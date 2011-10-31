@@ -1,0 +1,4 @@
+comments on integrating facebook:
+1. for video upload use the old API - facebook-iphone-sdk and not facebook-ios-sdk
+2. you have to change data to data.mov or whatever video format you have to no get the "not supported video format" error - do it in the FBRequest class
+3. add NSURLConnection delegate method to monitor upload progress
