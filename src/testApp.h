@@ -17,10 +17,12 @@
 
 #include "ofxiPhoneVideo.h"
 #include "ofxAudioSample.h"
+#include "ofxTexturesVector.h"
 
 
 class ofxiVideoPlayer;
 class ofxAudioPlayer;
+class ofxTexturesVector;
 
 
 struct player {
@@ -40,9 +42,18 @@ struct actor {
 	
 };
 
+struct animation {
+    ofxTexturesVector textures;
+    ofxMidiTrack *track;
+    int x;
+	int y;
+	float scale;
+};
+
 struct card {
 	vector<actor> actors;
 	vector<player> players;
+    vector<animation> animations;
 	ofxRKTexture *background;
 	bool bDisableNoteOff;
 };
@@ -119,9 +130,6 @@ public:
 //	int bufferSize;
 //	int nChannels;
 	
-	
-	
-
 	int songState;
 	int state;
 	

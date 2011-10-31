@@ -91,8 +91,8 @@ void testApp::setup(){
 		c.background = new ofxRKTexture;
 		c.background->setup(ofToDataPath(xml.getAttribute("card", "image", "", j)));
 		c.bDisableNoteOff = xml.getAttribute("card", "noteoff", 1, j);
-		c.background->init();
-		c.background->load();
+		
+		
 		int bpm = xml.getAttribute("card", "bpm", 120, j);
 		
 		xml.pushTag("card", j);
@@ -122,6 +122,24 @@ void testApp::setup(){
 			p.audio->setup(sampler.getAudioSample(),bufferSize,2); // max instances of sample 
 			
 			c.players.push_back(p);
+			
+		}
+        
+        for (i=0; i<xml.getNumTags("animation");i++) {
+			
+			animation a;
+
+            a.textures.setup(ofToDataPath(xml.getAttribute("animation", "textures", "", i)), xml.getAttribute("animation", "numFrames", 0, i));
+            
+            a.track = new ofxMidiTrack;
+			a.track->setup(bufferSize, sampleRate,bpm);
+            a.track->loadTrack(ofToDataPath(xml.getAttribute("animation", "track", "", i)));
+            
+            a.x = xml.getAttribute("animation", "x", 0, i) ;
+			a.y = xml.getAttribute("animation", "y", 0, i) ;
+			a.scale = xml.getAttribute("animation", "scale", 1.0f, i) ;
+			
+			c.animations.push_back(a);
 			
 		}
 	
@@ -185,7 +203,7 @@ void testApp::setup(){
 	songVersion = 0;
 	bCameraOffset = false;
 	
-	live();
+	resume();
 	
 	bNeedDisplay = true;
 	bTriggerRecord = false;
@@ -331,6 +349,15 @@ void testApp::drawCard(vector<card>::iterator iter) {
 //	ofTranslate(0, y); 
 	iter->background->draw(0, 0);
 	ofPopMatrix();
+    
+    for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end(); aiter++) {
+        ofPushMatrix();
+        ofTranslate(aiter->x, aiter->y, 0);
+        ofScale(aiter->scale,aiter->scale,1.0);
+        aiter->textures.draw();
+        ofPopMatrix();
+    }
+    
 	
 	ofDisableAlphaBlending();
 }
@@ -435,13 +462,30 @@ void testApp::exit() {
 void testApp::suspend() {
 	setSongState(SONG_IDLE);
 	grabber.suspend();
+    
+    for (vector<card>::iterator citer=cards.begin(); citer!=cards.end(); citer++) {
+        citer->background->release();
+        for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end(); aiter++) {
+            aiter->textures.release();
+        }
+    }
+
 }
 
 void testApp::resume() {
-	if (grabber.getState() == CAMERA_IDLE) { // return to foreground after aborting video rendering
+	for (vector<card>::iterator citer=cards.begin(); citer!=cards.end(); citer++) {
+        citer->background->init();
+        for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end(); aiter++) {
+            aiter->textures.init();
+        }
+    }
+    
+    if (grabber.getState() == CAMERA_IDLE) { // return to foreground after aborting video rendering
 		grabber.startCamera();
 	}
 	live(); // roikr: double live on startup ?
+    
+    
 }
 
 
@@ -565,6 +609,10 @@ void testApp::setSongState(int songState) {
 				iter->video->playIntro();
 				
 			}
+            
+            for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
+                aiter->track->stop();
+            }
 			break;
 		case SONG_PLAY:
 		case SONG_RENDER_AUDIO:
@@ -573,6 +621,11 @@ void testApp::setSongState(int songState) {
 				for (vector<player>::iterator iter=citer->players.begin(); iter!=citer->players.end(); iter++)  {
 					iter->song->play();
 				}
+                
+                for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
+                    aiter->track->play();
+                }
+
 			}
 			
 			break;
@@ -845,6 +898,37 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 		//piter->video->mix(rAudio, bufferSize,1.0f/players.size()*rightScale);
 		piter->audio->postProcess();
 	}
+    
+    
+    for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
+		
+		switch (songState) {
+			case SONG_PLAY:
+			case SONG_RENDER_AUDIO: {
+				
+				aiter->track->process(events); // allocate events and reserve enough space to avoid reallocations here
+				
+                //				if (events.size()>maxEvents) {
+                //					maxEvents = events.size();
+                //					printf("player: %i\tmaxEvents: %i\n",distance(citer->players.begin(),piter),maxEvents);
+                //				}
+				
+				for (vector<event>::iterator niter=events.begin(); niter!=events.end(); niter++) {
+					if (niter->bNoteOn) {
+                        //printf("animation: %i, note: %i", distance(citer->animations.begin(),aiter),niter->note);
+                        aiter->textures.setTexture(niter->note);
+                    }
+                }
+				
+				events.clear();
+				
+			} break;
+				
+			default:
+				break;
+		}
+	}
+    
 	
 	if (oiter!=cards.end()) {
 		bool bPlaying = false;
