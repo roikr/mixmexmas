@@ -15,6 +15,7 @@
 #include "ofMainExt.h"
 
 #include "ofxiPhoneExtras.h"
+#include "ofxAudioInstrument.h"
 
 #define MAX_NOTES_PER_BUFFER 10
 
@@ -142,6 +143,22 @@ void testApp::setup(){
 			c.animations.push_back(a);
 			
 		}
+        
+        int numSamples=xml.getAttribute("midi", "numSamples", 0);
+        string instrument=xml.getAttribute("midi", "instrument", "");
+        c.audioInstrument = new ofxAudioInstrument;
+        c.audioInstrument->setup(bufferSize,8);
+        
+        for (i=0; i<numSamples;i++) {
+            string soundname = instrument+"_"+ofToString(i+1) + ".caf";
+            ofLog(OF_LOG_VERBOSE,"loading sound: %s, map to midiNote: %i",soundname.c_str(),i+1); // roikr: giori start the drums midi note from 1
+            c.audioInstrument->loadSample(ofToDataPath(soundname), i);
+        }
+        
+        c.track = new ofxMidiTrack;
+        c.track->setup(bufferSize, sampleRate,bpm);
+        c.track->loadTrack(ofToDataPath(xml.getAttribute("midi", "filename", "")));
+        
 	
 		xml.popTag();
 	
@@ -457,11 +474,19 @@ void testApp::renderVideo(){
 //--------------------------------------------------------------
 void testApp::exit() {
 	grabber.exit();
+    
+    for (vector<card>::iterator citer=cards.begin(); citer!=cards.end(); citer++) {
+        citer->audioInstrument->exit();
+        delete citer->audioInstrument;
+    }
+    
+    cards.clear();
+
 }
 
 void testApp::suspend() {
 	setSongState(SONG_IDLE);
-	grabber.suspend();
+	
     
     for (vector<card>::iterator citer=cards.begin(); citer!=cards.end(); citer++) {
         citer->background->release();
@@ -469,6 +494,8 @@ void testApp::suspend() {
             aiter->textures.release();
         }
     }
+    
+    grabber.suspend();
 
 }
 
@@ -613,6 +640,7 @@ void testApp::setSongState(int songState) {
             for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
                 aiter->track->stop();
             }
+            citer->track->stop();
 			break;
 		case SONG_PLAY:
 		case SONG_RENDER_AUDIO:
@@ -625,6 +653,8 @@ void testApp::setSongState(int songState) {
                 for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
                     aiter->track->play();
                 }
+                
+                citer->track->play();
 
 			}
 			
@@ -832,19 +862,14 @@ void testApp::audioReceived( float * input, int bufferSize, int nChannels ) {
 void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 	
 	memset(output, 0, bufferSize*sizeof(float)*nChannels);
+    
+    switch (songState) {
+        case SONG_PLAY:
+        case SONG_RENDER_AUDIO: {
 	
-	for (vector<player>::iterator piter=citer->players.begin(); piter!=citer->players.end() ; piter++)  {
+            for (vector<player>::iterator piter=citer->players.begin(); piter!=citer->players.end() ; piter++)  {
 		
-		switch (songState) {
-			case SONG_PLAY:
-			case SONG_RENDER_AUDIO: {
-				
 				piter->song->process(events); // allocate events and reserve enough space to avoid reallocations here
-				
-//				if (events.size()>maxEvents) {
-//					maxEvents = events.size();
-//					printf("player: %i\tmaxEvents: %i\n",distance(citer->players.begin(),piter),maxEvents);
-//				}
 				
 				for (vector<event>::iterator niter=events.begin(); niter!=events.end(); niter++) {
 					if (niter->bNoteOn) {
@@ -853,13 +878,6 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 						
 						sampleInstance si;
 						si.speed = exp((float)(niter->note-60)/12.0*log(2.0));
-//						float speed = si.speed;
-//						
-//						if (speed>maxSpeed || speed<minSpeed) {
-//							maxSpeed= max(speed,maxSpeed);
-//							minSpeed = min(speed,minSpeed);
-//							printf("player: %i\tnote: %i\tmin: %f\t max: %f\n",distance(citer->players.begin(),piter),niter->note,minSpeed,maxSpeed);
-//						}
 						
 						float volume = (float)niter->velocity / 127* 1.0f;// /players.size();
 						
@@ -887,49 +905,53 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 				
 				events.clear();
 				
-			} break;
-				
-			default:
-				break;
-		}
-		
-		piter->audio->mixChannel(output,0,nChannels);//,1.0f/players.size()*leftScale);
-		piter->audio->mixChannel(output,1,nChannels);//,1.0f/players.size()*rightScale);
-		//piter->video->mix(rAudio, bufferSize,1.0f/players.size()*rightScale);
-		piter->audio->postProcess();
-	}
+					
+                piter->audio->mixChannel(output,0,nChannels);//,1.0f/players.size()*leftScale);
+                piter->audio->mixChannel(output,1,nChannels);//,1.0f/players.size()*rightScale);
+                //piter->video->mix(rAudio, bufferSize,1.0f/players.size()*rightScale);
+                piter->audio->postProcess();
+            }
     
     
-    for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
-		
-		switch (songState) {
-			case SONG_PLAY:
-			case SONG_RENDER_AUDIO: {
-				
+            for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
+    
 				aiter->track->process(events); // allocate events and reserve enough space to avoid reallocations here
-				
-                //				if (events.size()>maxEvents) {
-                //					maxEvents = events.size();
-                //					printf("player: %i\tmaxEvents: %i\n",distance(citer->players.begin(),piter),maxEvents);
-                //				}
-				
+								
 				for (vector<event>::iterator niter=events.begin(); niter!=events.end(); niter++) {
 					if (niter->bNoteOn) {
-                        //printf("animation: %i, note: %i", distance(citer->animations.begin(),aiter),niter->note);
+                        //printf("animation: %i, note: %i\n", distance(citer->animations.begin(),aiter),niter->note);
                         aiter->textures.setTexture(niter->note);
                     }
                 }
 				
 				events.clear();
 				
-			} break;
-				
-			default:
-				break;
-		}
-	}
+            }
     
-	
+            
+            citer->track->process(events); // allocate events and reserve enough space to avoid reallocations here
+            
+            for (vector<event>::iterator niter=events.begin(); niter!=events.end(); niter++) {
+                if (niter->bNoteOn) {
+//                    printf("midi track, note: %i\n", niter->note);
+                    citer->audioInstrument->noteOn(niter->note, niter->velocity);
+                }
+            }
+            
+            events.clear();
+            
+            citer->audioInstrument->preProcess();
+            citer->audioInstrument->mixChannel(output,0,nChannels);
+            citer->audioInstrument->mixChannel(output,1,nChannels);
+            citer->audioInstrument->postProcess();
+            
+        } break;
+            
+        default:
+            break;
+    }
+    
+    
 	if (oiter!=cards.end()) {
 		bool bPlaying = false;
 		for (vector<player>::iterator piter=oiter->players.begin(); piter!=oiter->players.end() ; piter++)  {

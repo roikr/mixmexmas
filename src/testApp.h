@@ -20,10 +20,11 @@
 #include "ofxTexturesVector.h"
 
 
+
 class ofxiVideoPlayer;
 class ofxAudioPlayer;
 class ofxTexturesVector;
-
+class ofxAudioInstrument;
 
 struct player {
 	ofxiVideoPlayer *video;
@@ -56,6 +57,9 @@ struct card {
     vector<animation> animations;
 	ofxRKTexture *background;
 	bool bDisableNoteOff;
+    
+    ofxAudioInstrument *audioInstrument;
+    ofxMidiTrack *track;
 };
 
 
