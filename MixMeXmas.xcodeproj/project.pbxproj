@@ -13,6 +13,13 @@
 		28EC4C5911D54ECE0027AA9F /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EC4C5711D54ECE0027AA9F /* MainViewController.mm */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		E40D5BB7145FD1E3005924A9 /* ofxAudioInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40D5BB5145FD1E3005924A9 /* ofxAudioInstrument.cpp */; };
+		E40D5BC3145FD38F005924A9 /* JINGLE_DRM.mid in Resources */ = {isa = PBXBuildFile; fileRef = E40D5BBD145FD38F005924A9 /* JINGLE_DRM.mid */; };
+		E40D5BC9145FDD51005924A9 /* JINGLE_DRM_1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E40D5BC4145FDD51005924A9 /* JINGLE_DRM_1.caf */; };
+		E40D5BCA145FDD51005924A9 /* JINGLE_DRM_2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E40D5BC5145FDD51005924A9 /* JINGLE_DRM_2.caf */; };
+		E40D5BCB145FDD51005924A9 /* JINGLE_DRM_3.caf in Resources */ = {isa = PBXBuildFile; fileRef = E40D5BC6145FDD51005924A9 /* JINGLE_DRM_3.caf */; };
+		E40D5BCC145FDD51005924A9 /* JINGLE_DRM_4.caf in Resources */ = {isa = PBXBuildFile; fileRef = E40D5BC7145FDD51005924A9 /* JINGLE_DRM_4.caf */; };
+		E40D5BCD145FDD51005924A9 /* JINGLE_DRM_5.caf in Resources */ = {isa = PBXBuildFile; fileRef = E40D5BC8145FDD51005924A9 /* JINGLE_DRM_5.caf */; };
 		E40FE458141F43C900E9CEDF /* CustomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E40FE457141F43C900E9CEDF /* CustomImageView.m */; };
 		E40FE4A9141F49AA00E9CEDF /* ShareViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40FE4A8141F49AA00E9CEDF /* ShareViewController.mm */; };
 		E40FE4B0141F49FC00E9CEDF /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40FE4AF141F49FC00E9CEDF /* ShareViewController.xib */; };
@@ -241,7 +248,6 @@
 		E4F3918013FC1B5E007B18EC /* ofxAudioFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3917813FC1B5E007B18EC /* ofxAudioFile.mm */; };
 		E4F3918A13FC1B7E007B18EC /* ofxiFBO.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3918913FC1B7E007B18EC /* ofxiFBO.mm */; };
 		E4F742C613FABA73002D7E1B /* ofxiPhoneSoundStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */; };
-		E4FE8FDC141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v in Resources */ = {isa = PBXBuildFile; fileRef = E4FE8FDB141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v */; };
 		E4FE9019141BEC99001AE508 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE900D141BEC99001AE508 /* loading.png */; };
 		E4FE901E141BEC99001AE508 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE9012141BEC99001AE508 /* share.png */; };
 		E4FE9040141BEF9A001AE508 /* button_0000_record.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE9036141BEF9A001AE508 /* button_0000_record.png */; };
@@ -266,6 +272,14 @@
 		28EC4C5711D54ECE0027AA9F /* MainViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E40D5BB5145FD1E3005924A9 /* ofxAudioInstrument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioInstrument.cpp; sourceTree = "<group>"; };
+		E40D5BB6145FD1E3005924A9 /* ofxAudioInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioInstrument.h; sourceTree = "<group>"; };
+		E40D5BBD145FD38F005924A9 /* JINGLE_DRM.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = JINGLE_DRM.mid; sourceTree = "<group>"; };
+		E40D5BC4145FDD51005924A9 /* JINGLE_DRM_1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JINGLE_DRM_1.caf; sourceTree = "<group>"; };
+		E40D5BC5145FDD51005924A9 /* JINGLE_DRM_2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JINGLE_DRM_2.caf; sourceTree = "<group>"; };
+		E40D5BC6145FDD51005924A9 /* JINGLE_DRM_3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JINGLE_DRM_3.caf; sourceTree = "<group>"; };
+		E40D5BC7145FDD51005924A9 /* JINGLE_DRM_4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JINGLE_DRM_4.caf; sourceTree = "<group>"; };
+		E40D5BC8145FDD51005924A9 /* JINGLE_DRM_5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JINGLE_DRM_5.caf; sourceTree = "<group>"; };
 		E40FE456141F43C900E9CEDF /* CustomImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImageView.h; sourceTree = "<group>"; };
 		E40FE457141F43C900E9CEDF /* CustomImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageView.m; sourceTree = "<group>"; };
 		E40FE4A7141F49AA00E9CEDF /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
@@ -680,7 +694,6 @@
 		E4F3918913FC1B7E007B18EC /* ofxiFBO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiFBO.mm; sourceTree = "<group>"; };
 		E4F742C413FABA73002D7E1B /* ofSoundStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofSoundStream.h; sourceTree = "<group>"; };
 		E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneSoundStream.mm; sourceTree = "<group>"; };
-		E4FE8FDB141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = SHANA_DEMO_IPHONE.m4v; path = Resources/SHANA_DEMO_IPHONE.m4v; sourceTree = "<group>"; };
 		E4FE900D141BEC99001AE508 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		E4FE9012141BEC99001AE508 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		E4FE9036141BEF9A001AE508 /* button_0000_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0000_record.png; sourceTree = "<group>"; };
@@ -784,7 +797,6 @@
 			isa = PBXGroup;
 			children = (
 				E4FE9008141BEC99001AE508 /* UI */,
-				E4FE8FDB141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v */,
 				E48BE17014197A89000958A2 /* Localizable.strings */,
 				E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */,
 				E42E5CAB1412602E003C4574 /* MixMeXmas-Info.plist */,
@@ -1512,6 +1524,12 @@
 		E4B6A2F0145F157A00D1A4B7 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				E40D5BC4145FDD51005924A9 /* JINGLE_DRM_1.caf */,
+				E40D5BC5145FDD51005924A9 /* JINGLE_DRM_2.caf */,
+				E40D5BC6145FDD51005924A9 /* JINGLE_DRM_3.caf */,
+				E40D5BC7145FDD51005924A9 /* JINGLE_DRM_4.caf */,
+				E40D5BC8145FDD51005924A9 /* JINGLE_DRM_5.caf */,
+				E40D5BBD145FD38F005924A9 /* JINGLE_DRM.mid */,
 				E44755BE145F592800481363 /* JINGLE_ANIMA_1.mid */,
 				E44755BF145F592800481363 /* JINGLE_ANIMA_2.mid */,
 				E4475586145F553300481363 /* JINGLE_ANIMA_1_00000.pvr */,
@@ -1676,6 +1694,8 @@
 		E4F3917613FC1B5E007B18EC /* src */ = {
 			isa = PBXGroup;
 			children = (
+				E40D5BB5145FD1E3005924A9 /* ofxAudioInstrument.cpp */,
+				E40D5BB6145FD1E3005924A9 /* ofxAudioInstrument.h */,
 				E4F3917713FC1B5E007B18EC /* ofxAudioFile.h */,
 				E4F3917813FC1B5E007B18EC /* ofxAudioFile.mm */,
 			);
@@ -1800,7 +1820,6 @@
 				E4C821FD140BF50200E190F1 /* AVPlayerViewController.xib in Resources */,
 				E43797D81419091200F3BBE9 /* FbKomic-Regular.otf in Resources */,
 				E48BE17214197A89000958A2 /* Localizable.strings in Resources */,
-				E4FE8FDC141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v in Resources */,
 				E4FE9019141BEC99001AE508 /* loading.png in Resources */,
 				E4FE901E141BEC99001AE508 /* share.png in Resources */,
 				E4FE9040141BEF9A001AE508 /* button_0000_record.png in Resources */,
@@ -1851,6 +1870,12 @@
 				E44755BD145F553300481363 /* JINGLE_ANIMA_2_00012.pvr in Resources */,
 				E44755C0145F592800481363 /* JINGLE_ANIMA_1.mid in Resources */,
 				E44755C1145F592800481363 /* JINGLE_ANIMA_2.mid in Resources */,
+				E40D5BC3145FD38F005924A9 /* JINGLE_DRM.mid in Resources */,
+				E40D5BC9145FDD51005924A9 /* JINGLE_DRM_1.caf in Resources */,
+				E40D5BCA145FDD51005924A9 /* JINGLE_DRM_2.caf in Resources */,
+				E40D5BCB145FDD51005924A9 /* JINGLE_DRM_3.caf in Resources */,
+				E40D5BCC145FDD51005924A9 /* JINGLE_DRM_4.caf in Resources */,
+				E40D5BCD145FDD51005924A9 /* JINGLE_DRM_5.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2029,6 +2054,7 @@
 				E40FE4A9141F49AA00E9CEDF /* ShareViewController.mm in Sources */,
 				E4C3F234145F21FC007760E9 /* testApp.mm in Sources */,
 				E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */,
+				E40D5BB7145FD1E3005924A9 /* ofxAudioInstrument.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
