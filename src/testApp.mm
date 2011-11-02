@@ -23,7 +23,7 @@
 //--------------------------------------------------------------
 void testApp::setup(){	
 	
-	
+	setiPhoneDataPath();
 	// register touch events
 	ofRegisterTouchEvents(this);
 	
@@ -43,8 +43,8 @@ void testApp::setup(){
 	
 	
 	
-	int bufferSize = 512;
-	int nChannels = 2;
+    bufferSize = 512;
+    nChannels = 2;
 	
 	video.fps = 25;
 	video.numIntroFrames = 4;
@@ -57,7 +57,8 @@ void testApp::setup(){
 	video.textureHeight = 256;
 	video.bHorizontal = true;
 	video.bFlipHoriznotal = false;
-	
+    
+    
 	
 	sampleRate 			= 44100;
 	
@@ -196,8 +197,7 @@ void testApp::setup(){
 	sample.buffer	= new float[sample.numFrames*sample.nChannels]; 
 	// roikr: this bugs took me about week to find - I didn't allocate enough space (new float[sample.numFrames]) so after rendering audio sometimes I got a crash - sometimes it just erased the midi's
 	
-//	camera = new ofxiVideoGrabber;
-	grabber.setup(&video,FRONT_CAMERA,0.75);
+
 	
 	
 	
@@ -211,21 +211,24 @@ void testApp::setup(){
 	assert(bLoaded);
 	bPlaySong = false;
 	
-	ofSoundStreamSetup(nChannels, 1, this, sampleRate, bufferSize, 2);
+//	ofSoundStreamSetup(nChannels, 1, this, sampleRate, bufferSize, 2);
+ //   ofSoundStreamStop();
 	
-	grabber.startCamera();
-	
-	
-	
+    
 	songVersion = 0;
 	bCameraOffset = false;
 	
-	resume();
+	
 	
 	bNeedDisplay = true;
 	bTriggerRecord = false;
 	
-	//camera->startCapture(); // TODO: remove this - just for testing	
+    bFirstLaunch = true;
+    grabber.setup(&video,FRONT_CAMERA,0.75);
+    grabber.startCamera();
+    resume();
+   
+    
 }
 
 
@@ -234,12 +237,20 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update()
 {
-	if (!bCameraOffset && grabber.getIsReady()) {
+    if (bFirstLaunch && ofGetElapsedTimeMillis()>2000) {
+        bFirstLaunch = false;
+        ofSoundStreamSetup(nChannels, 1, this, sampleRate, bufferSize, 2);
+    }
+    
+    grabber.update();
+    
+    if (!bCameraOffset  && grabber.getState() >= CAMERA_RUNNING) {
+        bCameraOffset = true;
 		ofPoint offset = ofPoint((grabber.getCameraWidth()-video.textureWidth)/2,(grabber.getCameraHeight()-video.textureHeight)/2);
 		grabber.setOffset(offset);
-		bCameraOffset = true;
-	}		
-
+		
+	}
+    
 	slider.update();
 	
 	if (bCardChanged && (ofGetElapsedTimeMillis() - delayStart)>SONG_SWITCH_DELAY) {
@@ -343,10 +354,11 @@ void testApp::drawCard(vector<card>::iterator iter) {
 		
 		//ofTranslate(i % 2 * ofGetWidth()/2, (int)(i / 2) * ofGetHeight() /2);
 		//ofScale(0.5, 0.5, 1);
-		
-		if (grabber.getIsReady() && (grabber.getState()==CAMERA_CAPTURING || grabber.getState()==CAMERA_RECORDING || video.textures.empty())) {
-			grabber.draw();
-		} else {
+        
+        if (grabber.getState()>=CAMERA_CAPTURING) {
+            grabber.draw();
+        } else
+		if (!video.textures.empty()) {
 			piter->video->draw();
 		}
 		
@@ -507,10 +519,16 @@ void testApp::resume() {
         }
     }
     
-    if (grabber.getState() == CAMERA_IDLE) { // return to foreground after aborting video rendering
-		grabber.startCamera();
-	}
-	live(); // roikr: double live on startup ?
+//    if (grabber.getState() == CAMERA_READY) { // return to foreground after aborting video rendering
+//		
+//	}
+   
+    state = STATE_LIVE;
+    bNeedDisplay = true;
+    grabber.startCapture();
+    
+    
+	
     
     
 }
@@ -524,10 +542,11 @@ void testApp::more() {
 
 
 void testApp::live() {
-	state = STATE_LIVE;
-	bNeedDisplay = true;
-//	grabber.releaseVideo();
-	grabber.startCapture();
+    if (grabber.getState()==CAMERA_RUNNING) {
+        state = STATE_LIVE;
+        bNeedDisplay = true;
+        grabber.startCapture();
+    }
 }
 
 void testApp::record() {
@@ -906,10 +925,6 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 				events.clear();
 				
 					
-                piter->audio->mixChannel(output,0,nChannels);//,1.0f/players.size()*leftScale);
-                piter->audio->mixChannel(output,1,nChannels);//,1.0f/players.size()*rightScale);
-                //piter->video->mix(rAudio, bufferSize,1.0f/players.size()*rightScale);
-                piter->audio->postProcess();
             }
     
     
@@ -940,16 +955,26 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
             
             events.clear();
             
-            citer->audioInstrument->preProcess();
-            citer->audioInstrument->mixChannel(output,0,nChannels);
-            citer->audioInstrument->mixChannel(output,1,nChannels);
-            citer->audioInstrument->postProcess();
-            
+                        
         } break;
             
         default:
             break;
     }
+    
+    for (vector<player>::iterator piter=citer->players.begin(); piter!=citer->players.end() ; piter++)  {
+        
+        piter->audio->mixChannel(output,0,nChannels);//,1.0f/players.size()*leftScale);
+        piter->audio->mixChannel(output,1,nChannels);//,1.0f/players.size()*rightScale);
+        //piter->video->mix(rAudio, bufferSize,1.0f/players.size()*rightScale);
+        piter->audio->postProcess();
+    }
+    
+    citer->audioInstrument->preProcess();
+    citer->audioInstrument->mixChannel(output,0,nChannels);
+    citer->audioInstrument->mixChannel(output,1,nChannels);
+    citer->audioInstrument->postProcess();
+    
     
     
 	if (oiter!=cards.end()) {

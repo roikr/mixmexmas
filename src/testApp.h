@@ -130,9 +130,10 @@ public:
 	
 	ofxAudioSample sample;
 	float sampleRate;
+    int nChannels;
 //	float *buffer; // for save song 
-//	int bufferSize;
-//	int nChannels;
+	int bufferSize;
+//	
 	
 	int songState;
 	int state;
@@ -164,6 +165,8 @@ public:
 	bool bPlaySong;
 	
 	vector<event> events;
+    
+    bool bFirstLaunch;
 	
 };
 

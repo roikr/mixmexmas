@@ -16,6 +16,7 @@
 #include "testApp.h"
 #include "Constants.h"
 
+
 @interface EAGLView (PrivateMethods)
 - (void)createFramebuffer;
 - (void)deleteFramebuffer;
@@ -27,6 +28,8 @@
 @dynamic context;
 @synthesize framebufferHeight;
 @synthesize animating;
+@synthesize OFSAptr;
+
 
 // You must implement this method
 + (Class)layerClass
@@ -37,11 +40,15 @@
 //The EAGL view is stored in the nib file. When it's unarchived it's sent -initWithCoder:.
 - (id)initWithCoder:(NSCoder*)coder
 {
+    NSLog(@"EAGLView::initWithCoder");
     self = [super initWithCoder:coder];
 	if (self)
     {
         
 		CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
+        
+        self.contentScaleFactor = 2.0f;
+        eaglLayer.contentsScale = 2.0f;
         
         eaglLayer.opaque = TRUE;
         eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -77,8 +84,12 @@
 		NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
 		if ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending)
 			displayLinkSupported = TRUE;
-				
-				
+			
+//        [self startAnimation];
+        
+        self.OFSAptr = new testApp;
+        OFSAptr->setup();
+        
     }
     
     return self;
@@ -235,6 +246,7 @@
 
 - (void)startAnimation
 {
+    NSLog(@"EAGLView::startAnimation");
     if (!animating)
     {
         if (displayLinkSupported)
@@ -247,9 +259,14 @@
             
             // The run loop will retain the display link on add.
             [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+            NSLog(@"EAGLView::startAnimation - displayLinkSupported"); 
         }
-        else
+        else {
+            
+           
             animationTimer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval)((1.0 / 60.0) * animationFrameInterval) target:self selector:@selector(drawFrame) userInfo:nil repeats:TRUE];
+            NSLog(@"EAGLView::startAnimation - displayLinkSupported not"); 
+        }
         
 		//startTime = CACurrentMediaTime();
 		//currentFrame =0;

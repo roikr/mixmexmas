@@ -19,9 +19,13 @@
 
 #include "Constants.h"
 #include "testApp.h"
-#include "ofMainExt.h"
+
 #include "EAGLView.h"
 #include "RKMacros.h"
+
+@interface SingingCardAppDelegate()
+
+@end
 
 @implementation SingingCardAppDelegate
 
@@ -32,25 +36,43 @@
 @synthesize mainViewController;
 @synthesize shareViewController;
 
-@synthesize OFSAptr;
+
 @synthesize lastSavedVersion;
 @synthesize shareManager;
 
-#define PLAY_INTRO
+//#define PLAY_INTRO
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     RKLog(@"application didFinishLaunchingWithOptions");
-	setiPhoneDataPath();	
+		
 	
 	self.shareManager = [ShareManager shareManager];
 	
 	self.window.rootViewController = self.mainViewController;
 	[self.window makeKeyAndVisible];
-		
+    
+#ifdef PLAY_INTRO
+    AVPlayerViewController *playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
+    [playerViewController setDelegate:self];
+    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"SHANA_DEMO_IPHONE" withExtension:@"m4v"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+    imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
+    imageView.center = CGPointMake(240.0, 160.0);
+    [playerViewController.view addSubview:imageView];
+    [imageView release];
+    //		playerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.mainViewController presentModalViewController:playerViewController animated:NO];
+    [playerViewController release];
+#endif
+
 	[self.eAGLView setInterfaceOrientation:UIInterfaceOrientationLandscapeRight duration:0];
 	RKLog(@"application didFinishLaunchingWithOptions finished");
 	return YES;
+}
+
+-(testApp*) OFSAptr {
+    return self.eAGLView.OFSAptr;
 }
 
 -(void) AVPlayerLayerIsReadyForDisplay:(AVPlayerViewController*)controller {
@@ -70,24 +92,25 @@
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
 	
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+
+	self.OFSAptr->soundStreamStart();
+    
+    [self.eAGLView startAnimation];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
 		RKLog(@"update loop started");
 		
 		while ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
-			if (OFSAptr) {
+			if (self.OFSAptr) {
 				
-				//OFSAptr->update(); // also update bNeedDisplay
+				//OFSAptr->update(); // also update bNeedDisplay - roikr: done in drawFrame
 				
-				if (OFSAptr->bNeedDisplay) {
+				if (self.OFSAptr->bNeedDisplay) {
 					dispatch_async(dispatch_get_main_queue(), ^{
 						
 						[mainViewController updateViews];
-						
-						
-						
-						
 					});
-					OFSAptr->bNeedDisplay = false; // this should stay out off the main view async call
+					self.OFSAptr->bNeedDisplay = false; // this should stay out off the main view async call
 				}
 				
 			}
@@ -95,41 +118,18 @@
 		}
 		RKLog(@"update loop exited");		
 	});
+
 	
-		
-	if (!OFSAptr) {
-		
-#ifdef PLAY_INTRO
-		AVPlayerViewController *playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
-		[playerViewController setDelegate:self];
-		[playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"SHANA_DEMO_IPHONE" withExtension:@"m4v"]];
-		UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
-		imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
-		imageView.center = CGPointMake(240.0, 160.0);
-		[playerViewController.view addSubview:imageView];
-		[imageView release];
-//		playerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-		[self.mainViewController presentModalViewController:playerViewController animated:NO];
-		[playerViewController release];
-#endif
-		self.OFSAptr = new testApp;
-		OFSAptr->setup();
-	} else {
-		OFSAptr->soundStreamStart();
-	}
-
-	[self.eAGLView startAnimation];
-
+    RKLog(@"applicationDidBecomeActive - ended");
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     RKLog(@"applicationWillResignActive");
 	[self.eAGLView stopAnimation];
+    self.OFSAptr->soundStreamStop();
 	
-	if (OFSAptr) {
-		OFSAptr->soundStreamStop();
-	}
 }
 
 
@@ -142,9 +142,9 @@
 
 - (void)beginInterruption {
 	RKLog(@"beginInterruption");
-	if (OFSAptr) {
-		OFSAptr->soundStreamStop();
-	}
+	
+    self.OFSAptr->soundStreamStop();
+	
 }
 
 - (void)endInterruptionWithFlags:(NSUInteger)flags {
@@ -154,9 +154,9 @@
 		NSError *activationError = nil;
 		[[AVAudioSession sharedInstance] setActive: YES error: &activationError];
 		RKLog(@"audio session activated");
-		if (OFSAptr) {
-			OFSAptr->soundStreamStart();
-		}
+		
+        self.OFSAptr->soundStreamStart();
+		
 		
 	}
 	
@@ -175,8 +175,8 @@
 	[shareManager applicationDidEnterBackground];
 	
 	// Handle any background procedures not related to animation here.
-	if (OFSAptr) {
-		OFSAptr->suspend();
+	if (self.OFSAptr) {
+		self.OFSAptr->suspend();
 	}
 	
 }
@@ -185,8 +185,8 @@
 {
     RKLog(@"applicationWillEnterForeground");
 	// Handle any foreground procedures not related to animation here.
-	if (OFSAptr) {
-		OFSAptr->resume();
+	if (self.OFSAptr) {
+		self.OFSAptr->resume();
 	}
 }
 

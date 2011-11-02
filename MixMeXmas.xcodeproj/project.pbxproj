@@ -2101,7 +2101,6 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = MixMeXmas;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "001009C9-C36E-4DC7-8BD2-8242897A01C6";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 			};
 			name = Debug;
@@ -2130,7 +2129,6 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = MixMeXmas;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FAA6F447-8C39-4E2D-8746-C4E36E5E865D";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2140,7 +2138,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2153,7 +2151,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roee Kremer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -2166,11 +2164,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Roee Kremer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=*]" = "B308CA2E-A46C-4F86-8420-64BA7CE3802F";
 				SDKROOT = iphoneos;
 			};
 			name = "Ad Hoc";
@@ -2199,7 +2198,6 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = MixMeXmas;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3E9BB101-4940-4039-9B0B-AF05F6809433";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2209,7 +2207,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -2242,7 +2240,6 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = MixMeXmas;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9B645451-838A-4D98-A5AD-784C854DD1A3";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 				VALIDATE_PRODUCT = YES;
 			};

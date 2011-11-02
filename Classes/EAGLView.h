@@ -13,7 +13,7 @@
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 
-
+class testApp;
 
 
 // This class wraps the CAEAGLLayer from CoreAnimation into a convenient UIView subclass.
@@ -47,6 +47,7 @@
     NSTimer *animationTimer;
 	//CFTimeInterval startTime;
 	
+    testApp *OFSAptr;
 	EAGLContext *secondaryContext;
 	
 }
@@ -56,6 +57,9 @@
 
 @property (readonly, nonatomic, getter=isAnimating) BOOL animating;
 @property (nonatomic) NSInteger animationFrameInterval;
+
+@property testApp *OFSAptr;
+
 
 
 - (void)setFramebuffer;

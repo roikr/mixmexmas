@@ -17,17 +17,15 @@
 @class EAGLView;
 class testApp;
 
+
 @interface SingingCardAppDelegate : NSObject <UIApplicationDelegate,AVPlayerViewControllerDelegate> {
     UIWindow *window;
 	EAGLView *eAGLView;
     MainViewController *mainViewController;
 	ShareViewController *shareViewController;
 		
-	testApp *OFSAptr;
-	
 	ShareManager *shareManager;
 	NSInteger lastSavedVersion;
-	
 	
 }
 
@@ -37,10 +35,10 @@ class testApp;
 @property (nonatomic, retain) IBOutlet ShareViewController *shareViewController;
 
 
-@property testApp *OFSAptr;
-
 @property (nonatomic, retain) ShareManager *shareManager;
 @property NSInteger lastSavedVersion;
+
+-(testApp*) OFSAptr;
 
 @end
 

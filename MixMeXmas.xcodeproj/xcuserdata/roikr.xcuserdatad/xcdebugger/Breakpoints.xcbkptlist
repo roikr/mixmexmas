@@ -50,20 +50,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Classes/SingingCardAppDelegate.mm"
-         timestampString = "341753848.324467"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "74"
-         endingLineNumber = "74"
-         landmarkName = "-applicationDidBecomeActive:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
          filePath = "iOSUtils/AVPlayerClasses/AVPlayerViewController.m"
          timestampString = "341706990.64694"
          startingColumnNumber = "9223372036854775807"
@@ -71,6 +57,20 @@
          startingLineNumber = "65"
          endingLineNumber = "65"
          landmarkName = "-dealloc"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Classes/EAGLView.mm"
+         timestampString = "341934066.034302"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "267"
+         endingLineNumber = "267"
+         landmarkName = "-startAnimation"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
