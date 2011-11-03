@@ -29,7 +29,7 @@ enum {
 
 
 
-@interface ShareManager : NSObject<FacebookUploaderDelegate,FacebookUploadViewControllerDelegate,YouTubeUploaderDelegate,YouTubeUploadViewControllerDelegate,MFMailComposeViewControllerDelegate,RenderManagerDelegate> {
+@interface ShareManager : NSObject<FacebookUploaderDelegate,FacebookUploadViewControllerDelegate,YouTubeUploaderDelegate,YouTubeUploadViewControllerDelegate,MFMailComposeViewControllerDelegate,RenderManagerDelegate,UIAlertViewDelegate> {
 	FacebookUploader *facebookUploader;
 	YouTubeUploader *youTubeUploader;
 	
@@ -43,6 +43,8 @@ enum {
 	UIViewController *parentViewController;
 	
 	RenderManager *renderManager;
+    
+    NSString *youtubeLink;
 }
 
 
@@ -56,6 +58,8 @@ enum {
 
 @property (nonatomic,retain) UIViewController *parentViewController;
 @property (nonatomic,retain) RenderManager *renderManager;
+
+@property (nonatomic,retain) NSString *youtubeLink;
 
 + (ShareManager*) shareManager;
 

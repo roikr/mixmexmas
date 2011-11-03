@@ -57,6 +57,8 @@ void ShareAlert(NSString *title,NSString *message) {
 @synthesize parentViewController;
 @synthesize renderManager;
 
+@synthesize youtubeLink;
+
 
 + (ShareManager*) shareManager {
 	
@@ -227,8 +229,9 @@ void ShareAlert(NSString *title,NSString *message) {
 		picker.mailComposeDelegate = self;
 		
 		[picker setSubject:subject];
-		[picker addAttachmentData:data mimeType:mimeType fileName:fileName];
-		
+        if (data) {
+            [picker addAttachmentData:data mimeType:mimeType fileName:fileName];
+        }
 		[picker setMessageBody:message isHTML:YES];
 		[parentViewController presentModalViewController:picker animated:YES];
 		[picker release];
@@ -310,7 +313,12 @@ void ShareAlert(NSString *title,NSString *message) {
 -(void) youTubeUploaderStateChanged:(YouTubeUploader *)theUploader{
 	switch (theUploader.state) {
 		case YOUTUBE_UPLOADER_STATE_UPLOAD_FINISHED: {
-			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), [NSString stringWithFormat:NSLocalizedString(@"YT upload finished",@"your video was uploaded successfully! link: %@"),[theUploader.link absoluteString]]); // ",]);
+//			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), [NSString stringWithFormat:NSLocalizedString(@"YT upload finished",@"your video was uploaded successfully! link: %@"),[theUploader.link absoluteString]]); // ",]);
+            self.youtubeLink = [theUploader.link absoluteString];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"YT alert",@"YouTube upload") message:NSLocalizedString(@"YT upload finished",@"your video was uploaded successfully! do you want to share the link ?") delegate:self  cancelButtonTitle:NSLocalizedString(@"NO thanks button",@"No Thanks")  otherButtonTitles: NSLocalizedString(@"OK button",@"OK"),nil];
+        
+            [alert show];
+            [alert release];
 #ifdef _FLURRY
 			[FlurryAPI endTimedEvent:@"YOUTUBE_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"FINISHED" forKey:@"STATE"]];
 #endif
@@ -336,6 +344,33 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	[((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).mainViewController updateViews];
 	
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        
+        Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+        if (mailClass != nil)
+        {
+            // We must always check whether the current device is configured for sending emails
+            MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+            picker.mailComposeDelegate = self;
+            
+            [picker setSubject:NSLocalizedString(@"YT email title",@"Sweeeet! My Xmas Greeting!")];
+            
+           
+            
+            NSString *message = [NSString stringWithFormat:NSLocalizedString(@"YT email message",@"Hey,<br/>I just made a xmas greeting created with the help of this cool app.<br/>click the <a href='%@'>link</a> to watch<br/><br/><br/><a href='http://www.lofipeople.com/mixmexmas/appstore'>MixMeXmas iPhone app</a>."),youtubeLink];
+                                                                             
+            [picker setMessageBody:message isHTML:YES];
+            
+            [((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).mainViewController presentModalViewController:picker animated:YES];
+        
+            [picker release];
+            
+        }
+    }
+    
 }
 
 
@@ -408,7 +443,7 @@ void ShareAlert(NSString *title,NSString *message) {
 			[controller setBDelayedUpload:YES];
 			[parentViewController presentModalViewController:controller animated:YES];
 			controller.uploader = appDelegate.shareManager.youTubeUploader;
-			controller.videoTitle = NSLocalizedString(@"YT title",@"shana tova musical card"); // [[self getDisplayName] uppercaseString];
+			controller.videoTitle = NSLocalizedString(@"YT title",@"xmas musical card"); // [[self getDisplayName] uppercaseString];
 			//controller.additionalText = kMilgromURL;
 			controller.descriptionView.text = NSLocalizedString(@"YT desc",@"this video created with this iphone app\nvisit lofipeople at http://www.lofipeople.com");
 			controller.videoPath = [[self getVideoPath] stringByAppendingPathExtension:@"mov"];
