@@ -164,7 +164,7 @@ public:
 	ofxAudioFile magic;
 	bool bPlaySong;
 	
-	vector<event> events;
+	
     
     bool bFirstLaunch;
 	
