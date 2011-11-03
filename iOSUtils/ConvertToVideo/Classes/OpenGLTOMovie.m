@@ -80,15 +80,15 @@ withAbortionHandler:(void (^)(void))abortionHandler
 	NSLog(@"can add output: %i",test);
 	[reader addOutput:output];
 	
-	AudioChannelLayout layout;
-	layout.mChannelLayoutTag = kAudioChannelLayoutTag_Stereo   ;
+//	AudioChannelLayout layout;
+//	layout.mChannelLayoutTag = kAudioChannelLayoutTag_Stereo   ;
 	
 	id keys[5], values[5];
     keys[0] = AVFormatIDKey; values[0] = [NSNumber numberWithInt: kAudioFormatMPEG4AAC ]; //kAudioFormatLinearPCM
     keys[1] = AVSampleRateKey; values[1] = [NSNumber numberWithFloat: 44100. ];
     keys[2] = AVNumberOfChannelsKey; values[2] = [NSNumber numberWithInt: 2 ];
     keys[3] = AVEncoderBitRateKey; values[3] = audioBitrate; //[NSNumber numberWithInt: 64000 ];
-    keys[4] = AVChannelLayoutKey; values[4] = [NSData dataWithBytes:&layout length:sizeof(AudioChannelLayout)];
+    keys[4] = AVChannelLayoutKey; values[4] = [NSData data];//[NSData dataWithBytes:&layout length:sizeof(AudioChannelLayout)];
     NSDictionary* audioSettings = [NSDictionary dictionaryWithObjects:values forKeys: keys count: 5 ];
 	
 	
