@@ -221,6 +221,7 @@ void testApp::setup(){
 	
 	
 	bNeedDisplay = true;
+    bSongPlayed = false;
 	bTriggerRecord = false;
 	
     bFirstLaunch = true;
@@ -626,7 +627,7 @@ void testApp::setSongState(int songState) {
 //	if (this->songState==SONG_RENDER_VIDEO && songState!=SONG_RENDER_VIDEO) {
 //		currentFrame =(ofGetElapsedTimeMillis()-startTime)  / 40;
 //	}
-	
+	bSongPlayed = false;
 	this->songState = songState;
 	
 	if (songState == SONG_RENDER_AUDIO || songState == SONG_RENDER_VIDEO) {
@@ -666,6 +667,8 @@ void testApp::setSongState(int songState) {
             citer->track->stop();
 			break;
 		case SONG_PLAY:
+            playTime = ofGetElapsedTimeMillis();
+            bSongPlayed = true;
 		case SONG_RENDER_AUDIO:
 		case SONG_RENDER_VIDEO:
 			if (!(grabber.getState()==CAMERA_CAPTURING || grabber.getState()==CAMERA_RECORDING || video.textures.empty())) {

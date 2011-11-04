@@ -19,6 +19,10 @@
 #import "Reachability.h"
 #import "ShareViewController.h"
 
+#ifdef _FLURRY
+#import "FlurryAPI.h"
+#endif
+
 enum {
 	STATE_IDLE,
 	STATE_SELECTED,
@@ -257,10 +261,34 @@ void ShareAlert(NSString *title,NSString *message) {
 		case MFMailComposeResultSaved:
 			//message.text = @"Result: saved";
 			break;
-		case MFMailComposeResultSent: 
+		case MFMailComposeResultSent: {
 			//message.text = @"Result: sent";
+#ifdef _FLURRY
+            NSString *target;
+            switch (action)
+            {
+                case 0: 
+                    action = ACTION_UPLOAD_TO_FACEBOOK;
+                    target = @"FACEBOOK";
+                    break;
+                case 1:
+                    action = ACTION_SEND_VIA_MAIL;
+                    target = @"EMAIL";
+                    break;			
+                case 2:
+                    action = ACTION_UPLOAD_TO_YOUTUBE;
+                    target = @"YOUTUBE";
+                    break;
+                case 4:
+                    action = ACTION_SEND_RINGTONE;
+                    target = @"RINGTONE";
+                    break;
+            }
+
+            [FlurryAPI endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:target forKey:@"TARGET"]];
+#endif
 			
-			break;
+        } break;
 		case MFMailComposeResultFailed:
 			//message.text = @"Result: failed";
 			break;
@@ -280,23 +308,13 @@ void ShareAlert(NSString *title,NSString *message) {
 		case FACEBOOK_UPLOADER_STATE_UPLOAD_FINISHED: {
 			ShareAlert(NSLocalizedString(@"FB alert",@"Facebook upload"),NSLocalizedString(@"FB upload finished", @"Your video was uploaded successfully!\ngo check your wall"));
 #ifdef _FLURRY
-			[FlurryAPI endTimedEvent:@"FACEBOOK_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"FINISHED" forKey:@"STATE"]];
+            [FlurryAPI endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"FACEBOOK" forKey:@"TARGET"]];
 #endif
 		} break;
 		case FACEBOOK_UPLOADER_STATE_UPLOADING: {
 			ShareAlert(NSLocalizedString(@"FB alert",@"Facebook upload"),NSLocalizedString(@"FB upload progress", @"Upload is in progress"));
-#ifdef _FLURRY
-			[FlurryAPI logEvent:@"FACEBOOK_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"STARTED" forKey:@"STATE"] timed:YES];
-#endif
+
 		} break;
-#ifdef _FLURRY
-		case FACEBOOK_UPLOADER_STATE_UPLOAD_CANCELED:
-			[FlurryAPI endTimedEvent:@"FACEBOOK_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"CANCELED" forKey:@"STATE"]];
-			break;	
-		case FACEBOOK_UPLOADER_STATE_UPLOAD_FAILED:
-			[FlurryAPI endTimedEvent:@"FACEBOOK_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"FAILED" forKey:@"STATE"]];
-			break;
-#endif
 		default:
 			break;
 	}
@@ -319,23 +337,18 @@ void ShareAlert(NSString *title,NSString *message) {
         
             [alert show];
             [alert release];
+
 #ifdef _FLURRY
-			[FlurryAPI endTimedEvent:@"YOUTUBE_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"FINISHED" forKey:@"STATE"]];
+            [FlurryAPI endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"YOUTUBE" forKey:@"TARGET"]];
 #endif
+
 		} break;
 		case YOUTUBE_UPLOADER_STATE_UPLOADING: {
-			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), NSLocalizedString(@"YT upload progress",@"Upload is in progress"));
-#ifdef _FLURRY
-			[FlurryAPI logEvent:@"YOUTUBE_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"STARTED" forKey:@"STATE"] timed:YES];
-#endif
-			
+			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), NSLocalizedString(@"YT upload progress",@"Upload is in progress"));			
 			
 		} break;
 		case YOUTUBE_UPLOADER_STATE_UPLOAD_STOPPED: {
 			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload") , NSLocalizedString(@"YT upload stopped",@"your upload has been stopped"));
-#ifdef _FLURRY
-			[FlurryAPI endTimedEvent:@"YOUTUBE_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"STOPPED" forKey:@"STATE"]];
-#endif
 		} break;
 			
 		default:
@@ -700,7 +713,7 @@ void ShareAlert(NSString *title,NSString *message) {
 												RKLog(@"writeVideoToAssestsLibrary successed");
 												ShareAlert(NSLocalizedString(@"library alert title",@"Library"),NSLocalizedString(@"library alert message",@"The video has been saved to your photos library"));
 #ifdef _FLURRY
-												[FlurryAPI logEvent:@"VIDEO_ADDED_TO_LIBRARY"];												
+                                                [FlurryAPI endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"LIBRARY" forKey:@"TARGET"]];
 #endif
 											}
 										});

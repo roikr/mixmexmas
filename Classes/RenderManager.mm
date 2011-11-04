@@ -21,10 +21,6 @@
 #import "ShareManager.h"
 #import "RKMacros.h"
 
-#ifdef _FLURRY
-#import "FlurryAPI.h"
-#endif
-
 
 @interface RenderManager() 
 
@@ -136,9 +132,6 @@
 	NSArray *modes = [[[NSArray alloc] initWithObjects:NSDefaultRunLoopMode, UITrackingRunLoopMode, nil] autorelease];
 	[self performSelector:@selector(updateRenderProgress) withObject:nil afterDelay:0.1 inModes:modes];
 	
-#ifdef _FLURRY
-	[FlurryAPI logEvent:@"RENDER_AUDIO" timed:YES];
-#endif
 	
 }
 
@@ -214,9 +207,7 @@
 					 
 					 self.renderer = nil;
 					 
-#ifdef _FLURRY
-					 [FlurryAPI endTimedEvent:@"RENDER_VIDEO" withParameters:[NSDictionary dictionaryWithObjectsAndKeys:@"COMPLETED",@"STATUS", nil]];
-#endif
+
 					 
 				 }
 		 
@@ -227,18 +218,13 @@
 					 OFSAptr->grabber.startCamera();
 					[delegate renderManagerRenderCanceled:self];
 					self.renderer = nil;
-#ifdef _FLURRY
-					[FlurryAPI endTimedEvent:@"RENDER_VIDEO" withParameters:[NSDictionary dictionaryWithObjectsAndKeys:@"CANCELED",@"STATUS", nil]];
-#endif
+
 				}
 		 
 				   withAbortionHandler:^ {
 					   NSLog(@"videoRender aborted");
 					   OFSAptr->setSongState(SONG_IDLE);
 					   self.renderer = nil;  
-#ifdef _FLURRY
-					   [FlurryAPI endTimedEvent:@"RENDER_VIDEO" withParameters:[NSDictionary dictionaryWithObjectsAndKeys:@"ABORTED",@"STATUS", nil]];
-#endif
 				   }
 		 
 		 ];
@@ -249,12 +235,7 @@
 	
 	NSArray *modes = [[[NSArray alloc] initWithObjects:NSDefaultRunLoopMode, UITrackingRunLoopMode, nil] autorelease];
 	[self performSelector:@selector(updateRenderProgress) withObject:nil afterDelay:0.1 inModes:modes];
-	
-#ifdef _FLURRY
-	[FlurryAPI logEvent:@"RENDER_VIDEO" timed:YES];
-#endif
-	
-	
+		
 }
 
 

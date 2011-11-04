@@ -27,8 +27,9 @@
 #import "RenderProgressView.h"
 #import "CustomImageView.h"
 
-
-
+#ifdef _FLURRY
+#import "FlurryAPI.h"
+#endif
 
 @interface MainViewController ()
 - (NSUInteger) cameraCount;
@@ -181,6 +182,9 @@
 
 - (IBAction) record:(id)sender {
 	self.OFSAptr->record();
+#ifdef _FLURRY
+    [FlurryAPI logEvent:@"RECORD" withParameters:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%i",[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardNumber]] forKey:@"CARD"]];
+#endif
 }
 
 - (IBAction) preview:(id)sender {

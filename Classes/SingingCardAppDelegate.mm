@@ -23,6 +23,10 @@
 #include "EAGLView.h"
 #include "RKMacros.h"
 
+#ifdef _FLURRY
+#import "FlurryAPI.h"
+#endif
+
 @interface SingingCardAppDelegate()
 
 @end
@@ -42,10 +46,22 @@
 
 //#define PLAY_INTRO
 
+
+#ifdef _FLURRY
+void uncaughtExceptionHandler(NSException *exception) { 
+	[FlurryAPI logError:@"Uncaught" message:@"Crash!" exception:exception]; 
+}
+#endif
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     RKLog(@"application didFinishLaunchingWithOptions");
 		
+#ifdef _FLURRY
+	NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+	[FlurryAPI startSession:@"QHB9XPQ4RUUGDYIS7H4Z"]; 
+#endif
+
 	
 	self.shareManager = [ShareManager shareManager];
 	
@@ -73,6 +89,11 @@
 
 -(testApp*) OFSAptr {
     return self.eAGLView.OFSAptr;
+}
+
+-(NSUInteger) getCurrentCardNumber {
+    
+    return distance(self.OFSAptr->cards.begin(),self.OFSAptr->citer);
 }
 
 -(void) AVPlayerLayerIsReadyForDisplay:(AVPlayerViewController*)controller {
@@ -112,6 +133,19 @@
 					});
 					self.OFSAptr->bNeedDisplay = false; // this should stay out off the main view async call
 				}
+                
+#ifdef _FLURRY
+                if (self.OFSAptr->bSongPlayed) {
+                    
+                    if (ofGetElapsedTimeMillis() - self.OFSAptr->playTime>LONG_PLAY) {
+                        self.OFSAptr->bSongPlayed = false;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [FlurryAPI logEvent:@"PLAY" withParameters:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%i",[self getCurrentCardNumber]] forKey:@"CARD"]];
+                        }); 
+                    }
+
+                }
+#endif
 				
 			}
 			

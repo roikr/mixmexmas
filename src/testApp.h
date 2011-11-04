@@ -163,10 +163,10 @@ public:
 	
 	ofxAudioFile magic;
 	bool bPlaySong;
-	
-	
-    
     bool bFirstLaunch;
+    
+    int playTime;
+    bool bSongPlayed;
 	
 };
 
