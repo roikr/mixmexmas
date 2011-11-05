@@ -47,8 +47,19 @@
         
 		CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
         
-        self.contentScaleFactor = 2.0f;
-        eaglLayer.contentsScale = 2.0f;
+        switch([[UIDevice currentDevice] userInterfaceIdiom]) {
+            case UIUserInterfaceIdiomPhone: 
+                if ([UIScreen mainScreen].scale == 2.0) {
+                    self.contentScaleFactor = 2.0f;
+                    eaglLayer.contentsScale = 2.0f;
+                }
+
+                break;
+            case UIUserInterfaceIdiomPad:
+                break;
+                
+        }
+        
         
         eaglLayer.opaque = TRUE;
         eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -348,16 +359,37 @@
 		
 	[UIView animateWithDuration:duration delay:0 options: UIViewAnimationOptionTransitionNone | UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction// UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse |
 					 animations:^{
-						 switch (toInterfaceOrientation) {
-							 case UIInterfaceOrientationPortrait: 
-							 case UIInterfaceOrientationPortraitUpsideDown: 
-								 self.center = CGPointMake(240, 240);
-								 break;
-							 case UIInterfaceOrientationLandscapeRight: 
-							 case UIInterfaceOrientationLandscapeLeft: 
-								 self.center = CGPointMake(160, 240);
-								 break;
-						 }
+                         switch([[UIDevice currentDevice] userInterfaceIdiom]) {
+                             case UIUserInterfaceIdiomPhone: 
+                                 switch (toInterfaceOrientation) {
+                                     case UIInterfaceOrientationPortrait: 
+                                     case UIInterfaceOrientationPortraitUpsideDown: 
+                                         self.center = CGPointMake(240, 240);
+                                         break;
+                                     case UIInterfaceOrientationLandscapeRight: 
+                                     case UIInterfaceOrientationLandscapeLeft: 
+                                         self.center = CGPointMake(160, 240);
+                                         break;
+                                 }
+                                 break;
+                             case UIUserInterfaceIdiomPad:
+                                 switch (toInterfaceOrientation) {
+                                     case UIInterfaceOrientationPortrait: 
+                                     case UIInterfaceOrientationPortraitUpsideDown: 
+                                         self.center = CGPointMake(512, 512);
+                                         break;
+                                     case UIInterfaceOrientationLandscapeRight: 
+                                     case UIInterfaceOrientationLandscapeLeft: 
+                                         self.center = CGPointMake(384, 512);
+                                         break;
+                                 }
+                                 break;
+                                
+                         }
+                         
+                         
+                         
+						 
 						 
 						 self.transform = CGAffineTransformIdentity;
 						 switch (toInterfaceOrientation) {
