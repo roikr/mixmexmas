@@ -1,0 +1,292 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E44BEAEB1466F7FE005C35BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44BEAEA1466F7FE005C35BE /* UIKit.framework */; };
+		E44BEAED1466F7FE005C35BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44BEAEC1466F7FE005C35BE /* Foundation.framework */; };
+		E44BEAEF1466F7FE005C35BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44BEAEE1466F7FE005C35BE /* CoreGraphics.framework */; };
+		E44BEAF51466F7FE005C35BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E44BEAF31466F7FE005C35BE /* InfoPlist.strings */; };
+		E44BEAF71466F7FE005C35BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E44BEAF61466F7FE005C35BE /* main.m */; };
+		E44BEAFB1466F7FE005C35BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E44BEAFA1466F7FE005C35BE /* AppDelegate.m */; };
+		E476E14814672D2C00DF4CA4 /* MessageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E476E14314672D2C00DF4CA4 /* MessageParser.m */; };
+		E476E14914672D2C00DF4CA4 /* URLCacheAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E476E14514672D2C00DF4CA4 /* URLCacheAlert.m */; };
+		E476E14A14672D2C00DF4CA4 /* URLCacheConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E476E14714672D2C00DF4CA4 /* URLCacheConnection.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E44BEAE61466F7FE005C35BE /* PopUpMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopUpMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E44BEAEA1466F7FE005C35BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E44BEAEC1466F7FE005C35BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E44BEAEE1466F7FE005C35BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E44BEAF21466F7FE005C35BE /* PopUpMessages-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PopUpMessages-Info.plist"; sourceTree = "<group>"; };
+		E44BEAF41466F7FE005C35BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E44BEAF61466F7FE005C35BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E44BEAF81466F7FE005C35BE /* PopUpMessages-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PopUpMessages-Prefix.pch"; sourceTree = "<group>"; };
+		E44BEAF91466F7FE005C35BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E44BEAFA1466F7FE005C35BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E476E14214672D2C00DF4CA4 /* MessageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageParser.h; sourceTree = "<group>"; };
+		E476E14314672D2C00DF4CA4 /* MessageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageParser.m; sourceTree = "<group>"; };
+		E476E14414672D2C00DF4CA4 /* URLCacheAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheAlert.h; sourceTree = "<group>"; };
+		E476E14514672D2C00DF4CA4 /* URLCacheAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheAlert.m; sourceTree = "<group>"; };
+		E476E14614672D2C00DF4CA4 /* URLCacheConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheConnection.h; sourceTree = "<group>"; };
+		E476E14714672D2C00DF4CA4 /* URLCacheConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheConnection.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E44BEAE31466F7FE005C35BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E44BEAEB1466F7FE005C35BE /* UIKit.framework in Frameworks */,
+				E44BEAED1466F7FE005C35BE /* Foundation.framework in Frameworks */,
+				E44BEAEF1466F7FE005C35BE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E44BEADB1466F7FE005C35BE = {
+			isa = PBXGroup;
+			children = (
+				E476E14114672D2C00DF4CA4 /* Classes */,
+				E44BEAF01466F7FE005C35BE /* PopUpMessages */,
+				E44BEAE91466F7FE005C35BE /* Frameworks */,
+				E44BEAE71466F7FE005C35BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E44BEAE71466F7FE005C35BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E44BEAE61466F7FE005C35BE /* PopUpMessages.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E44BEAE91466F7FE005C35BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E44BEAEA1466F7FE005C35BE /* UIKit.framework */,
+				E44BEAEC1466F7FE005C35BE /* Foundation.framework */,
+				E44BEAEE1466F7FE005C35BE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E44BEAF01466F7FE005C35BE /* PopUpMessages */ = {
+			isa = PBXGroup;
+			children = (
+				E44BEAF91466F7FE005C35BE /* AppDelegate.h */,
+				E44BEAFA1466F7FE005C35BE /* AppDelegate.m */,
+				E44BEAF11466F7FE005C35BE /* Supporting Files */,
+			);
+			path = PopUpMessages;
+			sourceTree = "<group>";
+		};
+		E44BEAF11466F7FE005C35BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E44BEAF21466F7FE005C35BE /* PopUpMessages-Info.plist */,
+				E44BEAF31466F7FE005C35BE /* InfoPlist.strings */,
+				E44BEAF61466F7FE005C35BE /* main.m */,
+				E44BEAF81466F7FE005C35BE /* PopUpMessages-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E476E14114672D2C00DF4CA4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E476E14214672D2C00DF4CA4 /* MessageParser.h */,
+				E476E14314672D2C00DF4CA4 /* MessageParser.m */,
+				E476E14414672D2C00DF4CA4 /* URLCacheAlert.h */,
+				E476E14514672D2C00DF4CA4 /* URLCacheAlert.m */,
+				E476E14614672D2C00DF4CA4 /* URLCacheConnection.h */,
+				E476E14714672D2C00DF4CA4 /* URLCacheConnection.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E44BEAE51466F7FE005C35BE /* PopUpMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E44BEAFE1466F7FE005C35BE /* Build configuration list for PBXNativeTarget "PopUpMessages" */;
+			buildPhases = (
+				E44BEAE21466F7FE005C35BE /* Sources */,
+				E44BEAE31466F7FE005C35BE /* Frameworks */,
+				E44BEAE41466F7FE005C35BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopUpMessages;
+			productName = PopUpMessages;
+			productReference = E44BEAE61466F7FE005C35BE /* PopUpMessages.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E44BEADD1466F7FE005C35BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = E44BEAE01466F7FE005C35BE /* Build configuration list for PBXProject "PopUpMessages" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E44BEADB1466F7FE005C35BE;
+			productRefGroup = E44BEAE71466F7FE005C35BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E44BEAE51466F7FE005C35BE /* PopUpMessages */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E44BEAE41466F7FE005C35BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E44BEAF51466F7FE005C35BE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E44BEAE21466F7FE005C35BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E44BEAF71466F7FE005C35BE /* main.m in Sources */,
+				E44BEAFB1466F7FE005C35BE /* AppDelegate.m in Sources */,
+				E476E14814672D2C00DF4CA4 /* MessageParser.m in Sources */,
+				E476E14914672D2C00DF4CA4 /* URLCacheAlert.m in Sources */,
+				E476E14A14672D2C00DF4CA4 /* URLCacheConnection.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E44BEAF31466F7FE005C35BE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E44BEAF41466F7FE005C35BE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E44BEAFC1466F7FE005C35BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E44BEAFD1466F7FE005C35BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E44BEAFF1466F7FE005C35BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopUpMessages/PopUpMessages-Prefix.pch";
+				INFOPLIST_FILE = "PopUpMessages/PopUpMessages-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E44BEB001466F7FE005C35BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopUpMessages/PopUpMessages-Prefix.pch";
+				INFOPLIST_FILE = "PopUpMessages/PopUpMessages-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E44BEAE01466F7FE005C35BE /* Build configuration list for PBXProject "PopUpMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E44BEAFC1466F7FE005C35BE /* Debug */,
+				E44BEAFD1466F7FE005C35BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E44BEAFE1466F7FE005C35BE /* Build configuration list for PBXNativeTarget "PopUpMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E44BEAFF1466F7FE005C35BE /* Debug */,
+				E44BEB001466F7FE005C35BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E44BEADD1466F7FE005C35BE /* Project object */;
+}
