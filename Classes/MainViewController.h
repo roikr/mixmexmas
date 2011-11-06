@@ -63,6 +63,8 @@
 
 - (IBAction)cameraToggle:(id)sender;
 
+- (IBAction)info:(id)sender;
+
 - (void)updateViews;
 - (void) setShareProgress:(float) progress;
 

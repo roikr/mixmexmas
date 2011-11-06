@@ -12,6 +12,7 @@
 
 @class MainViewController;
 @class ShareViewController;
+@class InfoViewController;
 
 @class ShareManager;
 @class EAGLView;
@@ -23,6 +24,7 @@ class testApp;
 	EAGLView *eAGLView;
     MainViewController *mainViewController;
 	ShareViewController *shareViewController;
+    InfoViewController *infoViewController;
 		
 	ShareManager *shareManager;
 	NSInteger lastSavedVersion;
@@ -33,6 +35,7 @@ class testApp;
 @property (nonatomic,retain)  IBOutlet EAGLView *eAGLView;
 @property (nonatomic, retain) IBOutlet MainViewController *mainViewController;
 @property (nonatomic, retain) IBOutlet ShareViewController *shareViewController;
+@property (nonatomic, retain) IBOutlet InfoViewController *infoViewController;
 
 
 @property (nonatomic, retain) ShareManager *shareManager;

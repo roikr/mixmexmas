@@ -11,6 +11,7 @@
 
 #import "MainViewController.h"
 #import "ShareViewController.h"
+#import "InfoViewController.h"
 #import "EAGLView.h"
 #import "SingingCardAppDelegate.h"
 
@@ -77,10 +78,6 @@
 
 - (void)dealloc
 {
-   
-    
-    
-    
     [super dealloc];
 }
 
@@ -91,23 +88,13 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    
-    
     [super viewWillDisappear:animated];
 }
 
 - (void)viewDidUnload
 {
 	[super viewDidUnload];
-	
-    
 }
-
-
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning
@@ -223,6 +210,10 @@
     self.OFSAptr->cameraToggle();
 }
 
+- (IBAction)info:(id)sender {
+    SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
+    [appDelegate.mainViewController presentModalViewController:appDelegate.infoViewController animated:YES];
+}
 
 #pragma mark Render && Share
 

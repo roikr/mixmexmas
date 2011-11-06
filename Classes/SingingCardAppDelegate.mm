@@ -39,6 +39,7 @@
 
 @synthesize mainViewController;
 @synthesize shareViewController;
+@synthesize infoViewController;
 
 
 @synthesize lastSavedVersion;
