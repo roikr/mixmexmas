@@ -17,9 +17,9 @@
 
 enum {
 	ACTION_UPLOAD_TO_FACEBOOK,
+    ACTION_SEND_VIA_MAIL,
 	ACTION_UPLOAD_TO_YOUTUBE,
 	ACTION_ADD_TO_LIBRARY,
-	ACTION_SEND_VIA_MAIL,
 	ACTION_SEND_RINGTONE,
 	ACTION_CANCEL,
 	ACTION_RENDER,
@@ -62,7 +62,7 @@ enum {
 @property (nonatomic,retain) NSString *youtubeLink;
 
 + (ShareManager*) shareManager;
-
++ (NSString *)getActionName:(NSUInteger)theAction;
 
 - (void)renderAudio;
 -(void) performAction:(NSUInteger)theAction;
@@ -72,5 +72,9 @@ enum {
 
 - (void)resetVersions;
 - (void)applicationDidEnterBackground;
+
+
+    
+
 
 @end

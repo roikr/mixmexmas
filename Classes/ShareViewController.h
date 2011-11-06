@@ -13,6 +13,6 @@
 	NSInteger action;
 }
 
--(void)action:(id)sender;
+-(IBAction)action:(id)sender;
 
 @end

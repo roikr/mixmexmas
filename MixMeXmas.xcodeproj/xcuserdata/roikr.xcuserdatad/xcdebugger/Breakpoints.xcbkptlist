@@ -67,12 +67,5 @@
          continueAfterRunningActions = "No"
          symbolName = "malloc_error_break">
       </SymbolicBreakpoint>
-      <SymbolicBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         symbolName = "NSKVODeallocateBreak"
-         moduleName = "">
-      </SymbolicBreakpoint>
    </SymbolicBreakpoints>
 </Bucket>

@@ -20,7 +20,7 @@
 #import "ShareViewController.h"
 
 #ifdef _FLURRY
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #endif
 
 enum {
@@ -144,15 +144,9 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
 		case 0:
-			name=@"berosh_hashana";
+			name=@"jingle_bells";
 			break;
-		case 1:
-			name=@"bashana_habaha";
-			break;
-		case 2:
-			name=@"shana_tova";
-			break;
-		default:
+        default:
 			break;
 	}
 	
@@ -167,13 +161,7 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
 		case 0:
-			name=@"berosh_hashana";
-			break;
-		case 1:
-			name=@"bashana_habaha";
-			break;
-		case 2:
-			name=@"shana_tova";
+			name=@"jingle_bells";
 			break;
 		default:
 			break;
@@ -201,15 +189,9 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
 		case 0:
-			name=@"berosh_hashana";
+			name=@"jingle_bells";
 			break;
-		case 1:
-			name=@"bashana_habaha";
-			break;
-		case 2:
-			name=@"shana_tova";
-			break;
-		default:
+        default:
 			break;
 	}
 	
@@ -264,28 +246,7 @@ void ShareAlert(NSString *title,NSString *message) {
 		case MFMailComposeResultSent: {
 			//message.text = @"Result: sent";
 #ifdef _FLURRY
-            NSString *target;
-            switch (action)
-            {
-                case 0: 
-                    action = ACTION_UPLOAD_TO_FACEBOOK;
-                    target = @"FACEBOOK";
-                    break;
-                case 1:
-                    action = ACTION_SEND_VIA_MAIL;
-                    target = @"EMAIL";
-                    break;			
-                case 2:
-                    action = ACTION_UPLOAD_TO_YOUTUBE;
-                    target = @"YOUTUBE";
-                    break;
-                case 4:
-                    action = ACTION_SEND_RINGTONE;
-                    target = @"RINGTONE";
-                    break;
-            }
-
-            [FlurryAPI endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:target forKey:@"TARGET"]];
+            [FlurryAnalytics endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:[ShareManager getActionName:action] forKey:@"TARGET"]];
 #endif
 			
         } break;
@@ -308,7 +269,7 @@ void ShareAlert(NSString *title,NSString *message) {
 		case FACEBOOK_UPLOADER_STATE_UPLOAD_FINISHED: {
 			ShareAlert(NSLocalizedString(@"FB alert",@"Facebook upload"),NSLocalizedString(@"FB upload finished", @"Your video was uploaded successfully!\ngo check your wall"));
 #ifdef _FLURRY
-            [FlurryAPI endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"FACEBOOK" forKey:@"TARGET"]];
+            [FlurryAnalytics endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"FACEBOOK" forKey:@"TARGET"]];
 #endif
 		} break;
 		case FACEBOOK_UPLOADER_STATE_UPLOADING: {
@@ -339,7 +300,7 @@ void ShareAlert(NSString *title,NSString *message) {
             [alert release];
 
 #ifdef _FLURRY
-            [FlurryAPI endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"YOUTUBE" forKey:@"TARGET"]];
+            [FlurryAnalytics endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"YOUTUBE" forKey:@"TARGET"]];
 #endif
 
 		} break;
@@ -391,7 +352,7 @@ void ShareAlert(NSString *title,NSString *message) {
 	[(MainViewController *)[(SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate] mainViewController] setShareProgress:progress];
 }
 
-
+#pragma mark Action
 
 - (void)resetVersions {
 	
@@ -431,6 +392,32 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 }
 
++ (NSString *)getActionName:(NSUInteger)theAction {
+    NSString *name;
+   
+    switch (theAction) {
+        case ACTION_UPLOAD_TO_FACEBOOK: 
+            name = @"FACEBOOK";
+            break;
+        case ACTION_SEND_VIA_MAIL:
+            name = @"EMAIL";
+            break;			
+        case ACTION_UPLOAD_TO_YOUTUBE:
+            name = @"YOUTUBE";
+            break;
+        case ACTION_ADD_TO_LIBRARY:
+            name = @"LIBRARY";
+            break;
+        case ACTION_SEND_RINGTONE:
+            name = @"RINGTONE";
+            break;
+        case ACTION_CANCEL:
+            name = @"CANCEL";
+            break;
+	}
+    
+    return name;
+}
 
 -(void) performAction:(NSUInteger)theAction {
 	action = theAction;
@@ -507,7 +494,11 @@ void ShareAlert(NSString *title,NSString *message) {
 	}	
 	
 	
-	
+#ifdef _FLURRY
+    NSString *card =  [NSString stringWithFormat:@"%i",[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardNumber]];
+    [FlurryAnalytics logEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObjectsAndKeys:[ShareManager getActionName:action],@"TARGET",card,@"CARD",nil] timed:action!=ACTION_CANCEL];
+    
+#endif
 	
 	
 	//[self.parentViewController dismissModalViewControllerAnimated:action==ACTION_CANCEL];
@@ -713,7 +704,7 @@ void ShareAlert(NSString *title,NSString *message) {
 												RKLog(@"writeVideoToAssestsLibrary successed");
 												ShareAlert(NSLocalizedString(@"library alert title",@"Library"),NSLocalizedString(@"library alert message",@"The video has been saved to your photos library"));
 #ifdef _FLURRY
-                                                [FlurryAPI endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"LIBRARY" forKey:@"TARGET"]];
+                                                [FlurryAnalytics endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"LIBRARY" forKey:@"TARGET"]];
 #endif
 											}
 										});

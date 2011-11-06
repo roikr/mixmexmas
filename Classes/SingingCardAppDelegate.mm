@@ -24,7 +24,7 @@
 #include "RKMacros.h"
 
 #ifdef _FLURRY
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #endif
 
 @interface SingingCardAppDelegate()
@@ -49,7 +49,7 @@
 
 #ifdef _FLURRY
 void uncaughtExceptionHandler(NSException *exception) { 
-	[FlurryAPI logError:@"Uncaught" message:@"Crash!" exception:exception]; 
+	[FlurryAnalytics logError:@"Uncaught" message:@"Crash!" exception:exception]; 
 }
 #endif
 
@@ -59,7 +59,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 		
 #ifdef _FLURRY
 	NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-	[FlurryAPI startSession:@"QHB9XPQ4RUUGDYIS7H4Z"]; 
+	[FlurryAnalytics startSession:@"LT1LZ197JKX9Z62SKBR9"]; 
 #endif
 
 	
@@ -140,7 +140,7 @@ void uncaughtExceptionHandler(NSException *exception) {
                     if (ofGetElapsedTimeMillis() - self.OFSAptr->playTime>LONG_PLAY) {
                         self.OFSAptr->bSongPlayed = false;
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            [FlurryAPI logEvent:@"PLAY" withParameters:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%i",[self getCurrentCardNumber]] forKey:@"CARD"]];
+                            [FlurryAnalytics logEvent:@"PLAY" withParameters:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%i",[self getCurrentCardNumber]] forKey:@"CARD"]];
                         }); 
                     }
 

@@ -28,7 +28,7 @@
 #import "CustomImageView.h"
 
 #ifdef _FLURRY
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #endif
 
 @interface MainViewController ()
@@ -183,7 +183,7 @@
 - (IBAction) record:(id)sender {
 	self.OFSAptr->record();
 #ifdef _FLURRY
-    [FlurryAPI logEvent:@"RECORD" withParameters:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%i",[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardNumber]] forKey:@"CARD"]];
+    [FlurryAnalytics logEvent:@"RECORD" withParameters:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%i",[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardNumber]] forKey:@"CARD"]];
 #endif
 }
 

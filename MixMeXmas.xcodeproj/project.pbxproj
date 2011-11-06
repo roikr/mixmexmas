@@ -222,6 +222,8 @@
 		E4A8AB6913F956C2006058D4 /* ofxiPhoneVideo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB5913F956C2006058D4 /* ofxiPhoneVideo.cpp */; };
 		E4AF013012B0EF5700457BC7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4AF012E12B0EF5700457BC7 /* MainWindow.xib */; };
 		E4AF014512B0F06000457BC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AF014412B0F06000457BC7 /* main.m */; };
+		E4AF1E711466B3390027F52D /* libFlurryAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AF1E701466B3390027F52D /* libFlurryAnalytics.a */; };
+		E4AF1E741466B87D0027F52D /* ShareViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4AF1E721466B87D0027F52D /* ShareViewController-iPad.xib */; };
 		E4AFFC4112B0B93B00457BC7 /* ShareManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4AFFC4012B0B93B00457BC7 /* ShareManager.mm */; };
 		E4AFFE4C12B0C42F00457BC7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFE4B12B0C42F00457BC7 /* SystemConfiguration.framework */; };
 		E4AFFE5012B0C44400457BC7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFE4F12B0C44400457BC7 /* Security.framework */; };
@@ -236,10 +238,10 @@
 		E4B6A30C145F157A00D1A4B7 /* cards.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4B6A2F6145F157A00D1A4B7 /* cards.xml */; };
 		E4B6A311145F157A00D1A4B7 /* magic.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4B6A2FB145F157A00D1A4B7 /* magic.caf */; };
 		E4C3F234145F21FC007760E9 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4C3F233145F21FC007760E9 /* testApp.mm */; };
-		E4C7A96114640A2800EB16C8 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C7A96014640A2800EB16C8 /* libFlurry.a */; };
 		E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C82116140BD03A00E190F1 /* RenderProgressView.m */; };
 		E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */; };
 		E4C821FD140BF50200E190F1 /* AVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */; };
+		E4F35E611465D3BC00B218B1 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F35E601465D3BC00B218B1 /* MainWindow-iPad.xib */; };
 		E4F3916613FC1B23007B18EC /* ofxAudioPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */; };
 		E4F3916813FC1B23007B18EC /* MyVideoBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3915F13FC1B23007B18EC /* MyVideoBuffer.mm */; };
 		E4F3916913FC1B23007B18EC /* ofxiVideoGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3916113FC1B23007B18EC /* ofxiVideoGrabber.mm */; };
@@ -248,6 +250,8 @@
 		E4F3917E13FC1B5E007B18EC /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4F3917313FC1B5E007B18EC /* CAXException.cpp */; };
 		E4F3918013FC1B5E007B18EC /* ofxAudioFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3917813FC1B5E007B18EC /* ofxAudioFile.mm */; };
 		E4F3918A13FC1B7E007B18EC /* ofxiFBO.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3918913FC1B7E007B18EC /* ofxiFBO.mm */; };
+		E4F4FBBB1465E84600563F8A /* MainViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F4FBB51465E84600563F8A /* MainViewController-iPad.xib */; };
+		E4F4FBBC1465E84600563F8A /* RenderViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F4FBB71465E84600563F8A /* RenderViewController-iPad.xib */; };
 		E4F742C613FABA73002D7E1B /* ofxiPhoneSoundStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */; };
 		E4FE9019141BEC99001AE508 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE900D141BEC99001AE508 /* loading.png */; };
 		E4FE901E141BEC99001AE508 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE9012141BEC99001AE508 /* share.png */; };
@@ -650,6 +654,9 @@
 		E4AF012E12B0EF5700457BC7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../Resources/MainWindow.xib; sourceTree = "<group>"; };
 		E4AF014312B0F05400457BC7 /* SingingCard_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCard_Prefix.pch; sourceTree = "<group>"; };
 		E4AF014412B0F06000457BC7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
+		E4AF1E6F1466B3390027F52D /* FlurryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAnalytics.h; sourceTree = "<group>"; };
+		E4AF1E701466B3390027F52D /* libFlurryAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAnalytics.a; sourceTree = "<group>"; };
+		E4AF1E731466B87D0027F52D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Resources/iPad/en.lproj/ShareViewController-iPad.xib"; sourceTree = "<group>"; };
 		E4AFFC3F12B0B93B00457BC7 /* ShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareManager.h; sourceTree = "<group>"; };
 		E4AFFC4012B0B93B00457BC7 /* ShareManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShareManager.mm; sourceTree = "<group>"; };
 		E4AFFE4B12B0C42F00457BC7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -667,8 +674,6 @@
 		E4C3F231145F21FC007760E9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E4C3F232145F21FC007760E9 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		E4C3F233145F21FC007760E9 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
-		E4C7A95F14640A2800EB16C8 /* FlurryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAPI.h; sourceTree = "<group>"; };
-		E4C7A96014640A2800EB16C8 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		E4C82115140BD03A00E190F1 /* RenderProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderProgressView.h; sourceTree = "<group>"; };
 		E4C82116140BD03A00E190F1 /* RenderProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderProgressView.m; sourceTree = "<group>"; };
 		E4C821F9140BF50200E190F1 /* AVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerViewController.h; sourceTree = "<group>"; };
@@ -676,6 +681,8 @@
 		E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVPlayerViewController.xib; sourceTree = "<group>"; };
 		E4C82243140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackViewController.h; sourceTree = "<group>"; };
 		E4C82244140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackViewController.m; sourceTree = "<group>"; };
+		E4F35E5C1465D2F000B218B1 /* MixMeXmas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MixMeXmas-Info.plist"; sourceTree = "<group>"; };
+		E4F35E601465D3BC00B218B1 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources/iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioPlayer.cpp; sourceTree = "<group>"; };
 		E4F3915613FC1B23007B18EC /* ofxAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioPlayer.h; sourceTree = "<group>"; };
 		E4F3915B13FC1B23007B18EC /* ofxAudioSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioSample.h; sourceTree = "<group>"; };
@@ -696,6 +703,8 @@
 		E4F3917813FC1B5E007B18EC /* ofxAudioFile.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxAudioFile.mm; sourceTree = "<group>"; };
 		E4F3918813FC1B7E007B18EC /* ofxiFBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiFBO.h; sourceTree = "<group>"; };
 		E4F3918913FC1B7E007B18EC /* ofxiFBO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiFBO.mm; sourceTree = "<group>"; };
+		E4F4FBB61465E84600563F8A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Resources/iPad/en.lproj/MainViewController-iPad.xib"; sourceTree = "<group>"; };
+		E4F4FBB81465E84600563F8A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Resources/iPad/en.lproj/RenderViewController-iPad.xib"; sourceTree = "<group>"; };
 		E4F742C413FABA73002D7E1B /* ofSoundStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofSoundStream.h; sourceTree = "<group>"; };
 		E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneSoundStream.mm; sourceTree = "<group>"; };
 		E4FE900D141BEC99001AE508 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
@@ -731,7 +740,7 @@
 				E4AFFF4112B0CA3000457BC7 /* CoreVideo.framework in Frameworks */,
 				E4AFFF4712B0CA4900457BC7 /* MobileCoreServices.framework in Frameworks */,
 				E4AFFFC112B0D37300457BC7 /* AudioToolbox.framework in Frameworks */,
-				E4C7A96114640A2800EB16C8 /* libFlurry.a in Frameworks */,
+				E4AF1E711466B3390027F52D /* libFlurryAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,8 +791,9 @@
 				E493CE16140AE970004CB633 /* iOSUtils */,
 				E48B83161402878200E4EFDB /* yesplastic */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				E4C7A95E14640A2800EB16C8 /* FlurryLib */,
+				E4AF1E6E1466B3390027F52D /* FlurryAnalytics */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				E4F35E5F1465D3B600B218B1 /* iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -802,6 +812,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4F35E5C1465D2F000B218B1 /* MixMeXmas-Info.plist */,
 				E4FE9008141BEC99001AE508 /* UI */,
 				E48BE17014197A89000958A2 /* Localizable.strings */,
 				E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */,
@@ -1526,6 +1537,15 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		E4AF1E6E1466B3390027F52D /* FlurryAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				E4AF1E6F1466B3390027F52D /* FlurryAnalytics.h */,
+				E4AF1E701466B3390027F52D /* libFlurryAnalytics.a */,
+			);
+			path = FlurryAnalytics;
+			sourceTree = "<group>";
+		};
 		E4B6A2F0145F157A00D1A4B7 /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -1576,15 +1596,6 @@
 			path = data;
 			sourceTree = "<group>";
 		};
-		E4C7A95E14640A2800EB16C8 /* FlurryLib */ = {
-			isa = PBXGroup;
-			children = (
-				E4C7A95F14640A2800EB16C8 /* FlurryAPI.h */,
-				E4C7A96014640A2800EB16C8 /* libFlurry.a */,
-			);
-			path = FlurryLib;
-			sourceTree = "<group>";
-		};
 		E4D5392012B393C200B9EFD8 /* addons */ = {
 			isa = PBXGroup;
 			children = (
@@ -1606,6 +1617,17 @@
 				E4A8AB1B13F95585006058D4 /* ofxSlider */,
 			);
 			name = addons;
+			sourceTree = "<group>";
+		};
+		E4F35E5F1465D3B600B218B1 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				E4AF1E721466B87D0027F52D /* ShareViewController-iPad.xib */,
+				E4F4FBB51465E84600563F8A /* MainViewController-iPad.xib */,
+				E4F4FBB71465E84600563F8A /* RenderViewController-iPad.xib */,
+				E4F35E601465D3BC00B218B1 /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		E4F3915313FC1B23007B18EC /* ofxAudioPlayer */ = {
@@ -1890,6 +1912,10 @@
 				E40D5BCD145FDD51005924A9 /* JINGLE_DRM_5.caf in Resources */,
 				E40236451463E6BF003BF6C5 /* MainViewController.xib in Resources */,
 				E402364A1463E6E5003BF6C5 /* ShareViewController.xib in Resources */,
+				E4F35E611465D3BC00B218B1 /* MainWindow-iPad.xib in Resources */,
+				E4F4FBBB1465E84600563F8A /* MainViewController-iPad.xib in Resources */,
+				E4F4FBBC1465E84600563F8A /* RenderViewController-iPad.xib in Resources */,
+				E4AF1E741466B87D0027F52D /* ShareViewController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2103,6 +2129,30 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		E4AF1E721466B87D0027F52D /* ShareViewController-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4AF1E731466B87D0027F52D /* en */,
+			);
+			name = "ShareViewController-iPad.xib";
+			sourceTree = "<group>";
+		};
+		E4F4FBB51465E84600563F8A /* MainViewController-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4F4FBB61465E84600563F8A /* en */,
+			);
+			name = "MainViewController-iPad.xib";
+			sourceTree = "<group>";
+		};
+		E4F4FBB71465E84600563F8A /* RenderViewController-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4F4FBB81465E84600563F8A /* en */,
+			);
+			name = "RenderViewController-iPad.xib";
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -2110,7 +2160,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2118,7 +2167,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MixMeXmas_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					_DEBUG,
+					_Debug,
 					_FLURRY,
 				);
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -2128,18 +2177,18 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "MixMeXmas-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
-					"\"$(SRCROOT)/FlurryLib\"",
+					"\"$(SRCROOT)/FlurryAnalytics\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lGLU",
 					"-ObjC",
 					"-lxml2",
 				);
 				PRODUCT_NAME = MixMeXmas;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 			};
 			name = Debug;
@@ -2148,7 +2197,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2160,18 +2208,18 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "MixMeXmas-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
-					"\"$(SRCROOT)/FlurryLib\"",
+					"\"$(SRCROOT)/FlurryAnalytics\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lGLU",
 					"-ObjC",
 					"-lxml2",
 				);
 				PRODUCT_NAME = MixMeXmas;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2187,6 +2235,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2201,6 +2250,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};
@@ -2216,6 +2266,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=*]" = "B308CA2E-A46C-4F86-8420-64BA7CE3802F";
 				SDKROOT = iphoneos;
@@ -2226,7 +2277,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roee Kremer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2238,18 +2288,18 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "MixMeXmas-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
-					"\"$(SRCROOT)/FlurryLib\"",
+					"\"$(SRCROOT)/FlurryAnalytics\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lGLU",
 					"-ObjC",
 					"-lxml2",
 				);
 				PRODUCT_NAME = MixMeXmas;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2265,6 +2315,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};
@@ -2274,7 +2325,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roee Kremer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2286,18 +2336,18 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "MixMeXmas-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
-					"\"$(SRCROOT)/FlurryLib\"",
+					"\"$(SRCROOT)/FlurryAnalytics\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lGLU",
 					"-ObjC",
 					"-lxml2",
 				);
 				PRODUCT_NAME = MixMeXmas;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 				VALIDATE_PRODUCT = YES;
 			};
