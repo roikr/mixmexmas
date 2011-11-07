@@ -13,9 +13,10 @@
 		E44BEAF51466F7FE005C35BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E44BEAF31466F7FE005C35BE /* InfoPlist.strings */; };
 		E44BEAF71466F7FE005C35BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E44BEAF61466F7FE005C35BE /* main.m */; };
 		E44BEAFB1466F7FE005C35BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E44BEAFA1466F7FE005C35BE /* AppDelegate.m */; };
-		E476E14814672D2C00DF4CA4 /* MessageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E476E14314672D2C00DF4CA4 /* MessageParser.m */; };
+		E470846814687504009FFEBC /* MessageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E476E14314672D2C00DF4CA4 /* MessageParser.m */; };
 		E476E14914672D2C00DF4CA4 /* URLCacheAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E476E14514672D2C00DF4CA4 /* URLCacheAlert.m */; };
-		E476E14A14672D2C00DF4CA4 /* URLCacheConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E476E14714672D2C00DF4CA4 /* URLCacheConnection.m */; };
+		E4CB9048146805E0000DBF20 /* PopupMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CB9047146805E0000DBF20 /* PopupMessage.m */; };
+		E4CB904C146813B0000DBF20 /* MessageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CB904B146813B0000DBF20 /* MessageLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +34,10 @@
 		E476E14314672D2C00DF4CA4 /* MessageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageParser.m; sourceTree = "<group>"; };
 		E476E14414672D2C00DF4CA4 /* URLCacheAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheAlert.h; sourceTree = "<group>"; };
 		E476E14514672D2C00DF4CA4 /* URLCacheAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheAlert.m; sourceTree = "<group>"; };
-		E476E14614672D2C00DF4CA4 /* URLCacheConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheConnection.h; sourceTree = "<group>"; };
-		E476E14714672D2C00DF4CA4 /* URLCacheConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheConnection.m; sourceTree = "<group>"; };
+		E4CB9046146805E0000DBF20 /* PopupMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupMessage.h; sourceTree = "<group>"; };
+		E4CB9047146805E0000DBF20 /* PopupMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupMessage.m; sourceTree = "<group>"; };
+		E4CB904A146813AF000DBF20 /* MessageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageLoader.h; sourceTree = "<group>"; };
+		E4CB904B146813B0000DBF20 /* MessageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +106,14 @@
 		E476E14114672D2C00DF4CA4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E476E14214672D2C00DF4CA4 /* MessageParser.h */,
-				E476E14314672D2C00DF4CA4 /* MessageParser.m */,
+				E4CB9046146805E0000DBF20 /* PopupMessage.h */,
+				E4CB9047146805E0000DBF20 /* PopupMessage.m */,
+				E4CB904A146813AF000DBF20 /* MessageLoader.h */,
+				E4CB904B146813B0000DBF20 /* MessageLoader.m */,
 				E476E14414672D2C00DF4CA4 /* URLCacheAlert.h */,
 				E476E14514672D2C00DF4CA4 /* URLCacheAlert.m */,
-				E476E14614672D2C00DF4CA4 /* URLCacheConnection.h */,
-				E476E14714672D2C00DF4CA4 /* URLCacheConnection.m */,
+				E476E14214672D2C00DF4CA4 /* MessageParser.h */,
+				E476E14314672D2C00DF4CA4 /* MessageParser.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -176,9 +181,10 @@
 			files = (
 				E44BEAF71466F7FE005C35BE /* main.m in Sources */,
 				E44BEAFB1466F7FE005C35BE /* AppDelegate.m in Sources */,
-				E476E14814672D2C00DF4CA4 /* MessageParser.m in Sources */,
 				E476E14914672D2C00DF4CA4 /* URLCacheAlert.m in Sources */,
-				E476E14A14672D2C00DF4CA4 /* URLCacheConnection.m in Sources */,
+				E4CB9048146805E0000DBF20 /* PopupMessage.m in Sources */,
+				E4CB904C146813B0000DBF20 /* MessageLoader.m in Sources */,
+				E470846814687504009FFEBC /* MessageParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

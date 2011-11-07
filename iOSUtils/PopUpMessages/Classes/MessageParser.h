@@ -7,50 +7,35 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "URLCacheConnection.h"
+
 
 @protocol MessageParserDelegate;
 
-@class URLCacheConnection;
+@class MessageData;
+@class ButtonData;
 
-@interface MessageParser : NSObject<NSXMLParserDelegate,URLCacheConnectionDelegate> {
+@interface MessageParser : NSObject<NSXMLParserDelegate> {
     id<MessageParserDelegate> delegate;
     
     NSMutableString *currentString;
-    UIAlertView *alertView;
-    NSMutableArray *links;
+    MessageData *messageData;
+    ButtonData *currentButton;
     
-    URLCacheConnection *connection;
-   
-    NSString *dataPath;
-    NSString *filePath;
-    NSDate *fileDate;
-    
-    NSError *error;
-   
 }
 
 @property (nonatomic, retain) id<MessageParserDelegate> delegate;
 
 @property (nonatomic, retain) NSMutableString *currentString;
-@property (nonatomic, retain) UIAlertView *alertView;
-@property (nonatomic, retain) NSMutableArray *links;
+@property (nonatomic, retain) MessageData *message;
+@property (nonatomic, retain) ButtonData *currentButton;
 
-@property (nonatomic, retain) URLCacheConnection *connection;
-
-
-@property (nonatomic, copy) NSString *dataPath;
-@property (nonatomic, copy) NSString *filePath;
-@property (nonatomic, retain) NSDate *fileDate;
-
-+(MessageParser *)messageParser;
-- (void)downloadAndParse:(NSURL *)theURL;
++(MessageParser *)messageParser:(NSData*)xmlData delegate:(id<MessageParserDelegate>) theDelegate;
 
 
 @end
 
 @protocol MessageParserDelegate
 
--(void)MessageParserDelegateParsed:(MessageParser *)parser;
+-(void)messageParserDidFinish:(MessageParser *)parser;
 
 @end

@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MessageParser.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,MessageParserDelegate,UIAlertViewDelegate> {
-    MessageParser *messageParser;
+@class PopupMessage;
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate> {
+    PopupMessage *popupMessage;
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, retain) MessageParser *messageParser;
+@property (nonatomic, retain) PopupMessage *popupMessage;
 
 @end

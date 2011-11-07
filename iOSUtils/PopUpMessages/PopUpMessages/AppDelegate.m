@@ -7,11 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "PopupMessage.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize messageParser;
+@synthesize popupMessage;
 
 - (void)dealloc
 {
@@ -60,10 +61,12 @@
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
     
-    self.messageParser = [MessageParser messageParser];
-    messageParser.delegate = self;
-    NSURL *url = [NSURL URLWithString:@"http://www.lofipeople.com/mixmexmas/message.xml"];
-    [messageParser downloadAndParse:url];
+    self.popupMessage=[PopupMessage popupMessage:[NSURL URLWithString:@"http://www.lofipeople.com/mixmexmas/message.xml"]];
+    
+//    self.messageParser = [MessageParser messageParser];
+//    messageParser.delegate = self;
+//    NSURL *url = ;
+//    [messageParser downloadAndParse:url];
     
     
 //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"No, thanks !" otherButtonTitles:@"bring it !" , nil];
@@ -81,16 +84,17 @@
      */
 }
 
+/*
 -(void)MessageParserDelegateParsed:(MessageParser *)parser {
     [parser.alertView setDelegate:self];
     [parser.alertView show];
  //   [alertView release];
 }
-
+*/
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     
-    NSLog(@"button: %i, link: %@",buttonIndex,[messageParser.links objectAtIndex:buttonIndex]);
-    self.messageParser = nil;
+//    NSLog(@"button: %i, link: %@",buttonIndex,[messageParser.links objectAtIndex:buttonIndex]);
+//    self.messageParser = nil;
 }
 
 
