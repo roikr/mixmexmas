@@ -20,12 +20,20 @@
     [super dealloc];
 }
 
+
+
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+   
     return YES;
 }
 
@@ -61,7 +69,8 @@
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
     
-    self.popupMessage=[PopupMessage popupMessage:[NSURL URLWithString:@"http://www.lofipeople.com/mixmexmas/message.xml"]];
+    //self.popupMessage=
+    [PopupMessage popupMessage:[NSURL URLWithString:@"http://www.lofipeople.com/mixmexmas/message.xml"]];
     
 //    self.messageParser = [MessageParser messageParser];
 //    messageParser.delegate = self;

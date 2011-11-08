@@ -57,8 +57,10 @@
     if (ELTYPE(message)) {
         self.message = [[[MessageData alloc] init] autorelease];
         message.buttons = [NSMutableArray array];
-        message.version = [attributeDict valueForKey:@"version"];
+        message.appVersion = [attributeDict valueForKey:@"appVersion"];
         message.messageID = [attributeDict valueForKey:@"id"];
+        message.displayed = NO;
+        message.retry = NO;
     } else if (ELTYPE(title)) {
         self.currentString =[NSMutableString string];
     } else if (ELTYPE(body)) {
@@ -69,7 +71,6 @@
         currentButton.link = [attributeDict valueForKey:@"link"];
         NSString *retry = [attributeDict valueForKey:@"retry"];
         currentButton.retry = retry ? [retry isEqualToString:@"1"] : NO;
-        currentButton.pressed = NO;
     }
 }
 

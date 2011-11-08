@@ -7,8 +7,9 @@
 //
 
 #import "MessageLoader.h"
-#import "URLCacheAlert.h"
-
+#ifdef _RK_DEBUG
+    #import "URLCacheAlert.h"
+#endif
 
 @interface MessageLoader(PrivateMethods) 
 
@@ -17,71 +18,38 @@
 
 @implementation MessageLoader
 
-@synthesize delegate,xmlData,isModified,lastModified,connection;
+@synthesize delegate,xmlData,isMessageModified,lastModified,connection;
 
 
 +(MessageLoader *)messageLoader:(NSURL *)theURL modified:(NSString *)modified delegate:(id<MessageLoaderDelegate>) theDelegate {
-    
+    NSLog(@"messageLoader: %@, modified: %@",[theURL path],modified);
     MessageLoader *loader = [[[MessageLoader alloc] init ] autorelease];
     
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:theURL];
     
- //   [theRequest addValue:modified forHTTPHeaderField:@"If-Modified-Since"];
+    if (modified!=nil) {
+         [theRequest addValue:modified forHTTPHeaderField:@"If-Modified-Since"];
+    }
+   
     
     loader.connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:loader];
-    loader.isModified = NO;
+    loader.isMessageModified = NO;
     loader.delegate = theDelegate;
     
     if (loader.connection == nil) {
         /* inform the user that the connection failed */
+#ifdef _RK_DEBUG
         NSString *message = NSLocalizedString (@"Unable to initiate request.",
                                                @"NSURLConnection initialization method failed.");
+
         URLCacheAlertWithMessage(message);
+#endif
     }
     
     return loader;
     
-
-//    
-//    /* default date if file doesn't exist (not an error) */
-//	NSDate *fileDate = [NSDate dateWithTimeIntervalSinceReferenceDate:0];
-//    
-//	if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-//		/* retrieve file attributes */
-//        NSError *error;
-//		NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:&error];
-//		if (attributes != nil) {
-//			fileDate = [attributes fileModificationDate];
-//		}
-//		else {
-//			URLCacheAlertWithError(error);
-//		}
-//	}
-//    
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    
-//    [dateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
-//    
-//    [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];
-//    
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-//	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-//    [theRequest addValue:[dateFormatter stringFromDate:fileDate]  forHTTPHeaderField:@"If-Modified-Since"];
-//	[dateFormatter release];
-    
-    
-    //    [request setHTTPMethod:@"POST"];
-    
-    
-    
-    
-    // create the connection with the request and start loading the data
-    
-    
-    //    self.connection = nil;
 
     
     
@@ -91,8 +59,10 @@
 
 - (void)dealloc
 {
-	self.xmlData = nil;
-	[super dealloc];
+    [lastModified release];
+	[xmlData release];
+    [connection release];
+    [super dealloc];
 }
 
 
@@ -135,7 +105,7 @@
                 
             case 200:
                 NSLog(@"200 OK");
-                isModified = YES;
+                isMessageModified = YES;
                 NSDictionary *headers = [(NSHTTPURLResponse *)response allHeaderFields];
                 self.lastModified = [headers objectForKey:@"Last-Modified"];
                 if (self.lastModified == nil) {
@@ -149,7 +119,7 @@
                     self.lastModified = [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceReferenceDate:0]];
                     [dateFormatter release];
                 }
-                NSLog(@"%@",self.lastModified);
+                NSLog(@"lastModified: %@",self.lastModified);
                 break;
             default:
                 break;
@@ -169,10 +139,10 @@
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-	self.connection = nil;
-    self.lastModified = nil;
-    self.xmlData = nil;
+#ifdef _RK_DEBUG	
     URLCacheAlertWithError(error);
+#endif
+    
 	[self.delegate messageLoaderDidFailed:self];
 }
 
@@ -180,8 +150,8 @@
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    self.connection = nil;
-    self.lastModified = nil;
+   
+    
     [self.delegate messageLoaderDidFinished:self];
 }
 

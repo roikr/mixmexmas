@@ -14,12 +14,12 @@
     NSString *text;
     NSString *link;
     BOOL retry;
-    BOOL pressed;
+//    BOOL pressed;
 }
 @property (nonatomic,retain) NSString *text;
 @property (nonatomic,retain) NSString *link;
 @property BOOL retry;
-@property BOOL pressed;
+//@property BOOL pressed;
 
 @end
 
@@ -27,27 +27,38 @@
     NSString *title;
     NSString *message;
     NSMutableArray *buttons; 
-    NSString *version;
+    NSString *appVersion;
     NSString *messageID;
+    
     NSString *modified;
+    BOOL displayed;
+    BOOL retry;
+    
 }
 
 @property (nonatomic,retain) NSString *title;
 @property (nonatomic,retain) NSString *message;
 @property (nonatomic,retain) NSMutableArray *buttons;
-@property (nonatomic,retain) NSString *version;
+@property (nonatomic,retain) NSString *appVersion;
 @property (nonatomic,retain) NSString *messageID;
 @property (nonatomic,retain) NSString *modified;
+@property BOOL displayed;
+@property BOOL retry;
+
+
 
 @end
 
 
-@interface PopupMessage : NSObject<MessageLoaderDelegate,MessageParserDelegate> {
+
+@interface PopupMessage : NSObject<MessageLoaderDelegate,MessageParserDelegate,UIAlertViewDelegate> {
+   
     MessageLoader *loader;
     MessageParser *parser;
     MessageData *data;
     NSURL *url;
 }
+
 
 @property (nonatomic,retain) MessageLoader *loader;
 @property (nonatomic,retain) MessageParser *parser;
@@ -56,6 +67,6 @@
 
 +(PopupMessage*) popupMessage:(NSURL *)theURL;
 
--(BOOL) shouldRetry;
-
 @end
+
+

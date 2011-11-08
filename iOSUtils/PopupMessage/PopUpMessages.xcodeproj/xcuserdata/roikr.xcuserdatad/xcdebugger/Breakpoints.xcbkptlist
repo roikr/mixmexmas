@@ -4,16 +4,16 @@
    version = "1.0">
    <FileBreakpoints>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Classes/MessageLoader.m"
-         timestampString = "342391333.757305"
+         filePath = "Classes/PopupMessage.m"
+         timestampString = "342449575.756225"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "94"
-         endingLineNumber = "94"
+         startingLineNumber = "117"
+         endingLineNumber = "117"
          landmarkName = "-dealloc"
          landmarkType = "5">
       </FileBreakpoint>

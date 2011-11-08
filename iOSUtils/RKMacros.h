@@ -7,11 +7,11 @@
 //
 
 
-#ifdef _Debug
+#ifdef _RK_DEBUG
 #define _SETTINGS
 #endif
 
-#ifdef _Debug
+#ifdef _RK_DEBUG
 #define RKLog( s, ... ) \
 do { \
 NSLog( @"<%@:(%d)> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] ); \
