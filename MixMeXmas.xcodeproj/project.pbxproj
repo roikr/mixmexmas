@@ -244,6 +244,10 @@
 		E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C82116140BD03A00E190F1 /* RenderProgressView.m */; };
 		E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */; };
 		E4C821FD140BF50200E190F1 /* AVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */; };
+		E4D7B515146960BF00131214 /* MessageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D7B4FD146960BF00131214 /* MessageLoader.m */; };
+		E4D7B516146960BF00131214 /* MessageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D7B4FF146960BF00131214 /* MessageParser.m */; };
+		E4D7B517146960BF00131214 /* PopupMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D7B501146960BF00131214 /* PopupMessage.m */; };
+		E4D7B518146960BF00131214 /* URLCacheAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D7B503146960BF00131214 /* URLCacheAlert.m */; };
 		E4F35E611465D3BC00B218B1 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F35E601465D3BC00B218B1 /* MainWindow-iPad.xib */; };
 		E4F3916613FC1B23007B18EC /* ofxAudioPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */; };
 		E4F3916813FC1B23007B18EC /* MyVideoBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3915F13FC1B23007B18EC /* MyVideoBuffer.mm */; };
@@ -687,6 +691,14 @@
 		E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVPlayerViewController.xib; sourceTree = "<group>"; };
 		E4C82243140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackViewController.h; sourceTree = "<group>"; };
 		E4C82244140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackViewController.m; sourceTree = "<group>"; };
+		E4D7B4FC146960BF00131214 /* MessageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageLoader.h; sourceTree = "<group>"; };
+		E4D7B4FD146960BF00131214 /* MessageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageLoader.m; sourceTree = "<group>"; };
+		E4D7B4FE146960BF00131214 /* MessageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageParser.h; sourceTree = "<group>"; };
+		E4D7B4FF146960BF00131214 /* MessageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageParser.m; sourceTree = "<group>"; };
+		E4D7B500146960BF00131214 /* PopupMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupMessage.h; sourceTree = "<group>"; };
+		E4D7B501146960BF00131214 /* PopupMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupMessage.m; sourceTree = "<group>"; };
+		E4D7B502146960BF00131214 /* URLCacheAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheAlert.h; sourceTree = "<group>"; };
+		E4D7B503146960BF00131214 /* URLCacheAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheAlert.m; sourceTree = "<group>"; };
 		E4F35E5C1465D2F000B218B1 /* MixMeXmas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MixMeXmas-Info.plist"; sourceTree = "<group>"; };
 		E4F35E601465D3BC00B218B1 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources/iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioPlayer.cpp; sourceTree = "<group>"; };
@@ -1233,6 +1245,7 @@
 		E493CE16140AE970004CB633 /* iOSUtils */ = {
 			isa = PBXGroup;
 			children = (
+				E4D7B4FA146960BF00131214 /* PopupMessage */,
 				E40FE455141F43C900E9CEDF /* CustomUI */,
 				E43797CA141908DC00F3BBE9 /* CustomUIFont */,
 				E493CE17140AE970004CB633 /* AVPlayerClasses */,
@@ -1625,6 +1638,29 @@
 				E4A8AB1B13F95585006058D4 /* ofxSlider */,
 			);
 			name = addons;
+			sourceTree = "<group>";
+		};
+		E4D7B4FA146960BF00131214 /* PopupMessage */ = {
+			isa = PBXGroup;
+			children = (
+				E4D7B4FB146960BF00131214 /* Classes */,
+			);
+			path = PopupMessage;
+			sourceTree = "<group>";
+		};
+		E4D7B4FB146960BF00131214 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E4D7B4FC146960BF00131214 /* MessageLoader.h */,
+				E4D7B4FD146960BF00131214 /* MessageLoader.m */,
+				E4D7B4FE146960BF00131214 /* MessageParser.h */,
+				E4D7B4FF146960BF00131214 /* MessageParser.m */,
+				E4D7B500146960BF00131214 /* PopupMessage.h */,
+				E4D7B501146960BF00131214 /* PopupMessage.m */,
+				E4D7B502146960BF00131214 /* URLCacheAlert.h */,
+				E4D7B503146960BF00131214 /* URLCacheAlert.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E4F35E5F1465D3B600B218B1 /* iPad */ = {
@@ -2105,6 +2141,10 @@
 				E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */,
 				E40D5BB7145FD1E3005924A9 /* ofxAudioInstrument.cpp in Sources */,
 				E4AF1E7D1466E4170027F52D /* InfoViewController.m in Sources */,
+				E4D7B515146960BF00131214 /* MessageLoader.m in Sources */,
+				E4D7B516146960BF00131214 /* MessageParser.m in Sources */,
+				E4D7B517146960BF00131214 /* PopupMessage.m in Sources */,
+				E4D7B518146960BF00131214 /* URLCacheAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2178,17 +2218,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MixMeXmas_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					_Debug,
-					_FLURRY,
-				);
-				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
@@ -2215,11 +2249,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MixMeXmas_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
@@ -2247,13 +2279,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (S8LHA25A98)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					_RK_DEBUG,
+					_FLURRY,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				PROVISIONING_PROFILE = "873502BF-54B9-4287-AB0F-83791003CEDC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2262,9 +2298,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roee Kremer";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -2278,15 +2313,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Roee Kremer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Roee Kremer";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=*]" = "B308CA2E-A46C-4F86-8420-64BA7CE3802F";
+				PROVISIONING_PROFILE = "B308CA2E-A46C-4F86-8420-64BA7CE3802F";
 				SDKROOT = iphoneos;
 			};
 			name = "Ad Hoc";
@@ -2295,11 +2330,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roee Kremer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MixMeXmas_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
@@ -2327,9 +2360,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -2343,11 +2375,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roee Kremer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MixMeXmas_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",

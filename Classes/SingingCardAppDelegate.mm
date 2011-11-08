@@ -22,6 +22,7 @@
 
 #include "EAGLView.h"
 #include "RKMacros.h"
+#import "PopupMessage.h"
 
 #ifdef _FLURRY
 #import "FlurryAnalytics.h"
@@ -113,6 +114,8 @@ void uncaughtExceptionHandler(NSException *exception) {
 	/*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    
+    
 	
 
 	self.OFSAptr->soundStreamStart();
@@ -153,6 +156,8 @@ void uncaughtExceptionHandler(NSException *exception) {
 		}
 		RKLog(@"update loop exited");		
 	});
+    
+    [PopupMessage popupMessage:[NSURL URLWithString:@"http://www.lofipeople.com/mixmexmas/message.xml"]];
 
 	
     RKLog(@"applicationDidBecomeActive - ended");
