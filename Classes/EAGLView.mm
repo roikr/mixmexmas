@@ -329,8 +329,19 @@
 	glLoadIdentity();
 	glScalef(1.0, -1.0,1.0);
 	glTranslatef(0, -framebufferHeight, 0);
+	 
 	
-	
+    switch([[UIDevice currentDevice] userInterfaceIdiom]) {
+        case UIUserInterfaceIdiomPhone: 
+            if ([UIScreen mainScreen].scale == 1.0) {
+                glScalef(0.5, 0.5, 1);
+            }
+            
+            break;
+        case UIUserInterfaceIdiomPad:
+            break;
+            
+    }
 	appDelegate.OFSAptr->draw();
 	
 	
