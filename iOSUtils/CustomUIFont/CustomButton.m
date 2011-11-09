@@ -16,7 +16,7 @@
 {
     if (self = [super initWithCoder: decoder])
     {
-        self.titleLabel.font            = [UIFont fontWithName: @"FbKomic-Regular" size: self.titleLabel.font.pointSize];
+        self.titleLabel.font            = [UIFont fontWithName: @"BRITANIC" size: self.titleLabel.font.pointSize];
 		
     }
     return self;
