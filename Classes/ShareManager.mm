@@ -144,7 +144,16 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
 		case 0:
-			name=@"jingle_bells";
+			name=@"lital";
+			break;
+        case 1:
+			name=@"kids";
+			break;
+        case 2:
+			name=@"deers";
+			break;
+        case 3:
+			name=@"santa";
 			break;
         default:
 			break;
@@ -161,7 +170,16 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
 		case 0:
-			name=@"jingle_bells";
+			name=@"lital";
+			break;
+        case 1:
+			name=@"kids";
+			break;
+        case 2:
+			name=@"deers";
+			break;
+        case 3:
+			name=@"santa";
 			break;
 		default:
 			break;
@@ -189,7 +207,16 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
 		case 0:
-			name=@"jingle_bells";
+			name=@"lital";
+			break;
+        case 1:
+			name=@"kids";
+			break;
+        case 2:
+			name=@"deers";
+			break;
+        case 3:
+			name=@"santa";
 			break;
         default:
 			break;

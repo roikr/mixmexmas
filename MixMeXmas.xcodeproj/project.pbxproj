@@ -30,7 +30,6 @@
 		E43797D0141908DC00F3BBE9 /* CustomFontTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */; };
 		E43797D81419091200F3BBE9 /* FbKomic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */; };
 		E43797E314190BDB00F3BBE9 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */; };
-		E4475577145F300E00481363 /* JINGLE.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4475576145F300E00481363 /* JINGLE.pvr */; };
 		E447557C145F37AF00481363 /* JINGLE_1.mid in Resources */ = {isa = PBXBuildFile; fileRef = E4475578145F37AF00481363 /* JINGLE_1.mid */; };
 		E447557D145F37AF00481363 /* JINGLE_2.mid in Resources */ = {isa = PBXBuildFile; fileRef = E4475579145F37AF00481363 /* JINGLE_2.mid */; };
 		E447557E145F37AF00481363 /* JINGLE_3.mid in Resources */ = {isa = PBXBuildFile; fileRef = E447557A145F37AF00481363 /* JINGLE_3.mid */; };
@@ -259,6 +258,10 @@
 		E4F3918A13FC1B7E007B18EC /* ofxiFBO.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3918913FC1B7E007B18EC /* ofxiFBO.mm */; };
 		E4F4FBBB1465E84600563F8A /* MainViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F4FBB51465E84600563F8A /* MainViewController-iPad.xib */; };
 		E4F742C613FABA73002D7E1B /* ofxiPhoneSoundStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */; };
+		E4FAB806146A982A00E75984 /* 01_lital.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4FAB802146A982A00E75984 /* 01_lital.pvr */; };
+		E4FAB807146A982A00E75984 /* 02_kids.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4FAB803146A982A00E75984 /* 02_kids.pvr */; };
+		E4FAB808146A982A00E75984 /* 03_deers.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4FAB804146A982A00E75984 /* 03_deers.pvr */; };
+		E4FAB809146A982A00E75984 /* 04_santa.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4FAB805146A982A00E75984 /* 04_santa.pvr */; };
 		E4FE9019141BEC99001AE508 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE900D141BEC99001AE508 /* loading.png */; };
 		E4FE901E141BEC99001AE508 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE9012141BEC99001AE508 /* share.png */; };
 		E4FE9040141BEF9A001AE508 /* button_0000_record.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE9036141BEF9A001AE508 /* button_0000_record.png */; };
@@ -310,7 +313,6 @@
 		E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FbKomic-Regular.otf"; path = "Resources/FbKomic-Regular.otf"; sourceTree = "<group>"; };
 		E43797E114190BDB00F3BBE9 /* CustomFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFontLabel.h; sourceTree = "<group>"; };
 		E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontLabel.m; sourceTree = "<group>"; };
-		E4475576145F300E00481363 /* JINGLE.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = JINGLE.pvr; sourceTree = "<group>"; };
 		E4475578145F37AF00481363 /* JINGLE_1.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = JINGLE_1.mid; sourceTree = "<group>"; };
 		E4475579145F37AF00481363 /* JINGLE_2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = JINGLE_2.mid; sourceTree = "<group>"; };
 		E447557A145F37AF00481363 /* JINGLE_3.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = JINGLE_3.mid; sourceTree = "<group>"; };
@@ -658,7 +660,6 @@
 		E4A8AB5913F956C2006058D4 /* ofxiPhoneVideo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxiPhoneVideo.cpp; sourceTree = "<group>"; };
 		E4A8AB5A13F956C2006058D4 /* ofxiPhoneVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneVideo.h; sourceTree = "<group>"; };
 		E4AF012E12B0EF5700457BC7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../Resources/MainWindow.xib; sourceTree = "<group>"; };
-		E4AF014312B0F05400457BC7 /* SingingCard_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCard_Prefix.pch; sourceTree = "<group>"; };
 		E4AF014412B0F06000457BC7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
 		E4AF1E6F1466B3390027F52D /* FlurryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAnalytics.h; sourceTree = "<group>"; };
 		E4AF1E701466B3390027F52D /* libFlurryAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAnalytics.a; sourceTree = "<group>"; };
@@ -681,6 +682,7 @@
 		E4B2FA1A1466F287008DDC30 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Resources/iPad/en.lproj/InfoViewController-iPad.xib"; sourceTree = "<group>"; };
 		E4B6A2F6145F157A00D1A4B7 /* cards.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cards.xml; sourceTree = "<group>"; };
 		E4B6A2FB145F157A00D1A4B7 /* magic.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = magic.caf; sourceTree = "<group>"; };
+		E4C1A741146A643000259F20 /* MixMeXmas_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixMeXmas_Prefix.pch; sourceTree = "<group>"; };
 		E4C3F231145F21FC007760E9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E4C3F232145F21FC007760E9 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		E4C3F233145F21FC007760E9 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
@@ -724,6 +726,10 @@
 		E4F4FBB61465E84600563F8A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Resources/iPad/en.lproj/MainViewController-iPad.xib"; sourceTree = "<group>"; };
 		E4F742C413FABA73002D7E1B /* ofSoundStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofSoundStream.h; sourceTree = "<group>"; };
 		E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneSoundStream.mm; sourceTree = "<group>"; };
+		E4FAB802146A982A00E75984 /* 01_lital.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01_lital.pvr; sourceTree = "<group>"; };
+		E4FAB803146A982A00E75984 /* 02_kids.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02_kids.pvr; sourceTree = "<group>"; };
+		E4FAB804146A982A00E75984 /* 03_deers.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = 03_deers.pvr; sourceTree = "<group>"; };
+		E4FAB805146A982A00E75984 /* 04_santa.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04_santa.pvr; sourceTree = "<group>"; };
 		E4FE900D141BEC99001AE508 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		E4FE9012141BEC99001AE508 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		E4FE9036141BEF9A001AE508 /* button_0000_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0000_record.png; sourceTree = "<group>"; };
@@ -823,8 +829,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E4C1A741146A643000259F20 /* MixMeXmas_Prefix.pch */,
 				E4AF014412B0F06000457BC7 /* main.m */,
-				E4AF014312B0F05400457BC7 /* SingingCard_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -1570,6 +1576,10 @@
 		E4B6A2F0145F157A00D1A4B7 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				E4FAB802146A982A00E75984 /* 01_lital.pvr */,
+				E4FAB803146A982A00E75984 /* 02_kids.pvr */,
+				E4FAB804146A982A00E75984 /* 03_deers.pvr */,
+				E4FAB805146A982A00E75984 /* 04_santa.pvr */,
 				E40D5BC4145FDD51005924A9 /* JINGLE_DRM_1.caf */,
 				E40D5BC5145FDD51005924A9 /* JINGLE_DRM_2.caf */,
 				E40D5BC6145FDD51005924A9 /* JINGLE_DRM_3.caf */,
@@ -1610,7 +1620,6 @@
 				E4475579145F37AF00481363 /* JINGLE_2.mid */,
 				E447557A145F37AF00481363 /* JINGLE_3.mid */,
 				E447557B145F37AF00481363 /* JINGLE_4.mid */,
-				E4475576145F300E00481363 /* JINGLE.pvr */,
 				E4B6A2F6145F157A00D1A4B7 /* cards.xml */,
 				E4B6A2FB145F157A00D1A4B7 /* magic.caf */,
 			);
@@ -1913,7 +1922,6 @@
 				E4FE9049141BEF9A001AE508 /* button_0009_cancel.png in Resources */,
 				E4B6A30C145F157A00D1A4B7 /* cards.xml in Resources */,
 				E4B6A311145F157A00D1A4B7 /* magic.caf in Resources */,
-				E4475577145F300E00481363 /* JINGLE.pvr in Resources */,
 				E447557C145F37AF00481363 /* JINGLE_1.mid in Resources */,
 				E447557D145F37AF00481363 /* JINGLE_2.mid in Resources */,
 				E447557E145F37AF00481363 /* JINGLE_3.mid in Resources */,
@@ -1961,6 +1969,10 @@
 				E4AF1E741466B87D0027F52D /* ShareViewController-iPad.xib in Resources */,
 				E4AF1E811466E4EE0027F52D /* InfoViewController.xib in Resources */,
 				E4B2FA1B1466F287008DDC30 /* InfoViewController-iPad.xib in Resources */,
+				E4FAB806146A982A00E75984 /* 01_lital.pvr in Resources */,
+				E4FAB807146A982A00E75984 /* 02_kids.pvr in Resources */,
+				E4FAB808146A982A00E75984 /* 03_deers.pvr in Resources */,
+				E4FAB809146A982A00E75984 /* 04_santa.pvr in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2233,7 +2245,6 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/FlurryAnalytics\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lGLU",
 					"-ObjC",
@@ -2262,7 +2273,6 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/FlurryAnalytics\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lGLU",
 					"-ObjC",
@@ -2278,7 +2288,6 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2297,7 +2306,6 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -2312,7 +2320,6 @@
 		E45EAC681401530100B2775A /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Roee Kremer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
@@ -2343,7 +2350,6 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/FlurryAnalytics\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lGLU",
 					"-ObjC",
@@ -2359,7 +2365,6 @@
 		E49EC6DB14125EF300A068E3 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -2388,7 +2393,6 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/FlurryAnalytics\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lGLU",
 					"-ObjC",
