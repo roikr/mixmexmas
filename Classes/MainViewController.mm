@@ -61,7 +61,14 @@
 {
 	[super viewDidLoad];
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
-	self.renderProgressView.progressView.image =  [UIImage imageNamed:@"button_0006_progress.png"];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ) {
+        self.renderProgressView.progressView.image =  [UIImage imageNamed:@"PREPARING_CARD_BAR@2x.png"];
+    } else {
+        self.renderProgressView.progressView.image =  [UIImage imageNamed:@"PREPARING_CARD_BAR.png"];
+    }
+
+	
 	[shareManager.renderManager setRenderProgressView:self.renderProgressView];
 	[self.renderProgressView.cancelButton addTarget:shareManager.renderManager action:@selector(cancelRendering:) forControlEvents:UIControlEventTouchUpInside];
 	self.cameraToggleButton.hidden = [self cameraCount] <= 1;
