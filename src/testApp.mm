@@ -141,22 +141,26 @@ void testApp::setup(){
 			
 		}
         
-        int numSamples=xml.getAttribute("midi", "numSamples", 0);
-        string instrument=xml.getAttribute("midi", "instrument", "");
-        c.audioInstrument = new ofxAudioInstrument;
-        c.audioInstrument->setup(bufferSize,8);
-        
-        for (i=0; i<numSamples;i++) {
-            string soundname = instrument+"_"+ofToString(i+1) + ".caf";
-            ofLog(OF_LOG_VERBOSE,"loading sound: %s, map to midiNote: %i",soundname.c_str(),i); 
-            c.audioInstrument->loadSample(ofToDataPath(soundname), i); // associate midi note 0 with sample 1 etc
+        if (xml.getNumTags("midi")) {
+            int numSamples=xml.getAttribute("midi", "numSamples", 0);
+            string instrument=xml.getAttribute("midi", "instrument", "");
+            c.audioInstrument = new ofxAudioInstrument;
+            c.audioInstrument->setup(bufferSize,8);
+            
+            for (i=0; i<numSamples;i++) {
+                string soundname = instrument+"_"+ofToString(i+1) + ".caf";
+                ofLog(OF_LOG_VERBOSE,"loading sound: %s, map to midiNote: %i",soundname.c_str(),i); 
+                c.audioInstrument->loadSample(ofToDataPath(soundname), i); // associate midi note 0 with sample 1 etc
+            }
+            
+            c.track = new ofxMidiTrack;
+            c.track->setup(bufferSize, sampleRate,bpm);
+            c.track->loadTrack(ofToDataPath(xml.getAttribute("midi", "filename", "")));
+        } else {
+            c.audioInstrument = 0;
+            c.track = 0;
         }
-        
-        c.track = new ofxMidiTrack;
-        c.track->setup(bufferSize, sampleRate,bpm);
-        c.track->loadTrack(ofToDataPath(xml.getAttribute("midi", "filename", "")));
-        
-	
+       	
 		xml.popTag();
 	
 		cards.push_back(c);
@@ -606,7 +610,7 @@ bool testApp::getIsPlaying() {
 		} 
 	}
     
-    if (citer->audioInstrument->getIsPlaying() || citer->track->getIsPlaying())
+    if ((citer->audioInstrument && citer->track) && (citer->audioInstrument->getIsPlaying() || citer->track->getIsPlaying()))
         return true;
     
 	return false;
@@ -669,7 +673,11 @@ void testApp::setSongState(int songState) {
             for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
                 aiter->track->stop();
             }
-            citer->track->stop();
+            
+            if (citer->track) {
+                 citer->track->stop();
+            }
+           
 			break;
 		case SONG_PLAY:
             playTime = ofGetElapsedTimeMillis();
@@ -685,7 +693,9 @@ void testApp::setSongState(int songState) {
                     aiter->track->play();
                 }
                 
-                citer->track->play();
+                if (citer->track) {
+                    citer->track->play();
+                }
 
 			}
 			
@@ -954,16 +964,18 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
     
            
 
+            if (citer->track) {
+                vector<event> events;
+                citer->track->process(events); // allocate events and reserve enough space to avoid reallocations here
                 
-            vector<event> events;
-            citer->track->process(events); // allocate events and reserve enough space to avoid reallocations here
-            
-            for (vector<event>::iterator niter=events.begin(); niter!=events.end(); niter++) {
-                if (niter->bNoteOn) {
-//                    printf("note: %i\n", niter->note);
-                    citer->audioInstrument->noteOn(niter->note, niter->velocity);
+                for (vector<event>::iterator niter=events.begin(); niter!=events.end(); niter++) {
+                    if (niter->bNoteOn) {
+                        //                    printf("note: %i\n", niter->note);
+                        citer->audioInstrument->noteOn(niter->note, niter->velocity);
+                    }
                 }
             }
+            
             
             
             
@@ -982,10 +994,13 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
         piter->audio->postProcess();
     }
     
-    citer->audioInstrument->preProcess();
-    citer->audioInstrument->mixChannel(output,0,nChannels);
-    citer->audioInstrument->mixChannel(output,1,nChannels);
-    citer->audioInstrument->postProcess();
+    if (citer->audioInstrument) {
+        citer->audioInstrument->preProcess();
+        citer->audioInstrument->mixChannel(output,0,nChannels);
+        citer->audioInstrument->mixChannel(output,1,nChannels);
+        citer->audioInstrument->postProcess();
+    }
+    
     
     
     
@@ -999,12 +1014,17 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 			bPlaying |= piter->audio->getNumPlaying() || piter->song->getIsPlaying();
 		}		
         
-        oiter->audioInstrument->preProcess();
-        oiter->audioInstrument->mixChannel(output,0,nChannels);
-        oiter->audioInstrument->mixChannel(output,1,nChannels);
-        oiter->audioInstrument->postProcess();
+        if (oiter->audioInstrument && oiter->track) {
+            oiter->audioInstrument->preProcess();
+            oiter->audioInstrument->mixChannel(output,0,nChannels);
+            oiter->audioInstrument->mixChannel(output,1,nChannels);
+            oiter->audioInstrument->postProcess();
+            
+            bPlaying |= oiter->audioInstrument->getIsPlaying() || oiter->track->getIsPlaying();
+        }
         
-        bPlaying |= oiter->audioInstrument->getIsPlaying() || oiter->track->getIsPlaying();
+        
+        
 		
 		if (!bPlaying) {
 			oiter=cards.end();
