@@ -15,6 +15,7 @@
 #import "RKMacros.h"
 #include "testApp.h"
 #include "Constants.h"
+#include "ofxiPhoneExtras.h"
 
 
 @interface EAGLView (PrivateMethods)
@@ -26,9 +27,10 @@
 @implementation EAGLView
 
 @dynamic context;
-@synthesize framebufferHeight;
 @synthesize animating;
 @synthesize OFSAptr;
+//@synthesize width = framebufferWidth;
+//@synthesize height = framebufferHeight;
 
 
 // You must implement this method
@@ -99,6 +101,8 @@
 //        [self startAnimation];
         
         self.OFSAptr = new testApp;
+        ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
+        ofxiPhoneSetDimesions(framebufferWidth, framebufferHeight);
         OFSAptr->setup();
         
     }
@@ -154,7 +158,7 @@
         [context renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer *)self.layer];
         glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &framebufferWidth);
         glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &framebufferHeight);
-		NSLog(@"framebuffer: width: %i, height: %i", framebufferWidth,framebufferHeight);
+		NSLog(@"createFramebuffer: width: %i, height: %i", framebufferWidth,framebufferHeight);
         
         glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, colorRenderbuffer);
         
@@ -324,7 +328,7 @@
     
 	glLoadIdentity();
 	glScalef(1.0, -1.0,1.0);
-	glTranslatef(0, -self.framebufferHeight, 0);
+	glTranslatef(0, -framebufferHeight, 0);
 	
 	
 	appDelegate.OFSAptr->draw();

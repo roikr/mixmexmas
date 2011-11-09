@@ -22,13 +22,12 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){	
-	
+	printf("testApp:setup - width: %i, height: %i\n",ofGetWidth(),ofGetHeight());
 	setiPhoneDataPath();
 	// register touch events
 	ofRegisterTouchEvents(this);
 	
 	//If you want a landscape oreintation 
-	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
 	
 	// initialize the accelerometer
 	//ofxAccelerometer.setup();
@@ -86,9 +85,6 @@ void testApp::setup(){
 	for (int j=0; j<xml.getNumTags("card");j++) {
 		card c;
 		
-//			int maxX,minX;
-//			maxX = 0;
-//			minX = ofGetWidth();
 		
 		c.background = new ofxRKTexture;
 		c.background->setup(ofToDataPath(xml.getAttribute("card", "image", "", j)));
@@ -164,13 +160,13 @@ void testApp::setup(){
 		xml.popTag();
 	
 		cards.push_back(c);
-		prefs.pages.push_back(ofPoint(0,ofGetHeight()*j));
+		prefs.pages.push_back(ofPoint(0,APP_HEIGHT*j));
 		
 	}
 							  
 	prefs.direction = SLIDER_VERTICAL;
 	prefs.bCyclic = true;
-	prefs.lastPageSize = ofPoint(0,ofGetHeight());
+	prefs.lastPageSize = ofPoint(0,APP_HEIGHT);
 	slider.setup(1,prefs);	
 	bSlide = false;
 		
@@ -353,8 +349,6 @@ void testApp::drawCard(vector<card>::iterator iter) {
 		ofRotate(aiter->degree);
 		ofScale(aiter->scale,aiter->scale,1.0);
 		
-		//ofTranslate(i % 2 * ofGetWidth()/2, (int)(i / 2) * ofGetHeight() /2);
-		//ofScale(0.5, 0.5, 1);
         
         if (grabber.getState()>=CAMERA_CAPTURING) {
             grabber.draw();
@@ -426,25 +420,25 @@ void testApp::draw()
 	
 	if (slider.getIsDragging() || slider.getIsAnimating()) {
 		ofPushMatrix();
-		ofTranslate(0, -ofGetHeight(), 0);
+		ofTranslate(0, -APP_HEIGHT, 0);
 		drawCard(cards.end()-1);
 		ofPopMatrix();
 		
 		for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
 			ofPushMatrix();
-			ofTranslate(0, distance(cards.begin(), iter) *ofGetHeight(), 0);
+			ofTranslate(0, distance(cards.begin(), iter) *APP_HEIGHT, 0);
 			drawCard(iter);
 			ofPopMatrix();
 		}
 		
 		ofPushMatrix();
-		ofTranslate(0, ofGetHeight()*cards.size(), 0);
+		ofTranslate(0, APP_HEIGHT*cards.size(), 0);
 		drawCard(cards.begin());
 		ofPopMatrix();
 		
 	} else {
 		ofPushMatrix();
-		ofTranslate(0, distance(cards.begin(), citer) *ofGetHeight(), 0);
+		ofTranslate(0, distance(cards.begin(), citer) *APP_HEIGHT, 0);
 		drawCard(citer);
 		ofPopMatrix();
 	}
@@ -461,6 +455,8 @@ void testApp::renderVideo(){
 	ofBackground(0, 0, 0);
 	ofSetColor(255,255,255,255);
 	ofPushMatrix();
+    
+//    drawCard(citer); // for some reason I can't use this call, maybe it is interfere with the main thread call
 	
 	vector<card>::iterator iter = citer;
 	
@@ -480,6 +476,15 @@ void testApp::renderVideo(){
 	ofTranslate(0, 0); 
 	iter->background->draw(0, 0);
 	ofPopMatrix();
+    
+    for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end(); aiter++) {
+        ofPushMatrix();
+        ofTranslate(aiter->x, aiter->y, 0);
+        ofScale(aiter->scale,aiter->scale,1.0);
+        aiter->textures.draw();
+        ofPopMatrix();
+    }
+
 	ofDisableAlphaBlending();
 	ofPopMatrix();
 }
@@ -925,7 +930,7 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 						
 						for (vector<actor>::iterator aiter=citer->actors.begin(); aiter!=citer->actors.end() ; aiter++)  {
 							if (aiter->player  == distance(citer->players.begin(), piter)) {
-								pan = (float)aiter->x/(float)(ofGetWidth());
+								pan = (float)aiter->x/(float)(APP_WIDTH);
 								if (songState == SONG_PLAY) { 
 									piter->video->play(si.speed);
 								}

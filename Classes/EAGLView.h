@@ -53,7 +53,9 @@ class testApp;
 }
 
 @property (nonatomic, retain) EAGLContext *context;
-@property  GLint framebufferHeight;
+
+//@property (readonly) int width;
+//@property (readonly) int height;
 
 @property (readonly, nonatomic, getter=isAnimating) BOOL animating;
 @property (nonatomic) NSInteger animationFrameInterval;

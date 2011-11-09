@@ -199,7 +199,7 @@ withAbortionHandler:(void (^)(void))abortionHandler
 		NSLog(@"failed to make complete framebuffer object %x", status);
 	}
 	
-	glViewport(0, 0, size.width, size.height);
+//	glViewport(0, 0, size.width, size.height); // moved to initialization handler
 	
 	initializationHandler();
 	

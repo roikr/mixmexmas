@@ -163,20 +163,23 @@
 	dispatch_async(myCustomQueue, ^{
 		
 		
-		
+		int videoWidth = 480;
+        int videoHeight = 320;
+        
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 		[renderer writeToVideoURL:[NSURL fileURLWithPath:[[shareManager getVideoPath]  stringByAppendingPathExtension:@"mov"]] withAudioURL:[NSURL fileURLWithPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"temp.caf"]] 
 		 
 		 
 						   withContext:appDelegate.eAGLView.context
-							  withSize:CGSizeMake(480, 320) 
+							  withSize:CGSizeMake(videoWidth, videoHeight) 
 			   withAudioAverageBitRate:[NSNumber numberWithInt: 192000 ]
 			   withVideoAverageBitRate:[NSNumber numberWithDouble:VIDEO_BITRATE*1000.0] // appDelegate.videoBitrate
 		 
 			 withInitializationHandler:^ {
+                 glViewport(0, 0, videoWidth, videoHeight);
 				 glMatrixMode (GL_PROJECTION);
 				 glLoadIdentity ();
-				 gluOrtho2D (0, 480, 0, 320);
+				 gluOrtho2D (0, videoWidth, 0, videoHeight);
 				 
 			 }
 		 
@@ -186,7 +189,7 @@
 							 
 							 glMatrixMode(GL_MODELVIEW);
 							 glLoadIdentity();
-							 
+							 glScalef(0.5, 0.5, 0); // retina
 							 OFSAptr->renderVideo();
 							 
 							 
