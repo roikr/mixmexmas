@@ -46,7 +46,7 @@
 @synthesize lastSavedVersion;
 @synthesize shareManager;
 
-//#define PLAY_INTRO
+#define PLAY_INTRO
 
 
 #ifdef _FLURRY
@@ -71,9 +71,19 @@ void uncaughtExceptionHandler(NSException *exception) {
 	[self.window makeKeyAndVisible];
     
 #ifdef PLAY_INTRO
-    AVPlayerViewController *playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
-    [playerViewController setDelegate:self];
-    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"SHANA_DEMO_IPHONE" withExtension:@"m4v"]];
+    AVPlayerViewController *playerViewController;
+    switch([[UIDevice currentDevice] userInterfaceIdiom]) {
+        case UIUserInterfaceIdiomPhone: 
+            playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
+            
+            break;
+        case UIUserInterfaceIdiomPad:
+            playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController-iPad" bundle:nil];
+            break;
+            
+    }
+        [playerViewController setDelegate:self];
+    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"SHANA_DEMO_SHORT" withExtension:@"m4v"]]; // SHANA_DEMO_IPHONE
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
     imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
     imageView.center = CGPointMake(240.0, 160.0);
@@ -157,8 +167,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 		RKLog(@"update loop exited");		
 	});
     
-    [PopupMessage popupMessage:[NSURL URLWithString:@"http://www.lofipeople.com/mixmexmas/message.xml"]];
-
+    
 	
     RKLog(@"applicationDidBecomeActive - ended");
 }
@@ -228,6 +237,9 @@ void uncaughtExceptionHandler(NSException *exception) {
 	if (self.OFSAptr) {
 		self.OFSAptr->resume();
 	}
+    
+    [PopupMessage popupMessage:[NSURL URLWithString:@"http://www.lofipeople.com/mixmexmas/message.xml"]];
+
 }
 
 - (void)dealloc
