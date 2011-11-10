@@ -66,6 +66,9 @@
 		E44755BD145F553300481363 /* JINGLE_ANIMA_2_00012.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E44755A1145F553300481363 /* JINGLE_ANIMA_2_00012.pvr */; };
 		E44755C0145F592800481363 /* JINGLE_ANIMA_1.mid in Resources */ = {isa = PBXBuildFile; fileRef = E44755BE145F592800481363 /* JINGLE_ANIMA_1.mid */; };
 		E44755C1145F592800481363 /* JINGLE_ANIMA_2.mid in Resources */ = {isa = PBXBuildFile; fileRef = E44755BF145F592800481363 /* JINGLE_ANIMA_2.mid */; };
+		E46E2F16146C1FB700FD2495 /* SHANA_DEMO_SHORT.m4v in Resources */ = {isa = PBXBuildFile; fileRef = E46E2F15146C1FB700FD2495 /* SHANA_DEMO_SHORT.m4v */; };
+		E46E2F22146C270600FD2495 /* AVPlayerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46E2F1E146C270600FD2495 /* AVPlayerViewController-iPad.xib */; };
+		E46E2F23146C270600FD2495 /* AVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46E2F20146C270600FD2495 /* AVPlayerViewController.xib */; };
 		E476ED191407EC960091FFA3 /* ofxAudioLimiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */; };
 		E48B29EA146B029E00FF65C0 /* BRITANIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E48B29E8146B029E00FF65C0 /* BRITANIC.TTF */; };
 		E48B29EB146B029E00FF65C0 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */; };
@@ -259,7 +262,6 @@
 		E4C3F234145F21FC007760E9 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4C3F233145F21FC007760E9 /* testApp.mm */; };
 		E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C82116140BD03A00E190F1 /* RenderProgressView.m */; };
 		E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */; };
-		E4C821FD140BF50200E190F1 /* AVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */; };
 		E4D7B515146960BF00131214 /* MessageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D7B4FD146960BF00131214 /* MessageLoader.m */; };
 		E4D7B516146960BF00131214 /* MessageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D7B4FF146960BF00131214 /* MessageParser.m */; };
 		E4D7B517146960BF00131214 /* PopupMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D7B501146960BF00131214 /* PopupMessage.m */; };
@@ -370,6 +372,9 @@
 		E44755A1145F553300481363 /* JINGLE_ANIMA_2_00012.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = JINGLE_ANIMA_2_00012.pvr; sourceTree = "<group>"; };
 		E44755BE145F592800481363 /* JINGLE_ANIMA_1.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = JINGLE_ANIMA_1.mid; sourceTree = "<group>"; };
 		E44755BF145F592800481363 /* JINGLE_ANIMA_2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = JINGLE_ANIMA_2.mid; sourceTree = "<group>"; };
+		E46E2F15146C1FB700FD2495 /* SHANA_DEMO_SHORT.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = SHANA_DEMO_SHORT.m4v; path = Resources/SHANA_DEMO_SHORT.m4v; sourceTree = "<group>"; };
+		E46E2F1F146C270600FD2495 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/AVPlayerViewController-iPad.xib"; sourceTree = "<group>"; };
+		E46E2F21146C270600FD2495 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AVPlayerViewController.xib; sourceTree = "<group>"; };
 		E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
 		E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioLimiter.h; sourceTree = "<group>"; };
 		E48B29E8146B029E00FF65C0 /* BRITANIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = BRITANIC.TTF; path = Resources/BRITANIC.TTF; sourceTree = "<group>"; };
@@ -726,7 +731,6 @@
 		E4C82116140BD03A00E190F1 /* RenderProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderProgressView.m; sourceTree = "<group>"; };
 		E4C821F9140BF50200E190F1 /* AVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerViewController.h; sourceTree = "<group>"; };
 		E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerViewController.m; sourceTree = "<group>"; };
-		E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVPlayerViewController.xib; sourceTree = "<group>"; };
 		E4C82243140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackViewController.h; sourceTree = "<group>"; };
 		E4C82244140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackViewController.m; sourceTree = "<group>"; };
 		E4D7B4FC146960BF00131214 /* MessageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageLoader.h; sourceTree = "<group>"; };
@@ -850,7 +854,6 @@
 			isa = PBXGroup;
 			children = (
 				E4F35E5C1465D2F000B218B1 /* MixMeXmas-Info.plist */,
-				E4B6A2F0145F157A00D1A4B7 /* data */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				E4F742C313FABA73002D7E1B /* src */,
 				E4D5392012B393C200B9EFD8 /* addons */,
@@ -859,6 +862,7 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				E4AF1E6E1466B3390027F52D /* FlurryAnalytics */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				E4B6A2F0145F157A00D1A4B7 /* data */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -877,6 +881,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E46E2F15146C1FB700FD2495 /* SHANA_DEMO_SHORT.m4v */,
 				E428405D146B3CE000AC554D /* PREPARING_CARD_BAR.png */,
 				E4284057146B36C600AC554D /* Default-Portrait.png */,
 				E4284058146B36C600AC554D /* Default.png */,
@@ -1328,13 +1333,14 @@
 		E493CE17140AE970004CB633 /* AVPlayerClasses */ = {
 			isa = PBXGroup;
 			children = (
+				E46E2F1E146C270600FD2495 /* AVPlayerViewController-iPad.xib */,
+				E46E2F20146C270600FD2495 /* AVPlayerViewController.xib */,
 				E4C82243140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.h */,
 				E4C82244140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.m */,
 				E493CE18140AE970004CB633 /* AVPlayerDemoPlaybackView.h */,
 				E493CE19140AE970004CB633 /* AVPlayerDemoPlaybackView.m */,
 				E4C821F9140BF50200E190F1 /* AVPlayerViewController.h */,
 				E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */,
-				E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */,
 			);
 			path = AVPlayerClasses;
 			sourceTree = "<group>";
@@ -1948,7 +1954,6 @@
 				E493D132140AE971004CB633 /* YouTubeUploadViewController.xib in Resources */,
 				E493D1CF140AF97C004CB633 /* icon.png in Resources */,
 				E493D1D0140AF97C004CB633 /* icon@2x.png in Resources */,
-				E4C821FD140BF50200E190F1 /* AVPlayerViewController.xib in Resources */,
 				E48BE17214197A89000958A2 /* Localizable.strings in Resources */,
 				E4B6A30C145F157A00D1A4B7 /* cards.xml in Resources */,
 				E4B6A311145F157A00D1A4B7 /* magic.caf in Resources */,
@@ -2037,6 +2042,9 @@
 				E428405B146B36C600AC554D /* Default.png in Resources */,
 				E428405C146B36C600AC554D /* Default@2x.png in Resources */,
 				E428405E146B3CE000AC554D /* PREPARING_CARD_BAR.png in Resources */,
+				E46E2F16146C1FB700FD2495 /* SHANA_DEMO_SHORT.m4v in Resources */,
+				E46E2F22146C270600FD2495 /* AVPlayerViewController-iPad.xib in Resources */,
+				E46E2F23146C270600FD2495 /* AVPlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2244,6 +2252,22 @@
 			name = ShareViewController.xib;
 			sourceTree = "<group>";
 		};
+		E46E2F1E146C270600FD2495 /* AVPlayerViewController-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E46E2F1F146C270600FD2495 /* en */,
+			);
+			name = "AVPlayerViewController-iPad.xib";
+			sourceTree = "<group>";
+		};
+		E46E2F20146C270600FD2495 /* AVPlayerViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E46E2F21146C270600FD2495 /* en */,
+			);
+			name = AVPlayerViewController.xib;
+			sourceTree = "<group>";
+		};
 		E48B29EC146B02B200FF65C0 /* InfoViewController-iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2367,6 +2391,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -2374,6 +2399,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "873502BF-54B9-4287-AB0F-83791003CEDC";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

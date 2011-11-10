@@ -11,7 +11,7 @@
 
 // Your Facebook APP Id must be set before running this example
 // See http://www.facebook.com/developers/createapp.php
-static NSString* kAppId = @"208043922589714";
+static NSString* kAppId = @"262653967119717";
 //static NSString* kApiKey = @"e06968ce5ad567d5685a8ebabfd63619";
 //static NSString* kApiSecret = @"05e64b714292c6405e111357e7110078";
 
