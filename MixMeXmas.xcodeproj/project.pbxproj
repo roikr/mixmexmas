@@ -378,7 +378,7 @@
 		E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
 		E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioLimiter.h; sourceTree = "<group>"; };
 		E48B29E8146B029E00FF65C0 /* BRITANIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = BRITANIC.TTF; path = Resources/BRITANIC.TTF; sourceTree = "<group>"; };
-		E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "../Resources/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		E48B29ED146B02B200FF65C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Resources/en.lproj/InfoViewController-iPad.xib"; sourceTree = "<group>"; };
 		E48B29EF146B02B200FF65C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Resources/en.lproj/MainViewController-iPad.xib"; sourceTree = "<group>"; };
 		E48B29F1146B02B200FF65C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Resources/en.lproj/ShareViewController-iPad.xib"; sourceTree = "<group>"; };
@@ -819,9 +819,11 @@
 				1D3623240D0F684500981E51 /* SingingCardAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SingingCardAppDelegate.mm */,
 				E4AF012E12B0EF5700457BC7 /* MainWindow.xib */,
+				E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */,
 				28EC4C5611D54ECE0027AA9F /* MainViewController.h */,
 				28EC4C5711D54ECE0027AA9F /* MainViewController.mm */,
 				E40236431463E6BF003BF6C5 /* MainViewController.xib */,
+				E48B29EE146B02B200FF65C0 /* MainViewController-iPad.xib */,
 				E4C82115140BD03A00E190F1 /* RenderProgressView.h */,
 				E4C82116140BD03A00E190F1 /* RenderProgressView.m */,
 				E41C4B9712CA37DD004D3FA6 /* EAGLView.h */,
@@ -831,6 +833,7 @@
 				E40FE4A7141F49AA00E9CEDF /* ShareViewController.h */,
 				E40FE4A8141F49AA00E9CEDF /* ShareViewController.mm */,
 				E40236481463E6E5003BF6C5 /* ShareViewController.xib */,
+				E48B29F0146B02B200FF65C0 /* ShareViewController-iPad.xib */,
 				E430D28912C8937400E65D3D /* TouchView.h */,
 				E430D28A12C8937400E65D3D /* TouchView.mm */,
 				E493D170140AEFC1004CB633 /* RenderManager.h */,
@@ -838,6 +841,7 @@
 				E4AF1E7A1466E4170027F52D /* InfoViewController.h */,
 				E4AF1E7B1466E4170027F52D /* InfoViewController.m */,
 				E4AF1E7F1466E4EE0027F52D /* InfoViewController.xib */,
+				E48B29EC146B02B200FF65C0 /* InfoViewController-iPad.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -886,11 +890,7 @@
 				E4284057146B36C600AC554D /* Default-Portrait.png */,
 				E4284058146B36C600AC554D /* Default.png */,
 				E4284059146B36C600AC554D /* Default@2x.png */,
-				E48B29EC146B02B200FF65C0 /* InfoViewController-iPad.xib */,
-				E48B29EE146B02B200FF65C0 /* MainViewController-iPad.xib */,
-				E48B29F0146B02B200FF65C0 /* ShareViewController-iPad.xib */,
 				E48B29E8146B029E00FF65C0 /* BRITANIC.TTF */,
-				E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */,
 				E4B9F50A146AF83B008CA875 /* AGAIN@2x.png */,
 				E4B9F50B146AF83B008CA875 /* CAMERA@2x.png */,
 				E4B9F50C146AF83B008CA875 /* MORE_CARDS@2x.png */,
@@ -2274,6 +2274,7 @@
 				E48B29ED146B02B200FF65C0 /* en */,
 			);
 			name = "InfoViewController-iPad.xib";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E48B29EE146B02B200FF65C0 /* MainViewController-iPad.xib */ = {
@@ -2282,6 +2283,7 @@
 				E48B29EF146B02B200FF65C0 /* en */,
 			);
 			name = "MainViewController-iPad.xib";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E48B29F0146B02B200FF65C0 /* ShareViewController-iPad.xib */ = {
@@ -2290,6 +2292,7 @@
 				E48B29F1146B02B200FF65C0 /* en */,
 			);
 			name = "ShareViewController-iPad.xib";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E48BE17014197A89000958A2 /* Localizable.strings */ = {
