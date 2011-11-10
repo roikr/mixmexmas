@@ -396,7 +396,6 @@
 								<string key="NSFrame">{{775, 659}, {229, 89}}</string>
 								<reference key="NSSuperview" ref="838564291"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<reference key="IBUIBackgroundColor" ref="797518550"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -478,7 +477,6 @@
 								<string key="NSFrame">{{424, 536}, {197, 66}}</string>
 								<reference key="NSSuperview" ref="566328428"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<reference key="IBUIBackgroundColor" ref="797518550"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -488,8 +486,17 @@
 								<reference key="IBUIHighlightedTitleColor" ref="885626976"/>
 								<reference key="IBUINormalTitleColor" ref="66573500"/>
 								<reference key="IBUINormalTitleShadowColor" ref="509696552"/>
-								<reference key="IBUIFontDescription" ref="301805287"/>
-								<reference key="IBUIFont" ref="404188275"/>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
+									<string key="name">Helvetica-Bold</string>
+									<string key="family">Helvetica</string>
+									<int key="traits">2</int>
+									<double key="pointSize">40</double>
+								</object>
+								<object class="NSFont" key="IBUIFont">
+									<string key="NSName">Helvetica-Bold</string>
+									<double key="NSSize">40</double>
+									<int key="NSfFlags">16</int>
+								</object>
 							</object>
 							<object class="IBUIView" id="490177001">
 								<reference key="NSNextResponder" ref="566328428"/>
@@ -521,7 +528,6 @@
 				<string key="NSFrameSize">{1024, 768}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<reference key="IBUIBackgroundColor" ref="797518550"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">

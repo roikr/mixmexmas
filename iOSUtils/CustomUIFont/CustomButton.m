@@ -16,7 +16,14 @@
 {
     if (self = [super initWithCoder: decoder])
     {
-        self.titleLabel.font            = [UIFont fontWithName: @"BRITANIC" size: self.titleLabel.font.pointSize];
+//        for (NSString *family in [UIFont familyNames]) {
+//            for (NSString *font in [UIFont fontNamesForFamilyName:family]) {
+//                NSLog(@"%@,%@",family,font);
+//            }
+//
+//        }
+        
+        self.titleLabel.font = [UIFont fontWithName: @"BritannicBold" size: self.titleLabel.font.pointSize];
 		
     }
     return self;
