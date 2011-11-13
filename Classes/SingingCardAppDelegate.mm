@@ -83,7 +83,7 @@ void uncaughtExceptionHandler(NSException *exception) {
             
     }
         [playerViewController setDelegate:self];
-    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"SHANA_DEMO_SHORT" withExtension:@"m4v"]]; // SHANA_DEMO_IPHONE
+    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"OPENING_MOV_IPHONE" withExtension:@"m4v"]]; // SHANA_DEMO_IPHONE
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
     imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
     imageView.center = CGPointMake(240.0, 160.0);
