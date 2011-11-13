@@ -23,6 +23,8 @@
 		E40FE458141F43C900E9CEDF /* CustomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E40FE457141F43C900E9CEDF /* CustomImageView.m */; };
 		E40FE4A9141F49AA00E9CEDF /* ShareViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40FE4A8141F49AA00E9CEDF /* ShareViewController.mm */; };
 		E41C4B9912CA37DD004D3FA6 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E41C4B9812CA37DD004D3FA6 /* EAGLView.mm */; };
+		E427928514702F7C00222869 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40236431463E6BF003BF6C5 /* MainViewController.xib */; };
+		E427928614702F8600222869 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40236481463E6E5003BF6C5 /* ShareViewController.xib */; };
 		E428405A146B36C600AC554D /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E4284057146B36C600AC554D /* Default-Portrait.png */; };
 		E428405B146B36C600AC554D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4284058146B36C600AC554D /* Default.png */; };
 		E428405C146B36C600AC554D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4284059146B36C600AC554D /* Default@2x.png */; };
@@ -2049,6 +2051,8 @@
 				E46E2F23146C270600FD2495 /* AVPlayerViewController.xib in Resources */,
 				E4B778FE147021E500836E40 /* CARD_BACKGROUND~iPad.png in Resources */,
 				E4B778FF147021E500836E40 /* OPENING_MOVIE_IPHONE.m4v in Resources */,
+				E427928514702F7C00222869 /* MainViewController.xib in Resources */,
+				E427928614702F8600222869 /* ShareViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2380,6 +2384,7 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2398,6 +2403,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
@@ -2414,6 +2420,7 @@
 		E45EAC681401530100B2775A /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Roee Kremer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
@@ -2459,6 +2466,7 @@
 		E49EC6DB14125EF300A068E3 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
