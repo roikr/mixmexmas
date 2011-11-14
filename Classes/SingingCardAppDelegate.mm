@@ -238,7 +238,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 		self.OFSAptr->resume();
 	}
     
-    [PopupMessage popupMessage:[NSURL URLWithString:@"http://www.lofipeople.com/mixmexmas/message.xml"]];
+    [PopupMessage popupMessage:@"http://www.lofipeople.com/gogos/message/message"];
 
 }
 

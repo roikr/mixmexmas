@@ -65,7 +65,7 @@
 @property (nonatomic,retain) MessageData *data;
 @property (nonatomic,retain) NSURL *url;
 
-+(PopupMessage*) popupMessage:(NSURL *)theURL;
++(PopupMessage*) popupMessage:(NSString *)theURL;
 
 @end
 

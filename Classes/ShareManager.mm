@@ -144,16 +144,19 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
 		case 0:
-			name=@"lital";
+			name=@"xmas";
 			break;
         case 1:
-			name=@"kids";
+			name=@"snow";
 			break;
         case 2:
-			name=@"deers";
+			name=@"newyear";
 			break;
         case 3:
-			name=@"santa";
+			name=@"hanuka";
+			break;
+        case 4:
+			name=@"sevivon";
 			break;
         default:
 			break;
@@ -165,28 +168,7 @@ void ShareAlert(NSString *title,NSString *message) {
 
 
 - (NSString *)getDisplayName {
-	NSString *name;
-	testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
-	
-	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
-		case 0:
-			name=@"lital";
-			break;
-        case 1:
-			name=@"kids";
-			break;
-        case 2:
-			name=@"deers";
-			break;
-        case 3:
-			name=@"santa";
-			break;
-		default:
-			break;
-	}
-	
-	
-	return name;
+	return [self getSongName];
 		
 }
 
@@ -201,29 +183,8 @@ void ShareAlert(NSString *title,NSString *message) {
 		RKLog(@"Documents directory not found!");
 		return @"";
 	}
-	
-	NSString *name;
-	testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
-	
-	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
-		case 0:
-			name=@"lital";
-			break;
-        case 1:
-			name=@"kids";
-			break;
-        case 2:
-			name=@"deers";
-			break;
-        case 3:
-			name=@"santa";
-			break;
-        default:
-			break;
-	}
-	
-	
-	return [[paths objectAtIndex:0] stringByAppendingPathComponent:name];
+		
+	return [[paths objectAtIndex:0] stringByAppendingPathComponent:[self getSongName]];
 }
 
 

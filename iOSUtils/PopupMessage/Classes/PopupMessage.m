@@ -96,18 +96,18 @@
 @synthesize loader,parser,data,url;
 
 
-+(PopupMessage*) popupMessage:(NSURL *)theURL {
++(PopupMessage*) popupMessage:(NSString *)theURL {
     
     
     PopupMessage* message = [[[PopupMessage alloc] init] autorelease];
     
-    message.url = theURL;
-    
+    message.url = [NSURL URLWithString:[theURL stringByAppendingFormat:@"_%@.xml",[[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0]]];
+                                       
     NSString* libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *filePath = [libraryPath stringByAppendingPathComponent:[[theURL path] lastPathComponent]];
+    NSString *filePath = [libraryPath stringByAppendingPathComponent:[[message.url path] lastPathComponent]];
     
     message.data = (MessageData *)[NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
-    message.loader = [MessageLoader messageLoader:theURL modified:message.data.modified delegate:message];
+    message.loader = [MessageLoader messageLoader:message.url modified:message.data.modified delegate:message];
     
     return message;
 }
