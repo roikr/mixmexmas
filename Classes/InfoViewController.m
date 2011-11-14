@@ -11,6 +11,7 @@
 @implementation InfoViewController
 
 @synthesize  webView;
+@synthesize  url;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,7 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.lofipeople.com/index.html"]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAppendingFormat:@"_%@.html",[[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0]]]]];
     // Do any additional setup after loading the view from its nib.
 }
 

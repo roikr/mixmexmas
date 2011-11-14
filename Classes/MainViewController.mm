@@ -219,6 +219,7 @@
 
 - (IBAction)info:(id)sender {
     SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
+    [appDelegate.infoViewController setUrl:@"http://www.lofipeople.com/gogos/info/info"];
     [appDelegate.mainViewController presentModalViewController:appDelegate.infoViewController animated:YES];
 }
 

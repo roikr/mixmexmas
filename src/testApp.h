@@ -72,7 +72,8 @@ public:
 	
 	void render();
 	
-	void drawCard(vector<card>::iterator iter);
+	void drawPlayers(vector<card>::iterator iter);
+    void drawAnimations(vector<card>::iterator iter);
 	void draw();
 	void exit();
 	
