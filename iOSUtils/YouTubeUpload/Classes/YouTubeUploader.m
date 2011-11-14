@@ -15,7 +15,7 @@
 #import "GDataEntryYouTubeVideo.h"
 #import "RKUBackgroundTask.h"
 
-NSString* const kDeveloperKey = @"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_ouUT6HFwaWn1GQxuyAIK-zvoeFB-GU_cqx30q-0HggREKxXG-b8w";
+NSString* const kDeveloperKey = @"AI39si7UINMeywyTjpdwb6jsPyw3nTy7NXLZr-ddXph5dEXf0q4ZNAvu_8BXwKU3AnxsTMglvjcpdQNfIoesABb6RYbo0bDeHw";
 
 
 @interface YouTubeUploader (PrivateMethods) 
