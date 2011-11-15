@@ -11,7 +11,7 @@
 
 // Your Facebook APP Id must be set before running this example
 // See http://www.facebook.com/developers/createapp.php
-static NSString* kAppId = @"262653967119717";
+//static NSString* kAppId = @"262653967119717";
 //static NSString* kApiKey = @"e06968ce5ad567d5685a8ebabfd63619";
 //static NSString* kApiSecret = @"05e64b714292c6405e111357e7110078";
 
@@ -36,22 +36,24 @@ static NSString* kAppId = @"262653967119717";
 //@synthesize loginDialog;
 //@synthesize permissionDialog;
 
-+ (FacebookUploader *) facebookUploader {
-	return [[[FacebookUploader alloc] init] autorelease];
++ (FacebookUploader *) facebookUploader:(NSString *)appId {
+	FacebookUploader *uploader = [[[FacebookUploader alloc] init] autorelease];
+    
+    uploader.facebook = [[Facebook alloc] initWithAppId:appId];
+    //[facebook logout:self];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
+        uploader.facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        uploader.facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+    }
+    
+    return uploader;
 }
 
 - (id)init {
 	
 	if (self = [super init]) {
-		self.facebook = [[Facebook alloc] initWithAppId:kAppId];
-		//[facebook logout:self];
-		
-		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-		if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
-			facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
-			facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
-		}
-		
 		self.delegates = [NSMutableArray array];
 		_state = FACEBOOK_UPLOADER_STATE_IDLE;	
 	} return self;
