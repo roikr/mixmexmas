@@ -59,7 +59,7 @@ enum {
 //@property (nonatomic, retain) FBLoginDialog* loginDialog;
 //@property (nonatomic, retain) FBPermissionDialog* permissionDialog;
 
-+ (FacebookUploader *) facebookUploader; 
++ (FacebookUploader *) facebookUploader:(NSString *)appId; 
 -(void) addDelegate:(id<FacebookUploaderDelegate>)delegate; 
 - (void) uploadVideoWithTitle:(NSString *)title withDescription:(NSString *)description andPath:(NSString *)path;
 - (void) upload;

@@ -39,6 +39,8 @@ enum {
 	NSInteger _state;
 	
 	RKUBackgroundTask *task;
+    
+    NSString *developerKey;
 	
 }
 
@@ -53,9 +55,10 @@ enum {
 @property (readonly) NSInteger state;
 
 @property (nonatomic, retain) RKUBackgroundTask *task;
+@property (nonatomic, retain) NSString *developerKey;
 
 
-+ (YouTubeUploader *) youTubeUploader; 
++ (YouTubeUploader *) youTubeUploader:(NSString*) developerKey; 
 -(void)addDelegate:(id<YouTubeUploaderDelegate>)delegate;
 - (void) uploadVideoWithTitle:(NSString *)title withDescription:(NSString *)description andPath:(NSString *)path;
 - (void) upload;
