@@ -60,6 +60,9 @@ struct card {
     
     ofxAudioInstrument *audioInstrument;
     ofxMidiTrack *track;
+    
+    string exportFilename;
+    string tag;
 };
 
 

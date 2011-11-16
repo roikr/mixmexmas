@@ -92,6 +92,9 @@ void testApp::setup(){
 		
 		
 		int bpm = xml.getAttribute("card", "bpm", 120, j);
+        
+        c.exportFilename = xml.getAttribute("card", "export", "VIDEO_"+ofToString(j), j);
+        c.tag = xml.getAttribute("card", "tag", "CARD_"+ofToString(j), j);
 		
 		xml.pushTag("card", j);
 

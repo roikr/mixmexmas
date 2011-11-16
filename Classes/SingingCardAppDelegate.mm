@@ -107,9 +107,8 @@ void uncaughtExceptionHandler(NSException *exception) {
     return self.eAGLView.OFSAptr;
 }
 
--(NSUInteger) getCurrentCardNumber {
-    
-    return distance(self.OFSAptr->cards.begin(),self.OFSAptr->citer);
+- (NSString *)getCurrentCardTag {
+    return  [NSString stringWithCString:self.OFSAptr->citer->tag.c_str() encoding:[NSString defaultCStringEncoding]];
 }
 
 -(void) AVPlayerLayerIsReadyForDisplay:(AVPlayerViewController*)controller {
@@ -159,7 +158,7 @@ void uncaughtExceptionHandler(NSException *exception) {
                     if (ofGetElapsedTimeMillis() - self.OFSAptr->playTime>LONG_PLAY) {
                         self.OFSAptr->bSongPlayed = false;
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            [FlurryAnalytics logEvent:@"PLAY" withParameters:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%i",[self getCurrentCardNumber]] forKey:@"CARD"]];
+                            [FlurryAnalytics logEvent:@"PLAY" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentCardTag] forKey:@"CARD"]];
                         }); 
                     }
 
