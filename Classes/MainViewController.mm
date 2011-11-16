@@ -177,7 +177,7 @@
 - (IBAction) record:(id)sender {
 	self.OFSAptr->record();
 #ifdef _FLURRY
-    [FlurryAnalytics logEvent:@"RECORD" withParameters:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%i",[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardNumber]] forKey:@"CARD"]];
+    [FlurryAnalytics logEvent:@"RECORD" withParameters:[NSDictionary dictionaryWithObject:[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardTag] forKey:@"CARD"]];
 #endif
 }
 
@@ -221,6 +221,10 @@
     SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
     [appDelegate.infoViewController setUrl:@"http://www.lofipeople.com/gogos/info/info"];
     [appDelegate.mainViewController presentModalViewController:appDelegate.infoViewController animated:YES];
+    
+#ifdef _FLURRY
+    [FlurryAnalytics logEvent:@"INFO"];
+#endif
 }
 
 #pragma mark Render && Share

@@ -138,37 +138,16 @@ void ShareAlert(NSString *title,NSString *message) {
 }
 
 
-- (NSString *)getSongName {
-	NSString *name;
+- (NSString *)getExoprtFileame {
+    
 	testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
-	
-	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
-		case 0:
-			name=@"xmas";
-			break;
-        case 1:
-			name=@"snow";
-			break;
-        case 2:
-			name=@"newyear";
-			break;
-        case 3:
-			name=@"hanuka";
-			break;
-        case 4:
-			name=@"sevivon";
-			break;
-        default:
-			break;
-	}
-	
-	
-	return name;
+    
+    return  [NSString stringWithCString:OFSAptr->citer->exportFilename.c_str() encoding:[NSString defaultCStringEncoding]];
+		
 }
 
-
 - (NSString *)getDisplayName {
-	return [self getSongName];
+	return [self getExoprtFileame];
 		
 }
 
@@ -184,7 +163,7 @@ void ShareAlert(NSString *title,NSString *message) {
 		return @"";
 	}
 		
-	return [[paths objectAtIndex:0] stringByAppendingPathComponent:[self getSongName]];
+	return [[paths objectAtIndex:0] stringByAppendingPathComponent:[self getExoprtFileame]];
 }
 
 
@@ -234,7 +213,7 @@ void ShareAlert(NSString *title,NSString *message) {
 		case MFMailComposeResultSent: {
 			//message.text = @"Result: sent";
 #ifdef _FLURRY
-            [FlurryAnalytics endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:[ShareManager getActionName:action] forKey:@"TARGET"]];
+            [FlurryAnalytics logEvent:@"SHARE_DONE" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"]];
 #endif
 			
         } break;
@@ -257,7 +236,7 @@ void ShareAlert(NSString *title,NSString *message) {
 		case FACEBOOK_UPLOADER_STATE_UPLOAD_FINISHED: {
 			ShareAlert(NSLocalizedString(@"FB alert",@"Facebook upload"),NSLocalizedString(@"FB upload finished", @"Your video was uploaded successfully!\ngo check your wall"));
 #ifdef _FLURRY
-            [FlurryAnalytics endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"FACEBOOK" forKey:@"TARGET"]];
+            [FlurryAnalytics logEvent:@"SHARE_DONE" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"]];
 #endif
 		} break;
 		case FACEBOOK_UPLOADER_STATE_UPLOADING: {
@@ -280,6 +259,10 @@ void ShareAlert(NSString *title,NSString *message) {
 -(void) youTubeUploaderStateChanged:(YouTubeUploader *)theUploader{
 	switch (theUploader.state) {
 		case YOUTUBE_UPLOADER_STATE_UPLOAD_FINISHED: {
+#ifdef _FLURRY
+            [FlurryAnalytics logEvent:@"SHARE_DONE" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"]];
+#endif
+            
 //			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), [NSString stringWithFormat:NSLocalizedString(@"YT upload finished",@"your video was uploaded successfully! link: %@"),[theUploader.link absoluteString]]); // ",]);
             self.youtubeLink = [theUploader.link absoluteString];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"YT alert",@"YouTube upload") message:NSLocalizedString(@"YT upload finished",@"your video was uploaded successfully! do you want to share the link ?") delegate:self  cancelButtonTitle:NSLocalizedString(@"NO thanks button",@"No Thanks")  otherButtonTitles: NSLocalizedString(@"OK button",@"OK"),nil];
@@ -287,9 +270,6 @@ void ShareAlert(NSString *title,NSString *message) {
             [alert show];
             [alert release];
 
-#ifdef _FLURRY
-            [FlurryAnalytics endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"YOUTUBE" forKey:@"TARGET"]];
-#endif
 
 		} break;
 		case YOUTUBE_UPLOADER_STATE_UPLOADING: {
@@ -314,6 +294,9 @@ void ShareAlert(NSString *title,NSString *message) {
         Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
         if (mailClass != nil)
         {
+            action = ACTION_SEND_YOUTUBE_LINK;
+            state = STATE_DONE;
+
             // We must always check whether the current device is configured for sending emails
             MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
             picker.mailComposeDelegate = self;
@@ -329,6 +312,12 @@ void ShareAlert(NSString *title,NSString *message) {
             [((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).mainViewController presentModalViewController:picker animated:YES];
         
             [picker release];
+            
+            
+            
+#ifdef _FLURRY
+            [FlurryAnalytics logEvent:@"SHARE_MENU" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"] ];
+#endif
             
         }
     }
@@ -380,10 +369,10 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 }
 
-+ (NSString *)getActionName:(NSUInteger)theAction {
+- (NSString *)getCurrentActionName {
     NSString *name;
    
-    switch (theAction) {
+    switch (action) {
         case ACTION_UPLOAD_TO_FACEBOOK: 
             name = @"FACEBOOK";
             break;
@@ -401,6 +390,9 @@ void ShareAlert(NSString *title,NSString *message) {
             break;
         case ACTION_CANCEL:
             name = @"CANCEL";
+            break;
+        case ACTION_SEND_YOUTUBE_LINK:
+            name = @"YOUTUBE_LINK";
             break;
 	}
     
@@ -477,16 +469,15 @@ void ShareAlert(NSString *title,NSString *message) {
 		case ACTION_CANCEL:
 			state = STATE_CANCELED;
 			break;
-		case ACTION_RENDER:
-			//[appDelegate mainViewController].view.userInteractionEnabled = YES; 
-			break;
+//		case ACTION_RENDER:
+//			//[appDelegate mainViewController].view.userInteractionEnabled = YES; 
+//			break;
 			
 	}	
 	
 	
 #ifdef _FLURRY
-    NSString *card =  [NSString stringWithFormat:@"%i",[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardNumber]];
-    [FlurryAnalytics logEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObjectsAndKeys:[ShareManager getActionName:action],@"TARGET",card,@"CARD",nil] timed:action!=ACTION_CANCEL];
+    [FlurryAnalytics logEvent:@"SHARE_MENU" withParameters:[NSDictionary dictionaryWithObjectsAndKeys:[self getCurrentActionName],@"TARGET",[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardTag],@"CARD",nil]];
     
 #endif
 	
@@ -586,7 +577,7 @@ void ShareAlert(NSString *title,NSString *message) {
 					NSString *message = NSLocalizedString(@"email message",@"Isn't  it a work of art?<br/><br/><a href='http://www.lofipeople.com/shanatova/appstore'>visit lofipeople</a>");
 					NSData *myData = [NSData dataWithContentsOfFile:[[self getVideoPath]  stringByAppendingPathExtension:@"mov"]];
 					[self sendViaMailWithSubject:subject withMessage:message withData:myData withMimeType:@"video/mov" 
-									withFileName:[[self getSongName] stringByAppendingPathExtension:@"mov"]];
+									withFileName:[[self getExoprtFileame] stringByAppendingPathExtension:@"mov"]];
 					
 				} break;
 				default:
@@ -605,7 +596,7 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	NSData *myData = [NSData dataWithContentsOfFile:[[self getVideoPath]  stringByAppendingPathExtension:@"m4r"]];
 	[self sendViaMailWithSubject:subject withMessage:message withData:myData withMimeType:@"audio/m4r" 
-					withFileName:[[self getSongName] stringByAppendingPathExtension:@"m4r"]];	
+					withFileName:[[self getExoprtFileame] stringByAppendingPathExtension:@"m4r"]];	
 }
 
 #pragma mark render delegates
@@ -694,7 +685,7 @@ void ShareAlert(NSString *title,NSString *message) {
 												RKLog(@"writeVideoToAssestsLibrary successed");
 												ShareAlert(NSLocalizedString(@"library alert title",@"Library"),NSLocalizedString(@"library alert message",@"The video has been saved to your photos library"));
 #ifdef _FLURRY
-                                                [FlurryAnalytics endTimedEvent:@"SHARE" withParameters:[NSDictionary dictionaryWithObject:@"LIBRARY" forKey:@"TARGET"]];
+                                                [FlurryAnalytics logEvent:@"SHARE_DONE" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"]];
 #endif
 											}
 										});

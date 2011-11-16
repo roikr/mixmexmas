@@ -48,7 +48,7 @@ class testApp;
 @property NSInteger lastSavedVersion;
 
 -(testApp*) OFSAptr;
--(NSUInteger) getCurrentCardNumber;
+- (NSString *)getCurrentCardTag;
 @end
 
 
