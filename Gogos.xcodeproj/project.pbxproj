@@ -126,7 +126,6 @@
 		E4698D1C1470043D001EBDEE /* icon~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D121470043C001EBDEE /* icon~iPad.png */; };
 		E4698D1D1470043D001EBDEE /* MAKE_SOUND@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D131470043C001EBDEE /* MAKE_SOUND@2X.png */; };
 		E4698D1E1470043D001EBDEE /* POSE_FACE@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D141470043C001EBDEE /* POSE_FACE@2X.png */; };
-		E4698D1F1470043D001EBDEE /* REC_NEGATIVE@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D151470043C001EBDEE /* REC_NEGATIVE@2X.png */; };
 		E4698D201470043D001EBDEE /* START_OVER@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D161470043D001EBDEE /* START_OVER@2X.png */; };
 		E4698D211470043D001EBDEE /* SWITCH_CARD@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D171470043D001EBDEE /* SWITCH_CARD@2X.png */; };
 		E4698D23147008FB001EBDEE /* OPENING_MOV_IPHONE.m4v in Resources */ = {isa = PBXBuildFile; fileRef = E4698D22147008FB001EBDEE /* OPENING_MOV_IPHONE.m4v */; };
@@ -269,7 +268,6 @@
 		E493D028140AE971004CB633 /* FacebookUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E493CEA9140AE971004CB633 /* FacebookUploadViewController.xib */; };
 		E493D02C140AE971004CB633 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CEB0140AE971004CB633 /* Reachability.m */; };
 		E493D12C140AE971004CB633 /* YouTubeUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CFC0140AE971004CB633 /* YouTubeUploader.m */; };
-		E493D12D140AE971004CB633 /* YouTubeUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CFC2140AE971004CB633 /* YouTubeUploadViewController.m */; };
 		E493D130140AE971004CB633 /* youtube_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E493CFC5140AE971004CB633 /* youtube_logo.png */; };
 		E493D132140AE971004CB633 /* YouTubeUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E493CFCB140AE971004CB633 /* YouTubeUploadViewController.xib */; };
 		E493D172140AEFC1004CB633 /* RenderManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E493D171140AEFC1004CB633 /* RenderManager.mm */; };
@@ -332,6 +330,10 @@
 		E4F3918013FC1B5E007B18EC /* ofxAudioFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3917813FC1B5E007B18EC /* ofxAudioFile.mm */; };
 		E4F3918A13FC1B7E007B18EC /* ofxiFBO.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3918913FC1B7E007B18EC /* ofxiFBO.mm */; };
 		E4F742C613FABA73002D7E1B /* ofxiPhoneSoundStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */; };
+		E4F9F81614742CFB00106A0C /* YouTubeUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CFC2140AE971004CB633 /* YouTubeUploadViewController.m */; };
+		E4F9F8231474684D00106A0C /* REC_NEG_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9F8201474684D00106A0C /* REC_NEG_1@2x.png */; };
+		E4F9F8241474684D00106A0C /* REC_NEG_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9F8211474684D00106A0C /* REC_NEG_2@2x.png */; };
+		E4F9F8251474684D00106A0C /* X@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9F8221474684D00106A0C /* X@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -466,7 +468,6 @@
 		E4698D121470043C001EBDEE /* icon~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon~iPad.png"; path = "Resources/icon~iPad.png"; sourceTree = "<group>"; };
 		E4698D131470043C001EBDEE /* MAKE_SOUND@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MAKE_SOUND@2X.png"; path = "Resources/MAKE_SOUND@2X.png"; sourceTree = "<group>"; };
 		E4698D141470043C001EBDEE /* POSE_FACE@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "POSE_FACE@2X.png"; path = "Resources/POSE_FACE@2X.png"; sourceTree = "<group>"; };
-		E4698D151470043C001EBDEE /* REC_NEGATIVE@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "REC_NEGATIVE@2X.png"; path = "Resources/REC_NEGATIVE@2X.png"; sourceTree = "<group>"; };
 		E4698D161470043D001EBDEE /* START_OVER@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "START_OVER@2X.png"; path = "Resources/START_OVER@2X.png"; sourceTree = "<group>"; };
 		E4698D171470043D001EBDEE /* SWITCH_CARD@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SWITCH_CARD@2X.png"; path = "Resources/SWITCH_CARD@2X.png"; sourceTree = "<group>"; };
 		E4698D22147008FB001EBDEE /* OPENING_MOV_IPHONE.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = OPENING_MOV_IPHONE.m4v; path = Resources/OPENING_MOV_IPHONE.m4v; sourceTree = "<group>"; };
@@ -855,6 +856,9 @@
 		E4F3918913FC1B7E007B18EC /* ofxiFBO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiFBO.mm; sourceTree = "<group>"; };
 		E4F742C413FABA73002D7E1B /* ofSoundStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofSoundStream.h; sourceTree = "<group>"; };
 		E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneSoundStream.mm; sourceTree = "<group>"; };
+		E4F9F8201474684D00106A0C /* REC_NEG_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "REC_NEG_1@2x.png"; path = "Resources/REC_NEG_1@2x.png"; sourceTree = "<group>"; };
+		E4F9F8211474684D00106A0C /* REC_NEG_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "REC_NEG_2@2x.png"; path = "Resources/REC_NEG_2@2x.png"; sourceTree = "<group>"; };
+		E4F9F8221474684D00106A0C /* X@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "X@2x.png"; path = "Resources/X@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -955,6 +959,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4F9F8201474684D00106A0C /* REC_NEG_1@2x.png */,
+				E4F9F8211474684D00106A0C /* REC_NEG_2@2x.png */,
+				E4F9F8221474684D00106A0C /* X@2x.png */,
 				E4698D22147008FB001EBDEE /* OPENING_MOV_IPHONE.m4v */,
 				E4698D0E1470043A001EBDEE /* CARD_BACKGROUND~iPad.png */,
 				E4698D0F1470043B001EBDEE /* icon-small.png */,
@@ -963,7 +970,6 @@
 				E4698D121470043C001EBDEE /* icon~iPad.png */,
 				E4698D131470043C001EBDEE /* MAKE_SOUND@2X.png */,
 				E4698D141470043C001EBDEE /* POSE_FACE@2X.png */,
-				E4698D151470043C001EBDEE /* REC_NEGATIVE@2X.png */,
 				E4698D161470043D001EBDEE /* START_OVER@2X.png */,
 				E4698D171470043D001EBDEE /* SWITCH_CARD@2X.png */,
 				E4698CFF146FEF4D001EBDEE /* ADD_TO_PHOTO_GALLERY@2X.png */,
@@ -1058,6 +1064,7 @@
 		E4698C5E146FECD7001EBDEE /* data */ = {
 			isa = PBXGroup;
 			children = (
+				E4698C6B146FECD7001EBDEE /* cards.xml */,
 				E42B39A71471914C0091E6EE /* snowcard_final.pvr */,
 				E42B39A81471914C0091E6EE /* XmasWall_flat2.pvr */,
 				E4625BDF14700F81002652D0 /* JINGLE_DRM_1.caf */,
@@ -1083,7 +1090,6 @@
 				E4698C62146FECD7001EBDEE /* AULD_LANG_SYNE_4.mid */,
 				E4698C63146FECD7001EBDEE /* AULD_LANG_SYNE_5.mid */,
 				E4698C64146FECD7001EBDEE /* AULD_LANG_SYNE_DRM.mid */,
-				E4698C6B146FECD7001EBDEE /* cards.xml */,
 				E4698C6C146FECD7001EBDEE /* HANUKA_ROMAN_FLAT2.pvr */,
 				E4698C6D146FECD7001EBDEE /* hanuka_sevivon_flat.pvr */,
 				E4698C6E146FECD7001EBDEE /* HANUKKAH_1.mid */,
@@ -2161,7 +2167,6 @@
 				E4698D1C1470043D001EBDEE /* icon~iPad.png in Resources */,
 				E4698D1D1470043D001EBDEE /* MAKE_SOUND@2X.png in Resources */,
 				E4698D1E1470043D001EBDEE /* POSE_FACE@2X.png in Resources */,
-				E4698D1F1470043D001EBDEE /* REC_NEGATIVE@2X.png in Resources */,
 				E4698D201470043D001EBDEE /* START_OVER@2X.png in Resources */,
 				E4698D211470043D001EBDEE /* SWITCH_CARD@2X.png in Resources */,
 				E4698D23147008FB001EBDEE /* OPENING_MOV_IPHONE.m4v in Resources */,
@@ -2185,6 +2190,9 @@
 				E4625BEB147011D7002652D0 /* MainViewController.xib in Resources */,
 				E42B39A91471914C0091E6EE /* snowcard_final.pvr in Resources */,
 				E42B39AA1471914C0091E6EE /* XmasWall_flat2.pvr in Resources */,
+				E4F9F8231474684D00106A0C /* REC_NEG_1@2x.png in Resources */,
+				E4F9F8241474684D00106A0C /* REC_NEG_2@2x.png in Resources */,
+				E4F9F8251474684D00106A0C /* X@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2352,7 +2360,6 @@
 				E493D025140AE971004CB633 /* FacebookUploadViewController.m in Sources */,
 				E493D02C140AE971004CB633 /* Reachability.m in Sources */,
 				E493D12C140AE971004CB633 /* YouTubeUploader.m in Sources */,
-				E493D12D140AE971004CB633 /* YouTubeUploadViewController.m in Sources */,
 				E493D172140AEFC1004CB633 /* RenderManager.mm in Sources */,
 				E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */,
 				E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */,
@@ -2369,6 +2376,7 @@
 				E4D7B516146960BF00131214 /* MessageParser.m in Sources */,
 				E4D7B517146960BF00131214 /* PopupMessage.m in Sources */,
 				E4D7B518146960BF00131214 /* URLCacheAlert.m in Sources */,
+				E4F9F81614742CFB00106A0C /* YouTubeUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2517,7 +2525,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = _RK_DEBUG;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					_FLURRY,
+					_RK_DEBUG,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -2548,13 +2559,13 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Roee Kremer";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "91320457-188D-4202-BBAC-BD037EB97D27";
+				PROVISIONING_PROFILE = "8B92D28C-4D05-4DDD-A49E-FFA41150D603";
 				SDKROOT = iphoneos;
 			};
 			name = "Ad Hoc";

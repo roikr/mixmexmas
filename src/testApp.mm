@@ -254,6 +254,11 @@ void testApp::update()
         ofSoundStreamSetup(nChannels, 1, this, sampleRate, bufferSize, 2);
     }
     
+    if (state == STATE_NONE && bAudioInitialized) {
+        state = STATE_LIVE;
+        bNeedDisplay = true;
+    }
+    
     grabber.update();
     
     if (!bCameraOffset  && grabber.getState() >= CAMERA_RUNNING) {
@@ -588,7 +593,7 @@ void testApp::resume() {
 //		
 //	}
    
-    state = STATE_LIVE;
+    state = STATE_NONE;
     bNeedDisplay = true;
     grabber.startCapture();
     

@@ -34,8 +34,8 @@
 
 @interface MainViewController ()
 - (NSUInteger) cameraCount;
-
-
+- (void) fadeOutRecordButton;
+- (void) fadeInRecordButton;
 @end
 
 @implementation MainViewController
@@ -43,6 +43,7 @@
 @synthesize liveView;
 @synthesize liveTextView;
 @synthesize recordView;
+@synthesize imageView;
 @synthesize recordTextView;
 @synthesize playView;
 @synthesize playButton;
@@ -144,6 +145,7 @@
 					break;
 				case STATE_RECORD:
 					recordView.hidden = NO;
+                     [self fadeOutRecordButton];
 					
 					break;
 				case STATE_PLAY:
@@ -179,6 +181,28 @@
 #ifdef _FLURRY
     [FlurryAnalytics logEvent:@"RECORD" withParameters:[NSDictionary dictionaryWithObject:[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardTag] forKey:@"CARD"]];
 #endif
+}
+
+- (void) fadeOutRecordButton {
+	if (self.OFSAptr->getState() == STATE_RECORD) {
+		[UIView animateWithDuration:0.1 delay:0.5 
+							options: UIViewAnimationOptionTransitionNone | UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction// UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse |
+						 animations:^{imageView.alpha = 0.0;} 
+						 completion:^(BOOL finished){ [self fadeInRecordButton]; }];
+		
+		
+	} 
+}
+
+- (void) fadeInRecordButton {
+	if (self.OFSAptr->getState() == STATE_RECORD) {
+		[UIView animateWithDuration:0.1 delay:0.5 
+							options: UIViewAnimationOptionTransitionNone | UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction// UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse |
+						 animations:^{imageView.alpha = 1.0;} 
+						 completion:^(BOOL finished){ [self fadeOutRecordButton]; }];
+		
+		
+	} 
 }
 
 - (IBAction) preview:(id)sender {
