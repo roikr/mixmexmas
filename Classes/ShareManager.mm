@@ -420,17 +420,19 @@ void ShareAlert(NSString *title,NSString *message) {
 			} break;
 	}
 	
-	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-	
 	switch (action)
 	{
 		case ACTION_UPLOAD_TO_YOUTUBE: {
 			state = STATE_SELECTED;
+            
+            youTubeUploader.username = @"gogoscrazyholidays";
+            youTubeUploader.password = @"ppithebox1";
+            
 			YouTubeUploadViewController *controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController" bundle:nil];
 			[controller setDelegate:self];
 			[controller setBDelayedUpload:YES];
 			[parentViewController presentModalViewController:controller animated:YES];
-			controller.uploader = appDelegate.shareManager.youTubeUploader;
+			controller.uploader = youTubeUploader;
 			controller.videoTitle = NSLocalizedString(@"YT title",@"xmas musical card"); // [[self getDisplayName] uppercaseString];
 			//controller.additionalText = kMilgromURL;
 			controller.descriptionView.text = NSLocalizedString(@"YT desc",@"this video created with this iphone app\nvisit lofipeople at http://www.lofipeople.com");
@@ -448,7 +450,7 @@ void ShareAlert(NSString *title,NSString *message) {
 			[controller setDelegate:self];
 			[controller setBDelayedUpload:YES];
 			[parentViewController presentModalViewController:controller animated:YES];
-			controller.uploader = appDelegate.shareManager.facebookUploader;
+			controller.uploader = facebookUploader;
 			controller.videoTitle = NSLocalizedString(@"FB title",@"shana tova musical card") ; //[NSString stringWithFormat:@"%@",[[self getDisplayName] uppercaseString]];
 			//controller.additionalText = kMilgromURL;
 			controller.descriptionView.text = NSLocalizedString(@"FB desc",@"shana tova");
