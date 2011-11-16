@@ -68,6 +68,8 @@ class testApp:public ofSimpleApp  { // : public   ofxiPhoneApp
 	
 public:
 	void setup();
+    void startAudio();
+    
 	void update();
 	
 	void render();
@@ -164,7 +166,9 @@ public:
 	
 	ofxAudioFile magic;
 	bool bPlaySong;
-    bool bFirstLaunch;
+    
+    bool bStartAudio;
+    bool bAudioInitialized;
     
     int playTime;
     bool bSongPlayed;

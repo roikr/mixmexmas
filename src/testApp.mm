@@ -224,22 +224,30 @@ void testApp::setup(){
     bSongPlayed = false;
 	bTriggerRecord = false;
 	
-    bFirstLaunch = true;
+    bStartAudio = false;
+    bAudioInitialized = false;
     grabber.setup(&video,FRONT_CAMERA,0.75);
-    grabber.startCamera();
+    
     resume();
    
     
 }
 
 
+void testApp::startAudio() {
+    bStartAudio = true;
+}
 
 
 //--------------------------------------------------------------
 void testApp::update()
 {
-    if (bFirstLaunch && ofGetElapsedTimeMillis()>2000) {
-        bFirstLaunch = false;
+    if  (grabber.getState() == CAMERA_READY) {
+        grabber.startCamera();
+    }
+    if (bStartAudio && !bAudioInitialized && grabber.getState() >= CAMERA_RUNNING) {
+        
+        bAudioInitialized = true;;
         ofSoundStreamSetup(nChannels, 1, this, sampleRate, bufferSize, 2);
     }
     

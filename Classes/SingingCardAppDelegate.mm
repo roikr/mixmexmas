@@ -11,9 +11,6 @@
 #import "ShareViewController.h"
 
 #import "ShareManager.h"
-
-//#import "AVPlayerDemoPlaybackViewController.h"
-
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -41,10 +38,13 @@
 @synthesize mainViewController;
 @synthesize shareViewController;
 @synthesize infoViewController;
+@synthesize playerViewController;
 
 
 @synthesize lastSavedVersion;
 @synthesize shareManager;
+
+@synthesize imageView;
 
 #define PLAY_INTRO
 
@@ -71,27 +71,31 @@ void uncaughtExceptionHandler(NSException *exception) {
 	[self.window makeKeyAndVisible];
     
 #ifdef PLAY_INTRO
-    AVPlayerViewController *playerViewController;
+    [playerViewController setDelegate:self];
+    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"OPENING_MOV_IPHONE" withExtension:@"m4v"]]; 
+    //		playerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
     switch([[UIDevice currentDevice] userInterfaceIdiom]) {
         case UIUserInterfaceIdiomPhone: 
-            playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
+            imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
+            imageView.center = CGPointMake(240.0, 160.0);
             
             break;
         case UIUserInterfaceIdiomPad:
-            playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController-iPad" bundle:nil];
+            imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
+            imageView.center = CGPointMake(512.0, 384.0);
             break;
             
     }
-        [playerViewController setDelegate:self];
-    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"OPENING_MOV_IPHONE" withExtension:@"m4v"]]; // SHANA_DEMO_IPHONE
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
-    imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
-    imageView.center = CGPointMake(240.0, 160.0);
+    
+    
     [playerViewController.view addSubview:imageView];
-    [imageView release];
-    //		playerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self.mainViewController presentModalViewController:playerViewController animated:NO];
-    [playerViewController release];
+     [self.mainViewController presentModalViewController:playerViewController animated:NO];
+    
+#else
+
+    [self AVPlayerViewControllerDone:nil];
+
 #endif
 
 	[self.eAGLView setInterfaceOrientation:UIInterfaceOrientationLandscapeRight duration:0];
@@ -109,14 +113,15 @@ void uncaughtExceptionHandler(NSException *exception) {
 }
 
 -(void) AVPlayerLayerIsReadyForDisplay:(AVPlayerViewController*)controller {
-	for (UIView *view in [controller.view subviews]) {
-		if ([view isKindOfClass:[UIImageView class]]) {
-			[view removeFromSuperview];
-		}
-	}
+    [imageView removeFromSuperview];
+//    
+
 }
 
 -(void) AVPlayerViewControllerDone:(AVPlayerViewController*)controller {
+    self.OFSAptr->startAudio();
+    [PopupMessage popupMessage:@"http://www.lofipeople.com/gogos/message/message"];
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -222,6 +227,11 @@ void uncaughtExceptionHandler(NSException *exception) {
 	RKLog(@"applicationDidEnterBackground");
 	
 	[shareManager applicationDidEnterBackground];
+    
+    if (mainViewController.modalViewController == (UIViewController*) infoViewController) {
+        [mainViewController dismissModalViewControllerAnimated:NO];
+    }
+    
 	
 	// Handle any background procedures not related to animation here.
 	if (self.OFSAptr) {
