@@ -57,9 +57,9 @@
 @property BOOL bDelayedUpload;
 
 -(void)setDelegate:(id<YouTubeUploadViewControllerDelegate>)theDelegate;
-- (void) upload:(id)sender;
-- (void) cancel:(id)sender;
-- (void) closeTextView:(id)sender;
+- (IBAction) upload:(id)sender;
+- (IBAction) cancel:(id)sender;
+- (IBAction) closeTextView:(id)sender;
 @end
 
 @protocol YouTubeUploadViewControllerDelegate<NSObject>

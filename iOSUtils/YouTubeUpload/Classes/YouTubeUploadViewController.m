@@ -217,8 +217,8 @@
 
 	
 	if (uploader!=nil) {
-		uploader.username = username.text;
-		uploader.password = password.text;
+//		uploader.username = username.text;
+//		uploader.password = password.text;
 		[uploader setVideoTitle:titleField.text];
 		[uploader setVideoDescription:[descriptionView.text stringByAppendingString:additionalText]];
 		[uploader setVideoPath:videoPath];
