@@ -25,6 +25,7 @@ enum {
 };
 
 enum {
+    STATE_NONE,
 	STATE_LIVE,
 	STATE_RECORD,
 	STATE_PLAY
