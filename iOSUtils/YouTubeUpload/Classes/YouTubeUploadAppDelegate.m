@@ -28,7 +28,7 @@
    // [window addSubview:navigationController.view];
    
 	//YouTubeUploadViewController * controller = (YouTubeUploadViewController*)navigationController.visibleViewController;
-	self.uploader = [YouTubeUploader youTubeUploader];
+	self.uploader = [YouTubeUploader youTubeUploader:nil];
 	[uploader addDelegate:self];
 	
 	[window makeKeyAndVisible];
