@@ -34,7 +34,7 @@ enum {
 
 void ShareAlert(NSString *title,NSString *message) {
 	
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil  cancelButtonTitle:@"OK"  otherButtonTitles: nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil  cancelButtonTitle:NSLocalizedString(@"ok button","OK")  otherButtonTitles: nil];
 	[alert show];
 	[alert release];
 }
@@ -234,13 +234,13 @@ void ShareAlert(NSString *title,NSString *message) {
 - (void) facebookUploaderStateChanged:(FacebookUploader *)theUploader {
 	switch (theUploader.state) {
 		case FACEBOOK_UPLOADER_STATE_UPLOAD_FINISHED: {
-			ShareAlert(NSLocalizedString(@"FB alert",@"Facebook upload"),NSLocalizedString(@"FB upload finished", @"Your video was uploaded successfully!\ngo check your wall"));
+			ShareAlert(NSLocalizedString(@"fb success title",@"Facebook upload"),NSLocalizedString(@"fb success body", @"Your video was uploaded successfully!\ngo check your wall"));
 #ifdef _FLURRY
             [FlurryAnalytics logEvent:@"SHARE_DONE" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"]];
 #endif
 		} break;
 		case FACEBOOK_UPLOADER_STATE_UPLOADING: {
-			ShareAlert(NSLocalizedString(@"FB alert",@"Facebook upload"),NSLocalizedString(@"FB upload progress", @"Upload is in progress"));
+			ShareAlert(NSLocalizedString(@"fb uploading title",@"Facebook upload"),NSLocalizedString(@"fb uploading body", @"Upload is in progress"));
 
 		} break;
 		default:
@@ -263,9 +263,8 @@ void ShareAlert(NSString *title,NSString *message) {
             [FlurryAnalytics logEvent:@"SHARE_DONE" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"]];
 #endif
             
-//			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), [NSString stringWithFormat:NSLocalizedString(@"YT upload finished",@"your video was uploaded successfully! link: %@"),[theUploader.link absoluteString]]); // ",]);
             self.youtubeLink = [theUploader.link absoluteString];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"YT alert",@"YouTube upload") message:NSLocalizedString(@"YT upload finished",@"your video was uploaded successfully! do you want to share the link ?") delegate:self  cancelButtonTitle:NSLocalizedString(@"NO thanks button",@"No Thanks")  otherButtonTitles: NSLocalizedString(@"OK button",@"OK"),nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"yt done title",@"YouTube upload") message:NSLocalizedString(@"yt done body",@"your video was uploaded successfully! do you want to share the link ?") delegate:self  cancelButtonTitle:NSLocalizedString(@"no thanks button",@"No Thanks")  otherButtonTitles: NSLocalizedString(@"ok button",@"OK"),nil];
         
             [alert show];
             [alert release];
@@ -273,11 +272,11 @@ void ShareAlert(NSString *title,NSString *message) {
 
 		} break;
 		case YOUTUBE_UPLOADER_STATE_UPLOADING: {
-			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), NSLocalizedString(@"YT upload progress",@"Upload is in progress"));			
+			ShareAlert(NSLocalizedString(@"yt upload title",@"YouTube upload"), NSLocalizedString(@"yt upload body",@"Upload is in progress"));			
 			
 		} break;
 		case YOUTUBE_UPLOADER_STATE_UPLOAD_STOPPED: {
-			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload") , NSLocalizedString(@"YT upload stopped",@"your upload has been stopped"));
+			ShareAlert(NSLocalizedString(@"yt stopped title",@"YouTube upload") , NSLocalizedString(@"yt stopped body",@"your upload has been stopped"));
 		} break;
 			
 		default:
@@ -406,7 +405,7 @@ void ShareAlert(NSString *title,NSString *message) {
 		case ACTION_UPLOAD_TO_YOUTUBE:
 		case ACTION_UPLOAD_TO_FACEBOOK:
 			if (![self gotInternet]) {
-				ShareAlert(NSLocalizedString(@"upload alert title",@"Upload Movie"), NSLocalizedString(@"upload alert message",@"We're trying hard, but there's no Internet connection"));
+				ShareAlert(NSLocalizedString(@"no internet title",@"Upload Movie"), NSLocalizedString(@"no internet body",@"We're trying hard, but there's no Internet connection"));
 				action = ACTION_CANCEL;
 				return;
 			} break;
@@ -683,7 +682,7 @@ void ShareAlert(NSString *title,NSString *message) {
 											}
 											else {
 												RKLog(@"writeVideoToAssestsLibrary successed");
-												ShareAlert(NSLocalizedString(@"library alert title",@"Library"),NSLocalizedString(@"library alert message",@"The video has been saved to your photos library"));
+												ShareAlert(NSLocalizedString(@"library alert title",@"Library"),NSLocalizedString(@"library alert body",@"The video has been saved to your photos library"));
 #ifdef _FLURRY
                                                 [FlurryAnalytics logEvent:@"SHARE_DONE" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"]];
 #endif
