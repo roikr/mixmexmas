@@ -255,7 +255,7 @@
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"YouTube error" 
 															message:@"Login failed, please check that the\nusername and password are correct"
 														   delegate:nil 
-												  cancelButtonTitle:@"OK" 
+												  cancelButtonTitle:NSLocalizedString(@"ok button","OK") 
 												  otherButtonTitles: nil];
 			[alert show];
 			[alert release];

@@ -160,7 +160,7 @@
 
 //			[uploader uploadVideoWithTitle:titleField.text withDescription:[descriptionView.text stringByAppendingString:additionalText] andPath:videoPath];
 		} else {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook Upload" message:@"You are not logged in. Please login to upload" delegate:nil  cancelButtonTitle:@"OK"  otherButtonTitles:nil];
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"fb no login title",@"Facebook login") message:NSLocalizedString(@"fb no login body",@"You are not logged in. Please login to upload") delegate:nil  cancelButtonTitle:NSLocalizedString(@"ok button","OK")  otherButtonTitles:nil];
 			[alert show];
 			[alert release];
 		}
@@ -170,7 +170,7 @@
 - (void) login:(id)sender {
 	if (uploader!=nil) {
 		if ([uploader isConnected]) {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook Login" message:@"You are already logged in" delegate:nil  cancelButtonTitle:@"OK"  otherButtonTitles:nil];
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"fb login title",@"Facebook Login") message:NSLocalizedString(@"fb login body",@"You are already logged in") delegate:nil  cancelButtonTitle:NSLocalizedString(@"ok button","OK")  otherButtonTitles:nil];
 			[alert show];
 			[alert release];
 		} else {
@@ -212,7 +212,7 @@
 			}
 			break;
 		case FACEBOOK_UPLOADER_STATE_DID_NOT_LOGIN: {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook Login" message:@"Logged in failed. Please login to upload" delegate:nil  cancelButtonTitle:@"OK"  otherButtonTitles:nil];
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"fb login failed title",@"Facebook Login") message:NSLocalizedString(@"fb login failed body",@"Logged in failed. Please try again") delegate:nil  cancelButtonTitle:NSLocalizedString(@"ok button","OK")  otherButtonTitles:nil];
 			[alert show];
 			[alert release];
 		}	break;

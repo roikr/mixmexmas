@@ -222,9 +222,7 @@
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
 	
 	if ([shareManager isUploading]) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"share while upload title",@"Sharing")
-														message:NSLocalizedString(@"share while upload message",@"Video upload in progress")
-													   delegate:nil  cancelButtonTitle:@"OK"  otherButtonTitles: nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"still uploading title",@"Sharing") message:NSLocalizedString(@"still uploading body",@"Video upload in progress") delegate:nil  cancelButtonTitle:NSLocalizedString(@"ok button","OK")  otherButtonTitles: nil];
 		[alert show];
 		[alert release];
 	} else {
