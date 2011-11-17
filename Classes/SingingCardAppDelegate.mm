@@ -61,7 +61,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 		
 #ifdef _FLURRY
 	NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-	[FlurryAnalytics startSession:@"LT1LZ197JKX9Z62SKBR9"]; 
+	[FlurryAnalytics startSession:@"87SJY1B8RBCUIWIGYFTE"]; 
 #endif
 
 	
