@@ -264,7 +264,7 @@ void ShareAlert(NSString *title,NSString *message) {
 #endif
             
             self.youtubeLink = [theUploader.link absoluteString];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"yt done title",@"YouTube upload") message:NSLocalizedString(@"yt done body",@"your video was uploaded successfully! do you want to share the link ?") delegate:self  cancelButtonTitle:NSLocalizedString(@"no thanks button",@"No Thanks")  otherButtonTitles: NSLocalizedString(@"ok button",@"OK"),nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"yt done title",@"YouTube upload") message:NSLocalizedString(@"yt done body",@"your video was uploaded successfully! do you want to share the link ?") delegate:self  cancelButtonTitle:NSLocalizedString(@"yt done b close",@"done")  otherButtonTitles: NSLocalizedString(@"yt done b mail",@"send link by mail"),nil];
         
             [alert show];
             [alert release];
