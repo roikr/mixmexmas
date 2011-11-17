@@ -11,15 +11,13 @@
 
 @protocol YouTubeUploadViewControllerDelegate;
 
-@interface YouTubeUploadViewController : UIViewController<YouTubeUploaderDelegate> {
+@interface YouTubeUploadViewController : UIViewController<YouTubeUploaderDelegate,UIScrollViewDelegate> {
 	YouTubeUploader *uploader;
 	
 	UITextField *username;
 	UITextField *password;
 	UITextField *titleField;
 	UITextView *description;
-	UIButton *keyboardButton;
-	
 	
 	NSString *videoName;
 	NSString *path;
@@ -35,6 +33,9 @@
 	id<YouTubeUploadViewControllerDelegate> delegate;
 	
 	BOOL bDelayedUpload;
+    
+    UIView *activeView;
+    BOOL _isKeyboardVisible;
 	
 }
 
@@ -45,7 +46,6 @@
 @property (nonatomic,retain) IBOutlet UITextField *titleField;
 @property (nonatomic,retain) IBOutlet UITextView *descriptionView;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic,retain) IBOutlet UIButton *keyboardButton;
 
 @property (nonatomic,retain) IBOutlet UIView *processView;
 
