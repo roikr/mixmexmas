@@ -102,7 +102,7 @@
         
         self.OFSAptr = new testApp;
         ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
-        ofxiPhoneSetDimesions(framebufferWidth, framebufferHeight);
+        ofxiPhoneSetDimensions(framebufferWidth, framebufferHeight);
         OFSAptr->setup();
         
     }
