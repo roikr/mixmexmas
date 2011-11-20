@@ -28,6 +28,7 @@
 		E43797D0141908DC00F3BBE9 /* CustomFontTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */; };
 		E43797E314190BDB00F3BBE9 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */; };
 		E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */; };
+		E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E44971F5147932BD000F5838 /* SingingCardKeys.m */; };
 		E4625BD314700C85002652D0 /* AULD_LANG_SYNE_DRM_1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4625BC714700C85002652D0 /* AULD_LANG_SYNE_DRM_1.caf */; };
 		E4625BD414700C85002652D0 /* AULD_LANG_SYNE_DRM_2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4625BC814700C85002652D0 /* AULD_LANG_SYNE_DRM_2.caf */; };
 		E4625BD514700C85002652D0 /* AULD_LANG_SYNE_DRM_3.caf in Resources */ = {isa = PBXBuildFile; fileRef = E4625BC914700C85002652D0 /* AULD_LANG_SYNE_DRM_3.caf */; };
@@ -368,6 +369,8 @@
 		E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontLabel.m; sourceTree = "<group>"; };
 		E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTexturesVector.cpp; sourceTree = "<group>"; };
 		E4475585145F3F0C00481363 /* ofxTexturesVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTexturesVector.h; sourceTree = "<group>"; };
+		E44971F4147932BC000F5838 /* SingingCardKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCardKeys.h; sourceTree = "<group>"; };
+		E44971F5147932BD000F5838 /* SingingCardKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingingCardKeys.m; sourceTree = "<group>"; };
 		E4625BC714700C85002652D0 /* AULD_LANG_SYNE_DRM_1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AULD_LANG_SYNE_DRM_1.caf; sourceTree = "<group>"; };
 		E4625BC814700C85002652D0 /* AULD_LANG_SYNE_DRM_2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AULD_LANG_SYNE_DRM_2.caf; sourceTree = "<group>"; };
 		E4625BC914700C85002652D0 /* AULD_LANG_SYNE_DRM_3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AULD_LANG_SYNE_DRM_3.caf; sourceTree = "<group>"; };
@@ -888,6 +891,8 @@
 			children = (
 				1D3623240D0F684500981E51 /* SingingCardAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SingingCardAppDelegate.mm */,
+				E44971F4147932BC000F5838 /* SingingCardKeys.h */,
+				E44971F5147932BD000F5838 /* SingingCardKeys.m */,
 				E4AF012E12B0EF5700457BC7 /* MainWindow.xib */,
 				E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */,
 				28EC4C5611D54ECE0027AA9F /* MainViewController.h */,
@@ -2369,6 +2374,7 @@
 				E4D7B517146960BF00131214 /* PopupMessage.m in Sources */,
 				E4D7B518146960BF00131214 /* URLCacheAlert.m in Sources */,
 				E4F9F81614742CFB00106A0C /* YouTubeUploadViewController.m in Sources */,
+				E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

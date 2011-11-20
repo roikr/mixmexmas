@@ -27,6 +27,7 @@
 #import "ShareManager.h"
 #import "RenderProgressView.h"
 #import "CustomImageView.h"
+#import "SingingCardKeys.h"
 
 #ifdef _FLURRY
 #import "FlurryAnalytics.h"
@@ -241,7 +242,7 @@
 
 - (IBAction)info:(id)sender {
     SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-    [appDelegate.infoViewController setUrl:@"http://www.lofipeople.com/gogos/info/info"];
+    [appDelegate.infoViewController setUrl:kInfoURL];
     [appDelegate.mainViewController presentModalViewController:appDelegate.infoViewController animated:YES];
     
 #ifdef _FLURRY

@@ -18,6 +18,7 @@
 #import "Constants.h"
 #import "Reachability.h"
 #import "ShareViewController.h"
+#import "SingingCardKeys.h"
 
 #ifdef _FLURRY
 #import "FlurryAnalytics.h"
@@ -72,9 +73,9 @@ void ShareAlert(NSString *title,NSString *message) {
 - (id)init {
 	
 	if (self = [super init]) {
-		self.youTubeUploader = [YouTubeUploader youTubeUploader:@"AI39si7UINMeywyTjpdwb6jsPyw3nTy7NXLZr-ddXph5dEXf0q4ZNAvu_8BXwKU3AnxsTMglvjcpdQNfIoesABb6RYbo0bDeHw"];
+		self.youTubeUploader = [YouTubeUploader youTubeUploader:kYouTubeDeveloperKey];
 		[youTubeUploader addDelegate:self];
-		self.facebookUploader = [FacebookUploader facebookUploader:@"218795661526558"];
+		self.facebookUploader = [FacebookUploader facebookUploader:kFacebookAppId];
 		[facebookUploader addDelegate:self];
 		self.renderManager = [[[RenderManager alloc] init] autorelease];
 		[renderManager setDelegate:self];
