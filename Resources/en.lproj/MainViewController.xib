@@ -189,6 +189,7 @@
 								<string key="NSFrame">{{360, 248}, {115, 67}}</string>
 								<reference key="NSSuperview" ref="503231365"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="480116449"/>
 								<reference key="IBUIBackgroundColor" ref="797518550"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -270,7 +271,7 @@
 								<string key="NSFrame">{{5, 236}, {191, 79}}</string>
 								<reference key="NSSuperview" ref="480116449"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
+								<reference key="NSNextKeyView" ref="838564291"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -286,6 +287,7 @@
 								<string key="NSFrame">{{369, 5}, {106, 44}}</string>
 								<reference key="NSSuperview" ref="480116449"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="441247725"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -301,6 +303,7 @@
 								<string key="NSFrame">{{369, 5}, {106, 44}}</string>
 								<reference key="NSSuperview" ref="480116449"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="684717725"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -314,7 +317,7 @@
 						<string key="NSFrameSize">{480, 320}</string>
 						<reference key="NSSuperview" ref="184854543"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="175744043"/>
 						<reference key="IBUIBackgroundColor" ref="797518550"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -482,7 +485,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">PREPARING_CARD@2x.png</string>
+									<string key="NSResourceName">BACKGROUND@2x.png</string>
 								</object>
 							</object>
 							<object class="IBUIButton" id="937308610">
@@ -546,7 +549,7 @@
 				<string key="NSFrameSize">{480, 320}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="838564291"/>
+				<reference key="NSNextKeyView" ref="503231365"/>
 				<reference key="IBUIBackgroundColor" ref="797518550"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
@@ -1321,12 +1324,12 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>BACKGROUND@2x.png</string>
 				<string>CAMERA@2x.png</string>
 				<string>CANCEL@2X.png</string>
 				<string>MAKE_SOUND@2X.png</string>
 				<string>PLAY@2x.png</string>
 				<string>POSE_FACE@2X.png</string>
-				<string>PREPARING_CARD@2x.png</string>
 				<string>REC@2x.png</string>
 				<string>REC_NEG_1@2x.png</string>
 				<string>REC_NEG_2@2x.png</string>
@@ -1337,12 +1340,12 @@
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{960, 640}</string>
 				<string>{237, 147}</string>
 				<string>{192, 71}</string>
 				<string>{383, 158}</string>
 				<string>{214, 84}</string>
 				<string>{383, 158}</string>
-				<string>{960, 640}</string>
 				<string>{211, 88}</string>
 				<string>{211, 88}</string>
 				<string>{211, 88}</string>

@@ -53,7 +53,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">SHARE_MENU@2x.png</string>
+							<string key="NSResourceName">BACKGROUND@2x.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="327680933">
@@ -458,20 +458,20 @@
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>ADD_TO_PHOTO_GALLERY@2X.png</string>
+				<string>BACKGROUND@2x.png</string>
 				<string>CANCEL@2X.png</string>
 				<string>SEND_BY_EMAIL@2X.png</string>
 				<string>SEND_RINGTON@2X.png</string>
-				<string>SHARE_MENU@2x.png</string>
 				<string>UPLOAD_FACEBOOK@2X.png</string>
 				<string>UPLOAD_YOUTUBE@2X.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{658, 115}</string>
+				<string>{960, 640}</string>
 				<string>{192, 71}</string>
 				<string>{384, 113}</string>
 				<string>{406, 115}</string>
-				<string>{960, 640}</string>
 				<string>{598, 131}</string>
 				<string>{821, 113}</string>
 			</object>

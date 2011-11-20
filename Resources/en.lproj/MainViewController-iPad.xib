@@ -500,7 +500,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">PREPARING_CARD~iPad.png</string>
+									<string key="NSResourceName">BACKGROUND~iPad.png</string>
 								</object>
 							</object>
 							<object class="IBUIButton" id="937308610">
@@ -1344,13 +1344,13 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>BACKGROUND~iPad.png</string>
 				<string>CAMERA@2x.png</string>
 				<string>CANCEL@2X.png</string>
 				<string>CARD_BACKGROUND~iPad.png</string>
 				<string>MAKE_SOUND@2X.png</string>
 				<string>PLAY@2x.png</string>
 				<string>POSE_FACE@2X.png</string>
-				<string>PREPARING_CARD~iPad.png</string>
 				<string>REC@2x.png</string>
 				<string>REC_NEG_1@2x.png</string>
 				<string>REC_NEG_2@2x.png</string>
@@ -1361,13 +1361,13 @@
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{1024, 768}</string>
 				<string>{237, 147}</string>
 				<string>{192, 71}</string>
 				<string>{1024, 768}</string>
 				<string>{383, 158}</string>
 				<string>{214, 84}</string>
 				<string>{383, 158}</string>
-				<string>{1024, 768}</string>
 				<string>{211, 88}</string>
 				<string>{211, 88}</string>
 				<string>{211, 88}</string>
