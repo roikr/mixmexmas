@@ -566,10 +566,27 @@ void testApp::exit() {
 
 }
 
+void testApp::becomeActive() {
+    state = STATE_NONE;
+    bNeedDisplay = true;
+    grabber.startCapture();
+    soundStreamStart();
+}
+                     
+                     
+void testApp::resignActive() {
+    setSongState(SONG_IDLE);
+    sampler.stop();
+    trigger.resetTrigger();
+    grabber.stopCapture();
+    magic.stop();
+    bPlaySong = false;
+    bTriggerRecord = false;
+    soundStreamStop();
+}
+
 void testApp::suspend() {
-	setSongState(SONG_IDLE);
 	
-    
     for (vector<card>::iterator citer=cards.begin(); citer!=cards.end(); citer++) {
         citer->background->release();
         for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end(); aiter++) {
@@ -588,19 +605,6 @@ void testApp::resume() {
             aiter->textures.init();
         }
     }
-    
-//    if (grabber.getState() == CAMERA_READY) { // return to foreground after aborting video rendering
-//		
-//	}
-   
-    state = STATE_NONE;
-    bNeedDisplay = true;
-    grabber.startCapture();
-    
-    
-	
-    
-    
 }
 
 
@@ -612,7 +616,7 @@ void testApp::more() {
 
 
 void testApp::live() {
-    if (grabber.getState()==CAMERA_RUNNING) {
+    if (grabber.getState()>=CAMERA_RUNNING) {
         state = STATE_LIVE;
         bNeedDisplay = true;
         grabber.startCapture();

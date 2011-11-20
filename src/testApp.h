@@ -82,6 +82,8 @@ public:
 	void draw();
 	void exit();
 	
+    void becomeActive();
+    void resignActive();
 	void suspend();
 	void resume();
 	
