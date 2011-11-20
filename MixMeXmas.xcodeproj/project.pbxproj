@@ -68,6 +68,7 @@
 		E44755BD145F553300481363 /* JINGLE_ANIMA_2_00012.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E44755A1145F553300481363 /* JINGLE_ANIMA_2_00012.pvr */; };
 		E44755C0145F592800481363 /* JINGLE_ANIMA_1.mid in Resources */ = {isa = PBXBuildFile; fileRef = E44755BE145F592800481363 /* JINGLE_ANIMA_1.mid */; };
 		E44755C1145F592800481363 /* JINGLE_ANIMA_2.mid in Resources */ = {isa = PBXBuildFile; fileRef = E44755BF145F592800481363 /* JINGLE_ANIMA_2.mid */; };
+		E449722514794240000F5838 /* SingingCardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E449722414794240000F5838 /* SingingCardKeys.m */; };
 		E46E2F22146C270600FD2495 /* AVPlayerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46E2F1E146C270600FD2495 /* AVPlayerViewController-iPad.xib */; };
 		E46E2F23146C270600FD2495 /* AVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46E2F20146C270600FD2495 /* AVPlayerViewController.xib */; };
 		E476ED191407EC960091FFA3 /* ofxAudioLimiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */; };
@@ -375,6 +376,8 @@
 		E44755A1145F553300481363 /* JINGLE_ANIMA_2_00012.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = JINGLE_ANIMA_2_00012.pvr; sourceTree = "<group>"; };
 		E44755BE145F592800481363 /* JINGLE_ANIMA_1.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = JINGLE_ANIMA_1.mid; sourceTree = "<group>"; };
 		E44755BF145F592800481363 /* JINGLE_ANIMA_2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = JINGLE_ANIMA_2.mid; sourceTree = "<group>"; };
+		E449722314794240000F5838 /* SingingCardKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCardKeys.h; sourceTree = "<group>"; };
+		E449722414794240000F5838 /* SingingCardKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingingCardKeys.m; sourceTree = "<group>"; };
 		E46E2F1F146C270600FD2495 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/AVPlayerViewController-iPad.xib"; sourceTree = "<group>"; };
 		E46E2F21146C270600FD2495 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AVPlayerViewController.xib; sourceTree = "<group>"; };
 		E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
@@ -822,6 +825,8 @@
 			children = (
 				1D3623240D0F684500981E51 /* SingingCardAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SingingCardAppDelegate.mm */,
+				E449722314794240000F5838 /* SingingCardKeys.h */,
+				E449722414794240000F5838 /* SingingCardKeys.m */,
 				E4AF012E12B0EF5700457BC7 /* MainWindow.xib */,
 				E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */,
 				28EC4C5611D54ECE0027AA9F /* MainViewController.h */,
@@ -2237,6 +2242,7 @@
 				E4D7B516146960BF00131214 /* MessageParser.m in Sources */,
 				E4D7B517146960BF00131214 /* PopupMessage.m in Sources */,
 				E4D7B518146960BF00131214 /* URLCacheAlert.m in Sources */,
+				E449722514794240000F5838 /* SingingCardKeys.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

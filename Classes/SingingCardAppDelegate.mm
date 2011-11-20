@@ -11,9 +11,6 @@
 #import "ShareViewController.h"
 
 #import "ShareManager.h"
-
-//#import "AVPlayerDemoPlaybackViewController.h"
-
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -23,6 +20,7 @@
 #include "EAGLView.h"
 #include "RKMacros.h"
 #import "PopupMessage.h"
+#import "SingingCardKeys.h"
 
 #ifdef _FLURRY
 #import "FlurryAnalytics.h"
@@ -41,10 +39,13 @@
 @synthesize mainViewController;
 @synthesize shareViewController;
 @synthesize infoViewController;
+@synthesize playerViewController;
 
 
 @synthesize lastSavedVersion;
 @synthesize shareManager;
+
+@synthesize imageView;
 
 #define PLAY_INTRO
 
@@ -61,7 +62,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 		
 #ifdef _FLURRY
 	NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-	[FlurryAnalytics startSession:@"LT1LZ197JKX9Z62SKBR9"]; 
+	[FlurryAnalytics startSession:kFlurryApiKey]; 
 #endif
 
 	
@@ -71,27 +72,32 @@ void uncaughtExceptionHandler(NSException *exception) {
 	[self.window makeKeyAndVisible];
     
 #ifdef PLAY_INTRO
-    AVPlayerViewController *playerViewController;
+    [playerViewController setDelegate:self];
+    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"OPENING_MOV_IPHONE" withExtension:@"m4v"]]; 
+    //		playerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
     switch([[UIDevice currentDevice] userInterfaceIdiom]) {
         case UIUserInterfaceIdiomPhone: 
-            playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
+            imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
+            imageView.center = CGPointMake(240.0, 160.0);
             
             break;
         case UIUserInterfaceIdiomPad:
-            playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController-iPad" bundle:nil];
+            imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
+            imageView.center = CGPointMake(512.0, 384.0);
             break;
             
     }
-        [playerViewController setDelegate:self];
-    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"OPENING_MOVIE_IPHONE" withExtension:@"m4v"]]; // SHANA_DEMO_IPHONE
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
-    imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
-    imageView.center = CGPointMake(240.0, 160.0);
+    
+    
     [playerViewController.view addSubview:imageView];
-    [imageView release];
-    //		playerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self.mainViewController presentModalViewController:playerViewController animated:NO];
-    [playerViewController release];
+     [self.mainViewController presentModalViewController:playerViewController animated:NO];
+    
+#else
+
+    self.OFSAptr->startAudio();
+    [PopupMessage popupMessage:kPopupMessageURL];
+
 #endif
 
 	[self.eAGLView setInterfaceOrientation:UIInterfaceOrientationLandscapeRight duration:0];
@@ -103,20 +109,23 @@ void uncaughtExceptionHandler(NSException *exception) {
     return self.eAGLView.OFSAptr;
 }
 
--(NSUInteger) getCurrentCardNumber {
-    
-    return distance(self.OFSAptr->cards.begin(),self.OFSAptr->citer);
+- (NSString *)getCurrentCardTag {
+    return  [NSString stringWithCString:self.OFSAptr->citer->tag.c_str() encoding:[NSString defaultCStringEncoding]];
 }
 
 -(void) AVPlayerLayerIsReadyForDisplay:(AVPlayerViewController*)controller {
-	for (UIView *view in [controller.view subviews]) {
-		if ([view isKindOfClass:[UIImageView class]]) {
-			[view removeFromSuperview];
-		}
-	}
+    [imageView removeFromSuperview];
+//    
+
 }
 
 -(void) AVPlayerViewControllerDone:(AVPlayerViewController*)controller {
+    RKLog(@"AVPlayerViewControllerDone");
+           
+    self.OFSAptr->startAudio();
+    [PopupMessage popupMessage:kPopupMessageURL];
+    
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -127,9 +136,8 @@ void uncaughtExceptionHandler(NSException *exception) {
     
     
 	
-
-	self.OFSAptr->soundStreamStart();
-    
+    self.OFSAptr->becomeActive();
+	
     [self.eAGLView startAnimation];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -154,7 +162,7 @@ void uncaughtExceptionHandler(NSException *exception) {
                     if (ofGetElapsedTimeMillis() - self.OFSAptr->playTime>LONG_PLAY) {
                         self.OFSAptr->bSongPlayed = false;
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            [FlurryAnalytics logEvent:@"PLAY" withParameters:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%i",[self getCurrentCardNumber]] forKey:@"CARD"]];
+                            [FlurryAnalytics logEvent:@"PLAY" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentCardTag] forKey:@"CARD"]];
                         }); 
                     }
 
@@ -177,8 +185,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 {
     RKLog(@"applicationWillResignActive");
 	[self.eAGLView stopAnimation];
-    self.OFSAptr->soundStreamStop();
-	
+    self.OFSAptr->resignActive();
 }
 
 
@@ -192,6 +199,8 @@ void uncaughtExceptionHandler(NSException *exception) {
 - (void)beginInterruption {
 	RKLog(@"beginInterruption");
 	
+    
+    self.OFSAptr->setSongState(SONG_IDLE);
     self.OFSAptr->soundStreamStop();
 	
 }
@@ -222,6 +231,17 @@ void uncaughtExceptionHandler(NSException *exception) {
 	RKLog(@"applicationDidEnterBackground");
 	
 	[shareManager applicationDidEnterBackground];
+    
+//    if (mainViewController.modalViewController == (UIViewController*) infoViewController) {
+//        [mainViewController dismissModalViewControllerAnimated:NO];
+//    }
+    
+    
+    
+    if (mainViewController.modalViewController && mainViewController.modalViewController != (UIViewController*) playerViewController) {
+        [mainViewController dismissModalViewControllerAnimated:NO];
+    }
+    
 	
 	// Handle any background procedures not related to animation here.
 	if (self.OFSAptr) {
@@ -234,12 +254,16 @@ void uncaughtExceptionHandler(NSException *exception) {
 {
     RKLog(@"applicationWillEnterForeground");
 	// Handle any foreground procedures not related to animation here.
-	if (self.OFSAptr) {
-		self.OFSAptr->resume();
-	}
+	
+    self.OFSAptr->resume();
     
-    [PopupMessage popupMessage:[NSURL URLWithString:@"http://www.lofipeople.com/mixmexmas/message.xml"]];
-
+    if (mainViewController.modalViewController && mainViewController.modalViewController == (UIViewController*) playerViewController) {
+        [playerViewController.player seekToTime:CMTimeMake(0, 1)];
+        [playerViewController.player play];
+    } else {
+        
+        [PopupMessage popupMessage:kPopupMessageURL];
+    }
 }
 
 - (void)dealloc

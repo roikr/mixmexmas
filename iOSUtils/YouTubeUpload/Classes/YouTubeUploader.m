@@ -15,9 +15,6 @@
 #import "GDataEntryYouTubeVideo.h"
 #import "RKUBackgroundTask.h"
 
-NSString* const kDeveloperKey = @"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_ouUT6HFwaWn1GQxuyAIK-zvoeFB-GU_cqx30q-0HggREKxXG-b8w";
-
-
 @interface YouTubeUploader (PrivateMethods) 
 
 - (GDataServiceTicket *)uploadTicket;
@@ -38,10 +35,13 @@ NSString* const kDeveloperKey = @"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_
 @synthesize progress;
 @synthesize link;
 @synthesize task;
+@synthesize developerKey;
 
 
-+ (YouTubeUploader *) youTubeUploader {
-	return [[[YouTubeUploader alloc] init] autorelease];
++ (YouTubeUploader *) youTubeUploader:(NSString*) developerKey {
+	YouTubeUploader *uploader = [[[YouTubeUploader alloc] init] autorelease];
+    uploader.developerKey = developerKey;
+    return uploader;
 }
 
 - (id)init {
@@ -138,7 +138,7 @@ NSString* const kDeveloperKey = @"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_
 		
 	}
 	
-	[service setYouTubeDeveloperKey:kDeveloperKey];
+	[service setYouTubeDeveloperKey:developerKey];
 	
 	return service;
 }
@@ -165,7 +165,7 @@ NSString* const kDeveloperKey = @"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_
 		return;
 	}
 	
-	[service setYouTubeDeveloperKey:kDeveloperKey];
+	[service setYouTubeDeveloperKey:developerKey];
 	
 	self.state = YOUTUBE_UPLOADER_STATE_UPLOAD_REQUESTED;
 	

@@ -92,6 +92,9 @@ void testApp::setup(){
 		
 		
 		int bpm = xml.getAttribute("card", "bpm", 120, j);
+        
+        c.exportFilename = xml.getAttribute("card", "export", "VIDEO_"+ofToString(j), j);
+        c.tag = xml.getAttribute("card", "tag", "CARD_"+ofToString(j), j);
 		
 		xml.pushTag("card", j);
 
@@ -224,23 +227,36 @@ void testApp::setup(){
     bSongPlayed = false;
 	bTriggerRecord = false;
 	
-    bFirstLaunch = true;
+    bStartAudio = false;
+    bAudioInitialized = false;
     grabber.setup(&video,FRONT_CAMERA,0.75);
-    grabber.startCamera();
+    
     resume();
    
     
 }
 
 
+void testApp::startAudio() {
+    bStartAudio = true;
+}
 
 
 //--------------------------------------------------------------
 void testApp::update()
 {
-    if (bFirstLaunch && ofGetElapsedTimeMillis()>2000) {
-        bFirstLaunch = false;
+    if  (grabber.getState() == CAMERA_READY) {
+        grabber.startCamera();
+    }
+    if (bStartAudio && !bAudioInitialized && grabber.getState() >= CAMERA_RUNNING) {
+        
+        bAudioInitialized = true;;
         ofSoundStreamSetup(nChannels, 1, this, sampleRate, bufferSize, 2);
+    }
+    
+    if (state == STATE_NONE && bAudioInitialized) {
+        state = STATE_LIVE;
+        bNeedDisplay = true;
     }
     
     grabber.update();
@@ -265,7 +281,7 @@ void testApp::update()
 				break;
 		}
 	}
-	
+    
 	switch (songState) {
 		case SONG_IDLE: 
 			for (vector<player>::iterator iter=citer->players.begin(); iter!=citer->players.end(); iter++) { 
@@ -311,6 +327,17 @@ void testApp::update()
 		default:
 			break;
 	}
+    
+    if (slider.getIsDragging() || slider.getIsAnimating()) {
+		for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
+			if (iter!=citer) {
+                for (vector<player>::iterator piter=iter->players.begin(); piter!=iter->players.end(); piter++) { 
+                    piter->video->update();
+                }
+            }
+		}
+    }
+
 	
 	if (bTriggerRecord && !getIsPlaying()) { // getSongState() == SONG_IDLE
 		bTriggerRecord = false;
@@ -340,15 +367,15 @@ void testApp::render()
 	}
 }
 
-void testApp::drawCard(vector<card>::iterator iter) {
+
+
+void testApp::drawPlayers(vector<card>::iterator iter) {
 	
 	
 	for (vector<actor>::iterator aiter=iter->actors.begin(); aiter!=iter->actors.end(); aiter++)  {
 		vector<player>::iterator piter=iter->players.begin()+aiter->player;
 		ofPushMatrix();
-		//glLoadIdentity();
-		
-		
+    
 		ofTranslate(aiter->x, aiter->y, 0);
 		ofRotate(aiter->degree);
 		ofScale(aiter->scale,aiter->scale,1.0);
@@ -357,38 +384,32 @@ void testApp::drawCard(vector<card>::iterator iter) {
         if (grabber.getState()>=CAMERA_CAPTURING) {
             grabber.draw();
         } else
-		if (!video.textures.empty()) {
-			piter->video->draw();
-		}
-		
-		
-		//if (iter->video->getIsPlaying()) {
-		//			iter->video->draw();
-		//		} else {
-		//			camera->draw();
-		//		}
+            if (!video.textures.empty()) {
+                piter->video->draw();
+            }
 		ofPopMatrix();
 		
 	}
+}
+
+
+void testApp::drawAnimations(vector<card>::iterator iter) {
 	
-	ofEnableAlphaBlending();
-	
-	ofPushMatrix();
-//	ofTranslate(0, y); 
-	iter->background->draw(0, 0);
-	ofPopMatrix();
-    
-    for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end(); aiter++) {
+
+    for (vector<animation>::iterator aiter=iter->animations.begin(); aiter!=iter->animations.end(); aiter++) {
         ofPushMatrix();
         ofTranslate(aiter->x, aiter->y, 0);
         ofScale(aiter->scale,aiter->scale,1.0);
         aiter->textures.draw();
         ofPopMatrix();
     }
+    	
     
-	
-	ofDisableAlphaBlending();
 }
+
+
+
+
 
 void testApp::draw()
 {
@@ -425,25 +446,66 @@ void testApp::draw()
 	if (slider.getIsDragging() || slider.getIsAnimating()) {
 		ofPushMatrix();
 		ofTranslate(0, -APP_HEIGHT, 0);
-		drawCard(cards.end()-1);
+		drawPlayers(cards.end()-1);
 		ofPopMatrix();
 		
 		for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
 			ofPushMatrix();
 			ofTranslate(0, distance(cards.begin(), iter) *APP_HEIGHT, 0);
-			drawCard(iter);
+			drawPlayers(iter);
 			ofPopMatrix();
 		}
 		
 		ofPushMatrix();
 		ofTranslate(0, APP_HEIGHT*cards.size(), 0);
-		drawCard(cards.begin());
+		drawPlayers(cards.begin());
 		ofPopMatrix();
+        
+        ofEnableAlphaBlending();
+        
+        ofPushMatrix();
+		ofTranslate(0, -APP_HEIGHT, 0);
+		(cards.end()-1)->background->draw(0, 0);
+		ofPopMatrix();
+		
+		for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
+			ofPushMatrix();
+			ofTranslate(0, distance(cards.begin(), iter) *APP_HEIGHT, 0);
+			iter->background->draw(0, 0);
+			ofPopMatrix();
+		}
+		
+		ofPushMatrix();
+		ofTranslate(0, APP_HEIGHT*cards.size(), 0);
+		cards.begin()->background->draw(0, 0);;
+		ofPopMatrix();
+        
+        ofPushMatrix();
+		ofTranslate(0, -APP_HEIGHT, 0);
+		drawAnimations(cards.end()-1);
+		ofPopMatrix();
+		
+		for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
+			ofPushMatrix();
+			ofTranslate(0, distance(cards.begin(), iter) *APP_HEIGHT, 0);
+			drawAnimations(iter);
+			ofPopMatrix();
+		}
+		
+		ofPushMatrix();
+		ofTranslate(0, APP_HEIGHT*cards.size(), 0);
+		drawAnimations(cards.begin());
+		ofPopMatrix();
+        ofDisableAlphaBlending();
 		
 	} else {
 		ofPushMatrix();
 		ofTranslate(0, distance(cards.begin(), citer) *APP_HEIGHT, 0);
-		drawCard(citer);
+        drawPlayers(citer);
+        ofEnableAlphaBlending();
+        citer->background->draw(0, 0);
+		drawAnimations(citer);
+        ofDisableAlphaBlending();
 		ofPopMatrix();
 	}
 
@@ -462,11 +524,9 @@ void testApp::renderVideo(){
     
 //    drawCard(citer); // for some reason I can't use this call, maybe it is interfere with the main thread call
 	
-	vector<card>::iterator iter = citer;
-	
-
-	for (vector<actor>::iterator aiter=iter->actors.begin(); aiter!=iter->actors.end(); aiter++)  {
-		vector<player>::iterator piter=iter->players.begin()+aiter->player;	
+    
+	for (vector<actor>::iterator aiter=citer->actors.begin(); aiter!=citer->actors.end(); aiter++)  {
+		vector<player>::iterator piter=citer->players.begin()+aiter->player;	
 		ofPushMatrix();
 		ofTranslate(aiter->x, aiter->y, 0);
 		ofRotate(aiter->degree);
@@ -478,7 +538,7 @@ void testApp::renderVideo(){
 	ofEnableAlphaBlending();
 	ofPushMatrix();
 	ofTranslate(0, 0); 
-	iter->background->draw(0, 0);
+	citer->background->draw(0, 0);
 	ofPopMatrix();
     
     for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end(); aiter++) {
@@ -506,10 +566,27 @@ void testApp::exit() {
 
 }
 
+void testApp::becomeActive() {
+    state = STATE_NONE;
+    bNeedDisplay = true;
+    grabber.startCapture();
+    soundStreamStart();
+}
+                     
+                     
+void testApp::resignActive() {
+    setSongState(SONG_IDLE);
+    sampler.stop();
+    trigger.resetTrigger();
+    grabber.stopCapture();
+    magic.stop();
+    bPlaySong = false;
+    bTriggerRecord = false;
+    soundStreamStop();
+}
+
 void testApp::suspend() {
-	setSongState(SONG_IDLE);
 	
-    
     for (vector<card>::iterator citer=cards.begin(); citer!=cards.end(); citer++) {
         citer->background->release();
         for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end(); aiter++) {
@@ -528,19 +605,6 @@ void testApp::resume() {
             aiter->textures.init();
         }
     }
-    
-//    if (grabber.getState() == CAMERA_READY) { // return to foreground after aborting video rendering
-//		
-//	}
-   
-    state = STATE_LIVE;
-    bNeedDisplay = true;
-    grabber.startCapture();
-    
-    
-	
-    
-    
 }
 
 
@@ -552,7 +616,7 @@ void testApp::more() {
 
 
 void testApp::live() {
-    if (grabber.getState()==CAMERA_RUNNING) {
+    if (grabber.getState()>=CAMERA_RUNNING) {
         state = STATE_LIVE;
         bNeedDisplay = true;
         grabber.startCapture();
@@ -656,7 +720,22 @@ void testApp::setSongState(int songState) {
 //		player[i].setSongState(songState);
 //	}
 	
-	
+	switch (songState) {
+        case SONG_IDLE:
+        case SONG_PLAY:
+            for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
+                if (iter!=citer) {
+                    for (vector<player>::iterator piter=iter->players.begin(); piter!=iter->players.end(); piter++) { 
+                        piter->video->playIntro();
+                    }
+                }
+            }
+            
+            break;
+            
+        default:
+            break;
+    }
 	
 	switch (songState) {
 		case SONG_IDLE:

@@ -15,7 +15,7 @@
 
 @implementation YouTubeUploadViewController
 
-
+//#define LOG_YOUTUBE_VIEW_CONTROLLER
 
 @synthesize username;
 @synthesize password;
@@ -25,7 +25,6 @@
 @synthesize scrollView;
 @synthesize additionalText;
 @synthesize processView;
-@synthesize keyboardButton;
 @synthesize bDelayedUpload;
 
 
@@ -57,8 +56,10 @@
 	password.text = [defaults objectForKey:@"YTPassword"];
 	additionalText = @"";
 	
-	scrollView.contentSize=CGSizeMake(scrollView.frame.size.width,scrollView.frame.size.height+150);
 	
+	
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
@@ -139,12 +140,14 @@
 //	return YES;
 //}
 //
-//- (void)textFieldDidBeginEditing:(UITextField *)textField {
-//	[scrollView scrollRectToVisible:textField.frame animated:YES];
-//}
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+#ifdef LOG_YOUTUBE_VIEW_CONTROLLER
+    NSLog(@"textFieldDidBeginEditing");
+#endif
+    activeView = textField;
+}
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-	
 	if (textField==username) {
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		
@@ -176,11 +179,24 @@
 	
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+#ifdef LOG_YOUTUBE_VIEW_CONTROLLER
+    NSLog(@"textFieldDidEndEditing");
+#endif
+    activeView = nil;
+}
+
+
 - (void) closeTextView:(id)sender {
-	
-	if ([descriptionView isFirstResponder]) {  
-		[descriptionView resignFirstResponder];
-	}
+#ifdef LOG_YOUTUBE_VIEW_CONTROLLER
+	NSLog(@"closeTextView");
+#endif
+    if (activeView) {
+        [activeView resignFirstResponder];
+    }
+//	if ([descriptionView isFirstResponder]) {  
+//		[descriptionView resignFirstResponder];
+//	}
 	
 }
 
@@ -192,29 +208,89 @@
 */
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-	keyboardButton.hidden = NO;
+#ifdef LOG_YOUTUBE_VIEW_CONTROLLER
+    NSLog(@"textViewDidBeginEditing");
+#endif
+    activeView = textView;
 }
 
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
-	keyboardButton.hidden = YES;
+#ifdef LOG_YOUTUBE_VIEW_CONTROLLER
+    NSLog(@"textViewDidEndEditing");
+#endif
+    activeView = nil;
 }
+
+// Called when the UIKeyboardDidHideNotification is sent
+- (void)keyboardDidShow:(NSNotification*)aNotification
+{
+	NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+//    scrollView.contentInset = contentInsets;
+//    scrollView.scrollIndicatorInsets = contentInsets;
+    
+    //scrollView.contentSize=CGSizeMake(scrollView.frame.size.width,scrollView.frame.size.height+150);
+    
+    switch (self.interfaceOrientation) {
+        case UIInterfaceOrientationPortrait:
+        case UIInterfaceOrientationPortraitUpsideDown:
+            scrollView.contentSize=CGSizeMake(scrollView.frame.size.width,scrollView.frame.size.height+kbSize.height);
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+        case UIInterfaceOrientationLandscapeRight:
+            scrollView.contentSize=CGSizeMake(scrollView.frame.size.width,scrollView.frame.size.height+kbSize.width);
+            
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    _isKeyboardVisible = YES;
+    [scrollView setContentOffset:CGPointMake(0.0, activeView.frame.origin.y-15) animated:YES];
+    
+}
+
 
 
 // Called when the UIKeyboardDidHideNotification is sent
 - (void)keyboardDidHide:(NSNotification*)aNotification
 {
-	[scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-
+	_isKeyboardVisible = NO;
+    
+    [scrollView setContentOffset:CGPointMake(0, 0) animated:YES]; 
 }
 
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)theScrollView {
+#ifdef LOG_YOUTUBE_VIEW_CONTROLLER
+    NSLog(@"scrollViewDidEndScrollingAnimation");
+#endif
+    if (!_isKeyboardVisible) {
+        scrollView.contentSize=CGSizeMake(scrollView.frame.size.width,scrollView.frame.size.height);
+    }
+}
 
+/*
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"scrollViewDidScroll");
+}
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    NSLog(@"scrollViewDidEndDragging, willDecelerate: %i",decelerate);
+}
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"scrollViewDidEndDecelerating");
+}
+*/
 
 
 - (void) upload:(id)sender {
-
+    [self closeTextView:nil];
 	
 	if (uploader!=nil) {
 		uploader.username = username.text;
@@ -235,14 +311,15 @@
 }
 
 - (void) cancel:(id)sender {
+    [self closeTextView:nil];
 	[delegate YouTubeUploadViewControllerCancel:self];
 }
 
 
 - (void) youTubeUploaderStateChanged:(YouTubeUploader *)theUploader {
-	
+#ifdef LOG_YOUTUBE_VIEW_CONTROLLER	
 	NSLog(@"YouTubeUploadViewController new state: %i, app state: %i",theUploader.state,[UIApplication sharedApplication].applicationState );
-	
+#endif	
 	
 	if ([UIApplication sharedApplication].applicationState != UIApplicationStateActive) {
 		return;
@@ -252,10 +329,10 @@
 	
 	switch (theUploader.state) {
 		case YOUTUBE_UPLOADER_STATE_INCORRECT_CREDENTIALS: {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"YouTube error" 
-															message:@"Login failed, please check that the\nusername and password are correct"
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"yt login failed title",@"YouTube error")
+															message:NSLocalizedString(@"yt login failed body",@"Login failed, please check that the\nusername and password are correct")
 														   delegate:nil 
-												  cancelButtonTitle:@"OK" 
+												  cancelButtonTitle:NSLocalizedString(@"ok button","OK") 
 												  otherButtonTitles: nil];
 			[alert show];
 			[alert release];
@@ -286,7 +363,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+#ifdef LOG_YOUTUBE_VIEW_CONTROLLER
 	NSLog(@"YouTubeUploadViewController::viewWillAppear");
+#endif
 	[scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
 	processView.hidden = uploader.state != YOUTUBE_UPLOADER_STATE_UPLOAD_REQUESTED && uploader.state != YOUTUBE_UPLOADER_STATE_UPLOADING;
 //	scrollView.scrollEnabled = NO;

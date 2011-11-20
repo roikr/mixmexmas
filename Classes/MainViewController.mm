@@ -27,6 +27,7 @@
 #import "ShareManager.h"
 #import "RenderProgressView.h"
 #import "CustomImageView.h"
+#import "SingingCardKeys.h"
 
 #ifdef _FLURRY
 #import "FlurryAnalytics.h"
@@ -34,8 +35,8 @@
 
 @interface MainViewController ()
 - (NSUInteger) cameraCount;
-
-
+- (void) fadeOutRecordButton;
+- (void) fadeInRecordButton;
 @end
 
 @implementation MainViewController
@@ -43,6 +44,7 @@
 @synthesize liveView;
 @synthesize liveTextView;
 @synthesize recordView;
+@synthesize imageView;
 @synthesize recordTextView;
 @synthesize playView;
 @synthesize playButton;
@@ -144,6 +146,7 @@
 					break;
 				case STATE_RECORD:
 					recordView.hidden = NO;
+                     [self fadeOutRecordButton];
 					
 					break;
 				case STATE_PLAY:
@@ -177,8 +180,30 @@
 - (IBAction) record:(id)sender {
 	self.OFSAptr->record();
 #ifdef _FLURRY
-    [FlurryAnalytics logEvent:@"RECORD" withParameters:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%i",[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardNumber]] forKey:@"CARD"]];
+    [FlurryAnalytics logEvent:@"RECORD" withParameters:[NSDictionary dictionaryWithObject:[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardTag] forKey:@"CARD"]];
 #endif
+}
+
+- (void) fadeOutRecordButton {
+	if (self.OFSAptr->getState() == STATE_RECORD) {
+		[UIView animateWithDuration:0.1 delay:0.5 
+							options: UIViewAnimationOptionTransitionNone | UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction// UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse |
+						 animations:^{imageView.alpha = 0.0;} 
+						 completion:^(BOOL finished){ [self fadeInRecordButton]; }];
+		
+		
+	} 
+}
+
+- (void) fadeInRecordButton {
+	if (self.OFSAptr->getState() == STATE_RECORD) {
+		[UIView animateWithDuration:0.1 delay:0.5 
+							options: UIViewAnimationOptionTransitionNone | UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction// UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse |
+						 animations:^{imageView.alpha = 1.0;} 
+						 completion:^(BOOL finished){ [self fadeOutRecordButton]; }];
+		
+		
+	} 
 }
 
 - (IBAction) preview:(id)sender {
@@ -198,9 +223,7 @@
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
 	
 	if ([shareManager isUploading]) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"share while upload title",@"Sharing")
-														message:NSLocalizedString(@"share while upload message",@"Video upload in progress")
-													   delegate:nil  cancelButtonTitle:@"OK"  otherButtonTitles: nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"still uploading title",@"Sharing") message:NSLocalizedString(@"still uploading body",@"Video upload in progress") delegate:nil  cancelButtonTitle:NSLocalizedString(@"ok button","OK")  otherButtonTitles: nil];
 		[alert show];
 		[alert release];
 	} else {
@@ -219,7 +242,12 @@
 
 - (IBAction)info:(id)sender {
     SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
+    [appDelegate.infoViewController setUrl:kInfoURL];
     [appDelegate.mainViewController presentModalViewController:appDelegate.infoViewController animated:YES];
+    
+#ifdef _FLURRY
+    [FlurryAnalytics logEvent:@"INFO"];
+#endif
 }
 
 #pragma mark Render && Share

@@ -69,7 +69,7 @@
 	UIButton *button = (UIButton *)sender;
   
     action = button.tag;
-    RKLog(@"ShareViewController::action: %i(%@)", button.tag,[ShareManager getActionName:action]);
+//    RKLog(@"ShareViewController::action: %i(%@)", button.tag,[ShareManager getActionName:action]);
     
 	[self dismissModalViewControllerAnimated:YES]; // action==ACTION_CANCEL
 		

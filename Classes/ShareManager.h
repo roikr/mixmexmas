@@ -22,6 +22,7 @@ enum {
 	ACTION_ADD_TO_LIBRARY,
 	ACTION_SEND_RINGTONE,
 	ACTION_CANCEL,
+    ACTION_SEND_YOUTUBE_LINK,
 	ACTION_RENDER,
 	ACTION_PLAY
 };
@@ -62,11 +63,11 @@ enum {
 @property (nonatomic,retain) NSString *youtubeLink;
 
 + (ShareManager*) shareManager;
-+ (NSString *)getActionName:(NSUInteger)theAction;
+- (NSString *)getCurrentActionName;
 
 - (void)renderAudio;
 -(void) performAction:(NSUInteger)theAction;
-- (NSString *)getSongName;
+- (NSString *)getExoprtFileame;
 - (NSString *)getDisplayName;
 - (NSString *)getVideoPath;
 

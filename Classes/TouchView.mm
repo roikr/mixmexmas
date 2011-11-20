@@ -60,8 +60,8 @@
 		CGPoint touchPoint = [touch locationInView:self];
 		
 		ofTouchEventArgs t;
-		t.x = touchPoint.x;
-		t.y = touchPoint.y;
+		t.x = touchPoint.x*[UIScreen mainScreen].scale;
+		t.y = touchPoint.y*[UIScreen mainScreen].scale;
 		t.id = touchIndex;
 		
 		if([touch tapCount] == 2) {
@@ -103,8 +103,8 @@
 		CGPoint touchPoint = [touch locationInView:self];
 		
 		ofTouchEventArgs t;
-		t.x = touchPoint.x;
-		t.y = touchPoint.y;
+		t.x = touchPoint.x*[UIScreen mainScreen].scale;
+		t.y = touchPoint.y*[UIScreen mainScreen].scale;
 		t.id = touchIndex;
 		
 		appDelegate.OFSAptr->touchMoved(t);
@@ -136,8 +136,8 @@
 		CGPoint touchPoint = [touch locationInView:self];
 		
 		ofTouchEventArgs t;
-		t.x = touchPoint.x;
-		t.y = touchPoint.y;
+		t.x = touchPoint.x*[UIScreen mainScreen].scale;
+		t.y = touchPoint.y*[UIScreen mainScreen].scale;
 		t.id = touchIndex;
 	
 //		int mode = appDelegate.OFSAptr->getMode(appDelegate.OFSAptr->controller);
@@ -164,8 +164,8 @@
 			activeTouches[i] = 0;
 			
 			ofTouchEventArgs t;
-			t.x = touchPoint.x;
-			t.y = touchPoint.y;
+			t.x = touchPoint.x*[UIScreen mainScreen].scale;
+			t.y = touchPoint.y*[UIScreen mainScreen].scale;
 			t.id = i;
 			
 			appDelegate.OFSAptr->touchUp(t);

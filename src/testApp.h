@@ -60,6 +60,9 @@ struct card {
     
     ofxAudioInstrument *audioInstrument;
     ofxMidiTrack *track;
+    
+    string exportFilename;
+    string tag;
 };
 
 
@@ -68,14 +71,19 @@ class testApp:public ofSimpleApp  { // : public   ofxiPhoneApp
 	
 public:
 	void setup();
+    void startAudio();
+    
 	void update();
 	
 	void render();
 	
-	void drawCard(vector<card>::iterator iter);
+	void drawPlayers(vector<card>::iterator iter);
+    void drawAnimations(vector<card>::iterator iter);
 	void draw();
 	void exit();
 	
+    void becomeActive();
+    void resignActive();
 	void suspend();
 	void resume();
 	
@@ -163,7 +171,9 @@ public:
 	
 	ofxAudioFile magic;
 	bool bPlaySong;
-    bool bFirstLaunch;
+    
+    bool bStartAudio;
+    bool bAudioInitialized;
     
     int playTime;
     bool bSongPlayed;
