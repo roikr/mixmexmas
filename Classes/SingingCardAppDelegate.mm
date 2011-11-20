@@ -20,6 +20,7 @@
 #include "EAGLView.h"
 #include "RKMacros.h"
 #import "PopupMessage.h"
+#import "SingingCardKeys.h"
 
 #ifdef _FLURRY
 #import "FlurryAnalytics.h"
@@ -61,7 +62,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 		
 #ifdef _FLURRY
 	NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-	[FlurryAnalytics startSession:@"87SJY1B8RBCUIWIGYFTE"]; 
+	[FlurryAnalytics startSession:kFlurryApiKey]; 
 #endif
 
 	
@@ -95,7 +96,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 #else
 
     self.OFSAptr->startAudio();
-    [PopupMessage popupMessage:@"http://www.lofipeople.com/gogos/message/message"];
+    [PopupMessage popupMessage:kPopupMessageURL];
 
 #endif
 
@@ -122,7 +123,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     RKLog(@"AVPlayerViewControllerDone");
            
     self.OFSAptr->startAudio();
-    [PopupMessage popupMessage:@"http://www.lofipeople.com/gogos/message/message"];
+    [PopupMessage popupMessage:kPopupMessageURL];
     
 
 }
@@ -261,7 +262,7 @@ void uncaughtExceptionHandler(NSException *exception) {
         [playerViewController.player play];
     } else {
         
-        [PopupMessage popupMessage:@"http://www.lofipeople.com/gogos/message/message"];
+        [PopupMessage popupMessage:kPopupMessageURL];
     }
 }
 
