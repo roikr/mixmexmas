@@ -329,8 +329,8 @@
 	
 	switch (theUploader.state) {
 		case YOUTUBE_UPLOADER_STATE_INCORRECT_CREDENTIALS: {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"YouTube error" 
-															message:@"Login failed, please check that the\nusername and password are correct"
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"yt login failed title",@"YouTube error")
+															message:NSLocalizedString(@"yt login failed body",@"Login failed, please check that the\nusername and password are correct")
 														   delegate:nil 
 												  cancelButtonTitle:NSLocalizedString(@"ok button","OK") 
 												  otherButtonTitles: nil];
