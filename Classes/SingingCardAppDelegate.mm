@@ -94,7 +94,8 @@ void uncaughtExceptionHandler(NSException *exception) {
     
 #else
 
-    [self AVPlayerViewControllerDone:nil];
+    self.OFSAptr->startAudio();
+    [PopupMessage popupMessage:@"http://www.lofipeople.com/gogos/message/message"];
 
 #endif
 
@@ -118,8 +119,11 @@ void uncaughtExceptionHandler(NSException *exception) {
 }
 
 -(void) AVPlayerViewControllerDone:(AVPlayerViewController*)controller {
+    RKLog(@"AVPlayerViewControllerDone");
+           
     self.OFSAptr->startAudio();
     [PopupMessage popupMessage:@"http://www.lofipeople.com/gogos/message/message"];
+    
 
 }
 
@@ -227,7 +231,13 @@ void uncaughtExceptionHandler(NSException *exception) {
 	
 	[shareManager applicationDidEnterBackground];
     
-    if (mainViewController.modalViewController == (UIViewController*) infoViewController) {
+//    if (mainViewController.modalViewController == (UIViewController*) infoViewController) {
+//        [mainViewController dismissModalViewControllerAnimated:NO];
+//    }
+    
+    
+    
+    if (mainViewController.modalViewController && mainViewController.modalViewController != (UIViewController*) playerViewController) {
         [mainViewController dismissModalViewControllerAnimated:NO];
     }
     
@@ -243,12 +253,16 @@ void uncaughtExceptionHandler(NSException *exception) {
 {
     RKLog(@"applicationWillEnterForeground");
 	// Handle any foreground procedures not related to animation here.
-	if (self.OFSAptr) {
-		self.OFSAptr->resume();
-	}
+	
+    self.OFSAptr->resume();
     
-    [PopupMessage popupMessage:@"http://www.lofipeople.com/gogos/message/message"];
-
+    if (mainViewController.modalViewController && mainViewController.modalViewController == (UIViewController*) playerViewController) {
+        [playerViewController.player seekToTime:CMTimeMake(0, 1)];
+        [playerViewController.player play];
+    } else {
+        
+        [PopupMessage popupMessage:@"http://www.lofipeople.com/gogos/message/message"];
+    }
 }
 
 - (void)dealloc
