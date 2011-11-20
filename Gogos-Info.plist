@@ -8,8 +8,6 @@
 	<string>Crazy Gogos</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>com.lofipeople.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -42,5 +40,14 @@
 	</array>
 	<key>UIStatusBarHidden</key>
 	<true/>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>icon.png</string>
+		<string>icon@2x.png</string>
+		<string>icon~iPad.png</string>
+		<string>icon-small.png</string>
+		<string>icon-small@2x.png</string>
+		<string>icon-small~iPad.png</string>
+	</array>
 </dict>
 </plist>
