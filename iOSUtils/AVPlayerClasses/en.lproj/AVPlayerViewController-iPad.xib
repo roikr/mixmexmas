@@ -42,7 +42,7 @@
 					<object class="IBUIButton" id="934273129">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{916, 20}, {88, 88}}</string>
+						<string key="NSFrame">{{20, 20}, {88, 88}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
