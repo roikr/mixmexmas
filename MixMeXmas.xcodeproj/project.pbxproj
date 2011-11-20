@@ -70,6 +70,7 @@
 		E44755C1145F592800481363 /* JINGLE_ANIMA_2.mid in Resources */ = {isa = PBXBuildFile; fileRef = E44755BF145F592800481363 /* JINGLE_ANIMA_2.mid */; };
 		E449722514794240000F5838 /* SingingCardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E449722414794240000F5838 /* SingingCardKeys.m */; };
 		E449723814795887000F5838 /* OPENING_MOV_IPHONE.m4v in Resources */ = {isa = PBXBuildFile; fileRef = E449723714795887000F5838 /* OPENING_MOV_IPHONE.m4v */; };
+		E451F90114797C3C00BC8336 /* icon~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E451F90014797C3C00BC8336 /* icon~iPad.png */; };
 		E46E2F22146C270600FD2495 /* AVPlayerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46E2F1E146C270600FD2495 /* AVPlayerViewController-iPad.xib */; };
 		E46E2F23146C270600FD2495 /* AVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46E2F20146C270600FD2495 /* AVPlayerViewController.xib */; };
 		E476ED191407EC960091FFA3 /* ofxAudioLimiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */; };
@@ -379,6 +380,7 @@
 		E449722314794240000F5838 /* SingingCardKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCardKeys.h; sourceTree = "<group>"; };
 		E449722414794240000F5838 /* SingingCardKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingingCardKeys.m; sourceTree = "<group>"; };
 		E449723714795887000F5838 /* OPENING_MOV_IPHONE.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = OPENING_MOV_IPHONE.m4v; path = Resources/OPENING_MOV_IPHONE.m4v; sourceTree = "<group>"; };
+		E451F90014797C3C00BC8336 /* icon~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon~iPad.png"; path = "Resources/icon~iPad.png"; sourceTree = "<group>"; };
 		E46E2F1F146C270600FD2495 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/AVPlayerViewController-iPad.xib"; sourceTree = "<group>"; };
 		E46E2F21146C270600FD2495 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AVPlayerViewController.xib; sourceTree = "<group>"; };
 		E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
@@ -894,6 +896,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E451F90014797C3C00BC8336 /* icon~iPad.png */,
 				E449723714795887000F5838 /* OPENING_MOV_IPHONE.m4v */,
 				E4B778FC147021E500836E40 /* CARD_BACKGROUND~iPad.png */,
 				E428405D146B3CE000AC554D /* PREPARING_CARD_BAR.png */,
@@ -2058,6 +2061,7 @@
 				E427928514702F7C00222869 /* MainViewController.xib in Resources */,
 				E427928614702F8600222869 /* ShareViewController.xib in Resources */,
 				E449723814795887000F5838 /* OPENING_MOV_IPHONE.m4v in Resources */,
+				E451F90114797C3C00BC8336 /* icon~iPad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2400,7 +2404,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PROVISIONING_PROFILE = "873502BF-54B9-4287-AB0F-83791003CEDC";
 				SDKROOT = iphoneos;
 			};
@@ -2415,7 +2419,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};
@@ -2431,7 +2435,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "8B92D28C-4D05-4DDD-A49E-FFA41150D603";
 				SDKROOT = iphoneos;
@@ -2476,7 +2480,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};
