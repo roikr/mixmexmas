@@ -135,9 +135,8 @@ void uncaughtExceptionHandler(NSException *exception) {
     
     
 	
-
-	self.OFSAptr->soundStreamStart();
-    
+    self.OFSAptr->becomeActive();
+	
     [self.eAGLView startAnimation];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -185,8 +184,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 {
     RKLog(@"applicationWillResignActive");
 	[self.eAGLView stopAnimation];
-    self.OFSAptr->soundStreamStop();
-	
+    self.OFSAptr->resignActive();
 }
 
 
@@ -200,6 +198,8 @@ void uncaughtExceptionHandler(NSException *exception) {
 - (void)beginInterruption {
 	RKLog(@"beginInterruption");
 	
+    
+    self.OFSAptr->setSongState(SONG_IDLE);
     self.OFSAptr->soundStreamStop();
 	
 }
