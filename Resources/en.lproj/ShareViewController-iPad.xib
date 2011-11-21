@@ -82,7 +82,7 @@
 						</object>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">UPLOAD_FACEBOOK@2X.png</string>
+							<string key="NSResourceName">UPLOAD_FACEBOOK@2x.png</string>
 						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="616155011">
 							<int key="type">2</int>
@@ -114,7 +114,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="814471705"/>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">SEND_BY_EMAIL@2X.png</string>
+							<string key="NSResourceName">SEND_BY_EMAIL@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="616155011"/>
 						<reference key="IBUIFont" ref="204891544"/>
@@ -138,7 +138,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="814471705"/>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">UPLOAD_YOUTUBE@2X.png</string>
+							<string key="NSResourceName">UPLOAD_YOUTUBE@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="616155011"/>
 						<reference key="IBUIFont" ref="204891544"/>
@@ -162,7 +162,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="814471705"/>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">ADD_TO_PHOTO_GALLERY@2X.png</string>
+							<string key="NSResourceName">ADD_TO_PHOTO_GALLERY@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="616155011"/>
 						<reference key="IBUIFont" ref="204891544"/>
@@ -186,7 +186,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="814471705"/>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">SEND_RINGTON@2X.png</string>
+							<string key="NSResourceName">SEND_RINGTON@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="616155011"/>
 						<reference key="IBUIFont" ref="204891544"/>
@@ -210,7 +210,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="814471705"/>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">CANCEL@2X.png</string>
+							<string key="NSResourceName">CANCEL@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="616155011"/>
 						<reference key="IBUIFont" ref="204891544"/>
@@ -382,7 +382,6 @@
 					<string>-2.IBPluginDependency</string>
 					<string>1.IBPluginDependency</string>
 					<string>24.IBPluginDependency</string>
-					<string>24.IBPropertyAccessControl</string>
 					<string>26.IBPluginDependency</string>
 					<string>28.IBPluginDependency</string>
 					<string>29.IBPluginDependency</string>
@@ -398,7 +397,6 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -457,13 +455,13 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>ADD_TO_PHOTO_GALLERY@2X.png</string>
+				<string>ADD_TO_PHOTO_GALLERY@2x.png</string>
 				<string>BACKGROUND~iPad.png</string>
-				<string>CANCEL@2X.png</string>
-				<string>SEND_BY_EMAIL@2X.png</string>
-				<string>SEND_RINGTON@2X.png</string>
-				<string>UPLOAD_FACEBOOK@2X.png</string>
-				<string>UPLOAD_YOUTUBE@2X.png</string>
+				<string>CANCEL@2x.png</string>
+				<string>SEND_BY_EMAIL@2x.png</string>
+				<string>SEND_RINGTON@2x.png</string>
+				<string>UPLOAD_FACEBOOK@2x.png</string>
+				<string>UPLOAD_YOUTUBE@2x.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
