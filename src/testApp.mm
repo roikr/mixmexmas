@@ -992,7 +992,12 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
                 for (vector<event>::iterator niter=events.begin(); niter!=events.end(); niter++) {
                     if (niter->bNoteOn) {
                         //printf("animation: %i, note: %i\n", distance(citer->animations.begin(),aiter),niter->note);
-                        aiter->textures.setTexture(niter->note);
+                        if (niter->note<aiter->textures.getNumTextures()) {
+                            aiter->textures.setTexture(niter->note);
+                        } else {
+                            printf("animation: %i, illegal note: %i, numTextures: %i\n",distance(citer->animations.begin(),aiter),niter->note,aiter->textures.getNumTextures());
+                        }
+                        
                     }
                 }
                 
@@ -1202,6 +1207,13 @@ void testApp::seekFrame(int frame) {
             
             for (vector<event>::iterator niter=events.begin(); niter!=events.end(); niter++) {
                 if (niter->bNoteOn) {
+                    
+                    if (niter->note<aiter->textures.getNumTextures()) {
+                        aiter->textures.setTexture(niter->note);
+                    } else {
+                        printf("animation: %i, illegal note: %i, numTextures: %i\n",distance(citer->animations.begin(),aiter),niter->note,aiter->textures.getNumTextures());
+                    }
+                    
                     //printf("animation: %i, note: %i\n", distance(citer->animations.begin(),aiter),niter->note);
                     aiter->textures.setTexture(niter->note);
                 }
