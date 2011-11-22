@@ -420,7 +420,19 @@ void ShareAlert(NSString *title,NSString *message) {
             youTubeUploader.username = @"gogoscrazyholidays";
             youTubeUploader.password = @"ppithebox1";
             
-			YouTubeUploadViewController *controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController" bundle:nil];
+			YouTubeUploadViewController *controller;
+            
+            switch([[UIDevice currentDevice] userInterfaceIdiom]) {
+                case UIUserInterfaceIdiomPhone: 
+                    controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController" bundle:nil];
+                    break;
+                case UIUserInterfaceIdiomPad:
+                    controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController-iPad" bundle:nil];
+                    break;
+                    
+            }
+            
+            
 			[controller setDelegate:self];
 			[controller setBDelayedUpload:YES];
 			[parentViewController presentModalViewController:controller animated:YES];
