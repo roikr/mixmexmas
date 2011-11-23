@@ -17,7 +17,6 @@
 	
 	UITextField *titleField;
 	UITextView *descriptionView;
-	UIButton *keyboardButton;
 	
 	NSString *videoPath;
 	
@@ -28,6 +27,9 @@
 	id<FacebookUploadViewControllerDelegate> delegate;
 	
 	BOOL bDelayedUpload;
+    
+    UIView *activeView;
+    BOOL _isKeyboardVisible;
 }
 
 @property (nonatomic, retain) FacebookUploader *uploader;
@@ -35,7 +37,6 @@
 @property (nonatomic, retain) IBOutlet UITextView *descriptionView;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, assign) UIView *activeView;
-@property (nonatomic, retain) IBOutlet UIButton *keyboardButton;
 //@property (nonatomic, retain) IBOutlet UIView *scrollView;
 
 @property (nonatomic,retain ) NSString *videoTitle;
@@ -45,12 +46,12 @@
 @property BOOL bDelayedUpload;
 
 -(void)setDelegate:(id<FacebookUploadViewControllerDelegate>)theDelegate;
-- (void) upload:(id)sender;
-- (void) cancel:(id)sender;
-- (void) login:(id)sender;
-- (void) closeTextView:(id)sender;
-- (void) logout:(id)sender;
-- (void) touchDown:(id)sender;
+- (IBAction) upload:(id)sender;
+- (IBAction) cancel:(id)sender;
+- (IBAction) login:(id)sender;
+- (IBAction) closeTextView:(id)sender;
+- (IBAction) logout:(id)sender;
+
 
 
 @end

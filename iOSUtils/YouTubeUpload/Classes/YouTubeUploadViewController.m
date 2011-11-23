@@ -70,9 +70,6 @@
     return interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationLandscapeRight;
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-	
-}
 
 
 
@@ -129,6 +126,7 @@
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    activeView = nil;
 	[textField resignFirstResponder];
 	return NO;
 }
@@ -192,6 +190,9 @@
 	NSLog(@"closeTextView");
 #endif
     if (activeView) {
+        if (![activeView isFirstResponder]) {
+            NSLog(@"but not first responder...");
+        }
         [activeView resignFirstResponder];
     }
 //	if ([descriptionView isFirstResponder]) {  

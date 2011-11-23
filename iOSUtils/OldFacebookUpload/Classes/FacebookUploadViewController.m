@@ -7,7 +7,8 @@
 //
 
 #import "FacebookUploadViewController.h"
-#import "FacebookUploader.h"
+
+#define LOG_FACEBOOK_VIEW_CONTROLLER
 
 @interface FacebookUploadViewController ()
 
@@ -22,7 +23,6 @@
 @synthesize activeView;
 @synthesize scrollView;
 @synthesize additionalText;
-@synthesize keyboardButton;
 @synthesize bDelayedUpload;
 
 
@@ -41,14 +41,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	additionalText = @"";
-	scrollView.contentSize=CGSizeMake(scrollView.frame.size.width,scrollView.frame.size.height+100);
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
-}
+	    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	NSLog(@"FacebookUploadViewController::viewWillAppear");
-	[scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+    
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 
@@ -102,6 +99,7 @@
 	return titleField.text;
 }
 
+/*
 - (void) touchDown:(id)sender {
 	NSLog(@"touchDown");
 	for (UIView *view in [self.scrollView subviews]) {  
@@ -111,39 +109,103 @@
         }
     }   
 }
+ */
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	[textField resignFirstResponder];
+	activeView = nil;
+    [textField resignFirstResponder];
 	return YES;
 }
 
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+#ifdef LOG_FACEBOOK_VIEW_CONTROLLER
+    NSLog(@"textFieldDidBeginEditing");
+#endif
+    activeView = textField;
+}
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+#ifdef LOG_FACEBOOK_VIEW_CONTROLLER
+    NSLog(@"textFieldDidEndEditing");
+#endif
+    activeView = nil;
+}
 
 - (void) closeTextView:(id)sender {
 	
-	if ([descriptionView isFirstResponder]) {  
-		[descriptionView resignFirstResponder];
-	}
+	if (activeView) {
+        if (![activeView isFirstResponder]) {
+            NSLog(@"but not first responder...");
+        }
+        [activeView resignFirstResponder];
+    }
 	
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-	keyboardButton.hidden = NO;
+#ifdef LOG_FACEBOOK_VIEW_CONTROLLER
+    NSLog(@"textViewDidBeginEditing");
+#endif
+    activeView = textView;
 }
 
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
-	keyboardButton.hidden = YES;
+#ifdef LOG_FACEBOOK_VIEW_CONTROLLER
+    NSLog(@"textViewDidEndEditing");
+#endif
+    activeView = nil;
 }
 
+// Called when the UIKeyboardDidHideNotification is sent
+- (void)keyboardDidShow:(NSNotification*)aNotification
+{
+	NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    //    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    //    scrollView.contentInset = contentInsets;
+    //    scrollView.scrollIndicatorInsets = contentInsets;
+    
+    //scrollView.contentSize=CGSizeMake(scrollView.frame.size.width,scrollView.frame.size.height+150);
+    
+    switch (self.interfaceOrientation) {
+        case UIInterfaceOrientationPortrait:
+        case UIInterfaceOrientationPortraitUpsideDown:
+            scrollView.contentSize=CGSizeMake(scrollView.frame.size.width,scrollView.frame.size.height+kbSize.height);
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+        case UIInterfaceOrientationLandscapeRight:
+            scrollView.contentSize=CGSizeMake(scrollView.frame.size.width,scrollView.frame.size.height+kbSize.width);
+            
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    _isKeyboardVisible = YES;
+    [scrollView setContentOffset:CGPointMake(0.0, activeView.frame.origin.y-15) animated:YES];
+    
+}
 
 - (void)keyboardDidHide:(NSNotification*)aNotification
 {
-	[scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+	_isKeyboardVisible = NO;
+    [scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
 	
 }
 
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)theScrollView {
+#ifdef LOG_FACEBOOK_VIEW_CONTROLLER
+    NSLog(@"scrollViewDidEndScrollingAnimation");
+#endif
+    if (!_isKeyboardVisible) {
+        scrollView.contentSize=CGSizeMake(scrollView.frame.size.width,scrollView.frame.size.height);
+    }
+}
 
 
 - (void) upload:(id)sender {
@@ -199,7 +261,9 @@
 
 
 - (void) facebookUploaderStateChanged:(FacebookUploader *)theUploader {
+#ifdef LOG_FACEBOOK_VIEW_CONTROLLER
 	NSLog(@"new state: %i, app state: %i",theUploader.state,[UIApplication sharedApplication].applicationState );
+#endif
 	if ([UIApplication sharedApplication].applicationState != UIApplicationStateActive) {
 		return;
 	}
