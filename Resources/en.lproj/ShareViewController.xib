@@ -56,6 +56,21 @@
 							<string key="NSResourceName">BACKGROUND@2x.png</string>
 						</object>
 					</object>
+					<object class="IBUIImageView" id="685389094">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrame">{{20, 250}, {95, 56}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">GOGO_LOGO@2x.png</string>
+						</object>
+					</object>
 					<object class="IBUIButton" id="327680933">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
@@ -323,6 +338,7 @@
 							<reference ref="234124785"/>
 							<reference ref="75277217"/>
 							<reference ref="627072093"/>
+							<reference ref="685389094"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -372,6 +388,11 @@
 						<reference key="object" ref="582154764"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">38</int>
+						<reference key="object" ref="685389094"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -389,6 +410,7 @@
 					<string>29.IBPluginDependency</string>
 					<string>34.IBPluginDependency</string>
 					<string>36.IBPluginDependency</string>
+					<string>38.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
@@ -396,6 +418,7 @@
 					<string>ShareViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>UIResponder</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -419,7 +442,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">37</int>
+			<int key="maxID">38</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -460,6 +483,7 @@
 				<string>ADD_TO_PHOTO_GALLERY@2x.png</string>
 				<string>BACKGROUND@2x.png</string>
 				<string>CANCEL@2x.png</string>
+				<string>GOGO_LOGO@2x.png</string>
 				<string>SEND_BY_EMAIL@2x.png</string>
 				<string>SEND_RINGTON@2x.png</string>
 				<string>UPLOAD_FACEBOOK@2x.png</string>
@@ -470,6 +494,7 @@
 				<string>{658, 115}</string>
 				<string>{960, 640}</string>
 				<string>{192, 71}</string>
+				<string>{190, 113}</string>
 				<string>{384, 113}</string>
 				<string>{406, 115}</string>
 				<string>{598, 131}</string>
