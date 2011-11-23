@@ -46,6 +46,7 @@
 @synthesize shareManager;
 
 @synthesize imageView;
+@synthesize message;
 
 #define PLAY_INTRO
 
@@ -97,6 +98,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 
     self.OFSAptr->startAudio();
     [PopupMessage popupMessage:kPopupMessageURL];
+    self.message = [RateMeMessage rateMeMessage:kRateMeMessageURL firstDelay:(NSTimeInterval)(60.0) repeatedDelay:(NSTimeInterval)(180.0) delegate:self];
 
 #endif
 
@@ -124,6 +126,7 @@ void uncaughtExceptionHandler(NSException *exception) {
            
     self.OFSAptr->startAudio();
     [PopupMessage popupMessage:kPopupMessageURL];
+    self.message = [RateMeMessage rateMeMessage:kRateMeMessageURL firstDelay:(NSTimeInterval)(60.0) repeatedDelay:(NSTimeInterval)(180.0) delegate:self];
     
 
 }
@@ -139,6 +142,10 @@ void uncaughtExceptionHandler(NSException *exception) {
     self.OFSAptr->becomeActive();
 	
     [self.eAGLView startAnimation];
+    
+    if (message) {
+        [message becomeActive];
+    }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
 		RKLog(@"update loop started");
@@ -186,6 +193,10 @@ void uncaughtExceptionHandler(NSException *exception) {
     RKLog(@"applicationWillResignActive");
 	[self.eAGLView stopAnimation];
     self.OFSAptr->resignActive();
+    if (message) {
+        [message resignActive];
+    }
+
 }
 
 
@@ -272,12 +283,26 @@ void uncaughtExceptionHandler(NSException *exception) {
 	[mainViewController release];
 
     [window release];
+    self.message = nil;
+    [shareManager release];
     
     [super dealloc];
 }
 
 
 
+-(void) rateMeMessageDelegateDidFire:(RateMeMessage *)theMessage {
+    NSLog(@"rateMeMessageDelegateDidFire");
+    if (self.mainViewController.modalViewController==nil && (self.OFSAptr->getSongState()==SONG_IDLE || self.OFSAptr->getSongState()==SONG_PLAY)) {
+        [theMessage show];
+    }
+    
+    
+}
+-(void) rateMeMessageDelegateDidRate:(RateMeMessage *)theMessage {
+    NSLog(@"rateMeMessageDelegateDidRate");
+    self.message = nil;
+}
 
 
 

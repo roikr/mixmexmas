@@ -13,3 +13,4 @@ NSString* kFacebookAppId=@"218795661526558";
 NSString* kFlurryApiKey=@"87SJY1B8RBCUIWIGYFTE";
 NSString* kPopupMessageURL=@"http://www.lofipeople.com/gogos/message/message";
 NSString* kInfoURL=@"http://www.lofipeople.com/gogos/info/info";
+NSString* kRateMeMessageURL=@"http://www.lofipeople.com";

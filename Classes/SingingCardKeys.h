@@ -14,3 +14,4 @@ extern NSString* kFacebookAppId;
 extern NSString* kFlurryApiKey;
 extern NSString* kPopupMessageURL;
 extern NSString* kInfoURL;
+extern NSString* kRateMeMessageURL;
