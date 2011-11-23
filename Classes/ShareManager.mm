@@ -450,8 +450,25 @@ void ShareAlert(NSString *title,NSString *message) {
 		case ACTION_UPLOAD_TO_FACEBOOK: {
 			state = STATE_SELECTED;
 			[facebookUploader login];
-			FacebookUploadViewController * controller = [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController" bundle:nil];
-			[controller setDelegate:self];
+			FacebookUploadViewController * controller ;
+            
+            
+            switch([[UIDevice currentDevice] userInterfaceIdiom]) {
+                case UIUserInterfaceIdiomPhone: 
+                    controller= [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController" bundle:nil];
+                    break;
+                case UIUserInterfaceIdiomPad:
+                    controller= [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController-iPad" bundle:nil];
+                    break;
+                    
+            }
+
+            
+            controller= [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController" bundle:nil];
+			
+            
+            
+            [controller setDelegate:self];
 			[controller setBDelayedUpload:YES];
 			[parentViewController presentModalViewController:controller animated:YES];
 			controller.uploader = facebookUploader;

@@ -65,9 +65,9 @@
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ) {
-        self.renderProgressView.progressView.image =  [UIImage imageNamed:@"PREPARING_CARD_BAR@2x.png"];
+        self.renderProgressView.progressView.image =  [UIImage imageNamed:@"LOADING_BAR@2x.png"];
     } else {
-        self.renderProgressView.progressView.image =  [UIImage imageNamed:@"PREPARING_CARD_BAR.png"];
+        self.renderProgressView.progressView.image =  [UIImage imageNamed:@"LOADING_BAR.png"];
     }
 
 	
