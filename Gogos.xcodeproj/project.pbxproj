@@ -22,6 +22,7 @@
 		E428405C146B36C600AC554D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4284059146B36C600AC554D /* Default@2x.png */; };
 		E428405E146B3CE000AC554D /* PREPARING_CARD_BAR.png in Resources */ = {isa = PBXBuildFile; fileRef = E428405D146B3CE000AC554D /* PREPARING_CARD_BAR.png */; };
 		E430D28B12C8937400E65D3D /* TouchView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E430D28A12C8937400E65D3D /* TouchView.mm */; };
+		E431ED94147CD75100F792EB /* RateMeMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E431ED87147CD75100F792EB /* RateMeMessage.m */; };
 		E43797CF141908DC00F3BBE9 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CC141908DC00F3BBE9 /* CustomButton.m */; };
 		E43797D0141908DC00F3BBE9 /* CustomFontTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */; };
 		E43797E314190BDB00F3BBE9 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */; };
@@ -699,6 +700,8 @@
 		E428405D146B3CE000AC554D /* PREPARING_CARD_BAR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PREPARING_CARD_BAR.png; path = Resources/PREPARING_CARD_BAR.png; sourceTree = "<group>"; };
 		E430D28912C8937400E65D3D /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
 		E430D28A12C8937400E65D3D /* TouchView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchView.mm; sourceTree = "<group>"; };
+		E431ED86147CD75100F792EB /* RateMeMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateMeMessage.h; sourceTree = "<group>"; };
+		E431ED87147CD75100F792EB /* RateMeMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateMeMessage.m; sourceTree = "<group>"; };
 		E43797CB141908DC00F3BBE9 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		E43797CC141908DC00F3BBE9 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		E43797CD141908DC00F3BBE9 /* CustomFontTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFontTextView.h; sourceTree = "<group>"; };
@@ -1722,6 +1725,23 @@
 			path = CustomUI;
 			sourceTree = "<group>";
 		};
+		E431ED84147CD75100F792EB /* RateMeMessage */ = {
+			isa = PBXGroup;
+			children = (
+				E431ED85147CD75100F792EB /* Classes */,
+			);
+			path = RateMeMessage;
+			sourceTree = "<group>";
+		};
+		E431ED85147CD75100F792EB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E431ED86147CD75100F792EB /* RateMeMessage.h */,
+				E431ED87147CD75100F792EB /* RateMeMessage.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		E43797CA141908DC00F3BBE9 /* CustomUIFont */ = {
 			isa = PBXGroup;
 			children = (
@@ -2514,6 +2534,7 @@
 		E493CE16140AE970004CB633 /* iOSUtils */ = {
 			isa = PBXGroup;
 			children = (
+				E431ED84147CD75100F792EB /* RateMeMessage */,
 				E4D7B4FA146960BF00131214 /* PopupMessage */,
 				E40FE455141F43C900E9CEDF /* CustomUI */,
 				E43797CA141908DC00F3BBE9 /* CustomUIFont */,
@@ -3735,6 +3756,7 @@
 				E4D7B518146960BF00131214 /* URLCacheAlert.m in Sources */,
 				E4F9F81614742CFB00106A0C /* YouTubeUploadViewController.m in Sources */,
 				E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */,
+				E431ED94147CD75100F792EB /* RateMeMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
