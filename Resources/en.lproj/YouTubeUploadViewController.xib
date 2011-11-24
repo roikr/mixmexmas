@@ -272,7 +272,7 @@
 								<reference key="IBUINormalTitleShadowColor" ref="671893332"/>
 								<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">YOURUBE_UPLOAD@2X.png</string>
+									<string key="NSResourceName">YOUTUBE_UPLOAD@2x.png</string>
 								</object>
 								<reference key="IBUIFontDescription" ref="906611088"/>
 								<reference key="IBUIFont" ref="296052191"/>
@@ -316,7 +316,6 @@
 								<string key="NSFrame">{{219, 140}, {37, 37}}</string>
 								<reference key="NSSuperview" ref="657773597"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -372,7 +371,6 @@
 				<string key="NSFrameSize">{171, 31}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<bool key="IBUIClipsSubviews">YES</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -420,7 +418,6 @@
 				<string key="NSFrameSize">{171, 31}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<bool key="IBUIClipsSubviews">YES</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -904,14 +901,14 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>YOURUBE_UPLOAD@2X.png</string>
 				<string>YOUTUBE_BUNNER@2x.png</string>
 				<string>YOUTUBE_CANCEL@2x.png</string>
+				<string>YOUTUBE_UPLOAD@2x.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>{211, 88}</string>
 				<string>{594, 110}</string>
+				<string>{211, 88}</string>
 				<string>{211, 88}</string>
 			</object>
 		</object>
