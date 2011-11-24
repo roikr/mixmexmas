@@ -17,12 +17,15 @@
     NSTimer *timer;
     BOOL didFire;
     NSTimeInterval delay;
+    
+    NSUInteger counter;
 }
 
 @property (nonatomic,retain) id<RateMeMessageDelegate> delegate;
 @property (nonatomic,retain) NSURL *url;
 @property (nonatomic,retain) NSTimer *timer;
 @property NSTimeInterval delay;
+@property NSUInteger counter;
 
 
 +(RateMeMessage*) rateMeMessage:(NSString *)theURL firstDelay:(NSTimeInterval)firstDelay repeatedDelay:(NSTimeInterval)repeatedDelay delegate:(id<RateMeMessageDelegate>)theDelegate;
@@ -39,6 +42,6 @@
 @protocol RateMeMessageDelegate 
 
 -(void) rateMeMessageDelegateDidFire:(RateMeMessage *)theMessage;
--(void) rateMeMessageDelegateDidRate:(RateMeMessage *)theMessage;
+-(void) rateMeMessageDelegateDone:(RateMeMessage *)theMessage;
 
 @end

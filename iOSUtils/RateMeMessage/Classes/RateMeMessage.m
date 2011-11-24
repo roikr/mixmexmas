@@ -18,6 +18,7 @@
 @synthesize url;
 @synthesize timer;
 @synthesize delay;
+@synthesize counter;
 
 //#define RATE_ME_MESSAGE_RESET
 
@@ -38,7 +39,9 @@
         message.url = [NSURL URLWithString:theURL];
         message.delegate = theDelegate;
         message.delay = repeatedDelay;
+        message.counter = 0;
         message.timer =  [NSTimer scheduledTimerWithTimeInterval:firstDelay target:message selector:@selector(fire) userInfo:nil repeats:NO];
+        
         
     }
     return message;
@@ -82,7 +85,6 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"rate title",@"Do you like this app?") message:NSLocalizedString(@"rate message",@"Please rate it in the App Store") delegate:self  cancelButtonTitle:NSLocalizedString(@"rate no",@"No thanks")  otherButtonTitles: NSLocalizedString(@"rate yes",@"Rate it now"),nil];
     [alert show];
     [alert release];
-    
 }
 
 
@@ -96,12 +98,22 @@
         if (![[UIApplication sharedApplication] openURL:url]) {
             NSLog(@"Failed to open url: %@",url);
         } else {
-            [delegate rateMeMessageDelegateDidRate:self];
+            [delegate rateMeMessageDelegateDone:self];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setBool:YES forKey:@"MeRated"];
             [defaults synchronize];
         }
-    } 
+    } else {
+        counter++;
+        if (counter==2) {
+            [timer invalidate];
+            self.timer = nil;
+            [delegate rateMeMessageDelegateDone:self];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setBool:YES forKey:@"MeRated"];
+            [defaults synchronize];
+        }
+    }
 }
 
 
