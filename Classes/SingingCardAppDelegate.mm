@@ -98,7 +98,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 
     self.OFSAptr->startAudio();
     [PopupMessage popupMessage:kPopupMessageURL];
-    self.message = [RateMeMessage rateMeMessage:kRateMeMessageURL firstDelay:(NSTimeInterval)(60.0) repeatedDelay:(NSTimeInterval)(180.0) delegate:self];
+    self.message = [RateMeMessage rateMeMessage:kRateMeMessageURL firstDelay:(NSTimeInterval)(300.0) repeatedDelay:(NSTimeInterval)(900.0) delegate:self];
 
 #endif
 
@@ -126,7 +126,7 @@ void uncaughtExceptionHandler(NSException *exception) {
            
     self.OFSAptr->startAudio();
     [PopupMessage popupMessage:kPopupMessageURL];
-    self.message = [RateMeMessage rateMeMessage:kRateMeMessageURL firstDelay:(NSTimeInterval)(60.0) repeatedDelay:(NSTimeInterval)(180.0) delegate:self];
+    self.message = [RateMeMessage rateMeMessage:kRateMeMessageURL firstDelay:(NSTimeInterval)(300.0) repeatedDelay:(NSTimeInterval)(900.0) delegate:self];
     
 
 }
@@ -299,8 +299,8 @@ void uncaughtExceptionHandler(NSException *exception) {
     
     
 }
--(void) rateMeMessageDelegateDidRate:(RateMeMessage *)theMessage {
-    NSLog(@"rateMeMessageDelegateDidRate");
+-(void) rateMeMessageDelegateDone:(RateMeMessage *)theMessage {
+    NSLog(@"rateMeMessageDelegateDone");
     self.message = nil;
 }
 
