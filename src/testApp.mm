@@ -265,6 +265,13 @@ void testApp::update()
         bCameraOffset = true;
 		ofPoint offset = ofPoint((grabber.getCameraWidth()-video.textureWidth)/2,(grabber.getCameraHeight()-video.textureHeight)/2);
 		grabber.setOffset(offset);
+        
+        for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
+            for (vector<player>::iterator piter=iter->players.begin(); piter!=iter->players.end(); piter++) { 
+                piter->video->stop();
+            }
+            
+        } 
 		
 	}
     
@@ -294,36 +301,9 @@ void testApp::update()
 			for (vector<player>::iterator iter=citer->players.begin(); iter!=citer->players.end(); iter++) { 
 				iter->video->update();
 			}
-			if (! getIsPlaying()) {
-				
-				setSongState(SONG_IDLE);
-				
-				//bNeedDisplay = true;
-			}
+			
 			break;
-		case SONG_RENDER_AUDIO:
-		case SONG_CANCEL_RENDER_AUDIO:
-			if (! getIsPlaying()) {
-				
-				songState = SONG_IDLE;
-				
-								
-				//bNeedDisplay = true;
-			}
-			break;
-			
-//		case SONG_RENDER_VIDEO:
-//			
-//			if  (currentBlock / totalBlocks >= 1.0) {
-//				setSongState(SONG_IDLE);
-//				//songState = SONG_IDLE; // TODO: check why not notifying players...
-//				//bNeedDisplay = true;
-//			}
-//			
-//			
-//			break;
-			
-			
+		
 		default:
 			break;
 	}
@@ -674,8 +654,9 @@ bool testApp::getIsPlaying() {
 		} 
 	}
     
-    if ((citer->audioInstrument && citer->track) && (citer->audioInstrument->getIsPlaying() || citer->track->getIsPlaying()))
+    if ((citer->audioInstrument && citer->track) && (citer->audioInstrument->getIsPlaying() || citer->track->getIsPlaying())) {
         return true;
+    }
     
 	return false;
 }
@@ -702,53 +683,37 @@ void testApp::setSongState(int songState) {
 //	}
 	bSongPlayed = false;
 	this->songState = songState;
-	
-	if (songState == SONG_RENDER_AUDIO || songState == SONG_RENDER_VIDEO) {
-		duration = 0;
-		
-		for (vector<player>::iterator piter=citer->players.begin(); piter!=citer->players.end(); piter++)  {
-			duration = max(duration, piter->song->getDuration());
-		}
-
-	}		
-	
-	if (songState == SONG_RENDER_VIDEO) { 
-		currentBlock = 0;
-	}
-	
-//	for (int i=0;i<3;i++) {
-//		player[i].setSongState(songState);
-//	}
-	
-	switch (songState) {
-        case SONG_IDLE:
+    
+    
+    switch (songState) {
         case SONG_PLAY:
-            for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
-                if (iter!=citer) {
-                    for (vector<player>::iterator piter=iter->players.begin(); piter!=iter->players.end(); piter++) { 
-                        piter->video->playIntro();
-                    }
-                }
-            }
+            
+            playTime = ofGetElapsedTimeMillis();
+            bSongPlayed = true;
             
             break;
+
+        case SONG_RENDER_VIDEO:
+            currentBlock = 0;
+        case SONG_RENDER_AUDIO:
+		
+            duration = 0;
             
-        default:
+            for (vector<player>::iterator piter=citer->players.begin(); piter!=citer->players.end(); piter++)  {
+                duration = max(duration, piter->song->getDuration());
+            }
             break;
     }
 	
+        
 	switch (songState) {
 		case SONG_IDLE:
-		case SONG_RENDER_AUDIO_FINISHED:
-		case SONG_CANCEL_RENDER_AUDIO:
-			songState = SONG_IDLE;
 			for (vector<player>::iterator iter=citer->players.begin(); iter!=citer->players.end(); iter++)  {
 				iter->song->stop();
 				iter->audio->stop();
-				iter->video->playIntro();
+				iter->video->stop();
 				
 			}
-            
             for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
                 aiter->track->stop();
             }
@@ -759,13 +724,13 @@ void testApp::setSongState(int songState) {
            
 			break;
 		case SONG_PLAY:
-            playTime = ofGetElapsedTimeMillis();
-            bSongPlayed = true;
 		case SONG_RENDER_AUDIO:
 		case SONG_RENDER_VIDEO:
 			if (!(grabber.getState()==CAMERA_CAPTURING || grabber.getState()==CAMERA_RECORDING || video.textures.empty())) {
-				for (vector<player>::iterator iter=citer->players.begin(); iter!=citer->players.end(); iter++)  {
-					iter->song->play();
+				
+                for (vector<player>::iterator iter=citer->players.begin(); iter!=citer->players.end(); iter++)  {
+					iter->video->playIntro();
+                    iter->song->play();
 				}
                 
                 for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
@@ -1141,6 +1106,18 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 //		output[i*nChannels + 1] = rAudio[i];// * gain;
 //	}
 	
+    switch (songState) {
+		case SONG_PLAY:
+        case SONG_RENDER_AUDIO:
+			if (! getIsPlaying()) {
+				setSongState(SONG_IDLE);
+			}
+			break;
+		default:
+			break;
+	}
+
+    
 }
 
 
@@ -1154,7 +1131,7 @@ void testApp::renderAudio() {
 	
 	currentBlock = 0;
 	
-	while (getSongState()==SONG_RENDER_AUDIO || getSongState()==SONG_CANCEL_RENDER_AUDIO) {
+	while (getSongState()==SONG_RENDER_AUDIO) {
 		
 		//update(); // todo move to production for other thread
 		audioRequested(sample.buffer,sample.numFrames,sample.nChannels);
@@ -1163,15 +1140,18 @@ void testApp::renderAudio() {
 		song.save(sample.buffer, sample.nChannels);
 		currentBlock++;
 	}
-	
-	song.close();	
+    
+    song.close();
+    
+    while (getIsPlaying()) {
+        audioRequested(sample.buffer,sample.numFrames,sample.nChannels);
+        currentBlock++;
+    }
 	
 	cout << "renderAudio finished" << endl;
 	
-	setSongState(SONG_RENDER_AUDIO_FINISHED);
-	
 	totalBlocks = currentBlock;
-	
+    	
 }
 
 void testApp::seekFrame(int frame) {

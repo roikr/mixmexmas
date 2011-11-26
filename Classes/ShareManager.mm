@@ -346,7 +346,6 @@ void ShareAlert(NSString *title,NSString *message) {
 	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
 	
 	if (![self audioRendered]) {
-		appDelegate.mainViewController.view.userInteractionEnabled = NO;
 		[renderManager renderAudio];
 	} else {
 		[appDelegate.mainViewController presentModalViewController:appDelegate.shareViewController animated:YES];
@@ -360,12 +359,10 @@ void ShareAlert(NSString *title,NSString *message) {
 - (void) renderManagerAudioRendered:(RenderManager *)manager {
 	
 	RKLog(@"renderManagerAudioRendered");
+	
 	[self setAudioRendered];
-	
 	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-	appDelegate.mainViewController.view.userInteractionEnabled = YES;
-	[appDelegate.mainViewController presentModalViewController:appDelegate.shareViewController animated:YES];
-	
+    [appDelegate.mainViewController presentModalViewController:appDelegate.shareViewController animated:YES];
 	
 }
 

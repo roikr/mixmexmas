@@ -64,23 +64,6 @@
 }
 
 
-
-/* used to be in mainViewController updateViews
- int songState =OFSAptr->getSongState();
- if (songState == SONG_RENDER_VIDEO || songState == SONG_RENDER_VIDEO_FINISHED || songState == SONG_RENDER_AUDIO || songState == SONG_CANCEL_RENDER_AUDIO || songState == SONG_RENDER_AUDIO_FINISHED || exportManager) {
- if (![self.view.subviews containsObject:renderView]) {
- [self.view addSubview:renderView];
- }
- 
- 
- renderView.slideView.hidden =renderCancelButton.hidden = renderCameraIcon.hidden = songState!=SONG_RENDER_VIDEO;
- 
- return;
- } else if ([self.view.subviews containsObject:renderView]) {
- [renderView removeFromSuperview];
- } 
- */
-
 - (void) setRenderProgress:(float) progress {
 	[delegate renderManagerProgress:progress];
 	[self.renderProgressView setRenderProgress:progress];
@@ -109,20 +92,32 @@
 	
 	testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
 	
-	OFSAptr->grabber.stopCamera();
+	audioRenderCanceled = NO;
+    
 	OFSAptr->soundStreamStop();
 	
 	dispatch_async(myCustomQueue, ^{
-		
-		OFSAptr->renderAudio();
-		
-		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			OFSAptr->setSongState(SONG_IDLE); // roikr: is this fixed the stubborn 
-			OFSAptr->soundStreamStart();
-			OFSAptr->grabber.startCamera();
-			[delegate renderManagerAudioRendered:self];
-		});
+        
+        OFSAptr->renderAudio();
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive) {
+                OFSAptr->soundStreamStart();
+                
+                if (!audioRenderCanceled) {
+                    RKLog(@"audio render succeeded");
+                    [delegate renderManagerAudioRendered:self];
+                } else {
+                    RKLog(@"audio render canceled");
+                }
+            } else {
+            
+                 RKLog(@"audio render aborted");
+                
+            }
+        });
+        
 		
 		
 	});
@@ -309,7 +304,8 @@
 			[self.renderer cancelRender];
 			break;
 		case SONG_RENDER_AUDIO:
-			OFSAptr->setSongState(SONG_CANCEL_RENDER_AUDIO); // TODO: need to be checked
+            audioRenderCanceled = YES;
+			OFSAptr->setSongState(SONG_IDLE); // TODO: need to be checked
 			break;
 		default:
 			break;
