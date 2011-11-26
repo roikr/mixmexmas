@@ -1631,18 +1631,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E4346FB7147EAEEE00011BCB /* FacebookUploadViewController-iPad.xib */,
-				E4346FB9147EAEEE00011BCB /* FacebookUploadViewController.xib */,
-				E4346FBB147EAEEE00011BCB /* YouTubeUploadViewController-iPad.xib */,
-				E4346FBD147EAEEE00011BCB /* YouTubeUploadViewController.xib */,
-				E45475F7147E8260004E812A /* AVPlayerViewController-iPad.xib */,
-				E45475F8147E8260004E812A /* AVPlayerViewController.xib */,
-				E4547548147E80BB004E812A /* InfoViewController-iPad.xib */,
-				E4547549147E80BB004E812A /* InfoViewController.xib */,
-				E454754A147E80BB004E812A /* MainViewController-iPad.xib */,
-				E454754B147E80BB004E812A /* MainViewController.xib */,
-				E454754C147E80BB004E812A /* ShareViewController-iPad.xib */,
-				E454754D147E80BB004E812A /* ShareViewController.xib */,
 				1D3623240D0F684500981E51 /* SingingCardAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SingingCardAppDelegate.mm */,
 				E44971F4147932BC000F5838 /* SingingCardKeys.h */,
@@ -1665,6 +1653,18 @@
 				E493D171140AEFC1004CB633 /* RenderManager.mm */,
 				E4AF1E7A1466E4170027F52D /* InfoViewController.h */,
 				E4AF1E7B1466E4170027F52D /* InfoViewController.m */,
+				E4346FB7147EAEEE00011BCB /* FacebookUploadViewController-iPad.xib */,
+				E4346FB9147EAEEE00011BCB /* FacebookUploadViewController.xib */,
+				E4346FBB147EAEEE00011BCB /* YouTubeUploadViewController-iPad.xib */,
+				E4346FBD147EAEEE00011BCB /* YouTubeUploadViewController.xib */,
+				E45475F7147E8260004E812A /* AVPlayerViewController-iPad.xib */,
+				E45475F8147E8260004E812A /* AVPlayerViewController.xib */,
+				E4547548147E80BB004E812A /* InfoViewController-iPad.xib */,
+				E4547549147E80BB004E812A /* InfoViewController.xib */,
+				E454754A147E80BB004E812A /* MainViewController-iPad.xib */,
+				E454754B147E80BB004E812A /* MainViewController.xib */,
+				E454754C147E80BB004E812A /* ShareViewController-iPad.xib */,
+				E454754D147E80BB004E812A /* ShareViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -4264,6 +4264,7 @@
 		E49EC6DB14125EF300A068E3 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: THE BOX LTD.";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -4271,6 +4272,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "9A18CC72-9431-4B65-B934-E9660876DE8A";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;

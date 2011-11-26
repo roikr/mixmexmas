@@ -159,11 +159,10 @@
 		}	break;
 		case SONG_RENDER_VIDEO:
 		case SONG_EXPORT_RINGTONE:
-			renderProgressView.cancelButton.hidden = NO;
-		case SONG_RENDER_AUDIO:
-		case SONG_RENDER_AUDIO_FINISHED:
-		case SONG_CANCEL_RENDER_AUDIO:
+        case SONG_RENDER_AUDIO:
 			renderProgressView.hidden = NO;
+            renderProgressView.cancelButton.hidden = NO;
+            renderProgressView.cancelButton.userInteractionEnabled = YES;
 		default:
 			break;
 	}

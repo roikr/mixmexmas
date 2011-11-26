@@ -20,6 +20,8 @@
 	ExportManager *exportManager;
 	OpenGLTOMovie *renderer;
 	RenderProgressView *renderProgressView;
+    
+    BOOL audioRenderCanceled;
 }
 
 
