@@ -50,6 +50,8 @@
 @synthesize playButton;
 @synthesize renderProgressView;
 
+@synthesize  recordButton1,recordButton2,startOverButton,shareButton,switchButton1,switchButton2;
+
 
 //@synthesize shareProgressView;
 
@@ -64,11 +66,19 @@
 	[super viewDidLoad];
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
     
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ) {
-        self.renderProgressView.progressView.image =  [UIImage imageNamed:@"LOADING_BAR@2x.png"];
-    } else {
-        self.renderProgressView.progressView.image =  [UIImage imageNamed:@"LOADING_BAR.png"];
-    }
+    self.renderProgressView.progressView.image =  [UIImage imageNamed:@"LOADING_BAR.png"];
+
+    [recordButton1 setTitle:NSLocalizedString(@"UI Record",@"Record") forState:UIControlStateNormal];
+    [recordButton2 setTitle:NSLocalizedString(@"UI Record",@"Record") forState:UIControlStateNormal];
+    [startOverButton setTitle:NSLocalizedString(@"UI Start over",@"Start over") forState:UIControlStateNormal];
+    [playButton setTitle:NSLocalizedString(@"UI Play",@"Play") forState:UIControlStateNormal];
+    [playButton setTitle:NSLocalizedString(@"UI Stop",@"Stop") forState:UIControlStateSelected];
+    [shareButton setTitle:NSLocalizedString(@"UI Share",@"Share") forState:UIControlStateNormal];
+    [switchButton1 setTitle:NSLocalizedString(@"UI Switch card",@"Switch card") forState:UIControlStateNormal];
+    [switchButton2 setTitle:NSLocalizedString(@"UI Switch card",@"Switch card") forState:UIControlStateNormal];
+    [renderProgressView.cancelButton setTitle:NSLocalizedString(@"render cancel",@"Cancel";) forState:UIControlStateNormal];
+    [liveTextView setText:NSLocalizedString(@"UI Record message",@"Pose your face in place, hit record and make a sound")];
+    [recordTextView setText:NSLocalizedString(@"UI Make a sound",@"C’mon, make a sound!")];
 
 	
 	[shareManager.renderManager setRenderProgressView:self.renderProgressView];

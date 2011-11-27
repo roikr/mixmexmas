@@ -8,9 +8,9 @@
 
 #import "SingingCardKeys.h"
 
-NSString* kYouTubeDeveloperKey=@"AI39si7UINMeywyTjpdwb6jsPyw3nTy7NXLZr-ddXph5dEXf0q4ZNAvu_8BXwKU3AnxsTMglvjcpdQNfIoesABb6RYbo0bDeHw";
-NSString* kFacebookAppId=@"218795661526558";
-NSString* kFlurryApiKey=@"87SJY1B8RBCUIWIGYFTE";
-NSString* kPopupMessageURL=@"http://theboxsite.com/gogos-ch/message/message";
-NSString* kInfoURL=@"http://theboxsite.com/gogos-ch/info/info";
-NSString* kRateMeMessageURL=@"http://theboxsite.com/gogos-ch/rank";
+NSString* kYouTubeDeveloperKey=@"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_ouUT6HFwaWn1GQxuyAIK-zvoeFB-GU_cqx30q-0HggREKxXG-b8w";;
+NSString* kFacebookAppId=@"262653967119717";
+NSString* kFlurryApiKey=@"LT1LZ197JKX9Z62SKBR9";
+NSString* kPopupMessageURL=@"http://www.lofipeople.com/mixmexmas/message/message";
+NSString* kInfoURL=@"http://www.lofipeople.com/mixmexmas/info/info";
+NSString* kRateMeMessageURL=@"http://www.lofipeople.com/mixmexmas/rank";

@@ -36,7 +36,14 @@
     
     UIView *activeView;
     BOOL _isKeyboardVisible;
-	
+    
+    UILabel *titleLabel;
+    UILabel *descLabel;
+    UILabel *usernameLabel;
+    UILabel *passwordLabel;
+    UIButton *uploadButton;
+    UIButton *cancelButton;
+    
 }
 
 @property (nonatomic,retain) YouTubeUploader *uploader;
@@ -55,6 +62,13 @@
 @property (nonatomic,retain) NSString* additionalText;
 
 @property BOOL bDelayedUpload;
+
+@property (nonatomic, retain) IBOutlet UILabel *titleLabel;
+@property (nonatomic, retain) IBOutlet UILabel *descLabel;
+@property (nonatomic, retain) IBOutlet UILabel *usernameLabel;
+@property (nonatomic, retain) IBOutlet UILabel *passwordLabel;
+@property (nonatomic, retain) IBOutlet UIButton *uploadButton;
+@property (nonatomic, retain) IBOutlet UIButton *cancelButton;
 
 -(void)setDelegate:(id<YouTubeUploadViewControllerDelegate>)theDelegate;
 - (IBAction) upload:(id)sender;

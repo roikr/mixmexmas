@@ -28,12 +28,39 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    for (UIView *view in [self.view subviews]) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            UIButton *button = (UIButton *)view;
+       
+            switch (button.tag) {
+                case ACTION_UPLOAD_TO_FACEBOOK: 
+                    [button setTitle:NSLocalizedString(@"SM facebook",@"Post on Facebook") forState:UIControlStateNormal];
+                    break;
+                case ACTION_SEND_VIA_MAIL:
+                    [button setTitle:NSLocalizedString(@"SM email",@"Send by Email") forState:UIControlStateNormal];
+                    break;			
+                case ACTION_UPLOAD_TO_YOUTUBE:
+                    [button setTitle:NSLocalizedString(@"SM youtube",@"Upload to YouTube") forState:UIControlStateNormal];
+                    break;
+                case ACTION_ADD_TO_LIBRARY:
+                    [button setTitle:NSLocalizedString(@"SM library",@"Save to photo library") forState:UIControlStateNormal];
+                    break;
+                case ACTION_SEND_RINGTONE:
+                    [button setTitle:NSLocalizedString(@"SM ringtone",@"Send ringtone") forState:UIControlStateNormal];
+                    break;
+                case ACTION_CANCEL:
+                    [button setTitle:NSLocalizedString(@"SM done",@"Done") forState:UIControlStateNormal];
+                    break;
+            }
+        }
+    }
 }
-*/
+
 
 
 // Override to allow orientations other than the default portrait orientation.
