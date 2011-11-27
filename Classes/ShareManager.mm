@@ -414,8 +414,8 @@ void ShareAlert(NSString *title,NSString *message) {
 		case ACTION_UPLOAD_TO_YOUTUBE: {
 			state = STATE_SELECTED;
             
-            youTubeUploader.username = @"gogoscrazyholidays";
-            youTubeUploader.password = @"ppithebox1";
+//            youTubeUploader.username = @"gogoscrazyholidays";
+//            youTubeUploader.password = @"ppithebox1";
             
 			YouTubeUploadViewController *controller;
             

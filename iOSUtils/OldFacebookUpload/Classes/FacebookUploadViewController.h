@@ -30,6 +30,13 @@
     
     UIView *activeView;
     BOOL _isKeyboardVisible;
+    
+    UILabel *titleLabel;
+    UILabel *messageLabel;
+    UIButton *loginButton;
+    UIButton *cancelButton;
+    UIButton *postButton;
+    UIButton *logoutButton;
 }
 
 @property (nonatomic, retain) FacebookUploader *uploader;
@@ -39,11 +46,18 @@
 @property (nonatomic, assign) UIView *activeView;
 //@property (nonatomic, retain) IBOutlet UIView *scrollView;
 
-@property (nonatomic,retain ) NSString *videoTitle;
-@property (nonatomic,retain) NSString* videoPath;
-@property (nonatomic,retain) NSString* additionalText;
-
 @property BOOL bDelayedUpload;
+
+@property (nonatomic,retain ) IBOutlet NSString *videoTitle;
+@property (nonatomic,retain) IBOutlet NSString* videoPath;
+@property (nonatomic,retain) IBOutlet NSString* additionalText;
+@property (nonatomic,retain) IBOutlet UILabel *titleLabel;
+@property (nonatomic,retain) IBOutlet UILabel *messageLabel;
+@property (nonatomic,retain) IBOutlet UIButton *loginButton;
+@property (nonatomic,retain) IBOutlet UIButton *cancelButton;
+@property (nonatomic,retain) IBOutlet UIButton *postButton;
+@property (nonatomic,retain) IBOutlet UIButton *logoutButton;
+
 
 -(void)setDelegate:(id<FacebookUploadViewControllerDelegate>)theDelegate;
 - (IBAction) upload:(id)sender;

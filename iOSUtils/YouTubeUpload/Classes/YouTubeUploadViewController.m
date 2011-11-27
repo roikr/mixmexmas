@@ -26,7 +26,7 @@
 @synthesize additionalText;
 @synthesize processView;
 @synthesize bDelayedUpload;
-
+@synthesize titleLabel,descLabel,usernameLabel,passwordLabel,uploadButton,cancelButton;
 
 
 /*
@@ -61,6 +61,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+    
+    [titleLabel setText:NSLocalizedString(@"YTW title",@"Title:")];
+    [descLabel setText:NSLocalizedString(@"YTW description",@"Description:")];
+    [usernameLabel setText:NSLocalizedString(@"YTW username",@"Username:")];
+    [passwordLabel setText:NSLocalizedString(@"YTW password",@"Password:")];
+    [uploadButton setTitle:NSLocalizedString(@"YTW upload",@"Upload") forState:UIControlStateNormal];
+    [cancelButton setTitle:NSLocalizedString(@"YTW cancel",@"Cancel") forState:UIControlStateNormal];
 }
 
 
@@ -294,8 +301,8 @@
     [self closeTextView:nil];
 	
 	if (uploader!=nil) {
-//		uploader.username = username.text;
-//		uploader.password = password.text;
+		uploader.username = username.text;
+		uploader.password = password.text;
 		[uploader setVideoTitle:titleField.text];
 		[uploader setVideoDescription:[descriptionView.text stringByAppendingString:additionalText]];
 		[uploader setVideoPath:videoPath];

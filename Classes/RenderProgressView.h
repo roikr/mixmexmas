@@ -13,10 +13,12 @@
 @interface RenderProgressView : UIView {
 	CustomImageView *progressView;
 	UIButton *cancelButton;
+    UILabel *titleLabel;
 }
 
 @property (nonatomic,retain ) IBOutlet CustomImageView *progressView;
 @property (nonatomic,retain ) IBOutlet UIButton *cancelButton;
+@property (nonatomic,retain ) IBOutlet UILabel *titleLabel;
 
 -(void)setRenderProgress:(float)progress;
 

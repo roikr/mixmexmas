@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "Gogos.app"
-               BlueprintName = "Gogos"
+               BuildableName = "MixMeXmas.app"
+               BlueprintName = "MixMeXmas"
                ReferencedContainer = "container:SingingCard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,8 +32,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Gogos.app"
-            BlueprintName = "Gogos"
+            BuildableName = "MixMeXmas.app"
+            BlueprintName = "MixMeXmas"
             ReferencedContainer = "container:SingingCard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -51,8 +51,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Gogos.app"
-            BlueprintName = "Gogos"
+            BuildableName = "MixMeXmas.app"
+            BlueprintName = "MixMeXmas"
             ReferencedContainer = "container:SingingCard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Gogos.app"
-            BlueprintName = "Gogos"
+            BuildableName = "MixMeXmas.app"
+            BlueprintName = "MixMeXmas"
             ReferencedContainer = "container:SingingCard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -79,7 +79,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Distribution"
+      buildConfiguration = "Ad Hoc"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

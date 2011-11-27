@@ -24,6 +24,7 @@
 @synthesize scrollView;
 @synthesize additionalText;
 @synthesize bDelayedUpload;
+@synthesize titleLabel,messageLabel,loginButton,cancelButton,postButton,logoutButton;
 
 
 /*
@@ -46,6 +47,13 @@
 
     
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+    
+    [titleLabel setText:NSLocalizedString(@"FBW title",@"Title:")];
+    [messageLabel setText:NSLocalizedString(@"FBW message",@"Message:")];
+    [loginButton setTitle:NSLocalizedString(@"FBW login",@"Login") forState:UIControlStateNormal];
+    [cancelButton setTitle:NSLocalizedString(@"FBW cancel",@"Cancel") forState:UIControlStateNormal];
+    [postButton setTitle:NSLocalizedString(@"FBW post",@"Post") forState:UIControlStateNormal];
+    [logoutButton setTitle:NSLocalizedString(@"FBW logout",@"Login as different user") forState:UIControlStateNormal];
 }
 
 

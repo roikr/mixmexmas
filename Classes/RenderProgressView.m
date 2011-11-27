@@ -13,6 +13,7 @@
 
 @synthesize progressView;
 @synthesize cancelButton;
+@synthesize titleLabel;
 
 
 - (id)initWithFrame:(CGRect)frame {
