@@ -1559,7 +1559,7 @@
 		E4D7B501146960BF00131214 /* PopupMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupMessage.m; sourceTree = "<group>"; };
 		E4D7B502146960BF00131214 /* URLCacheAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheAlert.h; sourceTree = "<group>"; };
 		E4D7B503146960BF00131214 /* URLCacheAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheAlert.m; sourceTree = "<group>"; };
-		E4F35E5C1465D2F000B218B1 /* Gogos-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gogos-Info.plist"; sourceTree = "<group>"; };
+		E4F35E5C1465D2F000B218B1 /* SingingCard-Info.plist */ = {isa = PBXFileReference; path = "SingingCard-Info.plist"; sourceTree = "<group>"; };
 		E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioPlayer.cpp; sourceTree = "<group>"; };
 		E4F3915613FC1B23007B18EC /* ofxAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioPlayer.h; sourceTree = "<group>"; };
 		E4F3915B13FC1B23007B18EC /* ofxAudioSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioSample.h; sourceTree = "<group>"; };
@@ -1680,7 +1680,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				E4F35E5C1465D2F000B218B1 /* Gogos-Info.plist */,
+				E4F35E5C1465D2F000B218B1 /* SingingCard-Info.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				E4F742C313FABA73002D7E1B /* src */,
 				E4D5392012B393C200B9EFD8 /* addons */,
@@ -3128,7 +3128,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Gogos" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SingingCard" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -4140,7 +4140,7 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
 					/usr/include/libxml2,
 				);
-				INFOPLIST_FILE = "Gogos-Info.plist";
+				INFOPLIST_FILE = "SingingCard-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/FlurryAnalytics\"",
@@ -4168,7 +4168,7 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
 					/usr/include/libxml2,
 				);
-				INFOPLIST_FILE = "Gogos-Info.plist";
+				INFOPLIST_FILE = "SingingCard-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/FlurryAnalytics\"",
@@ -4244,7 +4244,7 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
 					/usr/include/libxml2,
 				);
-				INFOPLIST_FILE = "Gogos-Info.plist";
+				INFOPLIST_FILE = "SingingCard-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/FlurryAnalytics\"",
@@ -4289,7 +4289,7 @@
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
 					/usr/include/libxml2,
 				);
-				INFOPLIST_FILE = "Gogos-Info.plist";
+				INFOPLIST_FILE = "SingingCard-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"\"$(SRCROOT)/FlurryAnalytics\"",
@@ -4320,7 +4320,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Gogos" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SingingCard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

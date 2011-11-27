@@ -16,7 +16,7 @@
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
                BuildableName = "Gogos.app"
                BlueprintName = "Gogos"
-               ReferencedContainer = "container:Gogos.xcodeproj">
+               ReferencedContainer = "container:SingingCard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,7 +34,7 @@
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
             BuildableName = "Gogos.app"
             BlueprintName = "Gogos"
-            ReferencedContainer = "container:Gogos.xcodeproj">
+            ReferencedContainer = "container:SingingCard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,7 +53,7 @@
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
             BuildableName = "Gogos.app"
             BlueprintName = "Gogos"
-            ReferencedContainer = "container:Gogos.xcodeproj">
+            ReferencedContainer = "container:SingingCard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,7 +71,7 @@
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
             BuildableName = "Gogos.app"
             BlueprintName = "Gogos"
-            ReferencedContainer = "container:Gogos.xcodeproj">
+            ReferencedContainer = "container:SingingCard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
