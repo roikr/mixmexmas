@@ -103,7 +103,9 @@
 }
 
 - (void)viewDidDisappear:(BOOL)animated {	
-	[((SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate]).shareManager performAction:action];
+	if (animated) { // otherwise it is entering background
+        [((SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate]).shareManager performAction:action];
+    }
 }
 
 @end

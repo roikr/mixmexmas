@@ -20,10 +20,10 @@
 	
 	
 	UIView *liveView;
-	UITextView *liveTextView;
+	UILabel *liveViewLabel;
 	UIView *recordView;
     UIImageView *imageView;
-	UITextView *recordTextView;
+	UILabel *recordViewLabel;
 	UIView *playView;
 	UIButton *playButton;
     
@@ -49,10 +49,10 @@
 
 
 @property (nonatomic, retain) IBOutlet UIView *liveView;
-@property (nonatomic, retain) IBOutlet UITextView *liveTextView;
+@property (nonatomic, retain) IBOutlet UILabel *liveViewLabel;
 @property (nonatomic, retain) IBOutlet UIView *recordView;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
-@property (nonatomic, retain) IBOutlet UITextView *recordTextView;
+@property (nonatomic, retain) IBOutlet UILabel *recordViewLabel;
 @property (nonatomic, retain) IBOutlet UIView *playView;
 @property (nonatomic, retain) IBOutlet UIButton *playButton;
 
