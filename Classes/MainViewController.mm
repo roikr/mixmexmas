@@ -42,10 +42,10 @@
 @implementation MainViewController
 
 @synthesize liveView;
-@synthesize liveTextView;
+@synthesize liveViewLabel;
 @synthesize recordView;
 @synthesize imageView;
-@synthesize recordTextView;
+@synthesize recordViewLabel;
 @synthesize playView;
 @synthesize playButton;
 @synthesize renderProgressView;
@@ -77,16 +77,16 @@
     [switchButton1 setTitle:NSLocalizedString(@"UI Switch card",@"Switch card") forState:UIControlStateNormal];
     [switchButton2 setTitle:NSLocalizedString(@"UI Switch card",@"Switch card") forState:UIControlStateNormal];
     [renderProgressView.cancelButton setTitle:NSLocalizedString(@"render cancel",@"Cancel";) forState:UIControlStateNormal];
-    [liveTextView setText:NSLocalizedString(@"UI Record message",@"Pose your face in place, hit record and make a sound")];
-    [recordTextView setText:NSLocalizedString(@"UI Make a sound",@"C’mon, make a sound!")];
+    [liveViewLabel setText:NSLocalizedString(@"UI Record message",@"Pose your face in place, hit record and make a sound")];
+    [recordViewLabel setText:NSLocalizedString(@"UI Make a sound",@"C’mon, make a sound!")];
 
 	
 	[shareManager.renderManager setRenderProgressView:self.renderProgressView];
 	[self.renderProgressView.cancelButton addTarget:shareManager.renderManager action:@selector(cancelRendering:) forControlEvents:UIControlEventTouchUpInside];
 	self.cameraToggleButton.hidden = [self cameraCount] <= 1;
 	
-	[self.liveTextView setFont:[[self.liveTextView font] fontWithSize:22]];
-	[self.recordTextView setFont:[[self.recordTextView font] fontWithSize:22]];
+//	[self.liveViewLabel setFont:[[self.liveViewLabel font] fontWithSize:22]];
+//	[self.recordViewLabel setFont:[[self.recordViewLabel font] fontWithSize:22]];
 	
 }
 
