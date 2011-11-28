@@ -36,7 +36,7 @@
     for (UIView *view in [self.view subviews]) {
         if ([view isKindOfClass:[UIButton class]]) {
             UIButton *button = (UIButton *)view;
-       
+            
             switch (button.tag) {
                 case ACTION_UPLOAD_TO_FACEBOOK: 
                     [button setTitle:NSLocalizedString(@"SM facebook",@"Post on Facebook") forState:UIControlStateNormal];
@@ -57,6 +57,9 @@
                     [button setTitle:NSLocalizedString(@"SM done",@"Done") forState:UIControlStateNormal];
                     break;
             }
+            
+            button.titleLabel.adjustsFontSizeToFitWidth = YES;
+            button.titleLabel.numberOfLines = 1;
         }
     }
 }
