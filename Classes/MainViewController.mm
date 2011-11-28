@@ -66,7 +66,11 @@
 	[super viewDidLoad];
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
     
-    self.renderProgressView.progressView.image =  [UIImage imageNamed:@"LOADING_BAR.png"];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ) {
+        self.renderProgressView.progressView.image =  [UIImage imageNamed:@"LOADING_BAR@2x.png"];
+    } else {
+        self.renderProgressView.progressView.image =  [UIImage imageNamed:@"LOADING_BAR.png"];
+    }
 
     [recordButton1 setTitle:NSLocalizedString(@"UI Record",@"Record") forState:UIControlStateNormal];
     [recordButton2 setTitle:NSLocalizedString(@"UI Record",@"Record") forState:UIControlStateNormal];
@@ -80,6 +84,21 @@
     [liveViewLabel setText:NSLocalizedString(@"UI Record message",@"Pose your face in place, hit record and make a sound")];
     [recordViewLabel setText:NSLocalizedString(@"UI Make a sound",@"C’mon, make a sound!")];
 
+    recordButton1.titleLabel.adjustsFontSizeToFitWidth = YES;
+    recordButton2.titleLabel.adjustsFontSizeToFitWidth = YES;
+    startOverButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    playButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    shareButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    switchButton1.titleLabel.adjustsFontSizeToFitWidth = YES;
+    switchButton2.titleLabel.adjustsFontSizeToFitWidth = YES;
+    renderProgressView.cancelButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    
+    startOverButton.titleLabel.textAlignment = UITextAlignmentCenter;
+    switchButton1.titleLabel.textAlignment = UITextAlignmentCenter;
+    switchButton2.titleLabel.textAlignment = UITextAlignmentCenter;
+    
+    startOverButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    shareButton.titleLabel.numberOfLines = 1;
 	
 	[shareManager.renderManager setRenderProgressView:self.renderProgressView];
 	[self.renderProgressView.cancelButton addTarget:shareManager.renderManager action:@selector(cancelRendering:) forControlEvents:UIControlEventTouchUpInside];

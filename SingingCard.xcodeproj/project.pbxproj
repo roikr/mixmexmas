@@ -195,6 +195,8 @@
 		E4AFFF4112B0CA3000457BC7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFF4012B0CA3000457BC7 /* CoreVideo.framework */; };
 		E4AFFF4712B0CA4900457BC7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */; };
 		E4AFFFC112B0D37300457BC7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */; };
+		E4BAB91A1484078A0027B4B1 /* MainViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4BAB9191484078A0027B4B1 /* MainViewController-iPad.xib */; };
+		E4BAB91C148422AF0027B4B1 /* LOADING_BAR.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BAB91B148422AF0027B4B1 /* LOADING_BAR.png */; };
 		E4C3F234145F21FC007760E9 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4C3F233145F21FC007760E9 /* testApp.mm */; };
 		E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C82116140BD03A00E190F1 /* RenderProgressView.m */; };
 		E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */; };
@@ -255,7 +257,7 @@
 		E4E41AAD1482A78D00EB3C20 /* INFO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A3E1482A78C00EB3C20 /* INFO@2x.png */; };
 		E4E41AAF1482A78D00EB3C20 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A401482A78C00EB3C20 /* InfoViewController.xib */; };
 		E4E41AB01482A78D00EB3C20 /* LOADING_BACKGROUND@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A411482A78C00EB3C20 /* LOADING_BACKGROUND@2x.png */; };
-		E4E41AB11482A78D00EB3C20 /* LOADING_BACKGROUND@iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A421482A78C00EB3C20 /* LOADING_BACKGROUND@iPad.png */; };
+		E4E41AB11482A78D00EB3C20 /* LOADING_BACKGROUND~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A421482A78C00EB3C20 /* LOADING_BACKGROUND~iPad.png */; };
 		E4E41AB21482A78D00EB3C20 /* LOADING_BAR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A431482A78C00EB3C20 /* LOADING_BAR@2x.png */; };
 		E4E41AB51482A78D00EB3C20 /* MORE_CARDS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A461482A78C00EB3C20 /* MORE_CARDS@2x.png */; };
 		E4E41AB61482A78D00EB3C20 /* OPENING_MOV_IPHONE.m4v in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A471482A78C00EB3C20 /* OPENING_MOV_IPHONE.m4v */; };
@@ -647,6 +649,8 @@
 		E4AFFF4012B0CA3000457BC7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E4BAB9191484078A0027B4B1 /* MainViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainViewController-iPad.xib"; sourceTree = "<group>"; };
+		E4BAB91B148422AF0027B4B1 /* LOADING_BAR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOADING_BAR.png; sourceTree = "<group>"; };
 		E4C1A741146A643000259F20 /* SingingCard_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCard_Prefix.pch; sourceTree = "<group>"; };
 		E4C3F231145F21FC007760E9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E4C3F232145F21FC007760E9 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
@@ -716,9 +720,9 @@
 		E4E41A3C1482A78C00EB3C20 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		E4E41A3D1482A78C00EB3C20 /* icon~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon~iPad.png"; sourceTree = "<group>"; };
 		E4E41A3E1482A78C00EB3C20 /* INFO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "INFO@2x.png"; sourceTree = "<group>"; };
-		E4E41A401482A78C00EB3C20 /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoViewController.xib; path = ../Resources/InfoViewController.xib; sourceTree = "<group>"; };
+		E4E41A401482A78C00EB3C20 /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		E4E41A411482A78C00EB3C20 /* LOADING_BACKGROUND@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOADING_BACKGROUND@2x.png"; sourceTree = "<group>"; };
-		E4E41A421482A78C00EB3C20 /* LOADING_BACKGROUND@iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOADING_BACKGROUND@iPad.png"; sourceTree = "<group>"; };
+		E4E41A421482A78C00EB3C20 /* LOADING_BACKGROUND~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOADING_BACKGROUND~iPad.png"; sourceTree = "<group>"; };
 		E4E41A431482A78C00EB3C20 /* LOADING_BAR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOADING_BAR@2x.png"; sourceTree = "<group>"; };
 		E4E41A461482A78C00EB3C20 /* MORE_CARDS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MORE_CARDS@2x.png"; sourceTree = "<group>"; };
 		E4E41A471482A78C00EB3C20 /* OPENING_MOV_IPHONE.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = OPENING_MOV_IPHONE.m4v; sourceTree = "<group>"; };
@@ -808,7 +812,6 @@
 				E493D171140AEFC1004CB633 /* RenderManager.mm */,
 				E4AF1E7A1466E4170027F52D /* InfoViewController.h */,
 				E4AF1E7B1466E4170027F52D /* InfoViewController.m */,
-				E4E41A401482A78C00EB3C20 /* InfoViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1675,11 +1678,14 @@
 		E4E41A221482A78C00EB3C20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4BAB91B148422AF0027B4B1 /* LOADING_BAR.png */,
+				E4A7144F1483BBC3000B710D /* MainViewController.xib */,
+				E4BAB9191484078A0027B4B1 /* MainViewController-iPad.xib */,
+				E4E41A401482A78C00EB3C20 /* InfoViewController.xib */,
 				E4F59B0D1483EADA005D13C4 /* REC_BACKGROUND@2x.png */,
 				E4F59B0E1483EADA005D13C4 /* REC_OVERLAY@2x.png */,
 				E4AF012E12B0EF5700457BC7 /* MainWindow.xib */,
 				E4A714501483BBC3000B710D /* MainWindow-iPad.xib */,
-				E4A7144F1483BBC3000B710D /* MainViewController.xib */,
 				E4A714541483BBC3000B710D /* ShareViewController.xib */,
 				E4A714531483BBC3000B710D /* ShareViewController-iPad.xib */,
 				E4A7144D1483BBC3000B710D /* InfoViewController-iPad.xib */,
@@ -1708,7 +1714,7 @@
 				E4E41A3D1482A78C00EB3C20 /* icon~iPad.png */,
 				E4E41A3E1482A78C00EB3C20 /* INFO@2x.png */,
 				E4E41A411482A78C00EB3C20 /* LOADING_BACKGROUND@2x.png */,
-				E4E41A421482A78C00EB3C20 /* LOADING_BACKGROUND@iPad.png */,
+				E4E41A421482A78C00EB3C20 /* LOADING_BACKGROUND~iPad.png */,
 				E4E41A431482A78C00EB3C20 /* LOADING_BAR@2x.png */,
 				E4E41A461482A78C00EB3C20 /* MORE_CARDS@2x.png */,
 				E4E41A471482A78C00EB3C20 /* OPENING_MOV_IPHONE.m4v */,
@@ -1945,7 +1951,7 @@
 				E4E41AAD1482A78D00EB3C20 /* INFO@2x.png in Resources */,
 				E4E41AAF1482A78D00EB3C20 /* InfoViewController.xib in Resources */,
 				E4E41AB01482A78D00EB3C20 /* LOADING_BACKGROUND@2x.png in Resources */,
-				E4E41AB11482A78D00EB3C20 /* LOADING_BACKGROUND@iPad.png in Resources */,
+				E4E41AB11482A78D00EB3C20 /* LOADING_BACKGROUND~iPad.png in Resources */,
 				E4E41AB21482A78D00EB3C20 /* LOADING_BAR@2x.png in Resources */,
 				E4E41AB51482A78D00EB3C20 /* MORE_CARDS@2x.png in Resources */,
 				E4E41AB61482A78D00EB3C20 /* OPENING_MOV_IPHONE.m4v in Resources */,
@@ -2005,6 +2011,8 @@
 				E4A714661483BD04000B710D /* BRITANIC.TTF in Resources */,
 				E4F59B0F1483EADA005D13C4 /* REC_BACKGROUND@2x.png in Resources */,
 				E4F59B101483EADA005D13C4 /* REC_OVERLAY@2x.png in Resources */,
+				E4BAB91A1484078A0027B4B1 /* MainViewController-iPad.xib in Resources */,
+				E4BAB91C148422AF0027B4B1 /* LOADING_BAR.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2348,7 +2356,7 @@
 		E49EC6DB14125EF300A068E3 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Roee Kremer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -2356,6 +2364,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "B9ED0261-11E7-4F6A-A0E3-EF179FC6AEF1";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;

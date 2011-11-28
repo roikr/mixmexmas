@@ -420,12 +420,13 @@ void ShareAlert(NSString *title,NSString *message) {
 			YouTubeUploadViewController *controller;
             
             switch([[UIDevice currentDevice] userInterfaceIdiom]) {
+                case UIUserInterfaceIdiomPad:
+//                    controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController-iPad" bundle:nil];
+//                    break;
                 case UIUserInterfaceIdiomPhone: 
                     controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController" bundle:nil];
                     break;
-                case UIUserInterfaceIdiomPad:
-                    controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController-iPad" bundle:nil];
-                    break;
+                
                     
             }
             
@@ -451,12 +452,13 @@ void ShareAlert(NSString *title,NSString *message) {
             
             
             switch([[UIDevice currentDevice] userInterfaceIdiom]) {
+                case UIUserInterfaceIdiomPad:
+//                    controller= [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController-iPad" bundle:nil];
+//                    break;
                 case UIUserInterfaceIdiomPhone: 
                     controller= [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController" bundle:nil];
                     break;
-                case UIUserInterfaceIdiomPad:
-                    controller= [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController-iPad" bundle:nil];
-                    break;
+                
                     
             }
 
