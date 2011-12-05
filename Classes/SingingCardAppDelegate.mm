@@ -96,10 +96,8 @@ void uncaughtExceptionHandler(NSException *exception) {
     
 #else
 
-    self.OFSAptr->startAudio();
-    [PopupMessage popupMessage:kPopupMessageURL];
-    self.message = [RateMeMessage rateMeMessage:kRateMeMessageURL firstDelay:(NSTimeInterval)(300.0) repeatedDelay:(NSTimeInterval)(900.0) delegate:self];
-
+    [self AVPlayerViewControllerDone:nil];
+   
 #endif
 
 	[self.eAGLView setInterfaceOrientation:UIInterfaceOrientationLandscapeRight duration:0];
