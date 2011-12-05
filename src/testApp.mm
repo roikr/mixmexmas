@@ -229,7 +229,7 @@ void testApp::setup(){
 	
     bStartAudio = false;
     bAudioInitialized = false;
-    grabber.setup(&video,FRONT_CAMERA,0.75);
+    grabber.setup(&video,FRONT_CAMERA);
     
     resume();
    
@@ -263,8 +263,18 @@ void testApp::update()
     
     if (!bCameraOffset  && grabber.getState() >= CAMERA_RUNNING) {
         bCameraOffset = true;
-		ofPoint offset = ofPoint((grabber.getCameraWidth()-video.textureWidth)/2,(grabber.getCameraHeight()-video.textureHeight)/2);
-		grabber.setOffset(offset);
+        ofPoint offset;
+        float scale = 0.75;
+        switch (ofxiPhoneGetUserInterface()) {
+            case OFXIPHONE_USER_INTERFACE_PHONE: 
+                offset = ofPoint(grabber.getCameraWidth()*2/3-video.textureWidth/scale/2,(grabber.getCameraHeight()-video.textureHeight/scale)/2);
+                break;
+            case OFXIPHONE_USER_INTERFACE_PAD: 
+                offset = ofPoint(grabber.getCameraWidth()*2/3-video.textureWidth/scale/2,(grabber.getCameraHeight()-video.textureHeight/scale)/2);
+                break;
+        }
+		
+		grabber.setTransform(offset,scale);
         
         for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
             for (vector<player>::iterator piter=iter->players.begin(); piter!=iter->players.end(); piter++) { 
