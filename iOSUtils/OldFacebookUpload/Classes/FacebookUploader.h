@@ -23,7 +23,7 @@ enum {
 @class RKUBackgroundTask;
 
 
-@interface FacebookUploader : NSObject<FBRequestDelegate,FBSessionDelegate> { // FBDialogDelegate
+@interface FacebookUploader : NSObject<FBRequestDelegate,FBSessionDelegate,FBDialogDelegate> { // FBDialogDelegate
 
 	Facebook *facebook;
 //	FBSession* session;
@@ -63,6 +63,7 @@ enum {
 -(void) addDelegate:(id<FacebookUploaderDelegate>)delegate; 
 - (void) uploadVideoWithTitle:(NSString *)title withDescription:(NSString *)description andPath:(NSString *)path;
 - (void) upload;
+- (void) publishWithAppId:(NSString *)appId link:(NSString *)link;
 - (void)login;
 - (void) logout;
 - (BOOL) isConnected;

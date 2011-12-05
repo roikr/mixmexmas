@@ -23,6 +23,7 @@ enum {
 	ACTION_SEND_RINGTONE,
 	ACTION_CANCEL,
     ACTION_SEND_YOUTUBE_LINK,
+    ACTION_PUBLISH_YOUTUBE_LINK,
 	ACTION_RENDER,
 	ACTION_PLAY
 };
@@ -46,6 +47,7 @@ enum {
 	RenderManager *renderManager;
     
     NSString *youtubeLink;
+
 }
 
 
