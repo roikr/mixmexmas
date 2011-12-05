@@ -15,16 +15,18 @@
 @interface MessageLoader : NSObject {
     id<MessageLoaderDelegate> delegate;
     NSMutableData *xmlData;
-    BOOL isMessageModified;
     NSString *lastModified;
     NSURLConnection *connection;
+    
+    NSInteger statusCode;
 }
 
 @property (nonatomic, retain) id<MessageLoaderDelegate> delegate;
 @property (nonatomic, retain) NSMutableData *xmlData;
-@property BOOL isMessageModified;
 @property (nonatomic, retain) NSString *lastModified;
 @property (nonatomic, retain) NSURLConnection *connection;
+
+@property NSInteger statusCode;
 
 +(MessageLoader *)messageLoader:(NSURL *)theURL modified:(NSString *)modified delegate:(id<MessageLoaderDelegate>) theDelegate;
 @end
