@@ -18,7 +18,7 @@
 
 @implementation MessageLoader
 
-@synthesize delegate,xmlData,isMessageModified,lastModified,connection;
+@synthesize delegate,xmlData,lastModified,connection,statusCode;
 
 
 +(MessageLoader *)messageLoader:(NSURL *)theURL modified:(NSString *)modified delegate:(id<MessageLoaderDelegate>) theDelegate {
@@ -35,7 +35,7 @@
    
     
     loader.connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:loader];
-    loader.isMessageModified = NO;
+    loader.statusCode = 0;
     loader.delegate = theDelegate;
     
     if (loader.connection == nil) {
@@ -97,7 +97,7 @@
 	 date so it matches format of cached image file modification date. */
     
 	if ([response isKindOfClass:[NSHTTPURLResponse self]]) {
-        NSInteger statusCode = [(NSHTTPURLResponse*)response statusCode];
+        statusCode = [(NSHTTPURLResponse*)response statusCode];
         switch (statusCode) {
             case 304:
                 NSLog(@"304 Not Modified");
@@ -105,7 +105,6 @@
                 
             case 200:
                 NSLog(@"200 OK");
-                isMessageModified = YES;
                 NSDictionary *headers = [(NSHTTPURLResponse *)response allHeaderFields];
                 self.lastModified = [headers objectForKey:@"Last-Modified"];
                 if (self.lastModified == nil) {
@@ -121,7 +120,11 @@
                 }
                 NSLog(@"lastModified: %@",self.lastModified);
                 break;
+            case 404:
+                NSLog(@"404 Not Found");
+                break;
             default:
+                NSLog(@"other: %i",statusCode);
                 break;
         }
         

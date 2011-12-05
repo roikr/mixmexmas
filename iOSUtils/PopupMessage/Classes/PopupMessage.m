@@ -170,11 +170,21 @@
 -(void)messageLoaderDidFinished:(MessageLoader *)theLoader {
     NSLog(@"messageLoaderDidFinished: %@",[[NSString alloc] initWithData:theLoader.xmlData encoding:NSASCIIStringEncoding]);
     
-    if ([theLoader isMessageModified]) {
-        self.parser = [MessageParser messageParser:theLoader.xmlData delegate:self];
-    } else {
-        [self popup];
+    switch ([theLoader statusCode]) {
+        case 0:
+            break;
+        case 200: // OK - Message Is Modified
+            self.parser = [MessageParser messageParser:theLoader.xmlData delegate:self];
+            break;
+        case 304: // Not Modified
+            [self popup];
+            break;
+        case 404: // Not Modified - don't popup
+            break;
+        default:
+            break;
     }
+    
     
     
 }
@@ -182,7 +192,7 @@
 -(void)messageLoaderDidFailed:(MessageLoader *)theLoader {
     NSLog(@"messageLoaderDidFailed: %@",[[NSString alloc] initWithData:theLoader.xmlData encoding:NSASCIIStringEncoding]);
    
-    [self popup];
+//    [self popup];
 }
 
 -(void)messageParserDidFinish:(MessageParser *)theParser {
@@ -201,7 +211,6 @@
         [self archive];
     } 
     
-       
     [self popup];
 }
 
