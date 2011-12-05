@@ -39,7 +39,7 @@
 + (FacebookUploader *) facebookUploader:(NSString *)appId {
 	FacebookUploader *uploader = [[[FacebookUploader alloc] init] autorelease];
     
-    uploader.facebook = [[Facebook alloc] initWithAppId:appId];
+    uploader.facebook = [[Facebook alloc] initWithAppId:appId andDelegate:uploader];
     //[facebook logout:self];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -121,8 +121,8 @@
 - (void)login {
 	
 	if (![facebook isSessionValid]) {
-		NSArray* permissions =  [[NSArray arrayWithObject:@"video_upload"] retain];
-		[facebook authorize:permissions delegate:self];
+		NSArray* permissions =  [[NSArray arrayWithObject:@"publish_stream"] retain]; // video_upload
+		[facebook authorize:permissions];
 	} else {
 		self.state = FACEBOOK_UPLOADER_STATE_DID_LOGIN;
 	}
@@ -138,31 +138,42 @@
 //	}
 }
 
+- (void) publishWithAppId:(NSString *)appId link:(NSString *)link {
+    
+    NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   appId, @"app_id",
+                                   link, @"link",
+//                                   @"http://fbrell.com/f8.jpg", @"picture",
+//                                   @"Facebook Dialogs", @"name",
+//                                   @"Reference Documentation", @"caption",
+//                                   @"Using Dialogs to interact with users.", @"description",
+//                                   @"Facebook Dialogs are so easy!",  @"message",
+                                   nil];
+    
+    [facebook dialog:@"feed" andParams:params andDelegate:self];
+        
+//    if ([self isConnected] && self.state == FACEBOOK_UPLOADER_STATE_DID_LOGIN) {
+//		
+//		[facebook openUrl:@"https://graph.facebook.com/me/feed" params:[NSMutableDictionary dictionaryWithObject:message forKey:@"message"] httpMethod:@"POST" delegate:self];
+//		
+//	}
+
+}
+
 - (void) upload {
 	
 	if ([self isConnected] && self.state == FACEBOOK_UPLOADER_STATE_DID_LOGIN) {
 		NSData *data = [NSData dataWithContentsOfFile:videoPath]; 
 		
-		//		FBRequest *uploadRequest = [FBRequest requestWithSession: session delegate: self];
-		//		
-		//		NSMutableDictionary* Parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys: @"video.upload", @"method", 
-		//										   videoTitle, @"title", videoDescription,@"description",nil];
-		//		[uploadRequest call: @"facebook.video.upload" params: Parameters dataParam: data];
-		//		
 		NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys: 
 									   videoTitle, @"title",
 									   videoDescription, @"description",
 									   data, @"video.mov",
 									   @"video/quicktime", @"contentType",
 									   nil];
-		[facebook openUrl:@"https://graph-video.facebook.com/me/videos" params:params httpMethod:@"POST" delegate:self];
+				
+        [facebook requestWithGraphPath:@"me/videos" andParams:params andHttpMethod:@"POST" andDelegate:self];
 		
-		
-		//if ([self isConnected]) {
-		//		[self logout];
-		//	} else {
-		//		[self login];
-		//	}
 	}
 	
 }
@@ -249,65 +260,30 @@
 }
 
 
-///**
-// * Called when the dialog succeeds and is about to be dismissed.
-// */
-//- (void)dialogDidSucceed:(FBDialog*)dialog {
-//	NSLog(@"dialogDidSucceed");
-//	if (dialog == loginDialog) {
-//		self.loginDialog = nil;
-//	} else if (dialog == permissionDialog) {
-//		self.permissionDialog = nil;
-//		self.state = FACEBOOK_UPLOADER_STATE_DID_LOGIN;
-//		//[delegate facebookUploaderDidLogin:self];
-//	}
-//}
-//
-///**
-// * Called when the dialog is cancelled and is about to be dismissed.
-// */
-//- (void)dialogDidCancel:(FBDialog*)dialog {
-//	NSLog(@"dialogDidCancel");
-//	
-//	if (dialog == loginDialog) {
-//		self.loginDialog = nil;
-//	} else if (dialog == permissionDialog) {
-//		self.permissionDialog = nil;
-//	}
-//	
-//	self.state = FACEBOOK_UPLOADER_STATE_UPLOAD_CANCELED;
-//	
-//}
-//
-///**
-// * Called when dialog failed to load due to an error.
-// */
-//- (void)dialog:(FBDialog*)dialog didFailWithError:(NSError*)error {
-//	NSLog(@"dialog didFailWithError");
-//	if ([dialog isKindOfClass:[FBPermissionDialog class]]) {
-//		self.state = FACEBOOK_UPLOADER_STATE_DID_NOT_LOGIN;
-//	}
-//	
-//	if ([dialog isKindOfClass:[FBLoginDialog class]]) {
-//		self.state = FACEBOOK_UPLOADER_STATE_DID_NOT_LOGIN;
-//	}
-//	
-//}
-//
-///**
-// * Asks if a link touched by a user should be opened in an external browser.
-// *
-// * If a user touches a link, the default behavior is to open the link in the Safari browser, 
-// * which will cause your app to quit.  You may want to prevent this from happening, open the link
-// * in your own internal browser, or perhaps warn the user that they are about to leave your app.
-// * If so, implement this method on your delegate and return NO.  If you warn the user, you
-// * should hold onto the URL and once you have received their acknowledgement open the URL yourself
-// * using [[UIApplication sharedApplication] openURL:].
-// */
-//- (BOOL)dialog:(FBDialog*)dialog shouldOpenURLInExternalBrowser:(NSURL*)url {
-//	return NO;
-//}
+/**
+ * Called when the dialog succeeds and is about to be dismissed.
+ */
+- (void)dialogDidComplete:(FBDialog *)dialog {
+     NSLog(@"dialog dialogDidComplete");
+    self.state = FACEBOOK_UPLOADER_STATE_UPLOAD_FINISHED;
+}
 
+
+/**
+ * Called when the dialog is cancelled and is about to be dismissed.
+ */
+- (void)dialogDidNotComplete:(FBDialog *)dialog {
+    NSLog(@"dialog dialogDidNotComplete");
+    self.state = FACEBOOK_UPLOADER_STATE_UPLOAD_CANCELED;
+}
+
+/**
+ * Called when dialog failed to load due to an error.
+ */
+- (void)dialog:(FBDialog*)dialog didFailWithError:(NSError *)error {
+     NSLog(@"dialog didFailWithError: %@",[error localizedDescription]);
+    self.state = FACEBOOK_UPLOADER_STATE_UPLOAD_FAILED;
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -337,8 +313,7 @@
  * Called when an error prevents the request from completing successfully.
  */
 - (void)request:(FBRequest*)request didFailWithError:(NSError*)error {
-	NSLog(@"request didFailWithError");
-	NSLog(@"%@",[error description]);
+	NSLog(@"request didFailWithError: %@",[error localizedDescription]);
 	self.state = FACEBOOK_UPLOADER_STATE_UPLOAD_FAILED;
 }
 
@@ -377,16 +352,6 @@
 
 
 
-///**
-// * Called when the request was cancelled.
-// */
-//- (void)requestWasCancelled:(FBRequest*)request {
-//	NSLog(@"requestWasCancelled");
-//	self.state = FACEBOOK_UPLOADER_STATE_UPLOAD_CANCELED;
-//	
-//}
-//
-//
 //- (void)request:(FBRequest*)request didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
 //	[task update];
 //	

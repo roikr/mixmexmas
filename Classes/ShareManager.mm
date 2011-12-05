@@ -233,20 +233,46 @@ void ShareAlert(NSString *title,NSString *message) {
 #pragma mark Uploaders delegates
 
 - (void) facebookUploaderStateChanged:(FacebookUploader *)theUploader {
-	switch (theUploader.state) {
-		case FACEBOOK_UPLOADER_STATE_UPLOAD_FINISHED: {
-			ShareAlert(NSLocalizedString(@"fb success title",@"Facebook upload"),NSLocalizedString(@"fb success body", @"Your video was uploaded successfully!\ngo check your wall"));
+    switch (action) {
+        case ACTION_UPLOAD_TO_FACEBOOK: {
+            switch (theUploader.state) {
+                case FACEBOOK_UPLOADER_STATE_UPLOAD_FINISHED: {
+                    ShareAlert(NSLocalizedString(@"fb success title",@"Facebook upload"),NSLocalizedString(@"fb success body", @"Your video was uploaded successfully!\ngo check your wall"));
 #ifdef _FLURRY
-            [FlurryAnalytics logEvent:@"SHARE_DONE" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"]];
+                    [FlurryAnalytics logEvent:@"SHARE_DONE" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"]];
 #endif
-		} break;
-		case FACEBOOK_UPLOADER_STATE_UPLOADING: {
-			ShareAlert(NSLocalizedString(@"fb uploading title",@"Facebook upload"),NSLocalizedString(@"fb uploading body", @"Upload is in progress"));
+                } break;
+                case FACEBOOK_UPLOADER_STATE_UPLOADING: {
+                    ShareAlert(NSLocalizedString(@"fb uploading title",@"Facebook upload"),NSLocalizedString(@"fb uploading body", @"Upload is in progress"));
+                    
+                } break;
+                default:
+                    break;
+            }
 
-		} break;
-		default:
-			break;
-	}
+        } break;
+        case ACTION_PUBLISH_YOUTUBE_LINK:{
+            switch (theUploader.state) {
+                case FACEBOOK_UPLOADER_STATE_DID_LOGIN:
+                    [facebookUploader publishWithAppId:kFacebookAppId link:youtubeLink];
+                    break;
+                case FACEBOOK_UPLOADER_STATE_UPLOAD_FINISHED: {
+//                    ShareAlert(@"Facebook publish",@"Your link was published successfully!\ngo check your wall"); // for testing
+#ifdef _FLURRY
+                    [FlurryAnalytics logEvent:@"SHARE_DONE" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"]];
+#endif
+                } break;
+                
+                default:
+                    break;
+            }
+
+        }
+            break;
+            
+        default:
+            break;
+    }
 	
 	[((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).mainViewController updateViews];
 		
@@ -265,7 +291,7 @@ void ShareAlert(NSString *title,NSString *message) {
 #endif
             
             self.youtubeLink = [theUploader.link absoluteString];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"yt done title",@"YouTube upload") message:NSLocalizedString(@"yt done body",@"your video was uploaded successfully! do you want to share the link ?") delegate:self  cancelButtonTitle:NSLocalizedString(@"yt done b close",@"done")  otherButtonTitles: NSLocalizedString(@"yt done b mail",@"send link by mail"),nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"yt done title",@"YouTube upload") message:NSLocalizedString(@"yt done body",@"your video was uploaded successfully! do you want to share the link ?") delegate:self  cancelButtonTitle:NSLocalizedString(@"yt done b close",@"done")  otherButtonTitles: NSLocalizedString(@"yt done b mail",@"send link by mail"),NSLocalizedString(@"yt done b facebook",@"Post link on Facebook"),nil];
         
             [alert show];
             [alert release];
@@ -289,37 +315,46 @@ void ShareAlert(NSString *title,NSString *message) {
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        
-        Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
-        if (mailClass != nil)
-        {
-            action = ACTION_SEND_YOUTUBE_LINK;
-            state = STATE_DONE;
+    switch (buttonIndex) {
+        case 1: {
+            Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+            if (mailClass != nil)
+            {
+                action = ACTION_SEND_YOUTUBE_LINK;
+                state = STATE_DONE;
 
-            // We must always check whether the current device is configured for sending emails
-            MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-            picker.mailComposeDelegate = self;
+                // We must always check whether the current device is configured for sending emails
+                MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+                picker.mailComposeDelegate = self;
+                
+                [picker setSubject:NSLocalizedString(@"YT email title",@"Sweeeet! My Xmas Greeting!")];
+                
+               
+                
+                NSString *message = [NSString stringWithFormat:NSLocalizedString(@"YT email message",@"Hey,<br/>I just made a xmas greeting created with the help of this cool app.<br/>click the <a href='%@'>link</a> to watch<br/><br/><br/><a href='http://www.lofipeople.com/mixmexmas/appstore'>MixMeXmas iPhone app</a>."),youtubeLink];
+                                                                                 
+                [picker setMessageBody:message isHTML:YES];
+                
+                [((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).mainViewController presentModalViewController:picker animated:YES];
             
-            [picker setSubject:NSLocalizedString(@"YT email title",@"Sweeeet! My Xmas Greeting!")];
-            
-           
-            
-            NSString *message = [NSString stringWithFormat:NSLocalizedString(@"YT email message",@"Hey,<br/>I just made a xmas greeting created with the help of this cool app.<br/>click the <a href='%@'>link</a> to watch<br/><br/><br/><a href='http://www.lofipeople.com/mixmexmas/appstore'>MixMeXmas iPhone app</a>."),youtubeLink];
-                                                                             
-            [picker setMessageBody:message isHTML:YES];
-            
-            [((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).mainViewController presentModalViewController:picker animated:YES];
-        
-            [picker release];
-            
-            
-            
+                [picker release];
+                
+#ifdef _FLURRY
+                [FlurryAnalytics logEvent:@"SHARE_MENU" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"] ];
+#endif
+                
+            }
+        } break;
+        case 2:
+            action = ACTION_PUBLISH_YOUTUBE_LINK;
+            state = STATE_DONE;
+            [facebookUploader login];
 #ifdef _FLURRY
             [FlurryAnalytics logEvent:@"SHARE_MENU" withParameters:[NSDictionary dictionaryWithObject:[self getCurrentActionName] forKey:@"TARGET"] ];
 #endif
-            
-        }
+            break;
+        default:
+            break;
     }
     
 }
@@ -390,6 +425,9 @@ void ShareAlert(NSString *title,NSString *message) {
             break;
         case ACTION_SEND_YOUTUBE_LINK:
             name = @"YOUTUBE_LINK";
+            break;
+        case ACTION_PUBLISH_YOUTUBE_LINK:
+            name = @"PUBLISH_YOUTUBE";
             break;
 	}
     
@@ -530,8 +568,6 @@ void ShareAlert(NSString *title,NSString *message) {
 //		
 //	}
 }
-
-
 
 
 - (void) proceedWithAudio {
