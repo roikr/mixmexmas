@@ -35,8 +35,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAppendingFormat:@"_%@.html",[[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0]]]]];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAppendingFormat:@"_%@.html",[[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0]]]]];
+    
 }
 
 - (void)viewDidUnload
@@ -55,5 +59,20 @@
 - (void) back:(id)sender {
 	[self dismissModalViewControllerAnimated:YES];
 }
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSLog(@"webView shouldStartLoadWithRequest: %@, navigationType: %u",request.URL.absoluteString,navigationType);
+    
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        if (![[UIApplication sharedApplication] openURL:request.URL]) {
+            NSLog(@"Failed to open url: %@",request.URL.absoluteString);
+        }
+        
+        return NO;
+    }
+    
+    return YES;
+}
+
 
 @end

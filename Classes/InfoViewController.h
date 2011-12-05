@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfoViewController : UIViewController {
+@interface InfoViewController : UIViewController<UIWebViewDelegate> {
     UIWebView *webView;
     NSString *url;
 }
