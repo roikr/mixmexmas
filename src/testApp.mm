@@ -267,10 +267,10 @@ void testApp::update()
         float scale = 0.75;
         switch (ofxiPhoneGetUserInterface()) {
             case OFXIPHONE_USER_INTERFACE_PHONE: 
-                offset = ofPoint(grabber.getCameraWidth()*2/3-video.textureWidth/scale/2,(grabber.getCameraHeight()-video.textureHeight/scale)/2);
+                offset = ofPoint(grabber.getCameraWidth()/2-video.textureWidth/scale/2,(grabber.getCameraHeight()-video.textureHeight/scale)/2);
                 break;
             case OFXIPHONE_USER_INTERFACE_PAD: 
-                offset = ofPoint(grabber.getCameraWidth()*2/3-video.textureWidth/scale/2,(grabber.getCameraHeight()-video.textureHeight/scale)/2);
+                offset = ofPoint(grabber.getCameraWidth()-video.textureWidth/scale,(grabber.getCameraHeight()-video.textureHeight/scale)/2);
                 break;
         }
 		
