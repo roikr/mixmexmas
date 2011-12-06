@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AVPlayerViewController.h"
 #import "RateMeMessage.h"
+#import "SingleProductStore.h"
 
 
 @class MainViewController;
@@ -21,7 +22,7 @@
 class testApp;
 
 
-@interface SingingCardAppDelegate : NSObject <UIApplicationDelegate,AVPlayerViewControllerDelegate,RateMeMessageDelegate> {
+@interface SingingCardAppDelegate : NSObject <UIApplicationDelegate,AVPlayerViewControllerDelegate,RateMeMessageDelegate,SingleProductStoreDelegate> {
     UIWindow *window;
 	EAGLView *eAGLView;
     MainViewController *mainViewController;
@@ -35,6 +36,7 @@ class testApp;
     UIImageView *imageView;
     
     RateMeMessage *message;
+    SingleProductStore *store;
 	
 }
 
@@ -46,6 +48,7 @@ class testApp;
 @property (nonatomic, retain) IBOutlet AVPlayerViewController *playerViewController;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) RateMeMessage *message;
+@property (nonatomic, retain) SingleProductStore *store;
 
 
 @property (nonatomic, retain) ShareManager *shareManager;

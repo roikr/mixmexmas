@@ -9,9 +9,13 @@
 
 #pragma once
 
-extern NSString* kYouTubeDeveloperKey;
-extern NSString* kFacebookAppId;
-extern NSString* kFlurryApiKey;
-extern NSString* kPopupMessageURL;
-extern NSString* kInfoURL;
-extern NSString* kRateMeMessageURL;
+#define IN_APP_STORE
+
+extern NSString* const kYouTubeDeveloperKey;
+extern NSString* const kFacebookAppId;
+extern NSString* const kFlurryApiKey;
+extern NSString* const kPopupMessageURL;
+extern NSString* const kInfoURL;
+extern NSString* const kRateMeMessageURL;
+extern NSString* const kMyTestFeatureIdentifier;
+extern NSString* const kMyFeatureIdentifier;

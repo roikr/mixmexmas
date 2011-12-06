@@ -47,6 +47,7 @@
 
 @synthesize imageView;
 @synthesize message;
+@synthesize store;
 
 #define PLAY_INTRO
 
@@ -66,6 +67,9 @@ void uncaughtExceptionHandler(NSException *exception) {
 	[FlurryAnalytics startSession:kFlurryApiKey]; 
 #endif
 
+#ifdef IN_APP_STORE
+	self.store = [SingleProductStore singleProductStore:kMyTestFeatureIdentifier delegate:self];
+#endif    
 	
 	self.shareManager = [ShareManager shareManager];
 	
@@ -134,8 +138,9 @@ void uncaughtExceptionHandler(NSException *exception) {
 	/*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
-    
-    
+#ifdef IN_APP_STORE    
+    [store check];
+#endif
 	
     self.OFSAptr->becomeActive();
 	
@@ -302,7 +307,28 @@ void uncaughtExceptionHandler(NSException *exception) {
     self.message = nil;
 }
 
+-(void) singleProductStoreStateChanged:(SingleProductStore *)theStore {
+    NSLog(@"singleProductStoreStateChanged: %i",[theStore state]);
+    [mainViewController updateViews];
+}
 
+-(void) singleProductStorePurchased:(SingleProductStore *)theStore {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[theStore product] localizedTitle] message:@"Purchased"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
 
+-(void) singleProductStoreRestored:(SingleProductStore *)theStore {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[theStore product] localizedTitle] message:@"Restored"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    
+}
+
+-(void) singleProductStorePurchaseFailed:(SingleProductStore *)theStore {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[theStore product] localizedTitle] message:@"Purchase failed"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release]; 
+}
 
 @end

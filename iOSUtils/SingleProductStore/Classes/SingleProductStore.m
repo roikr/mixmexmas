@@ -101,11 +101,17 @@
         switch (transaction.transactionState)
         {
             case SKPaymentTransactionStatePurchased:
+                self.state = STORE_STATE_PRODUCT_PURCHASED;
+                [delegate singleProductStorePurchased:self];
+                [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+                break;
             case SKPaymentTransactionStateRestored:
                 self.state = STORE_STATE_PRODUCT_PURCHASED;
+                [delegate singleProductStoreRestored:self];
                 [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
                 break;
             case SKPaymentTransactionStateFailed:
+                [delegate singleProductStorePurchaseFailed:self];
                 if (transaction.error.code != SKErrorPaymentCancelled)
                 {
                     // Optionally, display an error here.
