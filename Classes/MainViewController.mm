@@ -33,6 +33,10 @@
 #import "FlurryAnalytics.h"
 #endif
 
+#ifdef IN_APP_STORE
+#import "SingleProductStore.h"
+#endif
+
 @interface MainViewController ()
 - (NSUInteger) cameraCount;
 - (void) fadeOutRecordButton;
@@ -161,7 +165,13 @@
 	playButton.selected = NO;
 	renderProgressView.hidden = YES;
 	renderProgressView.cancelButton.hidden = YES;
-	
+
+#ifdef IN_APP_STORE
+    SingleProductStore *store = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).store;
+    
+    shareButton.hidden = store.state == STORE_STATE_NONE;
+    shareButton.selected = store.state == STORE_STATE_PRODUCT_EXIST;
+#endif
 	
 	
 	switch (self.OFSAptr->getSongState()) {
@@ -248,6 +258,29 @@
 
 - (IBAction) share:(id)sender {
 	
+#ifdef IN_APP_STORE
+    SingleProductStore *store = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).store;
+    
+    if (store.state == STORE_STATE_PRODUCT_EXIST) {
+        if ([store canMakePayments]) {
+            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+            [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+            [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+            [numberFormatter setLocale:store.product.priceLocale];
+            NSString *formattedString = [numberFormatter stringFromNumber:store.product.price];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No pay no game !" message:[NSString stringWithFormat:@"You can unlock all cards for %@",formattedString] delegate:self cancelButtonTitle:@"Bye" otherButtonTitles:@"Buy", nil];
+            [alert show];
+            [alert release];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No pay no game !"  message:@"Ask you mom for the credit card number"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+        }
+        
+        return;
+    }
+#endif
+    
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
 	
 	if ([shareManager isUploading]) {
@@ -262,6 +295,23 @@
 	// BUG FIX: this is very important: don't present from milgromViewController as it will result in crash when returning to BandView after share
 	
 }
+
+#ifdef IN_APP_STORE
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 1: {
+            SingleProductStore *store = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).store;
+            if ([store canMakePayments]) {
+                [store buy];
+            }
+        } break;
+            
+        default:
+            break;
+    }
+}
+
+#endif
 
 - (IBAction)cameraToggle:(id)sender
 {

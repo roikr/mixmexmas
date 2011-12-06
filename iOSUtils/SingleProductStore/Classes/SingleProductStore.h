@@ -42,5 +42,8 @@ enum  {
 @end
 
 @protocol SingleProductStoreDelegate 
--(void) singleProductStoreStateChanged:(SingleProductStore *)store;
+-(void) singleProductStoreStateChanged:(SingleProductStore *)theStore;
+-(void) singleProductStorePurchased:(SingleProductStore *)theStore;
+-(void) singleProductStoreRestored:(SingleProductStore *)theStore;
+-(void) singleProductStorePurchaseFailed:(SingleProductStore *)theStore;
 @end

@@ -8,9 +8,11 @@
 
 #import "SingingCardKeys.h"
 
-NSString* kYouTubeDeveloperKey=@"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_ouUT6HFwaWn1GQxuyAIK-zvoeFB-GU_cqx30q-0HggREKxXG-b8w";;
-NSString* kFacebookAppId=@"262653967119717";
-NSString* kFlurryApiKey=@"LT1LZ197JKX9Z62SKBR9";
-NSString* kPopupMessageURL=@"http://www.lofipeople.com/mixmexmas/message/message";
-NSString* kInfoURL=@"http://www.lofipeople.com/mixmexmas/info/info";
-NSString* kRateMeMessageURL=@"http://www.lofipeople.com/mixmexmas/rank";
+NSString* const kYouTubeDeveloperKey=@"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_ouUT6HFwaWn1GQxuyAIK-zvoeFB-GU_cqx30q-0HggREKxXG-b8w";;
+NSString* const kFacebookAppId=@"262653967119717";
+NSString* const kFlurryApiKey=@"LT1LZ197JKX9Z62SKBR9";
+NSString* const kPopupMessageURL=@"http://www.lofipeople.com/mixmexmas/message/message";
+NSString* const kInfoURL=@"http://www.lofipeople.com/mixmexmas/info/info";
+NSString* const kRateMeMessageURL=@"http://www.lofipeople.com/mixmexmas/rank";
+NSString* const kMyTestFeatureIdentifier = @"ExpansionTest";
+NSString* const kMyFeatureIdentifier = @"Expansion";

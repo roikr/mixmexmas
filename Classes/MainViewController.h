@@ -13,7 +13,7 @@
 //@class CustomImageView;
 @class RenderProgressView;
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<UIAlertViewDelegate>
 {
        
 	UIView *buttonsView;
