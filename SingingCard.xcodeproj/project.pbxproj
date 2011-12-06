@@ -25,6 +25,9 @@
 		E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */; };
 		E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E44971F5147932BD000F5838 /* SingingCardKeys.m */; };
 		E476ED191407EC960091FFA3 /* ofxAudioLimiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */; };
+		E476F0ED148ED45F000983EC /* SingleProductStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E476F0DD148ED45F000983EC /* SingleProductStore.m */; };
+		E476F0F6148ED689000983EC /* SHARE_LOCKED@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E476F0F5148ED689000983EC /* SHARE_LOCKED@2x.png */; };
+		E476F0F8148ED945000983EC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E476F0F7148ED945000983EC /* StoreKit.framework */; };
 		E48B831C140287AF00E4EFDB /* ofxRKTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E48B831B140287AF00E4EFDB /* ofxRKTexture.mm */; };
 		E48B841A1402880000E4EFDB /* GDataEntryBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B83361402880000E4EFDB /* GDataEntryBase.m */; };
 		E48B841B1402880000E4EFDB /* GDataFeedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B83381402880000E4EFDB /* GDataFeedBase.m */; };
@@ -321,6 +324,10 @@
 		E44971F5147932BD000F5838 /* SingingCardKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingingCardKeys.m; sourceTree = "<group>"; };
 		E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
 		E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioLimiter.h; sourceTree = "<group>"; };
+		E476F0DC148ED45F000983EC /* SingleProductStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleProductStore.h; sourceTree = "<group>"; };
+		E476F0DD148ED45F000983EC /* SingleProductStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleProductStore.m; sourceTree = "<group>"; };
+		E476F0F5148ED689000983EC /* SHARE_LOCKED@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHARE_LOCKED@2x.png"; sourceTree = "<group>"; };
+		E476F0F7148ED945000983EC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E48B831A140287AF00E4EFDB /* ofxRKTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxRKTexture.h; path = ../yesplastic/src/ofxRKTexture.h; sourceTree = SOURCE_ROOT; };
 		E48B831B140287AF00E4EFDB /* ofxRKTexture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ofxRKTexture.mm; path = ../yesplastic/src/ofxRKTexture.mm; sourceTree = SOURCE_ROOT; };
 		E48B83311402880000E4EFDB /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
@@ -775,6 +782,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E476F0F8148ED945000983EC /* StoreKit.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */,
@@ -834,6 +842,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				E476F0F7148ED945000983EC /* StoreKit.framework */,
 				E4F35E5C1465D2F000B218B1 /* SingingCard-Info.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				E4F742C313FABA73002D7E1B /* src */,
@@ -953,6 +962,23 @@
 				E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		E476F0DA148ED45F000983EC /* SingleProductStore */ = {
+			isa = PBXGroup;
+			children = (
+				E476F0DB148ED45F000983EC /* Classes */,
+			);
+			path = SingleProductStore;
+			sourceTree = "<group>";
+		};
+		E476F0DB148ED45F000983EC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E476F0DC148ED45F000983EC /* SingleProductStore.h */,
+				E476F0DD148ED45F000983EC /* SingleProductStore.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E48B83161402878200E4EFDB /* yesplastic */ = {
@@ -1291,6 +1317,7 @@
 				E493CEAD140AE971004CB633 /* RKMacros.h */,
 				E493CEAE140AE971004CB633 /* Utilities */,
 				E493CEB1140AE971004CB633 /* YouTubeUpload */,
+				E476F0DA148ED45F000983EC /* SingleProductStore */,
 			);
 			path = iOSUtils;
 			sourceTree = "<group>";
@@ -1755,6 +1782,7 @@
 		E4E41A221482A78C00EB3C20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E476F0F5148ED689000983EC /* SHARE_LOCKED@2x.png */,
 				E4BAB91B148422AF0027B4B1 /* LOADING_BAR.png */,
 				E4A7144F1483BBC3000B710D /* MainViewController.xib */,
 				E4BAB9191484078A0027B4B1 /* MainViewController-iPad.xib */,
@@ -2034,6 +2062,7 @@
 				E4BAB91A1484078A0027B4B1 /* MainViewController-iPad.xib in Resources */,
 				E4BAB91C148422AF0027B4B1 /* LOADING_BAR.png in Resources */,
 				E4E3E131148CE6A8008CB1A3 /* FBDialog.bundle in Resources */,
+				E476F0F6148ED689000983EC /* SHARE_LOCKED@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2222,6 +2251,7 @@
 				E4D8144A148D7BF900ED8573 /* MyVideoBuffer.mm in Sources */,
 				E4D8144B148D7BF900ED8573 /* ofxiVideoGrabber.mm in Sources */,
 				E4D8144C148D7BF900ED8573 /* ofxiVideoPlayer.cpp in Sources */,
+				E476F0ED148ED45F000983EC /* SingleProductStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2310,7 +2340,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "3BB59433-6434-4922-AAA9-5F3F16358D3C";
+				PROVISIONING_PROFILE = "302EF397-F978-43E4-BEB5-CFEFEC57E38C";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2318,7 +2348,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Roee Kremer (S8LHA25A98)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -2326,7 +2356,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "873502BF-54B9-4287-AB0F-83791003CEDC";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -2342,7 +2371,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "8B92D28C-4D05-4DDD-A49E-FFA41150D603";
+				PROVISIONING_PROFILE = "97924900-F799-48E5-8E64-25E25F28D3D2";
 				SDKROOT = iphoneos;
 			};
 			name = "Ad Hoc";
@@ -2379,7 +2408,7 @@
 		E49EC6DB14125EF300A068E3 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Roee Kremer";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -2387,7 +2416,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "B9ED0261-11E7-4F6A-A0E3-EF179FC6AEF1";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
