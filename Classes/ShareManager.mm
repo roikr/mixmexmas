@@ -459,8 +459,8 @@ void ShareAlert(NSString *title,NSString *message) {
             
             switch([[UIDevice currentDevice] userInterfaceIdiom]) {
                 case UIUserInterfaceIdiomPad:
-//                    controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController-iPad" bundle:nil];
-//                    break;
+                    controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController-iPad" bundle:nil];
+                    break;
                 case UIUserInterfaceIdiomPhone: 
                     controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController" bundle:nil];
                     break;
@@ -485,14 +485,14 @@ void ShareAlert(NSString *title,NSString *message) {
 			
 		case ACTION_UPLOAD_TO_FACEBOOK: {
 			state = STATE_SELECTED;
-			[facebookUploader login];
+			
 			FacebookUploadViewController * controller ;
             
             
             switch([[UIDevice currentDevice] userInterfaceIdiom]) {
                 case UIUserInterfaceIdiomPad:
-//                    controller= [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController-iPad" bundle:nil];
-//                    break;
+                    controller= [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController-iPad" bundle:nil];
+                    break;
                 case UIUserInterfaceIdiomPhone: 
                     controller= [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController" bundle:nil];
                     break;
@@ -514,6 +514,7 @@ void ShareAlert(NSString *title,NSString *message) {
 			controller.descriptionView.text = NSLocalizedString(@"FB desc",@"shana tova");
 			controller.videoPath = [[self getVideoPath]  stringByAppendingPathExtension:@"mov" ];
 			[controller release];
+            [facebookUploader login];
 			
 		}	break;
 			

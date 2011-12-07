@@ -25,7 +25,7 @@
     
     [window makeKeyAndVisible];
 	
-	self.uploader = [FacebookUploader facebookUploader];
+	self.uploader = [FacebookUploader facebookUploader:@"262653967119717"];
 	[uploader login];
 	
 	controller.uploader = uploader;

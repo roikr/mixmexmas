@@ -23,6 +23,7 @@
 @synthesize activeView;
 @synthesize scrollView;
 @synthesize additionalText;
+@synthesize processView;
 @synthesize bDelayedUpload;
 @synthesize titleLabel,messageLabel,loginButton,cancelButton,postButton,logoutButton;
 
@@ -291,6 +292,30 @@
 		default:
 			break;
 	}
+}
+
+- (void) facebookUploaderDialogWillAppear:(FacebookUploader *)theUploader {
+#ifdef LOG_FACEBOOK_VIEW_CONTROLLER
+	NSLog(@"facebookUploaderDialogWillAppear" );
+#endif    
+    processView.hidden = NO;
+}
+
+- (void) facebookUploaderDialogWillDisappear:(FacebookUploader *)theUploader {
+#ifdef LOG_FACEBOOK_VIEW_CONTROLLER
+	NSLog(@"facebookUploaderDialogWillDisappear" );
+    processView.hidden = YES;
+#endif    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+#ifdef LOG_FACEBOOK_VIEW_CONTROLLER
+	NSLog(@"FacebookUploadViewController::viewWillAppear");
+#endif
+	[scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+	processView.hidden = YES;
+    
 }
 
 @end
