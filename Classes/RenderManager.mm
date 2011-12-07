@@ -86,8 +86,9 @@
 
 - (void)renderAudio {
 	
+#ifdef LIVE_TEXT
 	[renderProgressView.titleLabel setText:NSLocalizedString(@"audio rendering",@"Hold on a sec...")];
-    
+#endif    
 	dispatch_queue_t myCustomQueue;
 	myCustomQueue = dispatch_queue_create("renderAudioQueue", NULL);
 	
@@ -140,8 +141,9 @@
 - (void)renderVideo {
 		
 	[self setRenderProgress:0.0f];
+#ifdef LIVE_TEXT
     [renderProgressView.titleLabel setText:NSLocalizedString(@"video rendering",@"Baking your video card...")];
-	
+#endif
 	SingingCardAppDelegate * appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
 	ShareManager *shareManager = [appDelegate shareManager];
 	

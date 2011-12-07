@@ -9,8 +9,6 @@
 
 #pragma once
 
-#define IN_APP_STORE
-
 extern NSString* const kYouTubeDeveloperKey;
 extern NSString* const kFacebookAppId;
 extern NSString* const kFlurryApiKey;
