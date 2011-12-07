@@ -33,23 +33,23 @@
   FBDialog* _loginDialog;
   FBDialog* _fbDialog;
   NSString* _appId;
-  NSString* _localAppId;
+  NSString* _urlSchemeSuffix;
   NSArray* _permissions;
 }
 
 @property(nonatomic, copy) NSString* accessToken;
 @property(nonatomic, copy) NSDate* expirationDate;
 @property(nonatomic, assign) id<FBSessionDelegate> sessionDelegate;
-@property(nonatomic, copy) NSString* localAppId;
+@property(nonatomic, copy) NSString* urlSchemeSuffix;
 
-- (id)initWithAppId:(NSString *)app_id;
+- (id)initWithAppId:(NSString *)appId
+        andDelegate:(id<FBSessionDelegate>)delegate;
 
-- (void)authorize:(NSArray *)permissions
-         delegate:(id<FBSessionDelegate>)delegate;
+- (id)initWithAppId:(NSString *)appId
+    urlSchemeSuffix:(NSString *)urlSchemeSuffix
+        andDelegate:(id<FBSessionDelegate>)delegate;
 
-- (void)authorize:(NSArray *)permissions
-         delegate:(id<FBSessionDelegate>)delegate
-       localAppId:(NSString *)localAppId;
+- (void)authorize:(NSArray *)permissions;
 
 - (BOOL)handleOpenURL:(NSURL *)url;
 
@@ -75,6 +75,11 @@
                      andHttpMethod:(NSString *)httpMethod
                        andDelegate:(id <FBRequestDelegate>)delegate;
 
+- (FBRequest*)openUrl:(NSString *)url
+               params:(NSMutableDictionary *)params
+           httpMethod:(NSString *)httpMethod
+             delegate:(id<FBRequestDelegate>)delegate;
+
 - (void)dialog:(NSString *)action
    andDelegate:(id<FBDialogDelegate>)delegate;
 
@@ -83,11 +88,6 @@
    andDelegate:(id <FBDialogDelegate>)delegate;
 
 - (BOOL)isSessionValid;
-
-- (FBRequest*)openUrl:(NSString *)url
-               params:(NSMutableDictionary *)params
-           httpMethod:(NSString *)httpMethod
-             delegate:(id<FBRequestDelegate>)delegate;
 
 @end
 

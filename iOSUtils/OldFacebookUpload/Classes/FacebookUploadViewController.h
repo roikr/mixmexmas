@@ -23,6 +23,8 @@
 	UIScrollView *srcollView;
 	
 	NSString *additionalText;
+    
+    UIView *processView;
 	
 	id<FacebookUploadViewControllerDelegate> delegate;
 	
@@ -48,6 +50,7 @@
 
 @property BOOL bDelayedUpload;
 
+@property (nonatomic,retain) IBOutlet UIView *processView;
 @property (nonatomic,retain ) IBOutlet NSString *videoTitle;
 @property (nonatomic,retain) IBOutlet NSString* videoPath;
 @property (nonatomic,retain) IBOutlet NSString* additionalText;

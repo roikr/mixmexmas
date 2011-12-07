@@ -76,6 +76,8 @@ enum {
 
 - (void) facebookUploaderStateChanged:(FacebookUploader *)theUploader;
 - (void) facebookUploaderProgress:(float)progress;
+- (void) facebookUploaderDialogWillAppear:(FacebookUploader *)theUploader;
+- (void) facebookUploaderDialogWillDisappear:(FacebookUploader *)theUploader;
 
 @end
 

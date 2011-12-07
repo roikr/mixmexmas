@@ -123,6 +123,11 @@
 	if (![facebook isSessionValid]) {
 		NSArray* permissions =  [[NSArray arrayWithObject:@"publish_stream"] retain]; // video_upload
 		[facebook authorize:permissions];
+        for (id<FacebookUploaderDelegate> delegate in delegates) {
+            if ([delegate respondsToSelector:@selector(facebookUploaderDialogWillAppear:)]) {
+                [delegate facebookUploaderDialogWillAppear:self];
+            }
+        }
 	} else {
 		self.state = FACEBOOK_UPLOADER_STATE_DID_LOGIN;
 	}
@@ -172,8 +177,8 @@
 									   @"video/quicktime", @"contentType",
 									   nil];
 				
-        [facebook requestWithGraphPath:@"me/videos" andParams:params andHttpMethod:@"POST" andDelegate:self];
-		
+        [facebook requestWithGraphPath:@"me/videos" andParams:params andHttpMethod:@"POST" andDelegate:self]; 
+// 		[facebook openUrl:@"https://graph-video.facebook.com/me/videos" params:params httpMethod:@"POST" delegate:self];
 	}
 	
 }
@@ -216,6 +221,13 @@
     [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
 	
+    for (id<FacebookUploaderDelegate> delegate in delegates) {
+        if ([delegate respondsToSelector:@selector(facebookUploaderDialogWillDisappear:)]) {
+            [delegate facebookUploaderDialogWillDisappear:self];
+        }
+    }
+
+    
 	self.state = FACEBOOK_UPLOADER_STATE_DID_LOGIN;
 	
 }
@@ -225,6 +237,13 @@
  */
 - (void)fbDidNotLogin:(BOOL)cancelled {
 	NSLog(@"fbDidNotLogin");
+    
+    for (id<FacebookUploaderDelegate> delegate in delegates) {
+        if ([delegate respondsToSelector:@selector(facebookUploaderDialogWillDisappear:)]) {
+            [delegate facebookUploaderDialogWillDisappear:self];
+        }
+    }
+    
 	self.state = FACEBOOK_UPLOADER_STATE_DID_NOT_LOGIN;
 }
 
@@ -283,6 +302,30 @@
 - (void)dialog:(FBDialog*)dialog didFailWithError:(NSError *)error {
      NSLog(@"dialog didFailWithError: %@",[error localizedDescription]);
     self.state = FACEBOOK_UPLOADER_STATE_UPLOAD_FAILED;
+}
+
+/**
+ * Subclasses may override to perform actions just prior to showing the dialog.
+ */
+- (void)dialogWillAppear {
+    NSLog(@"facebook dialogWillAppear");
+    for (id<FacebookUploaderDelegate> delegate in delegates) {
+        if ([delegate respondsToSelector:@selector(facebookUploaderDialogWillAppear:)]) {
+            [delegate facebookUploaderDialogWillAppear:self];
+        }
+    }
+}
+
+/**
+ * Subclasses may override to perform actions just after the dialog is hidden.
+ */
+- (void)dialogWillDisappear {
+    NSLog(@"facebook dialogWillDisappear");
+    for (id<FacebookUploaderDelegate> delegate in delegates) {
+        if ([delegate respondsToSelector:@selector(facebookUploaderDialogWillDisappear:)]) {
+            [delegate facebookUploaderDialogWillDisappear:self];
+        }
+    }
 }
 
 
