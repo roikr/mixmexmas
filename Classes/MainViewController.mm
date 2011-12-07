@@ -264,19 +264,12 @@
     SingleProductStore *store = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).store;
     
     if (store.state == STORE_STATE_PRODUCT_EXIST) {
-        if ([store canMakePayments]) {
-            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-            [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
-            [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-            [numberFormatter setLocale:store.product.priceLocale];
-            NSString *formattedString = [numberFormatter stringFromNumber:store.product.price];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No pay no game !" message:[NSString stringWithFormat:@"You can unlock all cards for %@",formattedString] delegate:self cancelButtonTitle:@"Bye" otherButtonTitles:@"Buy", nil];
-            [alert show];
-            [alert release];
-        } else {
+        if (![store canMakePayments]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No pay no game !"  message:@"Ask you mom for the credit card number"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             [alert release];
+        } else {
+           [store buy];
         }
         
         return;
@@ -298,22 +291,6 @@
 	
 }
 
-#ifdef IN_APP_STORE
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 1: {
-            SingleProductStore *store = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).store;
-            if ([store canMakePayments]) {
-                [store buy];
-            }
-        } break;
-            
-        default:
-            break;
-    }
-}
-
-#endif
 
 - (IBAction)cameraToggle:(id)sender
 {
