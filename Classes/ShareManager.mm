@@ -291,7 +291,8 @@ void ShareAlert(NSString *title,NSString *message) {
 #endif
             
             self.youtubeLink = [theUploader.link absoluteString];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"yt done title",@"YouTube upload") message:NSLocalizedString(@"yt done body",@"your video was uploaded successfully! do you want to share the link ?") delegate:self  cancelButtonTitle:NSLocalizedString(@"yt done b close",@"done")  otherButtonTitles: NSLocalizedString(@"yt done b mail",@"send link by mail"),NSLocalizedString(@"yt done b facebook",@"Post link on Facebook"),nil];
+//            NSLocalizedString(@"yt done title",@"YouTube upload") - old title trimmed to enable 3 buttons after offset
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"yt done body",@"your video was uploaded successfully! do you want to share the link ?") message:nil delegate:self  cancelButtonTitle:NSLocalizedString(@"yt done b close",@"done")  otherButtonTitles: NSLocalizedString(@"yt done b mail",@"send link by mail"),NSLocalizedString(@"yt done b facebook",@"Post link on Facebook"),nil];
         
             [alert show];
             [alert release];
@@ -312,6 +313,17 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	[((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).mainViewController updateViews];
 	
+}
+
+- (void)willPresentAlertView:(UIAlertView *)alertView {
+    CGFloat dy = 20;
+    alertView.frame = CGRectMake(alertView.frame.origin.x, alertView.frame.origin.y-dy,alertView.frame.size.width, alertView.frame.size.height+2*dy);
+    
+    for (UIView *view in [alertView subviews]) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y+dy,view.frame.size.width, view.frame.size.height);
+        }
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
