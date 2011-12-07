@@ -76,6 +76,7 @@
         self.renderProgressView.progressView.image =  [UIImage imageNamed:@"LOADING_BAR.png"];
     }
 
+#ifdef LIVE_TEXT
     [recordButton1 setTitle:NSLocalizedString(@"UI Record",@"Record") forState:UIControlStateNormal];
     [recordButton2 setTitle:NSLocalizedString(@"UI Record",@"Record") forState:UIControlStateNormal];
     [startOverButton setTitle:NSLocalizedString(@"UI Start over",@"Start over") forState:UIControlStateNormal];
@@ -86,7 +87,7 @@
     [switchButton2 setTitle:NSLocalizedString(@"UI Switch card",@"Switch card") forState:UIControlStateNormal];
     [renderProgressView.cancelButton setTitle:NSLocalizedString(@"render cancel",@"Cancel";) forState:UIControlStateNormal];
     [liveViewLabel setText:NSLocalizedString(@"UI Record message",@"Pose your face in place, hit record and make a sound")];
-    [recordViewLabel setText:NSLocalizedString(@"UI Make a sound",@"C’mon, make a sound!")];
+    [recordViewLabel setText:NSLocalizedString(@"UI Make a sound",@"C'mon, make a sound!")];
 
     recordButton1.titleLabel.adjustsFontSizeToFitWidth = YES;
     recordButton2.titleLabel.adjustsFontSizeToFitWidth = YES;
@@ -103,6 +104,7 @@
     
     startOverButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
     shareButton.titleLabel.numberOfLines = 1;
+#endif
 	
 	[shareManager.renderManager setRenderProgressView:self.renderProgressView];
 	[self.renderProgressView.cancelButton addTarget:shareManager.renderManager action:@selector(cancelRendering:) forControlEvents:UIControlEventTouchUpInside];

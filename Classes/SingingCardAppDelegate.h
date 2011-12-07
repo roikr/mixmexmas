@@ -21,6 +21,8 @@
 @class EAGLView;
 class testApp;
 
+#define IN_APP_STORE
+#define LIVE_TEXT
 
 @interface SingingCardAppDelegate : NSObject <UIApplicationDelegate,AVPlayerViewControllerDelegate,RateMeMessageDelegate,SingleProductStoreDelegate> {
     UIWindow *window;

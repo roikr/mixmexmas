@@ -32,7 +32,8 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+#ifdef LIVE_TEXT
     for (UIView *view in [self.view subviews]) {
         if ([view isKindOfClass:[UIButton class]]) {
             UIButton *button = (UIButton *)view;
@@ -62,6 +63,7 @@
             button.titleLabel.numberOfLines = 1;
         }
     }
+#endif
 }
 
 
