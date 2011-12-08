@@ -44,6 +44,8 @@
     UIButton *uploadButton;
     UIButton *cancelButton;
     
+    BOOL bIgnoreAccountFields;
+    
 }
 
 @property (nonatomic,retain) YouTubeUploader *uploader;
@@ -62,6 +64,7 @@
 @property (nonatomic,retain) NSString* additionalText;
 
 @property BOOL bDelayedUpload;
+@property BOOL bIgnoreAccountFields;
 
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel *descLabel;
