@@ -10,9 +10,9 @@
 #import <StoreKit/StoreKit.h>
 
 enum  {
-    STORE_STATE_NONE,
-    STORE_STATE_PRODUCT_DOES_NOT_EXIST,
-    STORE_STATE_PRODUCT_EXIST,
+    STORE_STATE_PRODUCT_NONE,
+//    STORE_STATE_PRODUCT_DOES_NOT_EXIST,
+//    STORE_STATE_PRODUCT_EXIST,
     STORE_STATE_PRODUCT_PURCHASED
 };
 
@@ -43,7 +43,5 @@ enum  {
 
 @protocol SingleProductStoreDelegate 
 -(void) singleProductStoreStateChanged:(SingleProductStore *)theStore;
--(void) singleProductStorePurchased:(SingleProductStore *)theStore;
--(void) singleProductStoreRestored:(SingleProductStore *)theStore;
--(void) singleProductStorePurchaseFailed:(SingleProductStore *)theStore;
+
 @end

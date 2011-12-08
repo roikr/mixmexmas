@@ -169,10 +169,12 @@
 	renderProgressView.cancelButton.hidden = YES;
 
 #ifdef IN_APP_STORE
-    SingleProductStore *store = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).store;
     
-    shareButton.hidden = store.state == STORE_STATE_NONE;
-    shareButton.selected = store.state == STORE_STATE_PRODUCT_EXIST;
+    SingingCardAppDelegate *delegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+//    shareButton.hidden = store.state == STORE_STATE_NONE;
+    
+    shareButton.selected = ([delegate getCurrentCardNumber] && delegate.store.state == STORE_STATE_PRODUCT_NONE);
 #endif
 	
 	
@@ -261,16 +263,13 @@
 - (IBAction) share:(id)sender {
 	
 #ifdef IN_APP_STORE
-    SingleProductStore *store = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).store;
-    
-    if (store.state == STORE_STATE_PRODUCT_EXIST) {
-        if (![store canMakePayments]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No pay no game !"  message:@"Ask you mom for the credit card number"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-            [alert release];
-        } else {
-           [store buy];
-        }
+    if (shareButton.selected) {
+   
+        SingingCardAppDelegate *delegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
+        
+        if ( [delegate getCurrentCardNumber] && delegate.store.state == STORE_STATE_PRODUCT_NONE)
+        
+        [delegate.store buy];
         
         return;
     }
