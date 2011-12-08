@@ -8,9 +8,12 @@
 
 #import "SingingCardKeys.h"
 
-NSString* kYouTubeDeveloperKey=@"AI39si7UINMeywyTjpdwb6jsPyw3nTy7NXLZr-ddXph5dEXf0q4ZNAvu_8BXwKU3AnxsTMglvjcpdQNfIoesABb6RYbo0bDeHw";
-NSString* kFacebookAppId=@"218795661526558";
-NSString* kFlurryApiKey=@"87SJY1B8RBCUIWIGYFTE";
-NSString* kPopupMessageURL=@"http://theboxsite.com/gogos-ch/message/message";
-NSString* kInfoURL=@"http://theboxsite.com/gogos-ch/info2/info";
-NSString* kRateMeMessageURL=@"http://theboxsite.com/gogos-ch/rank";
+NSString* const kYouTubeDeveloperKey=@"AI39si7UINMeywyTjpdwb6jsPyw3nTy7NXLZr-ddXph5dEXf0q4ZNAvu_8BXwKU3AnxsTMglvjcpdQNfIoesABb6RYbo0bDeHw";
+NSString* const kFacebookAppId=@"218795661526558";
+NSString* const kFlurryApiKey=@"87SJY1B8RBCUIWIGYFTE";
+NSString* const kPopupMessageURL=@"http://theboxsite.com/gogos-ch/message/message";
+NSString* const kInfoURL=@"http://theboxsite.com/gogos-ch/info2/info";
+NSString* const kRateMeMessageURL=@"http://theboxsite.com/gogos-ch/rank";
+
+NSString* const kYouTubeUsername = @"gogoscrazyholidays";
+NSString* const kYouTubePassword = @"ppithebox1";

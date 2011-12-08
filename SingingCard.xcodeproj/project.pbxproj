@@ -1209,7 +1209,7 @@
 		E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
 		E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioLimiter.h; sourceTree = "<group>"; };
 		E48B29E8146B029E00FF65C0 /* BRITANIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = BRITANIC.TTF; path = Resources/BRITANIC.TTF; sourceTree = "<group>"; };
-		E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "../Resources/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		E48B831A140287AF00E4EFDB /* ofxRKTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxRKTexture.h; path = ../yesplastic/src/ofxRKTexture.h; sourceTree = SOURCE_ROOT; };
 		E48B831B140287AF00E4EFDB /* ofxRKTexture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ofxRKTexture.mm; path = ../yesplastic/src/ofxRKTexture.mm; sourceTree = SOURCE_ROOT; };
 		E48B83311402880000E4EFDB /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
@@ -1530,7 +1530,7 @@
 		E4ACD952147EAC1C002B112F /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "Resources/en.lproj/YOUTUBE_UPLOAD@2x.png"; sourceTree = "<group>"; };
 		E4ACD953147EAC1C002B112F /* nl */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nl; path = "Resources/nl.lproj/YOUTUBE_UPLOAD@2x.png"; sourceTree = "<group>"; };
 		E4ACD954147EAC1C002B112F /* pt */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pt; path = "Resources/pt.lproj/YOUTUBE_UPLOAD@2x.png"; sourceTree = "<group>"; };
-		E4AF012E12B0EF5700457BC7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../Resources/MainWindow.xib; sourceTree = "<group>"; };
+		E4AF012E12B0EF5700457BC7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/MainWindow.xib; sourceTree = "<group>"; };
 		E4AF014412B0F06000457BC7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
 		E4AF1E6F1466B3390027F52D /* FlurryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAnalytics.h; sourceTree = "<group>"; };
 		E4AF1E701466B3390027F52D /* libFlurryAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAnalytics.a; sourceTree = "<group>"; };
@@ -1643,8 +1643,6 @@
 				1D3623250D0F684500981E51 /* SingingCardAppDelegate.mm */,
 				E44971F4147932BC000F5838 /* SingingCardKeys.h */,
 				E44971F5147932BD000F5838 /* SingingCardKeys.m */,
-				E4AF012E12B0EF5700457BC7 /* MainWindow.xib */,
-				E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */,
 				28EC4C5611D54ECE0027AA9F /* MainViewController.h */,
 				28EC4C5711D54ECE0027AA9F /* MainViewController.mm */,
 				E4C82115140BD03A00E190F1 /* RenderProgressView.h */,
@@ -1661,18 +1659,6 @@
 				E493D171140AEFC1004CB633 /* RenderManager.mm */,
 				E4AF1E7A1466E4170027F52D /* InfoViewController.h */,
 				E4AF1E7B1466E4170027F52D /* InfoViewController.m */,
-				E4346FB7147EAEEE00011BCB /* FacebookUploadViewController-iPad.xib */,
-				E4346FB9147EAEEE00011BCB /* FacebookUploadViewController.xib */,
-				E4346FBB147EAEEE00011BCB /* YouTubeUploadViewController-iPad.xib */,
-				E4346FBD147EAEEE00011BCB /* YouTubeUploadViewController.xib */,
-				E45475F7147E8260004E812A /* AVPlayerViewController-iPad.xib */,
-				E45475F8147E8260004E812A /* AVPlayerViewController.xib */,
-				E4547548147E80BB004E812A /* InfoViewController-iPad.xib */,
-				E4547549147E80BB004E812A /* InfoViewController.xib */,
-				E454754A147E80BB004E812A /* MainViewController-iPad.xib */,
-				E454754B147E80BB004E812A /* MainViewController.xib */,
-				E454754C147E80BB004E812A /* ShareViewController-iPad.xib */,
-				E454754D147E80BB004E812A /* ShareViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1716,6 +1702,20 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4AF012E12B0EF5700457BC7 /* MainWindow.xib */,
+				E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */,
+				E4346FB7147EAEEE00011BCB /* FacebookUploadViewController-iPad.xib */,
+				E4346FB9147EAEEE00011BCB /* FacebookUploadViewController.xib */,
+				E4346FBB147EAEEE00011BCB /* YouTubeUploadViewController-iPad.xib */,
+				E4346FBD147EAEEE00011BCB /* YouTubeUploadViewController.xib */,
+				E45475F7147E8260004E812A /* AVPlayerViewController-iPad.xib */,
+				E45475F8147E8260004E812A /* AVPlayerViewController.xib */,
+				E4547548147E80BB004E812A /* InfoViewController-iPad.xib */,
+				E4547549147E80BB004E812A /* InfoViewController.xib */,
+				E454754A147E80BB004E812A /* MainViewController-iPad.xib */,
+				E454754B147E80BB004E812A /* MainViewController.xib */,
+				E454754C147E80BB004E812A /* ShareViewController-iPad.xib */,
+				E454754D147E80BB004E812A /* ShareViewController.xib */,
 				E43AADA214910C6500896345 /* FACEBOOK_LOGO@2x.png */,
 				E4346FD3147EB09700011BCB /* FACEBOOK_UPLOAD@2x.png */,
 				E4ACD951147EAC1C002B112F /* YOUTUBE_UPLOAD@2x.png */,
@@ -3863,6 +3863,7 @@
 				E4346FC3147EAEEE00011BCB /* pt */,
 			);
 			name = "FacebookUploadViewController-iPad.xib";
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E4346FB9147EAEEE00011BCB /* FacebookUploadViewController.xib */ = {
@@ -3873,6 +3874,7 @@
 				E4346FC4147EAEEE00011BCB /* pt */,
 			);
 			name = FacebookUploadViewController.xib;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E4346FBB147EAEEE00011BCB /* YouTubeUploadViewController-iPad.xib */ = {
@@ -3883,6 +3885,7 @@
 				E4346FC5147EAEEE00011BCB /* pt */,
 			);
 			name = "YouTubeUploadViewController-iPad.xib";
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E4346FBD147EAEEE00011BCB /* YouTubeUploadViewController.xib */ = {
@@ -3893,6 +3896,7 @@
 				E4346FC6147EAEEE00011BCB /* pt */,
 			);
 			name = YouTubeUploadViewController.xib;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E4346FD3147EB09700011BCB /* FACEBOOK_UPLOAD@2x.png */ = {
