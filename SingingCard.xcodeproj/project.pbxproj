@@ -72,6 +72,9 @@
 		E43797CF141908DC00F3BBE9 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CC141908DC00F3BBE9 /* CustomButton.m */; };
 		E43797D0141908DC00F3BBE9 /* CustomFontTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */; };
 		E43797E314190BDB00F3BBE9 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */; };
+		E43AADA314910C6500896345 /* FACEBOOK_LOGO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43AADA214910C6500896345 /* FACEBOOK_LOGO@2x.png */; };
+		E43AADB71491131300896345 /* SingleProductStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E43AADA71491131300896345 /* SingleProductStore.m */; };
+		E43AADC61491208400896345 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E43AADC51491208300896345 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */; };
 		E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E44971F5147932BD000F5838 /* SingingCardKeys.m */; };
 		E452449C147BC48A0025103B /* AULD_LANG_SYNE_1.mid in Resources */ = {isa = PBXBuildFile; fileRef = E45242FF147BC4890025103B /* AULD_LANG_SYNE_1.mid */; };
@@ -765,6 +768,11 @@
 		E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontTextView.m; sourceTree = "<group>"; };
 		E43797E114190BDB00F3BBE9 /* CustomFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFontLabel.h; sourceTree = "<group>"; };
 		E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontLabel.m; sourceTree = "<group>"; };
+		E43AADA214910C6500896345 /* FACEBOOK_LOGO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FACEBOOK_LOGO@2x.png"; path = "Resources/FACEBOOK_LOGO@2x.png"; sourceTree = "<group>"; };
+		E43AADA61491131300896345 /* SingleProductStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleProductStore.h; sourceTree = "<group>"; };
+		E43AADA71491131300896345 /* SingleProductStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleProductStore.m; sourceTree = "<group>"; };
+		E43AADC414911F1B00896345 /* SingingCard_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCard_Prefix.pch; sourceTree = "<group>"; };
+		E43AADC51491208300896345 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTexturesVector.cpp; sourceTree = "<group>"; };
 		E4475585145F3F0C00481363 /* ofxTexturesVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTexturesVector.h; sourceTree = "<group>"; };
 		E44971F4147932BC000F5838 /* SingingCardKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCardKeys.h; sourceTree = "<group>"; };
@@ -1541,7 +1549,6 @@
 		E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E4B9F50B146AF83B008CA875 /* CAMERA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CAMERA@2x.png"; path = "Resources/CAMERA@2x.png"; sourceTree = "<group>"; };
-		E4C1A741146A643000259F20 /* Gogos_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gogos_Prefix.pch; sourceTree = "<group>"; };
 		E4C3F231145F21FC007760E9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E4C3F232145F21FC007760E9 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		E4C3F233145F21FC007760E9 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
@@ -1559,7 +1566,7 @@
 		E4D7B501146960BF00131214 /* PopupMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupMessage.m; sourceTree = "<group>"; };
 		E4D7B502146960BF00131214 /* URLCacheAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheAlert.h; sourceTree = "<group>"; };
 		E4D7B503146960BF00131214 /* URLCacheAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheAlert.m; sourceTree = "<group>"; };
-		E4F35E5C1465D2F000B218B1 /* SingingCard-Info.plist */ = {isa = PBXFileReference; path = "SingingCard-Info.plist"; sourceTree = "<group>"; };
+		E4F35E5C1465D2F000B218B1 /* SingingCard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SingingCard-Info.plist"; sourceTree = "<group>"; };
 		E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioPlayer.cpp; sourceTree = "<group>"; };
 		E4F3915613FC1B23007B18EC /* ofxAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioPlayer.h; sourceTree = "<group>"; };
 		E4F3915B13FC1B23007B18EC /* ofxAudioSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioSample.h; sourceTree = "<group>"; };
@@ -1607,6 +1614,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43AADC61491208400896345 /* StoreKit.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */,
@@ -1699,7 +1707,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E4C1A741146A643000259F20 /* Gogos_Prefix.pch */,
+				E43AADC414911F1B00896345 /* SingingCard_Prefix.pch */,
 				E4AF014412B0F06000457BC7 /* main.m */,
 			);
 			name = "Other Sources";
@@ -1708,6 +1716,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E43AADA214910C6500896345 /* FACEBOOK_LOGO@2x.png */,
 				E4346FD3147EB09700011BCB /* FACEBOOK_UPLOAD@2x.png */,
 				E4ACD951147EAC1C002B112F /* YOUTUBE_UPLOAD@2x.png */,
 				E431EDE6147CF02400F792EB /* GOGO_LOGO@2x.png */,
@@ -1761,6 +1770,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E43AADC51491208300896345 /* StoreKit.framework */,
 				E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */,
 				E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */,
 				E4AFFE9512B0C58100457BC7 /* AssetsLibrary.framework */,
@@ -1816,6 +1826,23 @@
 				E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */,
 			);
 			path = CustomUIFont;
+			sourceTree = "<group>";
+		};
+		E43AADA41491131300896345 /* SingleProductStore */ = {
+			isa = PBXGroup;
+			children = (
+				E43AADA51491131300896345 /* Classes */,
+			);
+			path = SingleProductStore;
+			sourceTree = "<group>";
+		};
+		E43AADA51491131300896345 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E43AADA61491131300896345 /* SingleProductStore.h */,
+				E43AADA71491131300896345 /* SingleProductStore.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E4475581145F3EFB00481363 /* ofxTexturesVector */ = {
@@ -2597,6 +2624,7 @@
 		E493CE16140AE970004CB633 /* iOSUtils */ = {
 			isa = PBXGroup;
 			children = (
+				E43AADA41491131300896345 /* SingleProductStore */,
 				E431ED84147CD75100F792EB /* RateMeMessage */,
 				E4D7B4FA146960BF00131214 /* PopupMessage */,
 				E40FE455141F43C900E9CEDF /* CustomUI */,
@@ -3633,6 +3661,7 @@
 				E4346FC9147EAEEE00011BCB /* YouTubeUploadViewController-iPad.xib in Resources */,
 				E4346FCA147EAEEE00011BCB /* YouTubeUploadViewController.xib in Resources */,
 				E4346FD7147EB09700011BCB /* FACEBOOK_UPLOAD@2x.png in Resources */,
+				E43AADA314910C6500896345 /* FACEBOOK_LOGO@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3819,6 +3848,7 @@
 				E4F9F81614742CFB00106A0C /* YouTubeUploadViewController.m in Sources */,
 				E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */,
 				E431ED94147CD75100F792EB /* RateMeMessage.m in Sources */,
+				E43AADB71491131300896345 /* SingleProductStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4134,7 +4164,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Gogos_Prefix.pch;
+				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
@@ -4162,7 +4192,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Gogos_Prefix.pch;
+				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
@@ -4195,7 +4225,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "873502BF-54B9-4287-AB0F-83791003CEDC";
+				PROVISIONING_PROFILE = "131BC687-9C14-438C-93B9-334C808C7950";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -4203,7 +4233,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Roee Kremer (S8LHA25A98)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -4211,7 +4241,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "873502BF-54B9-4287-AB0F-83791003CEDC";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -4227,7 +4256,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "2D1D577D-E1E0-4821-B41F-45BCAC473064";
+				PROVISIONING_PROFILE = "6D2CC2B7-0A34-457F-88FA-AB42A79D5AE8";
 				SDKROOT = iphoneos;
 			};
 			name = "Ad Hoc";
@@ -4238,7 +4267,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Gogos_Prefix.pch;
+				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
@@ -4264,7 +4293,7 @@
 		E49EC6DB14125EF300A068E3 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: THE BOX LTD.";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -4272,7 +4301,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "9A18CC72-9431-4B65-B934-E9660876DE8A";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -4283,7 +4311,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Gogos_Prefix.pch;
+				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",

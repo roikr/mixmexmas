@@ -12,5 +12,5 @@ NSString* kYouTubeDeveloperKey=@"AI39si7UINMeywyTjpdwb6jsPyw3nTy7NXLZr-ddXph5dEX
 NSString* kFacebookAppId=@"218795661526558";
 NSString* kFlurryApiKey=@"87SJY1B8RBCUIWIGYFTE";
 NSString* kPopupMessageURL=@"http://theboxsite.com/gogos-ch/message/message";
-NSString* kInfoURL=@"http://theboxsite.com/gogos-ch/info/info";
+NSString* kInfoURL=@"http://theboxsite.com/gogos-ch/info2/info";
 NSString* kRateMeMessageURL=@"http://theboxsite.com/gogos-ch/rank";
