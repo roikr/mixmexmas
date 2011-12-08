@@ -267,13 +267,14 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>E4A8AAF313F95546006058D4</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
 									<integer>11</integer>
-									<integer>2</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -325,7 +326,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4C925EC1483E89F005825A9</string>
+										<string>E41AF1B0145D6716009D5805</string>
 										<key>history</key>
 										<array>
 											<string>E4FACA071357166B008A82B0</string>
@@ -337,6 +338,7 @@
 											<string>E4F742ED13FABE4B002D7E1B</string>
 											<string>E45AAFD413FCF91A0001A811</string>
 											<string>E466262D1402FC4600A4B6E7</string>
+											<string>E466262E1402FC4600A4B6E7</string>
 											<string>E4DB80C41403BBA0005AD84F</string>
 											<string>E4DB80F71403BDD8005AD84F</string>
 											<string>E4DB80F81403BDD8005AD84F</string>
@@ -344,8 +346,13 @@
 											<string>E4DB80FA1403BDD8005AD84F</string>
 											<string>E4DB817D1403CAE4005AD84F</string>
 											<string>E4BC19F91404419D006FC675</string>
+											<string>E435C5001407711A00D887F5</string>
+											<string>E435C5041407711A00D887F5</string>
+											<string>E4A9A5B61407D0B300981AD5</string>
 											<string>E4A9A5C11407D0B300981AD5</string>
 											<string>E4A9A5EE1407D4F500981AD5</string>
+											<string>E4B3A40C14093AB300105B14</string>
+											<string>E4AFB32D140A68B5008DC227</string>
 											<string>E49292E1140AE51D002D3BB9</string>
 											<string>E493D1DE140AF9D1004CB633</string>
 											<string>E4C820BC140BB8DD00E190F1</string>
@@ -358,6 +365,7 @@
 											<string>E49EC6E114125F8900A068E3</string>
 											<string>E42E5CCD141261FD003C4574</string>
 											<string>E4DAC0F4141697CB00ACBD51</string>
+											<string>E412BA6E141782280069959A</string>
 											<string>E412BA6F141782280069959A</string>
 											<string>E412BA791417849D0069959A</string>
 											<string>E4BD52DE1417A63500D23A17</string>
@@ -373,6 +381,7 @@
 											<string>E4EEE279141F9C5800AE395E</string>
 											<string>E461D460141FF981001A8232</string>
 											<string>E461D4851420026F001A8232</string>
+											<string>E44E2FCC1420C0D800B784BB</string>
 											<string>E44E2FE71420C1D400B784BB</string>
 											<string>E44E2FF51420C38000B784BB</string>
 											<string>E44E30951420E59100B784BB</string>
@@ -406,7 +415,7 @@
 											<string>E4746E491429AEE20067B862</string>
 											<string>E41AF1AD145D6716009D5805</string>
 											<string>E41AF1AE145D6716009D5805</string>
-											<string>E49A52011483E898009B7953</string>
+											<string>E41AF1AF145D6716009D5805</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -464,9 +473,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>E4C925E91483E89F005825A9</string>
+				<string>E41AF1B1145D6716009D5805</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>E4C925EA1483E89F005825A9</string>
+				<string>E41AF1B2145D6716009D5805</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -605,7 +614,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>E4AFFBEE12B0B24A00457BC7</string>
-		<string>/Users/roikr/Developer/mixmexmas/SingingCard.xcodeproj</string>
+		<string>/Users/roikr/Developer/singingcard/ShanaTova.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>1709 397 1198 630 1680 250 1280 800 </string>
@@ -685,7 +694,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>E4AFFBEE12B0B24A00457BC7</string>
-				<string>E4C925EB1483E89F005825A9</string>
+				<string>E41AF1B3145D6716009D5805</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
