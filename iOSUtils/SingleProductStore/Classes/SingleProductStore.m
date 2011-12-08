@@ -10,6 +10,10 @@
 
 @interface SingleProductStore()
 -(void) setState:(NSUInteger)state;
+-(void) singleProductStorePurchased:(SingleProductStore *)theStore;
+-(void) singleProductStoreRestored:(SingleProductStore *)theStore;
+-(void) singleProductStorePurchaseCanceled:(SingleProductStore *)theStore;
+-(void) singleProductStorePurchaseFailed:(SingleProductStore *)theStore;
 @end
 
 @implementation SingleProductStore
@@ -74,11 +78,11 @@
         self.product = aProduct;
     }
     
-    if (product) {
-        self.state = STORE_STATE_PRODUCT_EXIST; 
-    } else {
-        self.state = STORE_STATE_PRODUCT_DOES_NOT_EXIST;
-    }
+//    if (product) {
+//        self.state = STORE_STATE_PRODUCT_EXIST; 
+//    } else {
+//        self.state = STORE_STATE_PRODUCT_DOES_NOT_EXIST;
+//    }
     // populate UI
     [request autorelease];
 }
@@ -102,19 +106,24 @@
         {
             case SKPaymentTransactionStatePurchased:
                 self.state = STORE_STATE_PRODUCT_PURCHASED;
-                [delegate singleProductStorePurchased:self];
+                [self singleProductStorePurchased:self];
                 [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
                 break;
             case SKPaymentTransactionStateRestored:
                 self.state = STORE_STATE_PRODUCT_PURCHASED;
-                [delegate singleProductStoreRestored:self];
+                [self singleProductStoreRestored:self];
                 [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
                 break;
             case SKPaymentTransactionStateFailed:
-                [delegate singleProductStorePurchaseFailed:self];
-                if (transaction.error.code != SKErrorPaymentCancelled)
+               
+                if (transaction.error.code == SKErrorPaymentCancelled)
                 {
+                     [self singleProductStorePurchaseCanceled:self];
                     // Optionally, display an error here.
+                } else
+                {
+                     [self singleProductStorePurchaseFailed:self];
+                    NSLog(@"SKPaymentTransactionStateFailed: %@ because %@",transaction.error.localizedDescription,transaction.error.localizedFailureReason);
                 }
                 [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
                 break;
@@ -129,5 +138,37 @@
 -(void)restore {
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions]; 
 }
+
+/* in app store */
+
+
+
+
+
+
+
+-(void) singleProductStorePurchased:(SingleProductStore *)theStore {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[theStore product] localizedTitle] message:NSLocalizedString(@"store purchased",@"Has been purchased successfully !")  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
+-(void) singleProductStoreRestored:(SingleProductStore *)theStore {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[theStore product] localizedTitle] message:NSLocalizedString(@"store restored",@"Has been restored successfully !")  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    
+}
+
+-(void) singleProductStorePurchaseCanceled:(SingleProductStore *)theStore {
+    
+}
+
+-(void) singleProductStorePurchaseFailed:(SingleProductStore *)theStore {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[theStore product] localizedTitle] message:NSLocalizedString(@"store failed",@"Purchase has been failed"	)  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release]; 
+}
+
 
 @end

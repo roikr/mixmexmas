@@ -845,7 +845,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				E476F0F7148ED945000983EC /* StoreKit.framework */,
 				E4F35E5C1465D2F000B218B1 /* SingingCard-Info.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				E4F742C313FABA73002D7E1B /* src */,
@@ -874,6 +873,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E476F0F7148ED945000983EC /* StoreKit.framework */,
 				E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */,
 				E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */,
 				E4AFFE9512B0C58100457BC7 /* AssetsLibrary.framework */,
@@ -2376,7 +2376,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "97924900-F799-48E5-8E64-25E25F28D3D2";
+				PROVISIONING_PROFILE = "77E8BF9C-FC56-4332-A881-E429E9EA1880";
 				SDKROOT = iphoneos;
 			};
 			name = "Ad Hoc";

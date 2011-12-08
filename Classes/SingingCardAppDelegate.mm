@@ -117,6 +117,10 @@ void uncaughtExceptionHandler(NSException *exception) {
     return  [NSString stringWithCString:self.OFSAptr->citer->tag.c_str() encoding:[NSString defaultCStringEncoding]];
 }
 
+- (NSUInteger)getCurrentCardNumber {
+    return distance(self.OFSAptr->cards.begin(), self.OFSAptr->citer);
+}
+
 -(void) AVPlayerLayerIsReadyForDisplay:(AVPlayerViewController*)controller {
     [imageView removeFromSuperview];
 //    
@@ -312,23 +316,5 @@ void uncaughtExceptionHandler(NSException *exception) {
     [mainViewController updateViews];
 }
 
--(void) singleProductStorePurchased:(SingleProductStore *)theStore {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[theStore product] localizedTitle] message:@"Purchased"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-}
-
--(void) singleProductStoreRestored:(SingleProductStore *)theStore {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[theStore product] localizedTitle] message:@"Restored"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-    
-}
-
--(void) singleProductStorePurchaseFailed:(SingleProductStore *)theStore {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[theStore product] localizedTitle] message:@"Purchase failed"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    [alert release]; 
-}
 
 @end

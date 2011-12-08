@@ -58,6 +58,7 @@ class testApp;
 
 -(testApp*) OFSAptr;
 - (NSString *)getCurrentCardTag;
+- (NSUInteger)getCurrentCardNumber;
 @end
 
 
