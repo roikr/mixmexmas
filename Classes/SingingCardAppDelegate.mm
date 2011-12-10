@@ -9,6 +9,7 @@
 #import "SingingCardAppDelegate.h"
 #import "MainViewController.h"
 #import "ShareViewController.h"
+#import "InfoViewController.h"
 
 #import "ShareManager.h"
 #import <CoreMedia/CoreMedia.h>
@@ -68,9 +69,12 @@ void uncaughtExceptionHandler(NSException *exception) {
 #endif
 
 #ifdef IN_APP_STORE
-	self.store = [SingleProductStore singleProductStore:kMyTestFeatureIdentifier delegate:self];
+	self.store = [SingleProductStore singleProductStore:kMyFeatureIdentifier delegate:self];
+    [self.infoViewController setRestoreTarget:self.store];
 #endif    
 	
+    [self.infoViewController setUrl:kInfoURL];
+    
 	self.shareManager = [ShareManager shareManager];
 	
 	self.window.rootViewController = self.mainViewController;
