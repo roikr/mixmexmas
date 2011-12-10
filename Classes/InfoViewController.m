@@ -12,6 +12,8 @@
 
 @synthesize  webView;
 @synthesize  url;
+@synthesize restoreButton;
+@synthesize restoreTarget;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,6 +38,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+
+    [restoreButton addTarget:restoreTarget action:@selector(restore) forControlEvents:UIControlEventTouchUpInside];
+    
+    [restoreButton setTitle:NSLocalizedString(@"restore button",@"Restore") forState:UIControlStateNormal];
+    
+    restoreButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    restoreButton.titleLabel.textAlignment = UITextAlignmentCenter;
+    restoreButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    restoreButton.titleLabel.numberOfLines = 1;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

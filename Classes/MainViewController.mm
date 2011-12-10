@@ -298,7 +298,6 @@
 
 - (IBAction)info:(id)sender {
     SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-    [appDelegate.infoViewController setUrl:kInfoURL];
     [appDelegate.mainViewController presentModalViewController:appDelegate.infoViewController animated:YES];
     
 #ifdef _FLURRY
