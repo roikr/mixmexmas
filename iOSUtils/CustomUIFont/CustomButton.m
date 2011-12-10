@@ -16,14 +16,7 @@
 {
     if (self = [super initWithCoder: decoder])
     {
-//        for (NSString *family in [UIFont familyNames]) {
-//            for (NSString *font in [UIFont fontNamesForFamilyName:family]) {
-//                NSLog(@"%@,%@",family,font);
-//            }
-//
-//        }
-        
-        self.titleLabel.font = [UIFont fontWithName: @"BritannicBold" size: self.titleLabel.font.pointSize];
+        self.titleLabel.font            = [UIFont fontWithName: @"FbKomic-Regular" size: self.titleLabel.font.pointSize];
 		
     }
     return self;

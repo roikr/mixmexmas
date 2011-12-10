@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "Gogos.app"
-               BlueprintName = "Gogos"
+               BuildableName = "ShanaTova.app"
+               BlueprintName = "ShanaTova"
                ReferencedContainer = "container:SingingCard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,8 +32,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Gogos.app"
-            BlueprintName = "Gogos"
+            BuildableName = "ShanaTova.app"
+            BlueprintName = "ShanaTova"
             ReferencedContainer = "container:SingingCard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -45,13 +45,14 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
       debugDocumentVersioning = "YES"
+      enablesOpenGLESFrameCapture = "YES"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Gogos.app"
-            BlueprintName = "Gogos"
+            BuildableName = "ShanaTova.app"
+            BlueprintName = "ShanaTova"
             ReferencedContainer = "container:SingingCard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -68,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Gogos.app"
-            BlueprintName = "Gogos"
+            BuildableName = "ShanaTova.app"
+            BlueprintName = "ShanaTova"
             ReferencedContainer = "container:SingingCard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

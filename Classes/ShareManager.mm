@@ -31,7 +31,7 @@ enum {
 	STATE_CANCELED
 };
 
-#define UNIQUE_YOUTUBE_CHANNEL
+//#define UNIQUE_YOUTUBE_CHANNEL
 
 void ShareAlert(NSString *title,NSString *message) {
 	

@@ -15,7 +15,7 @@
 {
     if (self = [super initWithCoder: decoder])
     {
-        [self setFont: [UIFont fontWithName: @"BritannicBold" size: self.font.pointSize]];
+        [self setFont: [UIFont fontWithName: @"FbKomic-Regular" size: self.font.pointSize]];
     }
     return self;
 }
