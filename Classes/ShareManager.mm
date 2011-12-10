@@ -693,7 +693,11 @@ void ShareAlert(NSString *title,NSString *message) {
 //	[parentViewController dismissModalViewControllerAnimated:NO];
 	
 	[self proceedWithVideo];
-	
+    
+#ifdef _FLURRY
+    [FlurryAnalytics logEvent:@"VIDEO_RENDERED" withParameters:[NSDictionary dictionaryWithObjectsAndKeys:[self getCurrentActionName],@"TARGET",nil]];
+    
+#endif
 }
 
 

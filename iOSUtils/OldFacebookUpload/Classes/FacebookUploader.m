@@ -15,6 +15,9 @@
 //static NSString* kApiKey = @"e06968ce5ad567d5685a8ebabfd63619";
 //static NSString* kApiSecret = @"05e64b714292c6405e111357e7110078";
 
+#ifdef _FLURRY
+#import "FlurryAnalytics.h"
+#endif
 
 
 @interface FacebookUploader (PrivateMethods) 
@@ -379,6 +382,10 @@
 			[delegate facebookUploaderProgress:progress];
 		}
 	}
+    
+#ifdef _FLURRY
+    [FlurryAnalytics logEvent:@"FACEBOOK_UPLOAD_FINISHED"];
+#endif
 	
 	self.state = FACEBOOK_UPLOADER_STATE_UPLOAD_FINISHED;
 }

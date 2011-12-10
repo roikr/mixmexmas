@@ -15,6 +15,10 @@
 #import "GDataEntryYouTubeVideo.h"
 #import "RKUBackgroundTask.h"
 
+#ifdef _FLURRY
+#import "FlurryAnalytics.h"
+#endif
+
 @interface YouTubeUploader (PrivateMethods) 
 
 - (GDataServiceTicket *)uploadTicket;
@@ -268,7 +272,9 @@ ofTotalByteCount:(unsigned long long)dataLength {
 		GDataLink *videoLink = [videoEntry HTMLLink];
 		link = [videoLink URL];
 		//NSLog(@"location: %@",[videoEntry location]);
-		
+#ifdef _FLURRY
+        [FlurryAnalytics logEvent:@"YOUTUBE_UPLOAD_FINISHED"];
+#endif		
 		self.state = YOUTUBE_UPLOADER_STATE_UPLOAD_FINISHED;
 		
 	} else {
