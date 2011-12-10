@@ -142,7 +142,7 @@
 		
 	[self setRenderProgress:0.0f];
 #ifdef LIVE_TEXT
-    [renderProgressView.titleLabel setText:NSLocalizedString(@"video rendering",@"Baking your video card...")];
+    [renderProgressView.titleLabel setText:NSLocalizedString(@"video rendering",@"Preparing your video card...")];
 #endif
 	SingingCardAppDelegate * appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
 	ShareManager *shareManager = [appDelegate shareManager];
