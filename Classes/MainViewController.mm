@@ -91,19 +91,26 @@
 
     recordButton1.titleLabel.adjustsFontSizeToFitWidth = YES;
     recordButton2.titleLabel.adjustsFontSizeToFitWidth = YES;
-    startOverButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     playButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     shareButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     switchButton1.titleLabel.adjustsFontSizeToFitWidth = YES;
     switchButton2.titleLabel.adjustsFontSizeToFitWidth = YES;
     renderProgressView.cancelButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     
-    startOverButton.titleLabel.textAlignment = UITextAlignmentCenter;
     switchButton1.titleLabel.textAlignment = UITextAlignmentCenter;
     switchButton2.titleLabel.textAlignment = UITextAlignmentCenter;
     
     startOverButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    startOverButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    startOverButton.titleLabel.textAlignment = UITextAlignmentCenter;
+    startOverButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    startOverButton.titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+    startOverButton.titleLabel.numberOfLines = 1;
+    startOverButton.titleLabel.minimumFontSize = 10;
+    
+    
     shareButton.titleLabel.numberOfLines = 1;
+    
 #endif
 	
 	[shareManager.renderManager setRenderProgressView:self.renderProgressView];
