@@ -16,6 +16,7 @@
 		E40D5BB7145FD1E3005924A9 /* ofxAudioInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40D5BB5145FD1E3005924A9 /* ofxAudioInstrument.cpp */; };
 		E40FE458141F43C900E9CEDF /* CustomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E40FE457141F43C900E9CEDF /* CustomImageView.m */; };
 		E40FE4A9141F49AA00E9CEDF /* ShareViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40FE4A8141F49AA00E9CEDF /* ShareViewController.mm */; };
+		E41934601493E44D002535F4 /* RESTORE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E419345F1493E44D002535F4 /* RESTORE@2x.png */; };
 		E41C4B9912CA37DD004D3FA6 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E41C4B9812CA37DD004D3FA6 /* EAGLView.mm */; };
 		E430D28B12C8937400E65D3D /* TouchView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E430D28A12C8937400E65D3D /* TouchView.mm */; };
 		E431ED94147CD75100F792EB /* RateMeMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E431ED87147CD75100F792EB /* RateMeMessage.m */; };
@@ -24,6 +25,7 @@
 		E43797E314190BDB00F3BBE9 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */; };
 		E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */; };
 		E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E44971F5147932BD000F5838 /* SingingCardKeys.m */; };
+		E4582F8F14941C4D00CCEFA5 /* RESTORE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E419345F1493E44D002535F4 /* RESTORE@2x.png */; };
 		E46AD814148F7B9F0087BC09 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E46AD7FC148F7B9F0087BC09 /* Facebook.m */; };
 		E46AD815148F7B9F0087BC09 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E46AD7FE148F7B9F0087BC09 /* FBDialog.bundle */; };
 		E46AD816148F7B9F0087BC09 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E46AD800148F7B9F0087BC09 /* FBDialog.m */; };
@@ -308,6 +310,7 @@
 		E40FE457141F43C900E9CEDF /* CustomImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageView.m; sourceTree = "<group>"; };
 		E40FE4A7141F49AA00E9CEDF /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		E40FE4A8141F49AA00E9CEDF /* ShareViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShareViewController.mm; sourceTree = "<group>"; };
+		E419345F1493E44D002535F4 /* RESTORE@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RESTORE@2x.png"; sourceTree = "<group>"; };
 		E41C4B9712CA37DD004D3FA6 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
 		E41C4B9812CA37DD004D3FA6 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
 		E430D28912C8937400E65D3D /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
@@ -324,6 +327,7 @@
 		E4475585145F3F0C00481363 /* ofxTexturesVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTexturesVector.h; sourceTree = "<group>"; };
 		E44971F4147932BC000F5838 /* SingingCardKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCardKeys.h; sourceTree = "<group>"; };
 		E44971F5147932BD000F5838 /* SingingCardKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingingCardKeys.m; sourceTree = "<group>"; };
+		E4582F8E14941C4D00CCEFA5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E46AD7FB148F7B9F0087BC09 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		E46AD7FC148F7B9F0087BC09 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
 		E46AD7FD148F7B9F0087BC09 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
@@ -1783,19 +1787,20 @@
 		E4E41A221482A78C00EB3C20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E419345F1493E44D002535F4 /* RESTORE@2x.png */,
 				E4E46D7C1490153900D2FDDA /* FacebookUploadViewController-iPad.xib */,
 				E4E46D7D1490153900D2FDDA /* YouTubeUploadViewController-iPad.xib */,
 				E476F0F5148ED689000983EC /* SHARE_LOCKED@2x.png */,
 				E4BAB91B148422AF0027B4B1 /* LOADING_BAR.png */,
 				E4A7144F1483BBC3000B710D /* MainViewController.xib */,
 				E4BAB9191484078A0027B4B1 /* MainViewController-iPad.xib */,
-				E4E41A401482A78C00EB3C20 /* InfoViewController.xib */,
 				E4F59B0D1483EADA005D13C4 /* REC_BACKGROUND@2x.png */,
 				E4F59B0E1483EADA005D13C4 /* REC_OVERLAY@2x.png */,
 				E4AF012E12B0EF5700457BC7 /* MainWindow.xib */,
 				E4A714501483BBC3000B710D /* MainWindow-iPad.xib */,
 				E4A714541483BBC3000B710D /* ShareViewController.xib */,
 				E4A714531483BBC3000B710D /* ShareViewController-iPad.xib */,
+				E4E41A401482A78C00EB3C20 /* InfoViewController.xib */,
 				E4A7144D1483BBC3000B710D /* InfoViewController-iPad.xib */,
 				E4A7144A1483BBC3000B710D /* AVPlayerViewController.xib */,
 				E4A714491483BBC3000B710D /* AVPlayerViewController-iPad.xib */,
@@ -1965,6 +1970,7 @@
 				pt,
 				es,
 				it,
+				fr,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -2068,6 +2074,8 @@
 				E46AD815148F7B9F0087BC09 /* FBDialog.bundle in Resources */,
 				E4E46D7E1490153900D2FDDA /* FacebookUploadViewController-iPad.xib in Resources */,
 				E4E46D7F1490153900D2FDDA /* YouTubeUploadViewController-iPad.xib in Resources */,
+				E41934601493E44D002535F4 /* RESTORE@2x.png in Resources */,
+				E4582F8F14941C4D00CCEFA5 /* RESTORE@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2269,6 +2277,7 @@
 				E4E41A2B1482A78C00EB3C20 /* en */,
 				E4A7144B1483BBC3000B710D /* es */,
 				E4A7144E1483BBC3000B710D /* it */,
+				E4582F8E14941C4D00CCEFA5 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2340,7 +2349,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = _RK_DEBUG;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					_FLURRY,
+					_RK_DEBUG,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -2413,7 +2425,7 @@
 		E49EC6DB14125EF300A068E3 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Roee Kremer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -2421,6 +2433,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "B9ED0261-11E7-4F6A-A0E3-EF179FC6AEF1";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;

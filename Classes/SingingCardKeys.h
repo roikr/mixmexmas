@@ -15,5 +15,4 @@ extern NSString* const kFlurryApiKey;
 extern NSString* const kPopupMessageURL;
 extern NSString* const kInfoURL;
 extern NSString* const kRateMeMessageURL;
-extern NSString* const kMyTestFeatureIdentifier;
 extern NSString* const kMyFeatureIdentifier;

@@ -106,13 +106,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Classes/ShareManager.mm"
-         timestampString = "345030059.712555"
+         filePath = "src/testApp.mm"
+         timestampString = "345254225.423604"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "287"
-         endingLineNumber = "287"
-         landmarkName = "-youTubeUploaderStateChanged:"
+         startingLineNumber = "560"
+         endingLineNumber = "560"
+         landmarkName = "testApp::becomeActive()"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -120,13 +120,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Classes/ShareManager.mm"
-         timestampString = "345030065.799259"
+         filePath = "src/testApp.mm"
+         timestampString = "345254376.22902"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "319"
-         endingLineNumber = "319"
-         landmarkName = "-willPresentAlertView:"
+         startingLineNumber = "249"
+         endingLineNumber = "249"
+         landmarkName = "testApp::update()"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -134,13 +134,55 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Classes/ShareManager.mm"
-         timestampString = "345030067.921721"
+         filePath = "src/testApp.mm"
+         timestampString = "345254377.211756"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "330"
-         endingLineNumber = "330"
-         landmarkName = "-alertView:didDismissWithButtonIndex:"
+         startingLineNumber = "253"
+         endingLineNumber = "253"
+         landmarkName = "testApp::update()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "src/testApp.mm"
+         timestampString = "345254389.012711"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "571"
+         endingLineNumber = "571"
+         landmarkName = "testApp::resignActive()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "0"
+         filePath = "/Users/roikr/Developer/of_preRelease/My Addons/ofxiVideoGrabber/src/ofxiVideoGrabber.mm"
+         timestampString = "345254489.610911"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
+         landmarkName = "ofxiVideoGrabber::update()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "0"
+         filePath = "/Users/roikr/Developer/of_preRelease/My Addons/ofxiVideoGrabber/src/ofxiVideoGrabber.mm"
+         timestampString = "345254518.219305"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "84"
+         endingLineNumber = "84"
+         landmarkName = "ofxiVideoGrabber::update()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

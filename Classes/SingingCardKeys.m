@@ -14,5 +14,4 @@ NSString* const kFlurryApiKey=@"LT1LZ197JKX9Z62SKBR9";
 NSString* const kPopupMessageURL=@"http://www.lofipeople.com/mixmexmas/message/message";
 NSString* const kInfoURL=@"http://www.lofipeople.com/mixmexmas/info/info";
 NSString* const kRateMeMessageURL=@"http://www.lofipeople.com/mixmexmas/rank";
-NSString* const kMyTestFeatureIdentifier = @"ExpansionTest";
-NSString* const kMyFeatureIdentifier = @"Expansion";
+NSString* const kMyFeatureIdentifier = @"XmasExpansion";
