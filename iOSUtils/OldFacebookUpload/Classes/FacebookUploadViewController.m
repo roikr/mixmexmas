@@ -55,6 +55,20 @@
     [cancelButton setTitle:NSLocalizedString(@"FBW cancel",@"Cancel") forState:UIControlStateNormal];
     [postButton setTitle:NSLocalizedString(@"FBW post",@"Post") forState:UIControlStateNormal];
     [logoutButton setTitle:NSLocalizedString(@"FBW logout",@"Login as different user") forState:UIControlStateNormal];
+
+    loginButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    loginButton.titleLabel.textAlignment = UITextAlignmentCenter;
+    loginButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    loginButton.titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+    loginButton.titleLabel.numberOfLines = 1;
+    loginButton.titleLabel.minimumFontSize = 10;
+        
+    logoutButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    logoutButton.titleLabel.textAlignment = UITextAlignmentCenter;
+    logoutButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    logoutButton.titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+    logoutButton.titleLabel.numberOfLines = 1;
+    logoutButton.titleLabel.minimumFontSize = 10;
 }
 
 
