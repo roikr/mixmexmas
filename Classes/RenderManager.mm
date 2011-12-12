@@ -226,7 +226,7 @@
 				   withAbortionHandler:^ {
 					   NSLog(@"videoRender aborted");
 					   OFSAptr->setSongState(SONG_IDLE);
-                       OFSAptr->grabber.startCamera();
+//                       OFSAptr->grabber.startCamera();
 					   self.renderer = nil;  
 				   }
 		 
