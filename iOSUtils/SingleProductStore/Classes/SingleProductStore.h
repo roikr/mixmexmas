@@ -37,7 +37,7 @@ enum  {
 -(void)check;
 -(void)buy;
 -(BOOL)canMakePayments;
--(void)restore;
+-(IBAction)restore;
 
 @end
 
