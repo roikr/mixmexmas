@@ -26,6 +26,7 @@
 		E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */; };
 		E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E44971F5147932BD000F5838 /* SingingCardKeys.m */; };
 		E4582F8F14941C4D00CCEFA5 /* RESTORE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E419345F1493E44D002535F4 /* RESTORE@2x.png */; };
+		E45A75F3149D44FF0038C452 /* OPENING_MOV_IPHONE.mov in Resources */ = {isa = PBXBuildFile; fileRef = E45A75F2149D44FF0038C452 /* OPENING_MOV_IPHONE.mov */; };
 		E46AD814148F7B9F0087BC09 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E46AD7FC148F7B9F0087BC09 /* Facebook.m */; };
 		E46AD815148F7B9F0087BC09 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E46AD7FE148F7B9F0087BC09 /* FBDialog.bundle */; };
 		E46AD816148F7B9F0087BC09 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E46AD800148F7B9F0087BC09 /* FBDialog.m */; };
@@ -271,7 +272,6 @@
 		E4E41AB11482A78D00EB3C20 /* LOADING_BACKGROUND~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A421482A78C00EB3C20 /* LOADING_BACKGROUND~iPad.png */; };
 		E4E41AB21482A78D00EB3C20 /* LOADING_BAR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A431482A78C00EB3C20 /* LOADING_BAR@2x.png */; };
 		E4E41AB51482A78D00EB3C20 /* MORE_CARDS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A461482A78C00EB3C20 /* MORE_CARDS@2x.png */; };
-		E4E41AB61482A78D00EB3C20 /* OPENING_MOV_IPHONE.m4v in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A471482A78C00EB3C20 /* OPENING_MOV_IPHONE.m4v */; };
 		E4E41AB71482A78D00EB3C20 /* PLAY@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A481482A78C00EB3C20 /* PLAY@2x.png */; };
 		E4E41AB81482A78D00EB3C20 /* POSE_YOUR_FACE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A491482A78C00EB3C20 /* POSE_YOUR_FACE@2x.png */; };
 		E4E41ABF1482A78D00EB3C20 /* SHARE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E41A501482A78C00EB3C20 /* SHARE@2x.png */; };
@@ -328,6 +328,7 @@
 		E44971F4147932BC000F5838 /* SingingCardKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCardKeys.h; sourceTree = "<group>"; };
 		E44971F5147932BD000F5838 /* SingingCardKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingingCardKeys.m; sourceTree = "<group>"; };
 		E4582F8E14941C4D00CCEFA5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E45A75F2149D44FF0038C452 /* OPENING_MOV_IPHONE.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = OPENING_MOV_IPHONE.mov; sourceTree = "<group>"; };
 		E46AD7FB148F7B9F0087BC09 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		E46AD7FC148F7B9F0087BC09 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
 		E46AD7FD148F7B9F0087BC09 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
@@ -752,7 +753,6 @@
 		E4E41A421482A78C00EB3C20 /* LOADING_BACKGROUND~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOADING_BACKGROUND~iPad.png"; sourceTree = "<group>"; };
 		E4E41A431482A78C00EB3C20 /* LOADING_BAR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOADING_BAR@2x.png"; sourceTree = "<group>"; };
 		E4E41A461482A78C00EB3C20 /* MORE_CARDS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MORE_CARDS@2x.png"; sourceTree = "<group>"; };
-		E4E41A471482A78C00EB3C20 /* OPENING_MOV_IPHONE.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = OPENING_MOV_IPHONE.m4v; sourceTree = "<group>"; };
 		E4E41A481482A78C00EB3C20 /* PLAY@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLAY@2x.png"; sourceTree = "<group>"; };
 		E4E41A491482A78C00EB3C20 /* POSE_YOUR_FACE@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POSE_YOUR_FACE@2x.png"; sourceTree = "<group>"; };
 		E4E41A501482A78C00EB3C20 /* SHARE@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHARE@2x.png"; sourceTree = "<group>"; };
@@ -1787,6 +1787,7 @@
 		E4E41A221482A78C00EB3C20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E45A75F2149D44FF0038C452 /* OPENING_MOV_IPHONE.mov */,
 				E419345F1493E44D002535F4 /* RESTORE@2x.png */,
 				E4E46D7C1490153900D2FDDA /* FacebookUploadViewController-iPad.xib */,
 				E4E46D7D1490153900D2FDDA /* YouTubeUploadViewController-iPad.xib */,
@@ -1830,7 +1831,6 @@
 				E4E41A421482A78C00EB3C20 /* LOADING_BACKGROUND~iPad.png */,
 				E4E41A431482A78C00EB3C20 /* LOADING_BAR@2x.png */,
 				E4E41A461482A78C00EB3C20 /* MORE_CARDS@2x.png */,
-				E4E41A471482A78C00EB3C20 /* OPENING_MOV_IPHONE.m4v */,
 				E4E41A481482A78C00EB3C20 /* PLAY@2x.png */,
 				E4E41A491482A78C00EB3C20 /* POSE_YOUR_FACE@2x.png */,
 				E4E41A501482A78C00EB3C20 /* SHARE@2x.png */,
@@ -2011,7 +2011,6 @@
 				E4E41AB11482A78D00EB3C20 /* LOADING_BACKGROUND~iPad.png in Resources */,
 				E4E41AB21482A78D00EB3C20 /* LOADING_BAR@2x.png in Resources */,
 				E4E41AB51482A78D00EB3C20 /* MORE_CARDS@2x.png in Resources */,
-				E4E41AB61482A78D00EB3C20 /* OPENING_MOV_IPHONE.m4v in Resources */,
 				E4E41AB71482A78D00EB3C20 /* PLAY@2x.png in Resources */,
 				E4E41AB81482A78D00EB3C20 /* POSE_YOUR_FACE@2x.png in Resources */,
 				E4E41ABF1482A78D00EB3C20 /* SHARE@2x.png in Resources */,
@@ -2076,6 +2075,7 @@
 				E4E46D7F1490153900D2FDDA /* YouTubeUploadViewController-iPad.xib in Resources */,
 				E41934601493E44D002535F4 /* RESTORE@2x.png in Resources */,
 				E4582F8F14941C4D00CCEFA5 /* RESTORE@2x.png in Resources */,
+				E45A75F3149D44FF0038C452 /* OPENING_MOV_IPHONE.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
