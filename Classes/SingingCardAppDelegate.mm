@@ -78,7 +78,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     
 #ifdef PLAY_INTRO
     [playerViewController setDelegate:self];
-    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"OPENING_MOV_IPHONE" withExtension:@"m4v"]]; 
+    [playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"OPENING_MOV_IPHONE" withExtension:@"mov"]]; 
     //		playerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     switch([[UIDevice currentDevice] userInterfaceIdiom]) {

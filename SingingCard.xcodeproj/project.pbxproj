@@ -461,12 +461,12 @@
 		E4547553147E80BB004E812A /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E454754D147E80BB004E812A /* ShareViewController.xib */; };
 		E45475F9147E8260004E812A /* AVPlayerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45475F7147E8260004E812A /* AVPlayerViewController-iPad.xib */; };
 		E45475FA147E8260004E812A /* AVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E45475F8147E8260004E812A /* AVPlayerViewController.xib */; };
+		E45A75FA149D4E280038C452 /* OPENING_MOV_IPHONE.mov in Resources */ = {isa = PBXBuildFile; fileRef = E45A75F9149D4E280038C452 /* OPENING_MOV_IPHONE.mov */; };
 		E4698D181470043D001EBDEE /* CARD_BACKGROUND~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D0E1470043A001EBDEE /* CARD_BACKGROUND~iPad.png */; };
 		E4698D191470043D001EBDEE /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D0F1470043B001EBDEE /* icon-small.png */; };
 		E4698D1A1470043D001EBDEE /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D101470043B001EBDEE /* icon-small@2x.png */; };
 		E4698D1B1470043D001EBDEE /* icon-small~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D111470043B001EBDEE /* icon-small~iPad.png */; };
 		E4698D1C1470043D001EBDEE /* icon~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E4698D121470043C001EBDEE /* icon~iPad.png */; };
-		E4698D23147008FB001EBDEE /* OPENING_MOV_IPHONE.m4v in Resources */ = {isa = PBXBuildFile; fileRef = E4698D22147008FB001EBDEE /* OPENING_MOV_IPHONE.m4v */; };
 		E476ED191407EC960091FFA3 /* ofxAudioLimiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */; };
 		E48B29EA146B029E00FF65C0 /* BRITANIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E48B29E8146B029E00FF65C0 /* BRITANIC.TTF */; };
 		E48B29EB146B029E00FF65C0 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */; };
@@ -1200,12 +1200,12 @@
 		E45475D2147E8109004E812A /* pt */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pt; path = "Resources/pt.lproj/YOUTUBE_CANCEL@2x.png"; sourceTree = "<group>"; };
 		E45475F7147E8260004E812A /* AVPlayerViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "AVPlayerViewController-iPad.xib"; path = "Resources/AVPlayerViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
 		E45475F8147E8260004E812A /* AVPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AVPlayerViewController.xib; path = Resources/AVPlayerViewController.xib; sourceTree = SOURCE_ROOT; };
+		E45A75F9149D4E280038C452 /* OPENING_MOV_IPHONE.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = OPENING_MOV_IPHONE.mov; path = Resources/OPENING_MOV_IPHONE.mov; sourceTree = "<group>"; };
 		E4698D0E1470043A001EBDEE /* CARD_BACKGROUND~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CARD_BACKGROUND~iPad.png"; path = "Resources/CARD_BACKGROUND~iPad.png"; sourceTree = "<group>"; };
 		E4698D0F1470043B001EBDEE /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-small.png"; path = "Resources/icon-small.png"; sourceTree = "<group>"; };
 		E4698D101470043B001EBDEE /* icon-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-small@2x.png"; path = "Resources/icon-small@2x.png"; sourceTree = "<group>"; };
 		E4698D111470043B001EBDEE /* icon-small~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-small~iPad.png"; path = "Resources/icon-small~iPad.png"; sourceTree = "<group>"; };
 		E4698D121470043C001EBDEE /* icon~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon~iPad.png"; path = "Resources/icon~iPad.png"; sourceTree = "<group>"; };
-		E4698D22147008FB001EBDEE /* OPENING_MOV_IPHONE.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = OPENING_MOV_IPHONE.m4v; path = Resources/OPENING_MOV_IPHONE.m4v; sourceTree = "<group>"; };
 		E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
 		E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioLimiter.h; sourceTree = "<group>"; };
 		E48B29E8146B029E00FF65C0 /* BRITANIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = BRITANIC.TTF; path = Resources/BRITANIC.TTF; sourceTree = "<group>"; };
@@ -1702,6 +1702,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E45A75F9149D4E280038C452 /* OPENING_MOV_IPHONE.mov */,
 				E4AF012E12B0EF5700457BC7 /* MainWindow.xib */,
 				E48B29E9146B029E00FF65C0 /* MainWindow-iPad.xib */,
 				E4346FB7147EAEEE00011BCB /* FacebookUploadViewController-iPad.xib */,
@@ -1749,7 +1750,6 @@
 				E49F888C147912D8004A33F4 /* SHARE@2x.png */,
 				E49F8890147912D8004A33F4 /* STOP@2x.png */,
 				E4F9F8221474684D00106A0C /* X@2x.png */,
-				E4698D22147008FB001EBDEE /* OPENING_MOV_IPHONE.m4v */,
 				E4698D0E1470043A001EBDEE /* CARD_BACKGROUND~iPad.png */,
 				E4698D0F1470043B001EBDEE /* icon-small.png */,
 				E4698D101470043B001EBDEE /* icon-small@2x.png */,
@@ -3201,7 +3201,6 @@
 				E4698D1A1470043D001EBDEE /* icon-small@2x.png in Resources */,
 				E4698D1B1470043D001EBDEE /* icon-small~iPad.png in Resources */,
 				E4698D1C1470043D001EBDEE /* icon~iPad.png in Resources */,
-				E4698D23147008FB001EBDEE /* OPENING_MOV_IPHONE.m4v in Resources */,
 				E4F9F8251474684D00106A0C /* X@2x.png in Resources */,
 				E49F889B147912D8004A33F4 /* PLAY@2x.png in Resources */,
 				E49F889D147912D8004A33F4 /* REC_NEG_1@2x.png in Resources */,
@@ -3662,6 +3661,7 @@
 				E4346FCA147EAEEE00011BCB /* YouTubeUploadViewController.xib in Resources */,
 				E4346FD7147EB09700011BCB /* FACEBOOK_UPLOAD@2x.png in Resources */,
 				E43AADA314910C6500896345 /* FACEBOOK_LOGO@2x.png in Resources */,
+				E45A75FA149D4E280038C452 /* OPENING_MOV_IPHONE.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4229,7 +4229,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "131BC687-9C14-438C-93B9-334C808C7950";
+				PROVISIONING_PROFILE = "CDE1505B-C4B5-4289-8F68-ED848AE16A78";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
