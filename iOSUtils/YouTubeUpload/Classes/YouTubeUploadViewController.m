@@ -26,6 +26,7 @@
 @synthesize additionalText;
 @synthesize processView;
 @synthesize bDelayedUpload;
+@synthesize bIgnoreAccountFields;
 @synthesize titleLabel,descLabel,usernameLabel,passwordLabel,uploadButton,cancelButton;
 
 
@@ -301,8 +302,10 @@
     [self closeTextView:nil];
 	
 	if (uploader!=nil) {
-		uploader.username = username.text;
-		uploader.password = password.text;
+        if (!bIgnoreAccountFields) {
+            uploader.username = username.text;
+            uploader.password = password.text;
+        }
 		[uploader setVideoTitle:titleField.text];
 		[uploader setVideoDescription:[descriptionView.text stringByAppendingString:additionalText]];
 		[uploader setVideoPath:videoPath];

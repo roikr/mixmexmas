@@ -15,3 +15,5 @@ NSString* const kPopupMessageURL=@"http://www.lofipeople.com/mixmexmas/message/m
 NSString* const kInfoURL=@"http://www.lofipeople.com/mixmexmas/info/info";
 NSString* const kRateMeMessageURL=@"http://www.lofipeople.com/mixmexmas/rank";
 NSString* const kMyFeatureIdentifier = @"XmasExpansion";
+NSString* const kYouTubeUsername = @"";
+NSString* const kYouTubePassword = @"";

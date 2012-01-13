@@ -31,7 +31,7 @@ enum {
 	STATE_CANCELED
 };
 
-
+#define UNIQUE_YOUTUBE_CHANNEL
 
 void ShareAlert(NSString *title,NSString *message) {
 	
@@ -75,6 +75,11 @@ void ShareAlert(NSString *title,NSString *message) {
 	if (self = [super init]) {
 		self.youTubeUploader = [YouTubeUploader youTubeUploader:kYouTubeDeveloperKey];
 		[youTubeUploader addDelegate:self];
+#ifdef UNIQUE_YOUTUBE_CHANNEL
+        [youTubeUploader setUsername:kYouTubeUsername];
+        [youTubeUploader setPassword:kYouTubePassword];
+#endif
+        
 		self.facebookUploader = [FacebookUploader facebookUploader:kFacebookAppId];
 		[facebookUploader addDelegate:self];
 		self.renderManager = [[[RenderManager alloc] init] autorelease];
@@ -464,9 +469,6 @@ void ShareAlert(NSString *title,NSString *message) {
 		case ACTION_UPLOAD_TO_YOUTUBE: {
 			state = STATE_SELECTED;
             
-//            youTubeUploader.username = @"gogoscrazyholidays";
-//            youTubeUploader.password = @"ppithebox1";
-            
 			YouTubeUploadViewController *controller;
             
             switch([[UIDevice currentDevice] userInterfaceIdiom]) {
@@ -483,6 +485,9 @@ void ShareAlert(NSString *title,NSString *message) {
             
 			[controller setDelegate:self];
 			[controller setBDelayedUpload:YES];
+#ifdef UNIQUE_YOUTUBE_CHANNEL
+            [controller setBIgnoreAccountFields:YES];
+#endif
 			[parentViewController presentModalViewController:controller animated:YES];
 			controller.uploader = youTubeUploader;
 			controller.videoTitle = NSLocalizedString(@"YT title",@"xmas musical card"); // [[self getDisplayName] uppercaseString];
