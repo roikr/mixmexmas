@@ -8,64 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import "MessageLoader.h"
-#import "MessageParser.h"
-
-@interface ButtonData : NSObject<NSCoding> {
-    NSString *text;
-    NSString *link;
-    BOOL retry;
-//    BOOL pressed;
-}
-@property (nonatomic,retain) NSString *text;
-@property (nonatomic,retain) NSString *link;
-@property BOOL retry;
-//@property BOOL pressed;
-
-@end
-
-@interface MessageData : NSObject<NSCoding> {
-    NSString *title;
-    NSString *message;
-    NSMutableArray *buttons; 
-    NSString *appVersion;
-    NSString *messageID;
-    
-    NSString *modified;
-    BOOL displayed;
-    BOOL retry;
-    
-}
-
-@property (nonatomic,retain) NSString *title;
-@property (nonatomic,retain) NSString *message;
-@property (nonatomic,retain) NSMutableArray *buttons;
-@property (nonatomic,retain) NSString *appVersion;
-@property (nonatomic,retain) NSString *messageID;
-@property (nonatomic,retain) NSString *modified;
-@property BOOL displayed;
-@property BOOL retry;
+#include "ofxPopupMessages.h"
 
 
-
-@end
-
-
-
-@interface PopupMessage : NSObject<MessageLoaderDelegate,MessageParserDelegate,UIAlertViewDelegate> {
+@interface PopupMessage : NSObject<MessageLoaderDelegate,UIAlertViewDelegate> {
    
+    NSString *url;
     MessageLoader *loader;
-    MessageParser *parser;
-    MessageData *data;
-    NSURL *url;
+    NSTimer *timer;
+    UIAlertView *view; // since 4.0 we need to keep it to manage when going background while alert open...
+    
+    ofxPopupMessages messages;
 }
 
-
+@property (nonatomic,retain) NSString *url;
 @property (nonatomic,retain) MessageLoader *loader;
-@property (nonatomic,retain) MessageParser *parser;
-@property (nonatomic,retain) MessageData *data;
-@property (nonatomic,retain) NSURL *url;
+@property (nonatomic,retain) NSTimer *timer;
+@property (nonatomic,retain) UIAlertView *view;
 
 +(PopupMessage*) popupMessage:(NSString *)theURL;
+-(void) load;
+-(void) unload;
 
 @end
 

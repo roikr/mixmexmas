@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "PopupMessage.h"
+#import "ofMainExt.h"
+#import "ofxiPhoneExtras.h"
 
 @implementation AppDelegate
 
@@ -32,13 +34,21 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+//    ofSetDataPathRoot(ofxiPhoneGetDocumentsDirectory());
+//    ofxDeleteFile(ofxiPhoneGetDocumentsDirectory()+"popups_state.xml");
+//    ofxDeleteFile(ofxiPhoneGetDocumentsDirectory()+"timeline.xml");
+//    ofxCopyFile(ofxNSStringToString([[NSBundle mainBundle] resourcePath])+"/timeline.xml", ofxiPhoneGetDocumentsDirectory()+"timeline.xml");
     
-   
+    ofSetDataPathRoot(ofxNSStringToString([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0])+'/');
+    self.popupMessage= [PopupMessage popupMessage:@"http://www.lofipeople.com/mixmexmas"];
+    
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
+   [popupMessage unload];
+   
     /*
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -69,8 +79,7 @@
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
     
-    //self.popupMessage=
-    [PopupMessage popupMessage:[NSURL URLWithString:@"http://www.lofipeople.com/mixmexmas/message.xml"]];
+    [popupMessage load];
     
 //    self.messageParser = [MessageParser messageParser];
 //    messageParser.delegate = self;
@@ -78,7 +87,9 @@
 //    [messageParser downloadAndParse:url];
     
     
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"No, thanks !" otherButtonTitles:@"bring it !" , nil];
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"No, thanks !" otherButtonTitles:@"bring it !" , nil];
+//    [alertView show];
+//    [alertView release];
     
     
     
@@ -101,7 +112,7 @@
 }
 */
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    
+    NSLog(@"alertView: %i",buttonIndex);
 //    NSLog(@"button: %i, link: %@",buttonIndex,[messageParser.links objectAtIndex:buttonIndex]);
 //    self.messageParser = nil;
 }

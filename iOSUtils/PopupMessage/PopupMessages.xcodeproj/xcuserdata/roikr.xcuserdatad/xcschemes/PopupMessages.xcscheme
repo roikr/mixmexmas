@@ -14,16 +14,16 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E44BEAE51466F7FE005C35BE"
-               BuildableName = "PopUpMessages.app"
-               BlueprintName = "PopUpMessages"
-               ReferencedContainer = "container:PopUpMessages.xcodeproj">
+               BuildableName = "PopupMessages.app"
+               BlueprintName = "PopupMessages"
+               ReferencedContainer = "container:PopupMessages.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
@@ -32,15 +32,15 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E44BEAE51466F7FE005C35BE"
-            BuildableName = "PopUpMessages.app"
-            BlueprintName = "PopUpMessages"
-            ReferencedContainer = "container:PopUpMessages.xcodeproj">
+            BuildableName = "PopupMessages.app"
+            BlueprintName = "PopupMessages"
+            ReferencedContainer = "container:PopupMessages.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
    <LaunchAction
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
@@ -50,9 +50,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E44BEAE51466F7FE005C35BE"
-            BuildableName = "PopUpMessages.app"
-            BlueprintName = "PopUpMessages"
-            ReferencedContainer = "container:PopUpMessages.xcodeproj">
+            BuildableName = "PopupMessages.app"
+            BlueprintName = "PopupMessages"
+            ReferencedContainer = "container:PopupMessages.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -68,9 +68,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E44BEAE51466F7FE005C35BE"
-            BuildableName = "PopUpMessages.app"
-            BlueprintName = "PopUpMessages"
-            ReferencedContainer = "container:PopUpMessages.xcodeproj">
+            BuildableName = "PopupMessages.app"
+            BlueprintName = "PopupMessages"
+            ReferencedContainer = "container:PopupMessages.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -78,7 +78,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Ad Hoc"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
