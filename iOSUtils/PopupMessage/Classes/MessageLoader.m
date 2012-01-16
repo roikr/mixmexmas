@@ -21,8 +21,8 @@
 @synthesize delegate,xmlData,lastModified,connection,statusCode;
 
 
-+(MessageLoader *)messageLoader:(NSURL *)theURL modified:(NSString *)modified delegate:(id<MessageLoaderDelegate>) theDelegate {
-    NSLog(@"messageLoader: %@, modified: %@",[theURL path],modified);
++(MessageLoader *)messageLoader:(NSURL *)theURL lastModified:(NSDate *)modified delegate:(id<MessageLoaderDelegate>) theDelegate {
+    NSLog(@"messageLoader: %@",[theURL path]);
     MessageLoader *loader = [[[MessageLoader alloc] init ] autorelease];
     
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
@@ -30,7 +30,18 @@
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:theURL];
     
     if (modified!=nil) {
-         [theRequest addValue:modified forHTTPHeaderField:@"If-Modified-Since"];
+        
+        /* default if last modified date doesn't exist (not an error) */
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        
+        /* avoid problem if the user's locale is incompatible with HTTP-style dates */
+        [dateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
+        [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+        NSString *str = [dateFormatter stringFromDate:modified];
+        NSLog(@"messageLoader: %@",str);
+        [theRequest addValue:str forHTTPHeaderField:@"If-Modified-Since"];  // [NSDate dateWithTimeIntervalSinceReferenceDate:0]]
+        [dateFormatter release];
     }
    
     
@@ -106,19 +117,21 @@
             case 200:
                 NSLog(@"200 OK");
                 NSDictionary *headers = [(NSHTTPURLResponse *)response allHeaderFields];
-                self.lastModified = [headers objectForKey:@"Last-Modified"];
-                if (self.lastModified == nil) {
+                NSString *modified =  [headers objectForKey:@"Last-Modified"];
+                NSLog(@"lastModified: %@",modified);
+                
+                if (modified != nil) {
                     /* default if last modified date doesn't exist (not an error) */
                     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                     
                     /* avoid problem if the user's locale is incompatible with HTTP-style dates */
                     [dateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
-                    
                     [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];
-                    self.lastModified = [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceReferenceDate:0]];
+                    self.lastModified = [dateFormatter dateFromString:modified];
                     [dateFormatter release];
                 }
-                NSLog(@"lastModified: %@",self.lastModified);
+                
+                
                 break;
             case 404:
                 NSLog(@"404 Not Found");

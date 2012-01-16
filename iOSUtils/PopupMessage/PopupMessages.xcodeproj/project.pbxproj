@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E44BEAEB1466F7FE005C35BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44BEAEA1466F7FE005C35BE /* UIKit.framework */; };
+		E44BEAED1466F7FE005C35BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44BEAEC1466F7FE005C35BE /* Foundation.framework */; };
+		E44BEAEF1466F7FE005C35BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44BEAEE1466F7FE005C35BE /* CoreGraphics.framework */; };
+		E46FAA8B14695FDD00289E06 /* URLCacheAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E476E14514672D2C00DF4CA4 /* URLCacheAlert.m */; };
+		E498A60414C2CFBC009861D0 /* ofxPopupMessages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E498A60214C2CFBC009861D0 /* ofxPopupMessages.cpp */; };
+		E4CB904C146813B0000DBF20 /* MessageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CB904B146813B0000DBF20 /* MessageLoader.m */; };
+		E4E1C3F314C4264600497C0B /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4E1C3EB14C4264600497C0B /* AppDelegate.mm */; };
+		E4E1C3F414C4264600497C0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4E1C3EC14C4264600497C0B /* InfoPlist.strings */; };
+		E4E1C3F514C4264600497C0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E1C3EE14C4264600497C0B /* main.m */; };
+		E4E1C3F614C4264600497C0B /* PopupMessages-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4E1C3EF14C4264600497C0B /* PopupMessages-Info.plist */; };
+		E4E1C3FF14C433A000497C0B /* PopupMessage.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4E1C3FE14C433A000497C0B /* PopupMessage.mm */; };
+		E4EE321714C2D98E00EB95C7 /* timeline_1.0.0.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4EE321514C2D98E00EB95C7 /* timeline_1.0.0.xml */; };
+		E4EE322D14C33C4A00EB95C7 /* install.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4EE322414C33C4A00EB95C7 /* install.xml */; };
+		E4EE322E14C33C4A00EB95C7 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4EE322614C33C4A00EB95C7 /* tinyxml.cpp */; };
+		E4EE322F14C33C4A00EB95C7 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4EE322814C33C4A00EB95C7 /* tinyxmlerror.cpp */; };
+		E4EE323014C33C4A00EB95C7 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4EE322914C33C4A00EB95C7 /* tinyxmlparser.cpp */; };
+		E4EE323114C33C4A00EB95C7 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4EE322B14C33C4A00EB95C7 /* ofxXmlSettings.cpp */; };
+		E4EE323D14C33C5300EB95C7 /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4EE323314C33C5300EB95C7 /* easing.cpp */; };
+		E4EE323E14C33C5300EB95C7 /* ofMainExt.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4EE323614C33C5300EB95C7 /* ofMainExt.mm */; };
+		E4EE323F14C33C5300EB95C7 /* ofMain.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4EE323914C33C5300EB95C7 /* ofMain.mm */; };
+		E4EE324014C33C5300EB95C7 /* ofxiPhoneExtras.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4EE323C14C33C5300EB95C7 /* ofxiPhoneExtras.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E44BEAE61466F7FE005C35BE /* PopupMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopupMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E44BEAEA1466F7FE005C35BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E44BEAEC1466F7FE005C35BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E44BEAEE1466F7FE005C35BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E476E14414672D2C00DF4CA4 /* URLCacheAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheAlert.h; sourceTree = "<group>"; };
+		E476E14514672D2C00DF4CA4 /* URLCacheAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheAlert.m; sourceTree = "<group>"; };
+		E498A60214C2CFBC009861D0 /* ofxPopupMessages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPopupMessages.cpp; sourceTree = "<group>"; };
+		E498A60314C2CFBC009861D0 /* ofxPopupMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxPopupMessages.h; sourceTree = "<group>"; };
+		E4CB904A146813AF000DBF20 /* MessageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageLoader.h; sourceTree = "<group>"; };
+		E4CB904B146813B0000DBF20 /* MessageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageLoader.m; sourceTree = "<group>"; };
+		E4E1C3EA14C4264600497C0B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E4E1C3EB14C4264600497C0B /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		E4E1C3ED14C4264600497C0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4E1C3EE14C4264600497C0B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4E1C3EF14C4264600497C0B /* PopupMessages-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PopupMessages-Info.plist"; sourceTree = "<group>"; };
+		E4E1C3F014C4264600497C0B /* PopupMessages-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PopupMessages-Prefix.pch"; sourceTree = "<group>"; };
+		E4E1C3FD14C433A000497C0B /* PopupMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupMessage.h; sourceTree = "<group>"; };
+		E4E1C3FE14C433A000497C0B /* PopupMessage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PopupMessage.mm; sourceTree = "<group>"; };
+		E4EE321514C2D98E00EB95C7 /* timeline_1.0.0.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = timeline_1.0.0.xml; sourceTree = "<group>"; };
+		E4EE322414C33C4A00EB95C7 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
+		E4EE322614C33C4A00EB95C7 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		E4EE322714C33C4A00EB95C7 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		E4EE322814C33C4A00EB95C7 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		E4EE322914C33C4A00EB95C7 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		E4EE322B14C33C4A00EB95C7 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
+		E4EE322C14C33C4A00EB95C7 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		E4EE323314C33C5300EB95C7 /* easing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = easing.cpp; sourceTree = "<group>"; };
+		E4EE323414C33C5300EB95C7 /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
+		E4EE323514C33C5300EB95C7 /* ofMainExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofMainExt.h; sourceTree = "<group>"; };
+		E4EE323614C33C5300EB95C7 /* ofMainExt.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofMainExt.mm; sourceTree = "<group>"; };
+		E4EE323814C33C5300EB95C7 /* ofMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofMain.h; sourceTree = "<group>"; };
+		E4EE323914C33C5300EB95C7 /* ofMain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofMain.mm; sourceTree = "<group>"; };
+		E4EE323A14C33C5300EB95C7 /* ofTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofTypes.h; sourceTree = "<group>"; };
+		E4EE323B14C33C5300EB95C7 /* ofxiPhoneExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneExtras.h; sourceTree = "<group>"; };
+		E4EE323C14C33C5300EB95C7 /* ofxiPhoneExtras.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneExtras.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E44BEAE31466F7FE005C35BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E44BEAEB1466F7FE005C35BE /* UIKit.framework in Frameworks */,
+				E44BEAED1466F7FE005C35BE /* Foundation.framework in Frameworks */,
+				E44BEAEF1466F7FE005C35BE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E44BEADB1466F7FE005C35BE = {
+			isa = PBXGroup;
+			children = (
+				E4EE321314C2D98E00EB95C7 /* data */,
+				E498A61214C2D116009861D0 /* addons */,
+				E476E14114672D2C00DF4CA4 /* Classes */,
+				E4E1C3E914C4264600497C0B /* popupMessages */,
+				E44BEAE91466F7FE005C35BE /* Frameworks */,
+				E44BEAE71466F7FE005C35BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E44BEAE71466F7FE005C35BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E44BEAE61466F7FE005C35BE /* PopupMessages.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E44BEAE91466F7FE005C35BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E44BEAEA1466F7FE005C35BE /* UIKit.framework */,
+				E44BEAEC1466F7FE005C35BE /* Foundation.framework */,
+				E44BEAEE1466F7FE005C35BE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E476E14114672D2C00DF4CA4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E4E1C3FD14C433A000497C0B /* PopupMessage.h */,
+				E4E1C3FE14C433A000497C0B /* PopupMessage.mm */,
+				E4CB904A146813AF000DBF20 /* MessageLoader.h */,
+				E4CB904B146813B0000DBF20 /* MessageLoader.m */,
+				E476E14414672D2C00DF4CA4 /* URLCacheAlert.h */,
+				E476E14514672D2C00DF4CA4 /* URLCacheAlert.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E498A60014C2CFBC009861D0 /* ofxPopupMessages */ = {
+			isa = PBXGroup;
+			children = (
+				E498A60114C2CFBC009861D0 /* src */,
+			);
+			path = ofxPopupMessages;
+			sourceTree = "<group>";
+		};
+		E498A60114C2CFBC009861D0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E498A60214C2CFBC009861D0 /* ofxPopupMessages.cpp */,
+				E498A60314C2CFBC009861D0 /* ofxPopupMessages.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E498A61214C2D116009861D0 /* addons */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE323214C33C5300EB95C7 /* common */,
+				E4EE323714C33C5300EB95C7 /* myOF */,
+				E4EE322314C33C4A00EB95C7 /* ofxXmlSettings */,
+				E498A60014C2CFBC009861D0 /* ofxPopupMessages */,
+			);
+			name = addons;
+			sourceTree = "<group>";
+		};
+		E4E1C3E914C4264600497C0B /* popupMessages */ = {
+			isa = PBXGroup;
+			children = (
+				E4E1C3EA14C4264600497C0B /* AppDelegate.h */,
+				E4E1C3EB14C4264600497C0B /* AppDelegate.mm */,
+				E4E1C3EC14C4264600497C0B /* InfoPlist.strings */,
+				E4E1C3EE14C4264600497C0B /* main.m */,
+				E4E1C3EF14C4264600497C0B /* PopupMessages-Info.plist */,
+				E4E1C3F014C4264600497C0B /* PopupMessages-Prefix.pch */,
+			);
+			path = popupMessages;
+			sourceTree = "<group>";
+		};
+		E4EE321314C2D98E00EB95C7 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE321514C2D98E00EB95C7 /* timeline_1.0.0.xml */,
+			);
+			name = data;
+			path = "../../../of_preRelease_v007_iphone/apps/My Works/popupMessages/bin/data";
+			sourceTree = "<group>";
+		};
+		E4EE322314C33C4A00EB95C7 /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE322414C33C4A00EB95C7 /* install.xml */,
+				E4EE322514C33C4A00EB95C7 /* libs */,
+				E4EE322A14C33C4A00EB95C7 /* src */,
+			);
+			name = ofxXmlSettings;
+			path = ../../../of_preRelease_v007_iphone/addons/ofxXmlSettings;
+			sourceTree = "<group>";
+		};
+		E4EE322514C33C4A00EB95C7 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE322614C33C4A00EB95C7 /* tinyxml.cpp */,
+				E4EE322714C33C4A00EB95C7 /* tinyxml.h */,
+				E4EE322814C33C4A00EB95C7 /* tinyxmlerror.cpp */,
+				E4EE322914C33C4A00EB95C7 /* tinyxmlparser.cpp */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		E4EE322A14C33C4A00EB95C7 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE322B14C33C4A00EB95C7 /* ofxXmlSettings.cpp */,
+				E4EE322C14C33C4A00EB95C7 /* ofxXmlSettings.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E4EE323214C33C5300EB95C7 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE323314C33C5300EB95C7 /* easing.cpp */,
+				E4EE323414C33C5300EB95C7 /* easing.h */,
+				E4EE323514C33C5300EB95C7 /* ofMainExt.h */,
+				E4EE323614C33C5300EB95C7 /* ofMainExt.mm */,
+			);
+			name = common;
+			path = "../../../of_preRelease_v007_iphone/My Addons/common";
+			sourceTree = "<group>";
+		};
+		E4EE323714C33C5300EB95C7 /* myOF */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE323814C33C5300EB95C7 /* ofMain.h */,
+				E4EE323914C33C5300EB95C7 /* ofMain.mm */,
+				E4EE323A14C33C5300EB95C7 /* ofTypes.h */,
+				E4EE323B14C33C5300EB95C7 /* ofxiPhoneExtras.h */,
+				E4EE323C14C33C5300EB95C7 /* ofxiPhoneExtras.mm */,
+			);
+			name = myOF;
+			path = "../../../of_preRelease_v007_iphone/My Addons/myOF";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E44BEAE51466F7FE005C35BE /* PopupMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E44BEAFE1466F7FE005C35BE /* Build configuration list for PBXNativeTarget "PopupMessages" */;
+			buildPhases = (
+				E44BEAE21466F7FE005C35BE /* Sources */,
+				E44BEAE31466F7FE005C35BE /* Frameworks */,
+				E44BEAE41466F7FE005C35BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopupMessages;
+			productName = PopUpMessages;
+			productReference = E44BEAE61466F7FE005C35BE /* PopupMessages.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E44BEADD1466F7FE005C35BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = E44BEAE01466F7FE005C35BE /* Build configuration list for PBXProject "PopupMessages" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E44BEADB1466F7FE005C35BE;
+			productRefGroup = E44BEAE71466F7FE005C35BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E44BEAE51466F7FE005C35BE /* PopupMessages */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E44BEAE41466F7FE005C35BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4EE321714C2D98E00EB95C7 /* timeline_1.0.0.xml in Resources */,
+				E4EE322D14C33C4A00EB95C7 /* install.xml in Resources */,
+				E4E1C3F414C4264600497C0B /* InfoPlist.strings in Resources */,
+				E4E1C3F614C4264600497C0B /* PopupMessages-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E44BEAE21466F7FE005C35BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CB904C146813B0000DBF20 /* MessageLoader.m in Sources */,
+				E46FAA8B14695FDD00289E06 /* URLCacheAlert.m in Sources */,
+				E498A60414C2CFBC009861D0 /* ofxPopupMessages.cpp in Sources */,
+				E4EE322E14C33C4A00EB95C7 /* tinyxml.cpp in Sources */,
+				E4EE322F14C33C4A00EB95C7 /* tinyxmlerror.cpp in Sources */,
+				E4EE323014C33C4A00EB95C7 /* tinyxmlparser.cpp in Sources */,
+				E4EE323114C33C4A00EB95C7 /* ofxXmlSettings.cpp in Sources */,
+				E4EE323D14C33C5300EB95C7 /* easing.cpp in Sources */,
+				E4EE323E14C33C5300EB95C7 /* ofMainExt.mm in Sources */,
+				E4EE323F14C33C5300EB95C7 /* ofMain.mm in Sources */,
+				E4EE324014C33C5300EB95C7 /* ofxiPhoneExtras.mm in Sources */,
+				E4E1C3F314C4264600497C0B /* AppDelegate.mm in Sources */,
+				E4E1C3F514C4264600497C0B /* main.m in Sources */,
+				E4E1C3FF14C433A000497C0B /* PopupMessage.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E4E1C3EC14C4264600497C0B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4E1C3ED14C4264600497C0B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E410EB3D14C4834500A4EAC9 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roee Kremer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6ADDD78E-0A1E-483B-9E1E-E8ECB7B62056";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Ad Hoc";
+		};
+		E410EB3E14C4834500A4EAC9 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopupMessages/PopupMessages-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "PopupMessages/PopupMessages-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = PopupMessages;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Ad Hoc";
+		};
+		E44BEAFC1466F7FE005C35BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E44BEAFD1466F7FE005C35BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E44BEAFF1466F7FE005C35BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopupMessages/PopupMessages-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "PopupMessages/PopupMessages-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = PopupMessages;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E44BEB001466F7FE005C35BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopupMessages/PopupMessages-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "PopupMessages/PopupMessages-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = PopupMessages;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E44BEAE01466F7FE005C35BE /* Build configuration list for PBXProject "PopupMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E44BEAFC1466F7FE005C35BE /* Debug */,
+				E410EB3D14C4834500A4EAC9 /* Ad Hoc */,
+				E44BEAFD1466F7FE005C35BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E44BEAFE1466F7FE005C35BE /* Build configuration list for PBXNativeTarget "PopupMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E44BEAFF1466F7FE005C35BE /* Debug */,
+				E410EB3E14C4834500A4EAC9 /* Ad Hoc */,
+				E44BEB001466F7FE005C35BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E44BEADD1466F7FE005C35BE /* Project object */;
+}
