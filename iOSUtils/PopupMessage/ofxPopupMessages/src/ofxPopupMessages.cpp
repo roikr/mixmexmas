@@ -10,23 +10,32 @@
 #include "ofxXmlSettings.h"
 
 
-void ofxPopupMessages::loadMessages(string filename,bool bNew) {
+void ofxPopupMessages::setup(string filename,string version) {
+    this->filename = filename;
+    this->version = version;
+    bStartMessage = false;
+    bStarted = false;
     
-    if (bLoaded && !bNew) {
-        return;
-    }
+}
+
+
+void ofxPopupMessages::load() {
     
+   
     messages.clear();
+    bStartMessage = false;
     
     ofxXmlSettings xml;
     xml.loadFile(filename); // xml uses ofToDataPath
+    
+    startDelay = xml.getAttribute("timeline", "startDelay", 0.0) ;
     
     xml.pushTag("timeline");
     
     for (int i=0; i<xml.getNumTags("message"); i++) {
         message m;
         m.messageID = xml.getAttribute("message", "id", 0,i);
-        m.time = xml.getAttribute("message", "time", 0,i);
+        m.time = xml.getAttribute("message", "time", 0.0,i) ;
         
         xml.pushTag("message",i);
         m.title = xml.getValue("title", "");
@@ -34,41 +43,29 @@ void ofxPopupMessages::loadMessages(string filename,bool bNew) {
         for (int j=0; j<xml.getNumTags("button"); j++) {
             button b;
             b.link = xml.getAttribute("button", "link", "",j);
+            b.retry = xml.getAttribute("button", "retry", 0,j);
             b.text = xml.getValue("button","",j);
+            
             m.buttons.push_back(b);
         }
         xml.popTag();
-        messages.push_back(m);
+        
+        if (m.time) {
+            messages.push_back(m);
+        } else if (!bStartMessage) {
+            bStartMessage = true;
+            startMessage = m;
+        }
+        
         
     }
     xml.popTag();
     
-    loadState();
-    
-    citer = messages.begin();
-    
-    while (getIsValid() && messagesDone.find(citer->messageID) != messagesDone.end()) {
-        citer++;
-    }
-    
-    bLoaded = true;
-    
-//    for (vector<message>::iterator miter = messages.begin(); miter!=messages.end(); miter++) {
-//        cout << miter->messageID << " " << miter->time << " " << miter->title << " " << miter->body << endl;
-//        for (vector<button>::iterator biter = miter->buttons.begin(); biter!=miter->buttons.end(); biter++) { 
-//            cout << "\t" << biter->text << " " << biter->link << endl;
-//        }
-//    }
-    
-}
-
-void ofxPopupMessages::loadState() {
     
     messagesDone.clear();
-    ofxXmlSettings xml;
+    xml.clear();
     if (xml.loadFile("popups_state.xml")) {
-    
-       // citer = messages.begin()+xml.getAttribute("state", "playhead", 0);
+        
         xml.pushTag("state");
         for (int i=0;i<xml.getNumTags("message");i++) {
             messagesDone.insert(xml.getAttribute("message", "id", 0,i));
@@ -83,14 +80,39 @@ void ofxPopupMessages::loadState() {
         
         cout << endl;
     }
+   
+    
+    xml.clear();
+    if (xml.loadFile("playhead_"+version+".xml")) {
+        nextDelay = xml.getAttribute("playhead", "nextDelay",startDelay);
+        citer = messages.begin()+xml.getAttribute("playhead","message",0);;
+        
+        
+    } else {
+        citer = messages.begin();
+        nextDelay = citer->time;
+        
+    }
+    
+    if (citer!=messages.end()) {
+        cout << "playhead: " << distance(messages.begin(), citer)  << ", nextDelay: " << nextDelay << ", messageTime: " << citer->time << endl;
+    }
+    
+    
+    for (vector<message>::iterator miter = messages.begin(); miter!=messages.end(); miter++) {
+        cout << miter->messageID << " " << miter->time << " " << miter->title << " " << miter->body << endl;
+        for (vector<button>::iterator biter = miter->buttons.begin(); biter!=miter->buttons.end(); biter++) { 
+            cout << "\t" << biter->text << " " << biter->link << endl;
+        }
+    }
     
 }
 
-void ofxPopupMessages::saveState() {
+void ofxPopupMessages::unload() {
+    
     ofxXmlSettings xml;
     
     xml.addTag("state");
-    //xml.setAttribute("state", "playhead", distance(messages.begin(), citer),0);
     
     xml.pushTag("state");
     
@@ -101,31 +123,52 @@ void ofxPopupMessages::saveState() {
     xml.popTag();
     
     xml.saveFile("popups_state.xml");
-}
-
-message &ofxPopupMessages::getMessage() {
-    return *citer;
-}
-
-
-void ofxPopupMessages::nextMessage(bool bDone) {
-    if (getIsValid()) {
-        if (bDone) {
-            messagesDone.insert(citer->messageID);
-            saveState();
-        }
-        citer++;
+    
+    xml.clear();
+    
+    xml.addTag("playhead");
+    xml.addAttribute("playhead", "message",distance(messages.begin(), citer),0);
+    if (citer!=messages.end()) {
+         nextDelay = max(citer->time - min((double)(ofGetElapsedTimeMillis()-timer)/1000.0,citer->time),startDelay);
+         xml.addAttribute("playhead", "nextDelay",nextDelay,0);
+        cout << "playhead: " << distance(messages.begin(), citer)  << ", nextDelay: " << nextDelay << ", messageTime: " << citer->time  << endl;
     }
    
-    while (getIsValid() && messagesDone.find(citer->messageID) != messagesDone.end()) {
-        citer++;
-    } 
+    xml.saveFile("playhead_"+version+".xml"); 
+}
+
+void ofxPopupMessages::clear() {
+    ofxXmlSettings xml;
+    xml.saveFile("playhead_"+version+".xml"); 
+}
+
+
     
+
+
+void ofxPopupMessages::nextMessage() {
+    
+    if (bStarted) {
+        if (citer!=messages.end()) {
+            citer++;
+        }
+        
+        while (citer!=messages.end() && messagesDone.find(citer->messageID) != messagesDone.end() ) {
+            citer++;
+        } 
+        
+        if (citer!=messages.end()) {
+            nextDelay = citer->time;
+        }
+        
+    } else {
+        bStarted = true;
+    }
+    
+   timer = ofGetElapsedTimeMillis();
     
 }
 
-bool ofxPopupMessages::getIsValid() {
-    return citer!=messages.end();
-    
-}
+
+
 

@@ -16,6 +16,7 @@ using namespace std;
 struct button {
     string text;
     string link;
+    bool retry;
 };
 
 struct message {
@@ -23,7 +24,7 @@ struct message {
     string body;
     vector<button> buttons; 
     int messageID;
-    int time;
+    double time;
     bool bDisplayed;
     bool bRetry;
     
@@ -34,21 +35,36 @@ class ofxPopupMessages{
     
 public:
    
-    ofxPopupMessages():bLoaded(false),citer(messages.end()) {};
-    void loadMessages(string filename,bool bNew = false);
+    void setup(string filename,string version);
+       
+    void load();
+    void unload();    
+
+    void nextMessage();
+    void clear();
     
     
-    message &getMessage();
-    void nextMessage(bool bDone);
-    bool getIsValid();
-    
-private:
-    bool bLoaded;
-    
-    void loadState();
-    void saveState();
+    message startMessage;
+    bool bStartMessage;
     
     vector<message> messages;
     vector<message>::iterator citer;
     set<int> messagesDone;
+
+    double nextDelay;
+    
+            
+private:
+    
+    string version;
+    string filename;
+    double startDelay;
+    
+    int timer;
+    bool bStarted;
+    
 };
+
+
+//messagesDone.insert(messageID);
+//return messagesDone.find(messageID) != messagesDone.end();

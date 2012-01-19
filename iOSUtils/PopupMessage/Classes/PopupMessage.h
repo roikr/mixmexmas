@@ -10,26 +10,40 @@
 #import "MessageLoader.h"
 #include "ofxPopupMessages.h"
 
+@protocol PopupMessageDelegate; 
 
 @interface PopupMessage : NSObject<MessageLoaderDelegate,UIAlertViewDelegate> {
-   
+    
+    id<PopupMessageDelegate> delegate;
     NSString *url;
     MessageLoader *loader;
-    NSTimer *timer;
     UIAlertView *view; // since 4.0 we need to keep it to manage when going background while alert open...
+    NSTimer *timer;
+   
+    ofxPopupMessages popup;
     
-    ofxPopupMessages messages;
+    BOOL startMessage;
 }
 
+@property (nonatomic,retain) id<PopupMessageDelegate> delegate;
 @property (nonatomic,retain) NSString *url;
 @property (nonatomic,retain) MessageLoader *loader;
-@property (nonatomic,retain) NSTimer *timer;
 @property (nonatomic,retain) UIAlertView *view;
+@property (nonatomic,retain) NSTimer *timer;
+@property BOOL messageDisplayed;
 
 +(PopupMessage*) popupMessage:(NSString *)theURL;
+-(id) initWithURL:(NSString *)theURL;
 -(void) load;
 -(void) unload;
+-(void) popup;
+
 
 @end
 
+@protocol PopupMessageDelegate 
+
+-(BOOL)popupMessageShouldDisplayMessage:(PopupMessage *)popup;
+
+@end
 
