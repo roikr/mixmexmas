@@ -7,14 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "PopupMessage.h"
-#import "ofMainExt.h"
-#import "ofxiPhoneExtras.h"
+#include "ofxiPhoneExtras.h"
+
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize popupMessage;
+@synthesize button;
 
 - (void)dealloc
 {
@@ -32,17 +32,32 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    self.button = [[UISwitch alloc] initWithFrame:CGRectMake(50, 50, 0, 0)];
+    button.on = YES;
+    
+    [self.window addSubview:button];
     [self.window makeKeyAndVisible];
     
-//    ofSetDataPathRoot(ofxiPhoneGetDocumentsDirectory());
-//    ofxDeleteFile(ofxiPhoneGetDocumentsDirectory()+"popups_state.xml");
-//    ofxDeleteFile(ofxiPhoneGetDocumentsDirectory()+"timeline.xml");
-//    ofxCopyFile(ofxNSStringToString([[NSBundle mainBundle] resourcePath])+"/timeline.xml", ofxiPhoneGetDocumentsDirectory()+"timeline.xml");
+
+
+//    NSError *error = nil;	
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//	[[NSFileManager defaultManager] removeItemAtPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"/timeline_1.0.0.xml"] error:&error];
+//	[[NSFileManager defaultManager] copyItemAtPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/timeline_1.0.0.xml"] toPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"/timeline_1.0.0.xml"] error:&error];
+//    
+//    [[NSFileManager defaultManager] removeItemAtPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"/playhead_1.0.0.xml"] error:&error];
     
-    ofSetDataPathRoot(ofxNSStringToString([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0])+'/');
+//    ofSetDataPathRoot(ofxNSStringToString([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0])+'/');
+    ofSetDataPathRoot(ofxiPhoneGetDocumentsDirectory());
     self.popupMessage= [PopupMessage popupMessage:@"http://www.lofipeople.com/mixmexmas"];
-    
+    [popupMessage setDelegate:self];
     return YES;
+}
+
+-(BOOL)popupMessageShouldDisplayMessage:(PopupMessage *)popup {
+    return button.on;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -81,18 +96,8 @@
     
     [popupMessage load];
     
-//    self.messageParser = [MessageParser messageParser];
-//    messageParser.delegate = self;
-//    NSURL *url = ;
-//    [messageParser downloadAndParse:url];
     
-    
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"No, thanks !" otherButtonTitles:@"bring it !" , nil];
-//    [alertView show];
-//    [alertView release];
-    
-    
-    
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -104,18 +109,6 @@
      */
 }
 
-/*
--(void)MessageParserDelegateParsed:(MessageParser *)parser {
-    [parser.alertView setDelegate:self];
-    [parser.alertView show];
- //   [alertView release];
-}
-*/
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    NSLog(@"alertView: %i",buttonIndex);
-//    NSLog(@"button: %i, link: %@",buttonIndex,[messageParser.links objectAtIndex:buttonIndex]);
-//    self.messageParser = nil;
-}
 
 
 @end

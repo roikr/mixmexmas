@@ -15,7 +15,7 @@
 		E4CB904C146813B0000DBF20 /* MessageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CB904B146813B0000DBF20 /* MessageLoader.m */; };
 		E4E1C3F314C4264600497C0B /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4E1C3EB14C4264600497C0B /* AppDelegate.mm */; };
 		E4E1C3F414C4264600497C0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4E1C3EC14C4264600497C0B /* InfoPlist.strings */; };
-		E4E1C3F514C4264600497C0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E1C3EE14C4264600497C0B /* main.m */; };
+		E4E1C3F514C4264600497C0B /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4E1C3EE14C4264600497C0B /* main.mm */; };
 		E4E1C3F614C4264600497C0B /* PopupMessages-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4E1C3EF14C4264600497C0B /* PopupMessages-Info.plist */; };
 		E4E1C3FF14C433A000497C0B /* PopupMessage.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4E1C3FE14C433A000497C0B /* PopupMessage.mm */; };
 		E4EE321714C2D98E00EB95C7 /* timeline_1.0.0.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4EE321514C2D98E00EB95C7 /* timeline_1.0.0.xml */; };
@@ -44,7 +44,7 @@
 		E4E1C3EA14C4264600497C0B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4E1C3EB14C4264600497C0B /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		E4E1C3ED14C4264600497C0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E4E1C3EE14C4264600497C0B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4E1C3EE14C4264600497C0B /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		E4E1C3EF14C4264600497C0B /* PopupMessages-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PopupMessages-Info.plist"; sourceTree = "<group>"; };
 		E4E1C3F014C4264600497C0B /* PopupMessages-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PopupMessages-Prefix.pch"; sourceTree = "<group>"; };
 		E4E1C3FD14C433A000497C0B /* PopupMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupMessage.h; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				E4E1C3EA14C4264600497C0B /* AppDelegate.h */,
 				E4E1C3EB14C4264600497C0B /* AppDelegate.mm */,
 				E4E1C3EC14C4264600497C0B /* InfoPlist.strings */,
-				E4E1C3EE14C4264600497C0B /* main.m */,
+				E4E1C3EE14C4264600497C0B /* main.mm */,
 				E4E1C3EF14C4264600497C0B /* PopupMessages-Info.plist */,
 				E4E1C3F014C4264600497C0B /* PopupMessages-Prefix.pch */,
 			);
@@ -307,7 +307,7 @@
 				E4EE323F14C33C5300EB95C7 /* ofMain.mm in Sources */,
 				E4EE324014C33C5300EB95C7 /* ofxiPhoneExtras.mm in Sources */,
 				E4E1C3F314C4264600497C0B /* AppDelegate.mm in Sources */,
-				E4E1C3F514C4264600497C0B /* main.m in Sources */,
+				E4E1C3F514C4264600497C0B /* main.mm in Sources */,
 				E4E1C3FF14C433A000497C0B /* PopupMessage.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,7 +331,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roee Kremer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Roee Kremer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -347,7 +347,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6ADDD78E-0A1E-483B-9E1E-E8ECB7B62056";
+				PROVISIONING_PROFILE = "6ADDD78E-0A1E-483B-9E1E-E8ECB7B62056";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -371,7 +371,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -387,6 +387,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "C111FD7C-7501-435A-9984-A80C333C109F";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -397,7 +398,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_THUMB_SUPPORT = NO;

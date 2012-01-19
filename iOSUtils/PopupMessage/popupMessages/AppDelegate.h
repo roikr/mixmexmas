@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PopupMessage.h"
 
-@class PopupMessage;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate> {
+@interface AppDelegate : UIResponder <UIApplicationDelegate,PopupMessageDelegate> {
     PopupMessage *popupMessage;
+    UISwitch *button;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) PopupMessage *popupMessage;
+@property (nonatomic, retain) UISwitch *button;
+
+
 
 @end

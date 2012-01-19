@@ -8,28 +8,33 @@
 
 #import "PopupMessage.h"
 #include "ofxiPhoneExtras.h"
-
+#include "ofxPopupMessages.h"
 
 @interface PopupMessage(PrivateMethods) 
--(void) setTimer;
--(void) popup;
 @end
 
 @implementation PopupMessage
-@synthesize url,loader,timer,view;
+@synthesize url,loader,view,timer,messageDisplayed,delegate;
 
 
 +(PopupMessage*) popupMessage:(NSString *)theURL {
     
-    
-    PopupMessage* message = [[[PopupMessage alloc] init] autorelease];
-    
-    NSString *preferredLocalizations = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
-    NSString *versionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey];
-    message.url = [theURL stringByAppendingFormat:@"/messages/%@/timeline_%@.xml",preferredLocalizations,versionString];
+    return [[[PopupMessage alloc] initWithURL:theURL] autorelease];
+}
+
+-(id) initWithURL:(NSString *)theURL {
     
     
-    return message;
+    if (self=[super init]) {
+        NSString *preferredLocalizations = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+        NSString *versionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey];
+        self.url = [theURL stringByAppendingFormat:@"/messages/%@/timeline_%@.xml",preferredLocalizations,versionString];
+        popup.setup(ofxNSStringToString([url lastPathComponent]),ofxNSStringToString(versionString));
+        messageDisplayed = NO;
+
+    }
+    
+    return self;
 }
 
 - (void)dealloc
@@ -43,6 +48,8 @@
 -(void) load {
     
    
+//    [self messageLoaderDidFinished:nil];
+//    return;
     //NSString* libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     
     
@@ -64,58 +71,88 @@
 }
 
 -(void) unload {
-    if (view) {
-        [view dismissWithClickedButtonIndex:-1 animated:NO];
-    } 
+    
+    popup.unload();
     
     if (timer) {
         [timer invalidate];
         self.timer = nil;
+    }
+    
+    if (view) {
+        [view dismissWithClickedButtonIndex:-1 animated:NO];
     } 
+    
+    
   
 }
 
 
--(void) setTimer {
-    if (messages.getIsValid()) {
-        message &m = messages.getMessage();
-        self.timer =  [NSTimer scheduledTimerWithTimeInterval:m.time target:self selector:@selector(popup) userInfo:nil repeats:NO];
-    }
-}
-
-
 -(void) popup {
-   
     
-    message &m = messages.getMessage();
+    [timer invalidate];
+    self.timer = nil;
     
-    self.view = [[UIAlertView alloc] init];
-    [view setDelegate:self];
-    [view setTitle:ofxStringToNSString(m.title)];
-    [view setMessage:ofxStringToNSString(m.body)];
-    
-    for (vector<button>::iterator iter=m.buttons.begin();iter!=m.buttons.end();iter++) {
-        [view addButtonWithTitle:ofxStringToNSString(iter->text)];
-    }
-    
-    [view show];
-    [view release];
-}
+    if ([delegate popupMessageShouldDisplayMessage:self]) {
+        
+        message m;
+        
+        if (startMessage) {
+            m = popup.startMessage;
+        } else {
+            m = *(popup.citer);
+        }
 
+        
+        self.view = [[UIAlertView alloc] init];
+        [view setDelegate:self];
+        [view setTitle:ofxStringToNSString(m.title)];
+        [view setMessage:ofxStringToNSString(m.body)];
+        
+        for (vector<button>::iterator iter=m.buttons.begin();iter!=m.buttons.end();iter++) {
+            [view addButtonWithTitle:ofxStringToNSString(iter->text)];
+        }
+        
+        [view show];
+        [view release];
+    } else {
+        self.timer =  [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(popup) userInfo:nil repeats:NO];
+    }
+}
 
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex>=0) {
+        
+        
+        
         NSLog(@"alertView: %i",buttonIndex);
         
-        message &m = messages.getMessage();
+        message m;
+        
+        if (startMessage) {
+            m = popup.startMessage;
+            startMessage = NO;
+        } else {
+            m = *(popup.citer);
+        }
+
+        
+        
         
         string link = m.buttons[buttonIndex].link;
-        bool bDone = !link.empty(); // if link pressed the message is done !
+        if (!m.buttons[buttonIndex].retry) { // if no rerty message is done !
+            popup.messagesDone.insert(m.messageID);
+        }
         
-        messages.nextMessage(bDone); 
         
-        [self setTimer];
+        
+        popup.nextMessage(); 
+        if (popup.citer != popup.messages.end()) {
+            self.timer =  [NSTimer scheduledTimerWithTimeInterval:popup.nextDelay target:self selector:@selector(popup) userInfo:nil repeats:NO];
+        }
+        
+
         
         if (!link.empty()) {
             if (![[UIApplication sharedApplication] openURL:[NSURL URLWithString:ofxStringToNSString(link)]]) {
@@ -125,6 +162,7 @@
         }    
     }
     self.view = nil;
+    messageDisplayed = NO;
 }    
     
 
@@ -140,17 +178,29 @@
             NSDictionary *dict = [NSDictionary dictionaryWithObject:theLoader.lastModified forKey:NSFileModificationDate];
             NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[url lastPathComponent]];
            [[NSFileManager defaultManager] createFileAtPath:filePath contents:theLoader.xmlData attributes:dict];
+        
+            // if new version or file, need to delete playhead
+            popup.clear();
             
-            
-            messages.loadMessages(ofxNSStringToString([url lastPathComponent]),true);
-            [self setTimer];
+           
 
-        }   break;
+        }  
         case 304: // Not Modified
-             messages.loadMessages(ofxNSStringToString([url lastPathComponent]));
-            [self setTimer];
+            popup.load();
             
-            break;
+             startMessage = popup.bStartMessage && popup.messagesDone.find(popup.startMessage.messageID) == popup.messagesDone.end();
+            if (startMessage) {
+                [self popup];
+            } else {
+                popup.nextMessage(); 
+                if (popup.citer != popup.messages.end()) {
+                    self.timer =  [NSTimer scheduledTimerWithTimeInterval:popup.nextDelay target:self selector:@selector(popup) userInfo:nil repeats:NO];
+                }
+                
+            }
+
+        break;
+        
         case 404: // Not Modified - don't popup
             break;
         default:
