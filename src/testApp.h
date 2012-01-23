@@ -63,6 +63,9 @@ struct card {
     
     string exportFilename;
     string tag;
+    string featureID;
+    vector<string> features;
+    bool bLocked;
 };
 
 
@@ -93,6 +96,7 @@ public:
 	void preview();
 //	void playIntro();
 
+    void unlock(string feature);
 	
 	bool getIsPlaying();
 	
@@ -177,6 +181,10 @@ public:
     
     int playTime;
     bool bSongPlayed;
-	
+    
+    ofxAudioFile demoSound;
+    ofxAudioSample demoSample;
+    ofxRKTexture demoFace;
+   
 };
 

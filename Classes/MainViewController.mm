@@ -45,12 +45,14 @@
 
 @implementation MainViewController
 
+@synthesize lockImage;
 @synthesize liveView;
 @synthesize liveViewLabel;
 @synthesize recordView;
 @synthesize imageView;
 @synthesize recordViewLabel;
 @synthesize playView;
+@synthesize buyButton;
 @synthesize playButton;
 @synthesize renderProgressView;
 
@@ -79,6 +81,7 @@
 #ifdef LIVE_TEXT
     [recordButton1 setTitle:NSLocalizedString(@"UI Record",@"Record") forState:UIControlStateNormal];
     [recordButton2 setTitle:NSLocalizedString(@"UI Record",@"Record") forState:UIControlStateNormal];
+    [buyButton setTitle:NSLocalizedString(@"UI Buy",@"Buy") forState:UIControlStateNormal];
     [startOverButton setTitle:NSLocalizedString(@"UI Start over",@"Start over") forState:UIControlStateNormal];
     [playButton setTitle:NSLocalizedString(@"UI Play",@"Play") forState:UIControlStateNormal];
     [playButton setTitle:NSLocalizedString(@"UI Stop",@"Stop") forState:UIControlStateSelected];
@@ -99,6 +102,14 @@
     
     switchButton1.titleLabel.textAlignment = UITextAlignmentCenter;
     switchButton2.titleLabel.textAlignment = UITextAlignmentCenter;
+    
+    buyButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    buyButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    buyButton.titleLabel.textAlignment = UITextAlignmentCenter;
+    buyButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    buyButton.titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+    buyButton.titleLabel.numberOfLines = 1;
+    buyButton.titleLabel.minimumFontSize = 10;
     
     startOverButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
     startOverButton.titleLabel.adjustsFontSizeToFitWidth = YES;
@@ -174,6 +185,9 @@
 	playButton.selected = NO;
 	renderProgressView.hidden = YES;
 	renderProgressView.cancelButton.hidden = YES;
+    
+    startOverButton.hidden = shareButton.hidden = self.OFSAptr->citer->bLocked;
+    lockImage.hidden = buyButton.hidden = !self.OFSAptr->citer->bLocked;
 
 #ifdef IN_APP_STORE
     
@@ -181,7 +195,11 @@
     
 //    shareButton.hidden = store.state == STORE_STATE_NONE;
     
-    shareButton.selected = ([delegate getCurrentCardNumber] && delegate.store.state == STORE_STATE_PRODUCT_NONE);
+    //shareButton.selected = ([delegate getCurrentCardNumber] && delegate.store.state == STORE_STATE_PRODUCT_NONE);
+    
+    
+    
+    
 #endif
 	
 	
@@ -191,7 +209,13 @@
 			buttonsView.hidden = NO;
 			switch (self.OFSAptr->getState()) {
 				case STATE_LIVE:
-					liveView.hidden = NO;
+                    if (!self.OFSAptr->citer->bLocked) {
+                        liveView.hidden = NO;
+                    } else {
+                        playView.hidden = NO;
+                        playButton.selected = self.OFSAptr->getSongState() == SONG_PLAY;
+                    }
+					
 
 					break;
 				case STATE_RECORD:
@@ -200,8 +224,11 @@
 					
 					break;
 				case STATE_PLAY:
-					playView.hidden = NO;
-					playButton.selected = self.OFSAptr->getSongState() == SONG_PLAY;
+					
+                    playView.hidden = NO;
+                    playButton.selected = self.OFSAptr->getSongState() == SONG_PLAY;
+                    
+
 				default:
 					break;
 			}
@@ -220,6 +247,18 @@
 
 - (IBAction) more:(id)sender {
 	self.OFSAptr->more();
+}
+
+
+- (NSString *)getFeatureIdentifier {
+    
+    return  self.OFSAptr->citer->featureID.empty()? nil : [NSString stringWithCString:self.OFSAptr->citer->featureID.c_str() encoding:[NSString defaultCStringEncoding]];
+    
+}
+
+
+- (IBAction) buy:(id)sender {
+    self.OFSAptr->unlock(self.OFSAptr->citer->featureID);
 }
 
 - (IBAction) live:(id)sender {

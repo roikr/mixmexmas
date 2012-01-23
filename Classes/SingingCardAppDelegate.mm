@@ -20,7 +20,7 @@
 
 #include "EAGLView.h"
 #include "RKMacros.h"
-#import "PopupMessage.h"
+//#import "PopupMessage.h"
 #import "SingingCardKeys.h"
 
 #ifdef _FLURRY
@@ -135,7 +135,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     RKLog(@"AVPlayerViewControllerDone");
            
     self.OFSAptr->startAudio();
-    [PopupMessage popupMessage:kPopupMessageURL];
+//    [PopupMessage popupMessage:kPopupMessageURL];
     self.message = [RateMeMessage rateMeMessage:kRateMeMessageURL firstDelay:(NSTimeInterval)(300.0) repeatedDelay:(NSTimeInterval)(900.0) delegate:self];
     
 
@@ -284,7 +284,7 @@ void uncaughtExceptionHandler(NSException *exception) {
         [playerViewController.player play];
     } else {
         
-        [PopupMessage popupMessage:kPopupMessageURL];
+//        [PopupMessage popupMessage:kPopupMessageURL];
     }
 }
 

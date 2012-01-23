@@ -71,10 +71,18 @@ void testApp::setup(){
 	
 	ofxXmlSettings xml;
 	
-	bool loaded = xml.loadFile("cards.xml");
-	assert(loaded);
+	bool bLoaded = xml.loadFile("cards.xml");
+	assert(bLoaded);
 	
 	
+    bLoaded = demoSound.load(ofToDataPath(xml.getAttribute("cards", "demoSound", "")), bufferSize);
+	assert(bLoaded);
+    demoSample.buffer = demoSound.getTableBuffer();
+    demoSample.nChannels = demoSound.getNumChannels();
+    demoSample.numFrames = demoSound.getSamplesPerChannel();
+    
+    demoFace.setup(ofToDataPath(xml.getAttribute("cards", "demoFace", "")));
+    
 	int i;
 	
 	xml.pushTag("cards");
@@ -95,6 +103,11 @@ void testApp::setup(){
         
         c.exportFilename = xml.getAttribute("card", "export", "VIDEO_"+ofToString(j), j);
         c.tag = xml.getAttribute("card", "tag", "CARD_"+ofToString(j), j);
+        c.featureID = xml.getAttribute("card", "featureID", "", j);
+        c.bLocked = !c.featureID.empty();
+        if  (c.bLocked) {
+            c.features.push_back(c.featureID);
+        }
 		
 		xml.pushTag("card", j);
 
@@ -120,8 +133,10 @@ void testApp::setup(){
 			p.video = new ofxiVideoPlayer;
 			p.video->setup(&video,true,0.5f);
 			p.audio = new ofxAudioPlayer;
-			p.audio->setup(sampler.getAudioSample(),bufferSize,2); // max instances of sample 
-			
+            
+            p.audio->setup(c.bLocked ? &demoSample : sampler.getAudioSample(),bufferSize,2); // max instances of sample 
+            
+            			
 			c.players.push_back(p);
 			
 		}
@@ -210,7 +225,7 @@ void testApp::setup(){
 	//trigger.setThresh(0.15);
 	limiter.setup(10, 500, sampleRate, 0.3);
 	
-	bool bLoaded = magic.load(ofToDataPath("magic.caf"), bufferSize);
+	bLoaded = magic.load(ofToDataPath("magic.caf"), bufferSize);
 	assert(bLoaded);
 	bPlaySong = false;
 	
@@ -292,7 +307,7 @@ void testApp::update()
 		switch (getSongState()) {
 			case SONG_IDLE: 
 			case SONG_PLAY: {
-				setSongState(SONG_PLAY);
+				setSongState(citer->bLocked ? SONG_IDLE : SONG_PLAY);
 			} break;
 			default:
 				break;
@@ -370,13 +385,15 @@ void testApp::drawPlayers(vector<card>::iterator iter) {
 		ofRotate(aiter->degree);
 		ofScale(aiter->scale,aiter->scale,1.0);
 		
-        
-        if (grabber.getState()>=CAMERA_CAPTURING) {
+        if (iter->bLocked) {
+            demoFace.draw(0, 0);
+        } else if (grabber.getState()>=CAMERA_CAPTURING) {
             grabber.draw();
-        } else
-            if (!video.textures.empty()) {
-                piter->video->draw();
-            }
+        } else if (!video.textures.empty()) {
+            piter->video->draw();
+        }
+        
+        
 		ofPopMatrix();
 		
 	}
@@ -584,12 +601,17 @@ void testApp::suspend() {
         }
     }
     
+    demoFace.release();
+    
+    
     grabber.suspend();
 
 }
 
 void testApp::resume() {
-	for (vector<card>::iterator citer=cards.begin(); citer!=cards.end(); citer++) {
+	demoFace.init();
+    
+    for (vector<card>::iterator citer=cards.begin(); citer!=cards.end(); citer++) {
         citer->background->init();
         for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end(); aiter++) {
             aiter->textures.init();
@@ -656,6 +678,18 @@ void testApp::preview() {
 //	}
 //	
 //}
+
+void testApp::unlock(string feature) {
+    for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
+        if (iter->bLocked && find(iter->features.begin(), iter->features.end(), feature) != iter->features.end() ) {
+            iter->bLocked = false;
+            for (vector<player>::iterator piter=iter->players.begin(); piter!=iter->players.end(); piter++)  {
+               piter->audio->setup(sampler.getAudioSample(),bufferSize,2); // max instances of sample 
+            }
+        }
+        
+    } 
+}
 
 bool testApp::getIsPlaying() {
 	for (vector<player>::iterator iter=citer->players.begin(); iter!=citer->players.end(); iter++)  {		
@@ -736,12 +770,18 @@ void testApp::setSongState(int songState) {
 		case SONG_PLAY:
 		case SONG_RENDER_AUDIO:
 		case SONG_RENDER_VIDEO:
-			if (!(grabber.getState()==CAMERA_CAPTURING || grabber.getState()==CAMERA_RECORDING || video.textures.empty())) {
+			if (!(grabber.getState()==CAMERA_CAPTURING || grabber.getState()==CAMERA_RECORDING || video.textures.empty()) || citer->bLocked) {
 				
                 for (vector<player>::iterator iter=citer->players.begin(); iter!=citer->players.end(); iter++)  {
-					iter->video->playIntro();
                     iter->song->play();
 				}
+                
+                if (!citer->bLocked) {
+                    for (vector<player>::iterator iter=citer->players.begin(); iter!=citer->players.end(); iter++)  {
+                        iter->video->playIntro();
+                    }
+                }
+                
                 
                 for (vector<animation>::iterator aiter=citer->animations.begin(); aiter!=citer->animations.end() ; aiter++)  {
                     aiter->track->play();
@@ -1000,7 +1040,7 @@ void testApp::audioRequested( float * output, int bufferSize, int nChannels ) {
 						for (vector<actor>::iterator aiter=citer->actors.begin(); aiter!=citer->actors.end() ; aiter++)  {
 							if (aiter->player  == distance(citer->players.begin(), piter)) {
 								pan = (float)aiter->x/(float)(APP_WIDTH);
-								if (songState == SONG_PLAY) { 
+								if (songState == SONG_PLAY && !citer->bLocked) { 
 									piter->video->play(si.speed);
 								}
 							}

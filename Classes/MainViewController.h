@@ -38,10 +38,13 @@
     
     UIButton *recordButton1;
     UIButton *recordButton2;
+    UIButton *buyButton;
     UIButton *startOverButton;
     UIButton *shareButton;
     UIButton *switchButton1;
     UIButton *switchButton2;
+    
+    UIImageView *lockImage;
 	
 }
 
@@ -65,16 +68,20 @@
 
 @property (nonatomic,retain) IBOutlet UIButton *recordButton1;
 @property (nonatomic,retain) IBOutlet UIButton *recordButton2;
+@property (nonatomic,retain) IBOutlet UIButton *buyButton;
 @property (nonatomic,retain) IBOutlet UIButton *startOverButton;
 @property (nonatomic,retain) IBOutlet UIButton *shareButton;
 @property (nonatomic,retain) IBOutlet UIButton *switchButton1;
 @property (nonatomic,retain) IBOutlet UIButton *switchButton2;
+@property (nonatomic,retain) IBOutlet UIImageView *lockImage;
 
 
 
 
 
 - (IBAction) more:(id)sender;
+- (NSString *)getFeatureIdentifier;
+- (IBAction) buy:(id)sender;
 - (IBAction) live:(id)sender;
 - (IBAction) record:(id)sender;
 - (IBAction) stop:(id)sender;
