@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#include "ofxiPhoneExtras.h"
-
 
 @implementation AppDelegate
 
@@ -42,15 +40,12 @@
     
 
 
-//    NSError *error = nil;	
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//	[[NSFileManager defaultManager] removeItemAtPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"/timeline_1.0.0.xml"] error:&error];
-//	[[NSFileManager defaultManager] copyItemAtPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/timeline_1.0.0.xml"] toPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"/timeline_1.0.0.xml"] error:&error];
-//    
-//    [[NSFileManager defaultManager] removeItemAtPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"/playhead_1.0.0.xml"] error:&error];
+   
+
     
 //    ofSetDataPathRoot(ofxNSStringToString([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0])+'/');
-    ofSetDataPathRoot(ofxiPhoneGetDocumentsDirectory());
+    //ofSetDataPathRoot(ofxiPhoneGetDocumentsDirectory());
+    //ofSetDataPathRoot(ofxNSStringToString([[NSBundle mainBundle] resourcePath])+'/');
     self.popupMessage= [PopupMessage popupMessage:@"http://www.lofipeople.com/mixmexmas"];
     [popupMessage setDelegate:self];
     return YES;

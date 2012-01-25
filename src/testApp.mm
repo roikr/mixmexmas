@@ -23,7 +23,8 @@
 //--------------------------------------------------------------
 void testApp::setup(){	
 	printf("testApp:setup - width: %i, height: %i\n",ofGetWidth(),ofGetHeight());
-	setiPhoneDataPath();
+    ofSetDataPathRoot(ofxNSStringToString([[NSBundle mainBundle] resourcePath])+'/');
+	
 	// register touch events
 	ofRegisterTouchEvents(this);
 	
@@ -70,11 +71,12 @@ void testApp::setup(){
 	song.setupForSave(bufferSize);
 	
 	ofxXmlSettings xml;
-	
+    
+    	
 	bool bLoaded = xml.loadFile("cards.xml");
 	assert(bLoaded);
-	
-	
+    
+    
     bLoaded = demoSound.load(ofToDataPath(xml.getAttribute("cards", "demoSound", "")), bufferSize);
 	assert(bLoaded);
     demoSample.buffer = demoSound.getTableBuffer();
@@ -103,13 +105,26 @@ void testApp::setup(){
         
         c.exportFilename = xml.getAttribute("card", "export", "VIDEO_"+ofToString(j), j);
         c.tag = xml.getAttribute("card", "tag", "CARD_"+ofToString(j), j);
-        c.featureID = xml.getAttribute("card", "featureID", "", j);
-        c.bLocked = !c.featureID.empty();
-        if  (c.bLocked) {
-            c.features.push_back(c.featureID);
+        c.feature = xml.getAttribute("card", "feature", "", j);
+        if (!c.feature.empty()) {
+            c.features.push_back(c.feature);
+            availableFeatures.insert(c.feature);
         }
-		
+        
+        
+        
 		xml.pushTag("card", j);
+        
+        for (int i=0;i<xml.getNumTags("feature");i++) {
+            string feature = xml.getValue("feature", "",i);
+            if (!feature.empty()) {
+                c.features.push_back(feature);
+                availableFeatures.insert(feature);
+            }
+        }
+        
+        
+        c.bLocked = !c.features.empty();
 
 		for (i=0; i<xml.getNumTags("actor");i++) {
 			
@@ -194,7 +209,10 @@ void testApp::setup(){
 		
 	
 	xml.popTag();
-	
+    
+    unlock();
+    
+    
 	citer = cards.begin();
 	oiter = cards.end();
 	bCardChanged =false;
@@ -679,16 +697,56 @@ void testApp::preview() {
 //	
 //}
 
+
 void testApp::unlock(string feature) {
-    for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
-        if (iter->bLocked && find(iter->features.begin(), iter->features.end(), feature) != iter->features.end() ) {
-            iter->bLocked = false;
-            for (vector<player>::iterator piter=iter->players.begin(); piter!=iter->players.end(); piter++)  {
-               piter->audio->setup(sampler.getAudioSample(),bufferSize,2); // max instances of sample 
+    
+    
+    set<string> features;
+    ofxXmlSettings xml;
+    bool bLoaded = xml.loadFile(ofxiPhoneGetDocumentsDirectory()+"/features.xml");
+    if (bLoaded) {
+        xml.pushTag("features");
+        for (int i=0;i<xml.getNumTags("feature");i++) {
+            string f = xml.getValue("feature", "",i);
+            if (!f.empty()) {
+                features.insert(f);
             }
         }
-        
-    } 
+        xml.popTag();
+    }
+    
+    if (!feature.empty() && find(features.begin(),features.end() , feature)==features.end()) {
+        features.insert(feature);
+        xml.clear();
+        xml.addTag("features");
+        xml.pushTag("features");
+        for (set<string>::iterator iter=features.begin(); iter!=features.end(); iter++) {
+            xml.addValue("feature", *iter);
+        }
+        xml.popTag();
+        xml.saveFile(ofxiPhoneGetDocumentsDirectory()+"/features.xml");
+
+    }
+    
+    if (!features.empty()) {
+        cout << "features found:" <<endl;
+        for (vector<card>::iterator iter=cards.begin(); iter!=cards.end(); iter++) {
+            if (iter->bLocked) {
+                cout << "\tcard " << distance(cards.begin(), iter) << ":\t" ;
+                for (vector<string>::iterator siter = iter->features.begin(); siter!=iter->features.end(); siter++) {
+                    if (find(features.begin(),features.end() , *siter)!=features.end()) {
+                        iter->bLocked = false;
+                        for (vector<player>::iterator piter=iter->players.begin(); piter!=iter->players.end(); piter++)  {
+                            piter->audio->setup(sampler.getAudioSample(),bufferSize,2); // max instances of sample 
+                        }
+                        cout << *siter;
+                        break;
+                    }
+                }
+                cout<<endl;
+            }
+        }
+    }
 }
 
 bool testApp::getIsPlaying() {
@@ -1177,7 +1235,7 @@ void testApp::renderAudio() {
 	
 	cout << "renderAudio started" << endl;
 	
-	song.openForSave(ofToDocumentsPath("temp.caf"));
+	song.openForSave(ofxiPhoneGetDocumentsDirectory()+"/temp.caf");
 	
 	currentBlock = 0;
 	

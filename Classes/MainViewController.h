@@ -80,7 +80,6 @@
 
 
 - (IBAction) more:(id)sender;
-- (NSString *)getFeatureIdentifier;
 - (IBAction) buy:(id)sender;
 - (IBAction) live:(id)sender;
 - (IBAction) record:(id)sender;

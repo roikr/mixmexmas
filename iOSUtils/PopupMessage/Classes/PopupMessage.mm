@@ -11,10 +11,14 @@
 #include "ofxPopupMessages.h"
 
 @interface PopupMessage(PrivateMethods) 
+-(void) start;
+-(void) next;
 @end
 
 @implementation PopupMessage
 @synthesize url,loader,view,timer,messageDisplayed,delegate;
+
+//#define LOCAL_TIMELINE
 
 
 +(PopupMessage*) popupMessage:(NSString *)theURL {
@@ -29,8 +33,22 @@
         NSString *preferredLocalizations = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
         NSString *versionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey];
         self.url = [theURL stringByAppendingFormat:@"/messages/%@/timeline_%@.xml",preferredLocalizations,versionString];
-        popup.setup(ofxNSStringToString([url lastPathComponent]),ofxNSStringToString(versionString));
+        popup.setup(ofxNSStringToString([url lastPathComponent]),ofxiPhoneGetDocumentsDirectory(),ofxNSStringToString(versionString));
         messageDisplayed = NO;
+
+#ifdef LOCAL_TIMELINE
+        NSError *error = nil;	
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        [[NSFileManager defaultManager] removeItemAtPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"/timeline_1.0.0.xml"] error:&error];
+        [[NSFileManager defaultManager] copyItemAtPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/timeline_1.0.0.xml"] toPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"/timeline_1.0.0.xml"] error:&error];
+        
+        
+        
+//        [[NSFileManager defaultManager] removeItemAtPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"/playhead_1.0.0.xml"] error:&error]; // popup.clear(); // clear playhead
+//        
+//        [[NSFileManager defaultManager] removeItemAtPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"/popups_state.xml"] error:&error]; // clear state
+        
+#endif
 
     }
     
@@ -65,8 +83,11 @@
         }
     }
 
+#ifdef LOCAL_TIMELINE
+    [self start];
+#else
     self.loader = [MessageLoader messageLoader:[NSURL URLWithString:url] lastModified:lastModified delegate:self];
-    
+#endif
 
 }
 
@@ -87,6 +108,25 @@
   
 }
 
+-(void) start {
+    popup.load();
+    
+    startMessage = popup.bStartMessage && popup.messagesDone.find(popup.startMessage.messageID) == popup.messagesDone.end();
+    if (startMessage) {
+        [self popup];
+    } else {
+        [self next];
+        
+    }
+}
+
+-(void) next {    
+    popup.nextMessage(); 
+    if (popup.citer != popup.messages.end()) {
+        self.timer =  [NSTimer scheduledTimerWithTimeInterval:popup.nextDelay target:self selector:@selector(popup) userInfo:nil repeats:NO];
+        NSLog(@"next\tnextDelay: %f, nextMessage: %d",popup.nextDelay,distance(popup.messages.begin(), popup.citer) );
+    }
+}
 
 -(void) popup {
     
@@ -106,11 +146,13 @@
         
         self.view = [[UIAlertView alloc] init];
         [view setDelegate:self];
-        [view setTitle:ofxStringToNSString(m.title)];
-        [view setMessage:ofxStringToNSString(m.body)];
+        
+        
+        [view setTitle:[NSString stringWithCString:m.title.c_str() encoding:NSUTF8StringEncoding]];
+        [view setMessage:[NSString stringWithCString:m.body.c_str() encoding:NSUTF8StringEncoding]];
         
         for (vector<button>::iterator iter=m.buttons.begin();iter!=m.buttons.end();iter++) {
-            [view addButtonWithTitle:ofxStringToNSString(iter->text)];
+            [view addButtonWithTitle:[NSString stringWithCString:iter->text.c_str() encoding:NSUTF8StringEncoding]];
         }
         
         [view show];
@@ -126,7 +168,7 @@
         
         
         
-        NSLog(@"alertView: %i",buttonIndex);
+//        NSLog(@"alertView: %i",buttonIndex);
         
         message m;
         
@@ -137,23 +179,13 @@
             m = *(popup.citer);
         }
 
-        
-        
-        
         string link = m.buttons[buttonIndex].link;
         if (!m.buttons[buttonIndex].retry) { // if no rerty message is done !
             popup.messagesDone.insert(m.messageID);
         }
         
-        
-        
-        popup.nextMessage(); 
-        if (popup.citer != popup.messages.end()) {
-            self.timer =  [NSTimer scheduledTimerWithTimeInterval:popup.nextDelay target:self selector:@selector(popup) userInfo:nil repeats:NO];
-        }
-        
+        [self next];        
 
-        
         if (!link.empty()) {
             if (![[UIApplication sharedApplication] openURL:[NSURL URLWithString:ofxStringToNSString(link)]]) {
                 
@@ -186,18 +218,7 @@
 
         }  
         case 304: // Not Modified
-            popup.load();
-            
-             startMessage = popup.bStartMessage && popup.messagesDone.find(popup.startMessage.messageID) == popup.messagesDone.end();
-            if (startMessage) {
-                [self popup];
-            } else {
-                popup.nextMessage(); 
-                if (popup.citer != popup.messages.end()) {
-                    self.timer =  [NSTimer scheduledTimerWithTimeInterval:popup.nextDelay target:self selector:@selector(popup) userInfo:nil repeats:NO];
-                }
-                
-            }
+            [self start];
 
         break;
         

@@ -17,6 +17,7 @@
 
 #include "Constants.h"
 #include "testApp.h"
+#include "ofxiPhoneExtras.h"
 
 #import "EAGLView.h"
 #import "glu.h"
@@ -34,7 +35,7 @@
 #endif
 
 #ifdef IN_APP_STORE
-#import "SingleProductStore.h"
+#import "StatelessStore.h"
 #endif
 
 @interface MainViewController ()
@@ -189,20 +190,6 @@
     startOverButton.hidden = shareButton.hidden = self.OFSAptr->citer->bLocked;
     lockImage.hidden = buyButton.hidden = !self.OFSAptr->citer->bLocked;
 
-#ifdef IN_APP_STORE
-    
-    SingingCardAppDelegate *delegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-    
-//    shareButton.hidden = store.state == STORE_STATE_NONE;
-    
-    //shareButton.selected = ([delegate getCurrentCardNumber] && delegate.store.state == STORE_STATE_PRODUCT_NONE);
-    
-    
-    
-    
-#endif
-	
-	
 	switch (self.OFSAptr->getSongState()) {
 		case SONG_IDLE:
 		case SONG_PLAY: {
@@ -250,15 +237,11 @@
 }
 
 
-- (NSString *)getFeatureIdentifier {
-    
-    return  self.OFSAptr->citer->featureID.empty()? nil : [NSString stringWithCString:self.OFSAptr->citer->featureID.c_str() encoding:[NSString defaultCStringEncoding]];
-    
-}
-
-
 - (IBAction) buy:(id)sender {
-    self.OFSAptr->unlock(self.OFSAptr->citer->featureID);
+#ifdef IN_APP_STORE
+    SingingCardAppDelegate *delegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
+    [delegate.store buy:ofxStringToNSString(self.OFSAptr->citer->feature)];
+#endif
 }
 
 - (IBAction) live:(id)sender {
@@ -307,19 +290,6 @@
 }
 
 - (IBAction) share:(id)sender {
-	
-#ifdef IN_APP_STORE
-    if (shareButton.selected) {
-   
-        SingingCardAppDelegate *delegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-        
-        if ( [delegate getCurrentCardNumber] && delegate.store.state == STORE_STATE_PRODUCT_NONE)
-        
-        [delegate.store buy];
-        
-        return;
-    }
-#endif
     
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
 	

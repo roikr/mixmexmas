@@ -17,6 +17,7 @@
 
 #include "Constants.h"
 #include "testApp.h"
+#include "ofxiPhoneExtras.h"
 
 #include "EAGLView.h"
 #include "RKMacros.h"
@@ -51,7 +52,7 @@
 @synthesize store;
 
 #define PLAY_INTRO
-
+#define MIX_ME_XMAS_STORE_COMPATIBILITY
 
 #ifdef _FLURRY
 void uncaughtExceptionHandler(NSException *exception) { 
@@ -69,7 +70,19 @@ void uncaughtExceptionHandler(NSException *exception) {
 #endif
 
 #ifdef IN_APP_STORE
-	self.store = [SingleProductStore singleProductStore:kMyFeatureIdentifier delegate:self];
+	//self.store = [SingleProductStore singleProductStore:kMyFeatureIdentifier delegate:self];
+    
+#ifdef MIX_ME_XMAS_STORE_COMPATIBILITY
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults integerForKey:@"SingleProductStoreState"]) {
+        self.OFSAptr->unlock("XmasExpansion");
+        [defaults removeObjectForKey:@"SingleProductStoreState"];
+        [defaults synchronize];
+        RKLog(@"SingleProductStoreState had been removed");
+    } 
+#endif
+    
+    self.store = [StatelessStore statelessStoreWithDelegate:self];
     [self.infoViewController setRestoreTarget:self.store];
 #endif    
 	
@@ -146,8 +159,12 @@ void uncaughtExceptionHandler(NSException *exception) {
 	/*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
-#ifdef IN_APP_STORE    
-    [store check];
+#ifdef IN_APP_STORE
+    NSMutableSet *productsSet = [NSMutableSet setWithCapacity:self.OFSAptr->availableFeatures.size()];
+    for (set<string>::iterator iter = self.OFSAptr->availableFeatures.begin() ; iter!=self.OFSAptr->availableFeatures.end(); iter++) {
+        [productsSet addObject:ofxStringToNSString(*iter)];
+    }
+    [store check:productsSet];
 #endif
 	
     self.OFSAptr->becomeActive();
@@ -315,8 +332,9 @@ void uncaughtExceptionHandler(NSException *exception) {
     self.message = nil;
 }
 
--(void) singleProductStoreStateChanged:(SingleProductStore *)theStore {
-    NSLog(@"singleProductStoreStateChanged: %i",[theStore state]);
+-(void) statelessStoreProductReceived:(NSString *)productIdentifier {
+    NSLog(@"statelessStoreProductReceived: %@",productIdentifier);
+    self.OFSAptr->unlock(ofxNSStringToString(productIdentifier));
     [mainViewController updateViews];
 }
 

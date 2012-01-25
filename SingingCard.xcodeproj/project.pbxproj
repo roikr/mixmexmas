@@ -19,10 +19,72 @@
 		E41934601493E44D002535F4 /* RESTORE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E419345F1493E44D002535F4 /* RESTORE@2x.png */; };
 		E41C4B9912CA37DD004D3FA6 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E41C4B9812CA37DD004D3FA6 /* EAGLView.mm */; };
 		E430D28B12C8937400E65D3D /* TouchView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E430D28A12C8937400E65D3D /* TouchView.mm */; };
-		E431ED94147CD75100F792EB /* RateMeMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E431ED87147CD75100F792EB /* RateMeMessage.m */; };
 		E43797CF141908DC00F3BBE9 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CC141908DC00F3BBE9 /* CustomButton.m */; };
 		E43797D0141908DC00F3BBE9 /* CustomFontTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */; };
 		E43797E314190BDB00F3BBE9 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */; };
+		E43E02B814D0199500B3EE22 /* AGAIN@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E027A14D0199500B3EE22 /* AGAIN@2x.png */; };
+		E43E02B914D0199500B3EE22 /* AVPlayerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E027B14D0199500B3EE22 /* AVPlayerViewController-iPad.xib */; };
+		E43E02BA14D0199500B3EE22 /* AVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E027C14D0199500B3EE22 /* AVPlayerViewController.xib */; };
+		E43E02BB14D0199500B3EE22 /* BRITANIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E43E027D14D0199500B3EE22 /* BRITANIC.TTF */; };
+		E43E02BC14D0199500B3EE22 /* CAMERA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E027E14D0199500B3EE22 /* CAMERA@2x.png */; };
+		E43E02BD14D0199500B3EE22 /* CARD_BACKGROUND~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E027F14D0199500B3EE22 /* CARD_BACKGROUND~iPad.png */; };
+		E43E02BE14D0199500B3EE22 /* CARD_LOCK@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E028014D0199500B3EE22 /* CARD_LOCK@2x.png */; };
+		E43E02BF14D0199500B3EE22 /* CARD_LOCK~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E028114D0199500B3EE22 /* CARD_LOCK~iPad.png */; };
+		E43E02C014D0199500B3EE22 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E028214D0199500B3EE22 /* Default-Portrait.png */; };
+		E43E02C114D0199500B3EE22 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E028314D0199500B3EE22 /* Default.png */; };
+		E43E02C214D0199500B3EE22 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E028414D0199500B3EE22 /* Default@2x.png */; };
+		E43E02C314D0199500B3EE22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E43E028514D0199500B3EE22 /* Localizable.strings */; };
+		E43E02C414D0199500B3EE22 /* FACEBOOK_CANCEL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E028814D0199500B3EE22 /* FACEBOOK_CANCEL@2x.png */; };
+		E43E02C514D0199500B3EE22 /* FACEBOOK_DIFFRENET@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E028914D0199500B3EE22 /* FACEBOOK_DIFFRENET@2x.png */; };
+		E43E02C614D0199500B3EE22 /* FACEBOOK_LOGIN.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E028A14D0199500B3EE22 /* FACEBOOK_LOGIN.png */; };
+		E43E02C714D0199500B3EE22 /* FACEBOOK_LOGO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E028B14D0199500B3EE22 /* FACEBOOK_LOGO@2x.png */; };
+		E43E02C814D0199500B3EE22 /* FACEBOOK_UPLOAD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E028C14D0199500B3EE22 /* FACEBOOK_UPLOAD@2x.png */; };
+		E43E02C914D0199500B3EE22 /* FacebookUploadViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E028D14D0199500B3EE22 /* FacebookUploadViewController-iPad.xib */; };
+		E43E02CA14D0199500B3EE22 /* FacebookUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E028E14D0199500B3EE22 /* FacebookUploadViewController.xib */; };
+		E43E02CB14D0199500B3EE22 /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029014D0199500B3EE22 /* icon-small.png */; };
+		E43E02CC14D0199500B3EE22 /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029114D0199500B3EE22 /* icon-small@2x.png */; };
+		E43E02CD14D0199500B3EE22 /* icon-small~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029214D0199500B3EE22 /* icon-small~iPad.png */; };
+		E43E02CE14D0199500B3EE22 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029314D0199500B3EE22 /* icon.png */; };
+		E43E02CF14D0199500B3EE22 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029414D0199500B3EE22 /* icon@2x.png */; };
+		E43E02D014D0199500B3EE22 /* icon~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029514D0199500B3EE22 /* icon~iPad.png */; };
+		E43E02D114D0199500B3EE22 /* INFO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029614D0199500B3EE22 /* INFO@2x.png */; };
+		E43E02D214D0199500B3EE22 /* InfoViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E029714D0199500B3EE22 /* InfoViewController-iPad.xib */; };
+		E43E02D314D0199500B3EE22 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E029814D0199500B3EE22 /* InfoViewController.xib */; };
+		E43E02D414D0199500B3EE22 /* LOADING_BACKGROUND@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029A14D0199500B3EE22 /* LOADING_BACKGROUND@2x.png */; };
+		E43E02D514D0199500B3EE22 /* LOADING_BACKGROUND~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029B14D0199500B3EE22 /* LOADING_BACKGROUND~iPad.png */; };
+		E43E02D614D0199500B3EE22 /* LOADING_BAR.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029C14D0199500B3EE22 /* LOADING_BAR.png */; };
+		E43E02D714D0199500B3EE22 /* LOADING_BAR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E029D14D0199500B3EE22 /* LOADING_BAR@2x.png */; };
+		E43E02D814D0199500B3EE22 /* MainViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E029E14D0199500B3EE22 /* MainViewController-iPad.xib */; };
+		E43E02D914D0199500B3EE22 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E029F14D0199500B3EE22 /* MainViewController.xib */; };
+		E43E02DA14D0199500B3EE22 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E02A014D0199500B3EE22 /* MainWindow-iPad.xib */; };
+		E43E02DB14D0199500B3EE22 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E02A114D0199500B3EE22 /* MainWindow.xib */; };
+		E43E02DC14D0199500B3EE22 /* MORE_CARDS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02A214D0199500B3EE22 /* MORE_CARDS@2x.png */; };
+		E43E02DD14D0199500B3EE22 /* OPENING_MOV_IPHONE.mov in Resources */ = {isa = PBXBuildFile; fileRef = E43E02A314D0199500B3EE22 /* OPENING_MOV_IPHONE.mov */; };
+		E43E02DE14D0199500B3EE22 /* PLAY@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02A414D0199500B3EE22 /* PLAY@2x.png */; };
+		E43E02DF14D0199500B3EE22 /* POSE_YOUR_FACE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02A514D0199500B3EE22 /* POSE_YOUR_FACE@2x.png */; };
+		E43E02E014D0199500B3EE22 /* REC_BACKGROUND@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02A614D0199500B3EE22 /* REC_BACKGROUND@2x.png */; };
+		E43E02E114D0199500B3EE22 /* REC_OVERLAY@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02A714D0199500B3EE22 /* REC_OVERLAY@2x.png */; };
+		E43E02E214D0199500B3EE22 /* RESTORE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02A814D0199500B3EE22 /* RESTORE@2x.png */; };
+		E43E02E314D0199500B3EE22 /* SHARE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02A914D0199500B3EE22 /* SHARE@2x.png */; };
+		E43E02E414D0199500B3EE22 /* SHARE_LOCKED@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02AA14D0199500B3EE22 /* SHARE_LOCKED@2x.png */; };
+		E43E02E514D0199500B3EE22 /* SHARE_MENU@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02AB14D0199500B3EE22 /* SHARE_MENU@2x.png */; };
+		E43E02E614D0199500B3EE22 /* SHARE_MENU~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02AC14D0199500B3EE22 /* SHARE_MENU~iPad.png */; };
+		E43E02E714D0199500B3EE22 /* ShareViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E02AD14D0199500B3EE22 /* ShareViewController-iPad.xib */; };
+		E43E02E814D0199500B3EE22 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E02AE14D0199500B3EE22 /* ShareViewController.xib */; };
+		E43E02E914D0199500B3EE22 /* STOP@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02AF14D0199500B3EE22 /* STOP@2x.png */; };
+		E43E02EA14D0199500B3EE22 /* X@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02B014D0199500B3EE22 /* X@2x.png */; };
+		E43E02EB14D0199500B3EE22 /* YOUTUBE_CANCEL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02B114D0199500B3EE22 /* YOUTUBE_CANCEL@2x.png */; };
+		E43E02EC14D0199500B3EE22 /* YOUTUBE_UPLOAD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02B214D0199500B3EE22 /* YOUTUBE_UPLOAD@2x.png */; };
+		E43E02ED14D0199500B3EE22 /* YouTubeUploadViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E02B314D0199500B3EE22 /* YouTubeUploadViewController-iPad.xib */; };
+		E43E02EE14D0199500B3EE22 /* YouTubeUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E02B414D0199500B3EE22 /* YouTubeUploadViewController.xib */; };
+		E43E02EF14D0199500B3EE22 /* YOUYUBE_LOGO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02B514D0199500B3EE22 /* YOUYUBE_LOGO@2x.png */; };
+		E43E02F014D0199500B3EE22 /* CARD_LOCK@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02B614D0199500B3EE22 /* CARD_LOCK@2x.png */; };
+		E43E02F114D0199500B3EE22 /* CARD_LOCK~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E02B714D0199500B3EE22 /* CARD_LOCK~iPad.png */; };
+		E43E036614D01A2900B3EE22 /* MessageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E43E032314D01A2800B3EE22 /* MessageLoader.m */; };
+		E43E036714D01A2900B3EE22 /* MessageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E43E032514D01A2800B3EE22 /* MessageParser.m */; };
+		E43E036814D01A2900B3EE22 /* PopupMessage.mm in Sources */ = {isa = PBXBuildFile; fileRef = E43E032714D01A2800B3EE22 /* PopupMessage.mm */; };
+		E43E036914D01A2900B3EE22 /* URLCacheAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E43E032914D01A2800B3EE22 /* URLCacheAlert.m */; };
+		E43E036A14D01A2900B3EE22 /* ofxPopupMessages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E43E032C14D01A2800B3EE22 /* ofxPopupMessages.cpp */; };
 		E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */; };
 		E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E44971F5147932BD000F5838 /* SingingCardKeys.m */; };
 		E4582F8F14941C4D00CCEFA5 /* RESTORE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E419345F1493E44D002535F4 /* RESTORE@2x.png */; };
@@ -62,7 +124,6 @@
 		E469002414CD722D007BEFDB /* valentine1.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E469002014CD722D007BEFDB /* valentine1.pvr */; };
 		E469002514CD722D007BEFDB /* valentine2.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E469002114CD722D007BEFDB /* valentine2.pvr */; };
 		E469002614CD722D007BEFDB /* wedding.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E469002214CD722D007BEFDB /* wedding.pvr */; };
-		E469002814CD882E007BEFDB /* CARD_LOCK.png in Resources */ = {isa = PBXBuildFile; fileRef = E469002714CD882E007BEFDB /* CARD_LOCK.png */; };
 		E469002B14CDA273007BEFDB /* DEMO_FACE.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E469002914CDA273007BEFDB /* DEMO_FACE.pvr */; };
 		E469002C14CDA273007BEFDB /* DEMO_SOUND.caf in Resources */ = {isa = PBXBuildFile; fileRef = E469002A14CDA273007BEFDB /* DEMO_SOUND.caf */; };
 		E469FFE814CD7089007BEFDB /* 01_Lital.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E469FFB114CD7089007BEFDB /* 01_Lital.pvr */; };
@@ -101,7 +162,6 @@
 		E46AD81D148F7B9F0087BC09 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E46AD810148F7B9F0087BC09 /* SBJsonParser.m */; };
 		E46AD81E148F7B9F0087BC09 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E46AD812148F7B9F0087BC09 /* SBJsonWriter.m */; };
 		E476ED191407EC960091FFA3 /* ofxAudioLimiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */; };
-		E476F0ED148ED45F000983EC /* SingleProductStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E476F0DD148ED45F000983EC /* SingleProductStore.m */; };
 		E476F0F6148ED689000983EC /* SHARE_LOCKED@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E476F0F5148ED689000983EC /* SHARE_LOCKED@2x.png */; };
 		E476F0F8148ED945000983EC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E476F0F7148ED945000983EC /* StoreKit.framework */; };
 		E48B831C140287AF00E4EFDB /* ofxRKTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E48B831B140287AF00E4EFDB /* ofxRKTexture.mm */; };
@@ -233,20 +293,11 @@
 		E4A714601483BBC3000B710D /* YouTubeUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A714551483BBC3000B710D /* YouTubeUploadViewController.xib */; };
 		E4A714641483BC25000B710D /* FacebookUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A714631483BC25000B710D /* FacebookUploadViewController.xib */; };
 		E4A714661483BD04000B710D /* BRITANIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E4A714651483BD04000B710D /* BRITANIC.TTF */; };
-		E4A8AB1F13F95585006058D4 /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AAFB13F95585006058D4 /* easing.cpp */; };
-		E4A8AB2013F95585006058D4 /* ofMainExt.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AAFE13F95585006058D4 /* ofMainExt.mm */; };
-		E4A8AB2113F95585006058D4 /* ofMain.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB0113F95585006058D4 /* ofMain.mm */; };
-		E4A8AB2213F95585006058D4 /* ofxiPhoneExtras.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB0413F95585006058D4 /* ofxiPhoneExtras.mm */; };
 		E4A8AB2313F95585006058D4 /* ofxAudioSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB0713F95585006058D4 /* ofxAudioSampler.cpp */; };
 		E4A8AB2413F95585006058D4 /* ofxAudioTrigger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB0B13F95585006058D4 /* ofxAudioTrigger.cpp */; };
 		E4A8AB2513F95585006058D4 /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB0F13F95585006058D4 /* ofxMidi.cpp */; };
 		E4A8AB2A13F95585006058D4 /* ofxMidiTrack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB1913F95585006058D4 /* ofxMidiTrack.cpp */; };
 		E4A8AB2B13F95585006058D4 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB1D13F95585006058D4 /* ofxSlider.cpp */; };
-		E4A8AB3813F955C2006058D4 /* install.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4A8AB2F13F955C2006058D4 /* install.xml */; };
-		E4A8AB3913F955C2006058D4 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB3113F955C2006058D4 /* tinyxml.cpp */; };
-		E4A8AB3A13F955C2006058D4 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB3313F955C2006058D4 /* tinyxmlerror.cpp */; };
-		E4A8AB3B13F955C2006058D4 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB3413F955C2006058D4 /* tinyxmlparser.cpp */; };
-		E4A8AB3C13F955C2006058D4 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AB3613F955C2006058D4 /* ofxXmlSettings.cpp */; };
 		E4AF013012B0EF5700457BC7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4AF012E12B0EF5700457BC7 /* MainWindow.xib */; };
 		E4AF014512B0F06000457BC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AF014412B0F06000457BC7 /* main.m */; };
 		E4AF1E711466B3390027F52D /* libFlurryAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AF1E701466B3390027F52D /* libFlurryAnalytics.a */; };
@@ -267,6 +318,16 @@
 		E4C3F234145F21FC007760E9 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4C3F233145F21FC007760E9 /* testApp.mm */; };
 		E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C82116140BD03A00E190F1 /* RenderProgressView.m */; };
 		E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */; };
+		E4CB05C014CEBFE5004CE621 /* install.xml in Resources */ = {isa = PBXBuildFile; fileRef = E4CB05B714CEBFE5004CE621 /* install.xml */; };
+		E4CB05C114CEBFE5004CE621 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4CB05B914CEBFE5004CE621 /* tinyxml.cpp */; };
+		E4CB05C214CEBFE5004CE621 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4CB05BB14CEBFE5004CE621 /* tinyxmlerror.cpp */; };
+		E4CB05C314CEBFE5004CE621 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4CB05BC14CEBFE5004CE621 /* tinyxmlparser.cpp */; };
+		E4CB05C414CEBFE5004CE621 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4CB05BE14CEBFE5004CE621 /* ofxXmlSettings.cpp */; };
+		E4CB05D014CEBFF3004CE621 /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4CB05C614CEBFF3004CE621 /* easing.cpp */; };
+		E4CB05D114CEBFF3004CE621 /* ofMainExt.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4CB05C914CEBFF3004CE621 /* ofMainExt.mm */; };
+		E4CB05D214CEBFF3004CE621 /* ofMain.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4CB05CC14CEBFF3004CE621 /* ofMain.mm */; };
+		E4CB05D314CEBFF3004CE621 /* ofxiPhoneExtras.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4CB05CF14CEBFF3004CE621 /* ofxiPhoneExtras.mm */; };
+		E4CB05DF14CEC73F004CE621 /* StatelessStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CB05DE14CEC73F004CE621 /* StatelessStore.m */; };
 		E4D81444148D7BF900ED8573 /* ofxiFBO.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8142C148D7BF900ED8573 /* ofxiFBO.mm */; };
 		E4D81445148D7BF900ED8573 /* ofxiPhoneVideo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D8142F148D7BF900ED8573 /* ofxiPhoneVideo.cpp */; };
 		E4D81448148D7BF900ED8573 /* VideoImporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D81437148D7BF900ED8573 /* VideoImporter.mm */; };
@@ -340,14 +401,83 @@
 		E41C4B9812CA37DD004D3FA6 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
 		E430D28912C8937400E65D3D /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
 		E430D28A12C8937400E65D3D /* TouchView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchView.mm; sourceTree = "<group>"; };
-		E431ED86147CD75100F792EB /* RateMeMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateMeMessage.h; sourceTree = "<group>"; };
-		E431ED87147CD75100F792EB /* RateMeMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateMeMessage.m; sourceTree = "<group>"; };
 		E43797CB141908DC00F3BBE9 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		E43797CC141908DC00F3BBE9 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		E43797CD141908DC00F3BBE9 /* CustomFontTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFontTextView.h; sourceTree = "<group>"; };
 		E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontTextView.m; sourceTree = "<group>"; };
 		E43797E114190BDB00F3BBE9 /* CustomFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFontLabel.h; sourceTree = "<group>"; };
 		E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontLabel.m; sourceTree = "<group>"; };
+		E43E027A14D0199500B3EE22 /* AGAIN@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AGAIN@2x.png"; sourceTree = "<group>"; };
+		E43E027B14D0199500B3EE22 /* AVPlayerViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AVPlayerViewController-iPad.xib"; sourceTree = "<group>"; };
+		E43E027C14D0199500B3EE22 /* AVPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AVPlayerViewController.xib; sourceTree = "<group>"; };
+		E43E027D14D0199500B3EE22 /* BRITANIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BRITANIC.TTF; sourceTree = "<group>"; };
+		E43E027E14D0199500B3EE22 /* CAMERA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CAMERA@2x.png"; sourceTree = "<group>"; };
+		E43E027F14D0199500B3EE22 /* CARD_BACKGROUND~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CARD_BACKGROUND~iPad.png"; sourceTree = "<group>"; };
+		E43E028014D0199500B3EE22 /* CARD_LOCK@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CARD_LOCK@2x.png"; sourceTree = "<group>"; };
+		E43E028114D0199500B3EE22 /* CARD_LOCK~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CARD_LOCK~iPad.png"; sourceTree = "<group>"; };
+		E43E028214D0199500B3EE22 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		E43E028314D0199500B3EE22 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E43E028414D0199500B3EE22 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E43E028614D0199500B3EE22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E43E028714D0199500B3EE22 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E43E028814D0199500B3EE22 /* FACEBOOK_CANCEL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FACEBOOK_CANCEL@2x.png"; sourceTree = "<group>"; };
+		E43E028914D0199500B3EE22 /* FACEBOOK_DIFFRENET@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FACEBOOK_DIFFRENET@2x.png"; sourceTree = "<group>"; };
+		E43E028A14D0199500B3EE22 /* FACEBOOK_LOGIN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FACEBOOK_LOGIN.png; sourceTree = "<group>"; };
+		E43E028B14D0199500B3EE22 /* FACEBOOK_LOGO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FACEBOOK_LOGO@2x.png"; sourceTree = "<group>"; };
+		E43E028C14D0199500B3EE22 /* FACEBOOK_UPLOAD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FACEBOOK_UPLOAD@2x.png"; sourceTree = "<group>"; };
+		E43E028D14D0199500B3EE22 /* FacebookUploadViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "FacebookUploadViewController-iPad.xib"; sourceTree = "<group>"; };
+		E43E028E14D0199500B3EE22 /* FacebookUploadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookUploadViewController.xib; sourceTree = "<group>"; };
+		E43E028F14D0199500B3EE22 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E43E029014D0199500B3EE22 /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small.png"; sourceTree = "<group>"; };
+		E43E029114D0199500B3EE22 /* icon-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small@2x.png"; sourceTree = "<group>"; };
+		E43E029214D0199500B3EE22 /* icon-small~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small~iPad.png"; sourceTree = "<group>"; };
+		E43E029314D0199500B3EE22 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E43E029414D0199500B3EE22 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		E43E029514D0199500B3EE22 /* icon~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon~iPad.png"; sourceTree = "<group>"; };
+		E43E029614D0199500B3EE22 /* INFO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "INFO@2x.png"; sourceTree = "<group>"; };
+		E43E029714D0199500B3EE22 /* InfoViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "InfoViewController-iPad.xib"; sourceTree = "<group>"; };
+		E43E029814D0199500B3EE22 /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
+		E43E029914D0199500B3EE22 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E43E029A14D0199500B3EE22 /* LOADING_BACKGROUND@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOADING_BACKGROUND@2x.png"; sourceTree = "<group>"; };
+		E43E029B14D0199500B3EE22 /* LOADING_BACKGROUND~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOADING_BACKGROUND~iPad.png"; sourceTree = "<group>"; };
+		E43E029C14D0199500B3EE22 /* LOADING_BAR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOADING_BAR.png; sourceTree = "<group>"; };
+		E43E029D14D0199500B3EE22 /* LOADING_BAR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOADING_BAR@2x.png"; sourceTree = "<group>"; };
+		E43E029E14D0199500B3EE22 /* MainViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainViewController-iPad.xib"; sourceTree = "<group>"; };
+		E43E029F14D0199500B3EE22 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		E43E02A014D0199500B3EE22 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		E43E02A114D0199500B3EE22 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		E43E02A214D0199500B3EE22 /* MORE_CARDS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MORE_CARDS@2x.png"; sourceTree = "<group>"; };
+		E43E02A314D0199500B3EE22 /* OPENING_MOV_IPHONE.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = OPENING_MOV_IPHONE.mov; sourceTree = "<group>"; };
+		E43E02A414D0199500B3EE22 /* PLAY@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLAY@2x.png"; sourceTree = "<group>"; };
+		E43E02A514D0199500B3EE22 /* POSE_YOUR_FACE@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POSE_YOUR_FACE@2x.png"; sourceTree = "<group>"; };
+		E43E02A614D0199500B3EE22 /* REC_BACKGROUND@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "REC_BACKGROUND@2x.png"; sourceTree = "<group>"; };
+		E43E02A714D0199500B3EE22 /* REC_OVERLAY@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "REC_OVERLAY@2x.png"; sourceTree = "<group>"; };
+		E43E02A814D0199500B3EE22 /* RESTORE@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RESTORE@2x.png"; sourceTree = "<group>"; };
+		E43E02A914D0199500B3EE22 /* SHARE@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHARE@2x.png"; sourceTree = "<group>"; };
+		E43E02AA14D0199500B3EE22 /* SHARE_LOCKED@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHARE_LOCKED@2x.png"; sourceTree = "<group>"; };
+		E43E02AB14D0199500B3EE22 /* SHARE_MENU@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHARE_MENU@2x.png"; sourceTree = "<group>"; };
+		E43E02AC14D0199500B3EE22 /* SHARE_MENU~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHARE_MENU~iPad.png"; sourceTree = "<group>"; };
+		E43E02AD14D0199500B3EE22 /* ShareViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ShareViewController-iPad.xib"; sourceTree = "<group>"; };
+		E43E02AE14D0199500B3EE22 /* ShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
+		E43E02AF14D0199500B3EE22 /* STOP@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STOP@2x.png"; sourceTree = "<group>"; };
+		E43E02B014D0199500B3EE22 /* X@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X@2x.png"; sourceTree = "<group>"; };
+		E43E02B114D0199500B3EE22 /* YOUTUBE_CANCEL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YOUTUBE_CANCEL@2x.png"; sourceTree = "<group>"; };
+		E43E02B214D0199500B3EE22 /* YOUTUBE_UPLOAD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YOUTUBE_UPLOAD@2x.png"; sourceTree = "<group>"; };
+		E43E02B314D0199500B3EE22 /* YouTubeUploadViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "YouTubeUploadViewController-iPad.xib"; sourceTree = "<group>"; };
+		E43E02B414D0199500B3EE22 /* YouTubeUploadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouTubeUploadViewController.xib; sourceTree = "<group>"; };
+		E43E02B514D0199500B3EE22 /* YOUYUBE_LOGO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YOUYUBE_LOGO@2x.png"; sourceTree = "<group>"; };
+		E43E02B614D0199500B3EE22 /* CARD_LOCK@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CARD_LOCK@2x.png"; sourceTree = "<group>"; };
+		E43E02B714D0199500B3EE22 /* CARD_LOCK~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CARD_LOCK~iPad.png"; sourceTree = "<group>"; };
+		E43E032214D01A2800B3EE22 /* MessageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageLoader.h; sourceTree = "<group>"; };
+		E43E032314D01A2800B3EE22 /* MessageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageLoader.m; sourceTree = "<group>"; };
+		E43E032414D01A2800B3EE22 /* MessageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageParser.h; sourceTree = "<group>"; };
+		E43E032514D01A2800B3EE22 /* MessageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageParser.m; sourceTree = "<group>"; };
+		E43E032614D01A2800B3EE22 /* PopupMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupMessage.h; sourceTree = "<group>"; };
+		E43E032714D01A2800B3EE22 /* PopupMessage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PopupMessage.mm; sourceTree = "<group>"; };
+		E43E032814D01A2800B3EE22 /* URLCacheAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheAlert.h; sourceTree = "<group>"; };
+		E43E032914D01A2800B3EE22 /* URLCacheAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheAlert.m; sourceTree = "<group>"; };
+		E43E032C14D01A2800B3EE22 /* ofxPopupMessages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPopupMessages.cpp; sourceTree = "<group>"; };
+		E43E032D14D01A2800B3EE22 /* ofxPopupMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxPopupMessages.h; sourceTree = "<group>"; };
 		E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTexturesVector.cpp; sourceTree = "<group>"; };
 		E4475585145F3F0C00481363 /* ofxTexturesVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTexturesVector.h; sourceTree = "<group>"; };
 		E44971F4147932BC000F5838 /* SingingCardKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCardKeys.h; sourceTree = "<group>"; };
@@ -358,7 +488,6 @@
 		E469002014CD722D007BEFDB /* valentine1.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = valentine1.pvr; sourceTree = "<group>"; };
 		E469002114CD722D007BEFDB /* valentine2.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = valentine2.pvr; sourceTree = "<group>"; };
 		E469002214CD722D007BEFDB /* wedding.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = wedding.pvr; sourceTree = "<group>"; };
-		E469002714CD882E007BEFDB /* CARD_LOCK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CARD_LOCK.png; sourceTree = "<group>"; };
 		E469002914CDA273007BEFDB /* DEMO_FACE.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = DEMO_FACE.pvr; sourceTree = "<group>"; };
 		E469002A14CDA273007BEFDB /* DEMO_SOUND.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DEMO_SOUND.caf; sourceTree = "<group>"; };
 		E469FFB114CD7089007BEFDB /* 01_Lital.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01_Lital.pvr; sourceTree = "<group>"; };
@@ -441,8 +570,6 @@
 		E46AD812148F7B9F0087BC09 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
 		E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioLimiter.h; sourceTree = "<group>"; };
-		E476F0DC148ED45F000983EC /* SingleProductStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleProductStore.h; sourceTree = "<group>"; };
-		E476F0DD148ED45F000983EC /* SingleProductStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleProductStore.m; sourceTree = "<group>"; };
 		E476F0F5148ED689000983EC /* SHARE_LOCKED@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHARE_LOCKED@2x.png"; sourceTree = "<group>"; };
 		E476F0F7148ED945000983EC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E48B831A140287AF00E4EFDB /* ofxRKTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxRKTexture.h; path = ../yesplastic/src/ofxRKTexture.h; sourceTree = SOURCE_ROOT; };
@@ -706,15 +833,6 @@
 		E4A714551483BBC3000B710D /* YouTubeUploadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouTubeUploadViewController.xib; sourceTree = "<group>"; };
 		E4A714631483BC25000B710D /* FacebookUploadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookUploadViewController.xib; sourceTree = "<group>"; };
 		E4A714651483BD04000B710D /* BRITANIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BRITANIC.TTF; sourceTree = "<group>"; };
-		E4A8AAFB13F95585006058D4 /* easing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = easing.cpp; sourceTree = "<group>"; };
-		E4A8AAFC13F95585006058D4 /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
-		E4A8AAFD13F95585006058D4 /* ofMainExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofMainExt.h; sourceTree = "<group>"; };
-		E4A8AAFE13F95585006058D4 /* ofMainExt.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofMainExt.mm; sourceTree = "<group>"; };
-		E4A8AB0013F95585006058D4 /* ofMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofMain.h; sourceTree = "<group>"; };
-		E4A8AB0113F95585006058D4 /* ofMain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofMain.mm; sourceTree = "<group>"; };
-		E4A8AB0213F95585006058D4 /* ofTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofTypes.h; sourceTree = "<group>"; };
-		E4A8AB0313F95585006058D4 /* ofxiPhoneExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneExtras.h; sourceTree = "<group>"; };
-		E4A8AB0413F95585006058D4 /* ofxiPhoneExtras.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneExtras.mm; sourceTree = "<group>"; };
 		E4A8AB0713F95585006058D4 /* ofxAudioSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioSampler.cpp; sourceTree = "<group>"; };
 		E4A8AB0813F95585006058D4 /* ofxAudioSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioSampler.h; sourceTree = "<group>"; };
 		E4A8AB0B13F95585006058D4 /* ofxAudioTrigger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioTrigger.cpp; sourceTree = "<group>"; };
@@ -725,13 +843,6 @@
 		E4A8AB1A13F95585006058D4 /* ofxMidiTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMidiTrack.h; sourceTree = "<group>"; };
 		E4A8AB1D13F95585006058D4 /* ofxSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSlider.cpp; sourceTree = "<group>"; };
 		E4A8AB1E13F95585006058D4 /* ofxSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSlider.h; sourceTree = "<group>"; };
-		E4A8AB2F13F955C2006058D4 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
-		E4A8AB3113F955C2006058D4 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
-		E4A8AB3213F955C2006058D4 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
-		E4A8AB3313F955C2006058D4 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
-		E4A8AB3413F955C2006058D4 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
-		E4A8AB3613F955C2006058D4 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
-		E4A8AB3713F955C2006058D4 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		E4AF012E12B0EF5700457BC7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		E4AF014412B0F06000457BC7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
 		E4AF1E6F1466B3390027F52D /* FlurryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAnalytics.h; sourceTree = "<group>"; };
@@ -762,6 +873,24 @@
 		E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerViewController.m; sourceTree = "<group>"; };
 		E4C82243140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackViewController.h; sourceTree = "<group>"; };
 		E4C82244140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackViewController.m; sourceTree = "<group>"; };
+		E4CB05B714CEBFE5004CE621 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
+		E4CB05B914CEBFE5004CE621 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		E4CB05BA14CEBFE5004CE621 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		E4CB05BB14CEBFE5004CE621 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		E4CB05BC14CEBFE5004CE621 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		E4CB05BE14CEBFE5004CE621 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
+		E4CB05BF14CEBFE5004CE621 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		E4CB05C614CEBFF3004CE621 /* easing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = easing.cpp; sourceTree = "<group>"; };
+		E4CB05C714CEBFF3004CE621 /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
+		E4CB05C814CEBFF3004CE621 /* ofMainExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofMainExt.h; sourceTree = "<group>"; };
+		E4CB05C914CEBFF3004CE621 /* ofMainExt.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofMainExt.mm; sourceTree = "<group>"; };
+		E4CB05CB14CEBFF3004CE621 /* ofMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofMain.h; sourceTree = "<group>"; };
+		E4CB05CC14CEBFF3004CE621 /* ofMain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofMain.mm; sourceTree = "<group>"; };
+		E4CB05CD14CEBFF3004CE621 /* ofTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofTypes.h; sourceTree = "<group>"; };
+		E4CB05CE14CEBFF3004CE621 /* ofxiPhoneExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneExtras.h; sourceTree = "<group>"; };
+		E4CB05CF14CEBFF3004CE621 /* ofxiPhoneExtras.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneExtras.mm; sourceTree = "<group>"; };
+		E4CB05DD14CEC73F004CE621 /* StatelessStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatelessStore.h; sourceTree = "<group>"; };
+		E4CB05DE14CEC73F004CE621 /* StatelessStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatelessStore.m; sourceTree = "<group>"; };
 		E4D8142B148D7BF900ED8573 /* ofxiFBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiFBO.h; sourceTree = "<group>"; };
 		E4D8142C148D7BF900ED8573 /* ofxiFBO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiFBO.mm; sourceTree = "<group>"; };
 		E4D8142F148D7BF900ED8573 /* ofxiPhoneVideo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxiPhoneVideo.cpp; sourceTree = "<group>"; };
@@ -895,6 +1024,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				E4CB05B514CEBFB9004CE621 /* addons_007_iphone */,
 				E4F35E5C1465D2F000B218B1 /* SingingCard-Info.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				E4F742C313FABA73002D7E1B /* src */,
@@ -951,23 +1081,6 @@
 			path = CustomUI;
 			sourceTree = "<group>";
 		};
-		E431ED84147CD75100F792EB /* RateMeMessage */ = {
-			isa = PBXGroup;
-			children = (
-				E431ED85147CD75100F792EB /* Classes */,
-			);
-			path = RateMeMessage;
-			sourceTree = "<group>";
-		};
-		E431ED85147CD75100F792EB /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E431ED86147CD75100F792EB /* RateMeMessage.h */,
-				E431ED87147CD75100F792EB /* RateMeMessage.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		E43797CA141908DC00F3BBE9 /* CustomUIFont */ = {
 			isa = PBXGroup;
 			children = (
@@ -979,6 +1092,110 @@
 				E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */,
 			);
 			path = CustomUIFont;
+			sourceTree = "<group>";
+		};
+		E43E027914D0199500B3EE22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E43E027A14D0199500B3EE22 /* AGAIN@2x.png */,
+				E43E027B14D0199500B3EE22 /* AVPlayerViewController-iPad.xib */,
+				E43E027C14D0199500B3EE22 /* AVPlayerViewController.xib */,
+				E43E027D14D0199500B3EE22 /* BRITANIC.TTF */,
+				E43E027E14D0199500B3EE22 /* CAMERA@2x.png */,
+				E43E027F14D0199500B3EE22 /* CARD_BACKGROUND~iPad.png */,
+				E43E028014D0199500B3EE22 /* CARD_LOCK@2x.png */,
+				E43E028114D0199500B3EE22 /* CARD_LOCK~iPad.png */,
+				E43E028214D0199500B3EE22 /* Default-Portrait.png */,
+				E43E028314D0199500B3EE22 /* Default.png */,
+				E43E028414D0199500B3EE22 /* Default@2x.png */,
+				E43E028514D0199500B3EE22 /* Localizable.strings */,
+				E43E028814D0199500B3EE22 /* FACEBOOK_CANCEL@2x.png */,
+				E43E028914D0199500B3EE22 /* FACEBOOK_DIFFRENET@2x.png */,
+				E43E028A14D0199500B3EE22 /* FACEBOOK_LOGIN.png */,
+				E43E028B14D0199500B3EE22 /* FACEBOOK_LOGO@2x.png */,
+				E43E028C14D0199500B3EE22 /* FACEBOOK_UPLOAD@2x.png */,
+				E43E028D14D0199500B3EE22 /* FacebookUploadViewController-iPad.xib */,
+				E43E028E14D0199500B3EE22 /* FacebookUploadViewController.xib */,
+				E43E029014D0199500B3EE22 /* icon-small.png */,
+				E43E029114D0199500B3EE22 /* icon-small@2x.png */,
+				E43E029214D0199500B3EE22 /* icon-small~iPad.png */,
+				E43E029314D0199500B3EE22 /* icon.png */,
+				E43E029414D0199500B3EE22 /* icon@2x.png */,
+				E43E029514D0199500B3EE22 /* icon~iPad.png */,
+				E43E029614D0199500B3EE22 /* INFO@2x.png */,
+				E43E029714D0199500B3EE22 /* InfoViewController-iPad.xib */,
+				E43E029814D0199500B3EE22 /* InfoViewController.xib */,
+				E43E029A14D0199500B3EE22 /* LOADING_BACKGROUND@2x.png */,
+				E43E029B14D0199500B3EE22 /* LOADING_BACKGROUND~iPad.png */,
+				E43E029C14D0199500B3EE22 /* LOADING_BAR.png */,
+				E43E029D14D0199500B3EE22 /* LOADING_BAR@2x.png */,
+				E43E029E14D0199500B3EE22 /* MainViewController-iPad.xib */,
+				E43E029F14D0199500B3EE22 /* MainViewController.xib */,
+				E43E02A014D0199500B3EE22 /* MainWindow-iPad.xib */,
+				E43E02A114D0199500B3EE22 /* MainWindow.xib */,
+				E43E02A214D0199500B3EE22 /* MORE_CARDS@2x.png */,
+				E43E02A314D0199500B3EE22 /* OPENING_MOV_IPHONE.mov */,
+				E43E02A414D0199500B3EE22 /* PLAY@2x.png */,
+				E43E02A514D0199500B3EE22 /* POSE_YOUR_FACE@2x.png */,
+				E43E02A614D0199500B3EE22 /* REC_BACKGROUND@2x.png */,
+				E43E02A714D0199500B3EE22 /* REC_OVERLAY@2x.png */,
+				E43E02A814D0199500B3EE22 /* RESTORE@2x.png */,
+				E43E02A914D0199500B3EE22 /* SHARE@2x.png */,
+				E43E02AA14D0199500B3EE22 /* SHARE_LOCKED@2x.png */,
+				E43E02AB14D0199500B3EE22 /* SHARE_MENU@2x.png */,
+				E43E02AC14D0199500B3EE22 /* SHARE_MENU~iPad.png */,
+				E43E02AD14D0199500B3EE22 /* ShareViewController-iPad.xib */,
+				E43E02AE14D0199500B3EE22 /* ShareViewController.xib */,
+				E43E02AF14D0199500B3EE22 /* STOP@2x.png */,
+				E43E02B014D0199500B3EE22 /* X@2x.png */,
+				E43E02B114D0199500B3EE22 /* YOUTUBE_CANCEL@2x.png */,
+				E43E02B214D0199500B3EE22 /* YOUTUBE_UPLOAD@2x.png */,
+				E43E02B314D0199500B3EE22 /* YouTubeUploadViewController-iPad.xib */,
+				E43E02B414D0199500B3EE22 /* YouTubeUploadViewController.xib */,
+				E43E02B514D0199500B3EE22 /* YOUYUBE_LOGO@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E43E02F214D01A2800B3EE22 /* PopupMessage */ = {
+			isa = PBXGroup;
+			children = (
+				E43E032114D01A2800B3EE22 /* Classes */,
+				E43E032A14D01A2800B3EE22 /* ofxPopupMessages */,
+			);
+			path = PopupMessage;
+			sourceTree = "<group>";
+		};
+		E43E032114D01A2800B3EE22 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E43E032214D01A2800B3EE22 /* MessageLoader.h */,
+				E43E032314D01A2800B3EE22 /* MessageLoader.m */,
+				E43E032414D01A2800B3EE22 /* MessageParser.h */,
+				E43E032514D01A2800B3EE22 /* MessageParser.m */,
+				E43E032614D01A2800B3EE22 /* PopupMessage.h */,
+				E43E032714D01A2800B3EE22 /* PopupMessage.mm */,
+				E43E032814D01A2800B3EE22 /* URLCacheAlert.h */,
+				E43E032914D01A2800B3EE22 /* URLCacheAlert.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E43E032A14D01A2800B3EE22 /* ofxPopupMessages */ = {
+			isa = PBXGroup;
+			children = (
+				E43E032B14D01A2800B3EE22 /* src */,
+			);
+			path = ofxPopupMessages;
+			sourceTree = "<group>";
+		};
+		E43E032B14D01A2800B3EE22 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E43E032C14D01A2800B3EE22 /* ofxPopupMessages.cpp */,
+				E43E032D14D01A2800B3EE22 /* ofxPopupMessages.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		E4475581145F3EFB00481363 /* ofxTexturesVector */ = {
@@ -1129,23 +1346,6 @@
 				E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		E476F0DA148ED45F000983EC /* SingleProductStore */ = {
-			isa = PBXGroup;
-			children = (
-				E476F0DB148ED45F000983EC /* Classes */,
-			);
-			path = SingleProductStore;
-			sourceTree = "<group>";
-		};
-		E476F0DB148ED45F000983EC /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E476F0DC148ED45F000983EC /* SingleProductStore.h */,
-				E476F0DD148ED45F000983EC /* SingleProductStore.m */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		E48B83161402878200E4EFDB /* yesplastic */ = {
@@ -1471,7 +1671,7 @@
 		E493CE16140AE970004CB633 /* iOSUtils */ = {
 			isa = PBXGroup;
 			children = (
-				E431ED84147CD75100F792EB /* RateMeMessage */,
+				E43E02F214D01A2800B3EE22 /* PopupMessage */,
 				E40FE455141F43C900E9CEDF /* CustomUI */,
 				E43797CA141908DC00F3BBE9 /* CustomUIFont */,
 				E493CE17140AE970004CB633 /* AVPlayerClasses */,
@@ -1483,7 +1683,7 @@
 				E493CEAD140AE971004CB633 /* RKMacros.h */,
 				E493CEAE140AE971004CB633 /* Utilities */,
 				E493CEB1140AE971004CB633 /* YouTubeUpload */,
-				E476F0DA148ED45F000983EC /* SingleProductStore */,
+				E4CB05DB14CEC73F004CE621 /* StatelessStore */,
 			);
 			path = iOSUtils;
 			sourceTree = "<group>";
@@ -1586,31 +1786,6 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		E4A8AAFA13F95585006058D4 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				E4A8AAFB13F95585006058D4 /* easing.cpp */,
-				E4A8AAFC13F95585006058D4 /* easing.h */,
-				E4A8AAFD13F95585006058D4 /* ofMainExt.h */,
-				E4A8AAFE13F95585006058D4 /* ofMainExt.mm */,
-			);
-			name = common;
-			path = "../of_preRelease/My Addons/common";
-			sourceTree = SOURCE_ROOT;
-		};
-		E4A8AAFF13F95585006058D4 /* myOF */ = {
-			isa = PBXGroup;
-			children = (
-				E4A8AB0013F95585006058D4 /* ofMain.h */,
-				E4A8AB0113F95585006058D4 /* ofMain.mm */,
-				E4A8AB0213F95585006058D4 /* ofTypes.h */,
-				E4A8AB0313F95585006058D4 /* ofxiPhoneExtras.h */,
-				E4A8AB0413F95585006058D4 /* ofxiPhoneExtras.mm */,
-			);
-			name = myOF;
-			path = "../of_preRelease/My Addons/myOF";
-			sourceTree = SOURCE_ROOT;
-		};
 		E4A8AB0513F95585006058D4 /* ofxAudioSampler */ = {
 			isa = PBXGroup;
 			children = (
@@ -1685,37 +1860,6 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		E4A8AB2E13F955C2006058D4 /* ofxXmlSettings */ = {
-			isa = PBXGroup;
-			children = (
-				E4A8AB2F13F955C2006058D4 /* install.xml */,
-				E4A8AB3013F955C2006058D4 /* libs */,
-				E4A8AB3513F955C2006058D4 /* src */,
-			);
-			name = ofxXmlSettings;
-			path = ../of_preRelease/addons/ofxXmlSettings;
-			sourceTree = SOURCE_ROOT;
-		};
-		E4A8AB3013F955C2006058D4 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				E4A8AB3113F955C2006058D4 /* tinyxml.cpp */,
-				E4A8AB3213F955C2006058D4 /* tinyxml.h */,
-				E4A8AB3313F955C2006058D4 /* tinyxmlerror.cpp */,
-				E4A8AB3413F955C2006058D4 /* tinyxmlparser.cpp */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-		E4A8AB3513F955C2006058D4 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				E4A8AB3613F955C2006058D4 /* ofxXmlSettings.cpp */,
-				E4A8AB3713F955C2006058D4 /* ofxXmlSettings.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		E4AF1E6E1466B3390027F52D /* FlurryAnalytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -1723,6 +1867,89 @@
 				E4AF1E701466B3390027F52D /* libFlurryAnalytics.a */,
 			);
 			path = FlurryAnalytics;
+			sourceTree = "<group>";
+		};
+		E4CB05B514CEBFB9004CE621 /* addons_007_iphone */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB05C514CEBFF3004CE621 /* common */,
+				E4CB05CA14CEBFF3004CE621 /* myOF */,
+				E4CB05B614CEBFE5004CE621 /* ofxXmlSettings */,
+			);
+			name = addons_007_iphone;
+			sourceTree = "<group>";
+		};
+		E4CB05B614CEBFE5004CE621 /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB05B714CEBFE5004CE621 /* install.xml */,
+				E4CB05B814CEBFE5004CE621 /* libs */,
+				E4CB05BD14CEBFE5004CE621 /* src */,
+			);
+			name = ofxXmlSettings;
+			path = ../of_preRelease_v007_iphone/addons/ofxXmlSettings;
+			sourceTree = "<group>";
+		};
+		E4CB05B814CEBFE5004CE621 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB05B914CEBFE5004CE621 /* tinyxml.cpp */,
+				E4CB05BA14CEBFE5004CE621 /* tinyxml.h */,
+				E4CB05BB14CEBFE5004CE621 /* tinyxmlerror.cpp */,
+				E4CB05BC14CEBFE5004CE621 /* tinyxmlparser.cpp */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		E4CB05BD14CEBFE5004CE621 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB05BE14CEBFE5004CE621 /* ofxXmlSettings.cpp */,
+				E4CB05BF14CEBFE5004CE621 /* ofxXmlSettings.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E4CB05C514CEBFF3004CE621 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB05C614CEBFF3004CE621 /* easing.cpp */,
+				E4CB05C714CEBFF3004CE621 /* easing.h */,
+				E4CB05C814CEBFF3004CE621 /* ofMainExt.h */,
+				E4CB05C914CEBFF3004CE621 /* ofMainExt.mm */,
+			);
+			name = common;
+			path = "../of_preRelease_v007_iphone/My Addons/common";
+			sourceTree = "<group>";
+		};
+		E4CB05CA14CEBFF3004CE621 /* myOF */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB05CB14CEBFF3004CE621 /* ofMain.h */,
+				E4CB05CC14CEBFF3004CE621 /* ofMain.mm */,
+				E4CB05CD14CEBFF3004CE621 /* ofTypes.h */,
+				E4CB05CE14CEBFF3004CE621 /* ofxiPhoneExtras.h */,
+				E4CB05CF14CEBFF3004CE621 /* ofxiPhoneExtras.mm */,
+			);
+			name = myOF;
+			path = "../of_preRelease_v007_iphone/My Addons/myOF";
+			sourceTree = "<group>";
+		};
+		E4CB05DB14CEC73F004CE621 /* StatelessStore */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB05DC14CEC73F004CE621 /* Classes */,
+			);
+			path = StatelessStore;
+			sourceTree = "<group>";
+		};
+		E4CB05DC14CEC73F004CE621 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB05DD14CEC73F004CE621 /* StatelessStore.h */,
+				E4CB05DE14CEC73F004CE621 /* StatelessStore.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E4D5392012B393C200B9EFD8 /* addons */ = {
@@ -1740,9 +1967,6 @@
 				E4A8AB0913F95585006058D4 /* ofxAudioTrigger */,
 				E4F3916D13FC1B5E007B18EC /* ofxAudio */,
 				E4A8AB0D13F95585006058D4 /* ofxMidi */,
-				E4A8AB2E13F955C2006058D4 /* ofxXmlSettings */,
-				E4A8AAFA13F95585006058D4 /* common */,
-				E4A8AAFF13F95585006058D4 /* myOF */,
 				E4A8AB1B13F95585006058D4 /* ofxSlider */,
 			);
 			name = addons;
@@ -1837,7 +2061,9 @@
 		E4E41A221482A78C00EB3C20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E469002714CD882E007BEFDB /* CARD_LOCK.png */,
+				E43E027914D0199500B3EE22 /* Resources */,
+				E43E02B614D0199500B3EE22 /* CARD_LOCK@2x.png */,
+				E43E02B714D0199500B3EE22 /* CARD_LOCK~iPad.png */,
 				E45A75F2149D44FF0038C452 /* OPENING_MOV_IPHONE.mov */,
 				E419345F1493E44D002535F4 /* RESTORE@2x.png */,
 				E4E46D7C1490153900D2FDDA /* FacebookUploadViewController-iPad.xib */,
@@ -2038,7 +2264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4AF013012B0EF5700457BC7 /* MainWindow.xib in Resources */,
-				E4A8AB3813F955C2006058D4 /* install.xml in Resources */,
 				E4E41A971482A78D00EB3C20 /* AGAIN@2x.png in Resources */,
 				E4E41A991482A78D00EB3C20 /* CAMERA@2x.png in Resources */,
 				E4E41A9A1482A78D00EB3C20 /* CARD_BACKGROUND~iPad.png in Resources */,
@@ -2153,9 +2378,67 @@
 				E469002414CD722D007BEFDB /* valentine1.pvr in Resources */,
 				E469002514CD722D007BEFDB /* valentine2.pvr in Resources */,
 				E469002614CD722D007BEFDB /* wedding.pvr in Resources */,
-				E469002814CD882E007BEFDB /* CARD_LOCK.png in Resources */,
 				E469002B14CDA273007BEFDB /* DEMO_FACE.pvr in Resources */,
 				E469002C14CDA273007BEFDB /* DEMO_SOUND.caf in Resources */,
+				E4CB05C014CEBFE5004CE621 /* install.xml in Resources */,
+				E43E02B814D0199500B3EE22 /* AGAIN@2x.png in Resources */,
+				E43E02B914D0199500B3EE22 /* AVPlayerViewController-iPad.xib in Resources */,
+				E43E02BA14D0199500B3EE22 /* AVPlayerViewController.xib in Resources */,
+				E43E02BB14D0199500B3EE22 /* BRITANIC.TTF in Resources */,
+				E43E02BC14D0199500B3EE22 /* CAMERA@2x.png in Resources */,
+				E43E02BD14D0199500B3EE22 /* CARD_BACKGROUND~iPad.png in Resources */,
+				E43E02BE14D0199500B3EE22 /* CARD_LOCK@2x.png in Resources */,
+				E43E02BF14D0199500B3EE22 /* CARD_LOCK~iPad.png in Resources */,
+				E43E02C014D0199500B3EE22 /* Default-Portrait.png in Resources */,
+				E43E02C114D0199500B3EE22 /* Default.png in Resources */,
+				E43E02C214D0199500B3EE22 /* Default@2x.png in Resources */,
+				E43E02C314D0199500B3EE22 /* Localizable.strings in Resources */,
+				E43E02C414D0199500B3EE22 /* FACEBOOK_CANCEL@2x.png in Resources */,
+				E43E02C514D0199500B3EE22 /* FACEBOOK_DIFFRENET@2x.png in Resources */,
+				E43E02C614D0199500B3EE22 /* FACEBOOK_LOGIN.png in Resources */,
+				E43E02C714D0199500B3EE22 /* FACEBOOK_LOGO@2x.png in Resources */,
+				E43E02C814D0199500B3EE22 /* FACEBOOK_UPLOAD@2x.png in Resources */,
+				E43E02C914D0199500B3EE22 /* FacebookUploadViewController-iPad.xib in Resources */,
+				E43E02CA14D0199500B3EE22 /* FacebookUploadViewController.xib in Resources */,
+				E43E02CB14D0199500B3EE22 /* icon-small.png in Resources */,
+				E43E02CC14D0199500B3EE22 /* icon-small@2x.png in Resources */,
+				E43E02CD14D0199500B3EE22 /* icon-small~iPad.png in Resources */,
+				E43E02CE14D0199500B3EE22 /* icon.png in Resources */,
+				E43E02CF14D0199500B3EE22 /* icon@2x.png in Resources */,
+				E43E02D014D0199500B3EE22 /* icon~iPad.png in Resources */,
+				E43E02D114D0199500B3EE22 /* INFO@2x.png in Resources */,
+				E43E02D214D0199500B3EE22 /* InfoViewController-iPad.xib in Resources */,
+				E43E02D314D0199500B3EE22 /* InfoViewController.xib in Resources */,
+				E43E02D414D0199500B3EE22 /* LOADING_BACKGROUND@2x.png in Resources */,
+				E43E02D514D0199500B3EE22 /* LOADING_BACKGROUND~iPad.png in Resources */,
+				E43E02D614D0199500B3EE22 /* LOADING_BAR.png in Resources */,
+				E43E02D714D0199500B3EE22 /* LOADING_BAR@2x.png in Resources */,
+				E43E02D814D0199500B3EE22 /* MainViewController-iPad.xib in Resources */,
+				E43E02D914D0199500B3EE22 /* MainViewController.xib in Resources */,
+				E43E02DA14D0199500B3EE22 /* MainWindow-iPad.xib in Resources */,
+				E43E02DB14D0199500B3EE22 /* MainWindow.xib in Resources */,
+				E43E02DC14D0199500B3EE22 /* MORE_CARDS@2x.png in Resources */,
+				E43E02DD14D0199500B3EE22 /* OPENING_MOV_IPHONE.mov in Resources */,
+				E43E02DE14D0199500B3EE22 /* PLAY@2x.png in Resources */,
+				E43E02DF14D0199500B3EE22 /* POSE_YOUR_FACE@2x.png in Resources */,
+				E43E02E014D0199500B3EE22 /* REC_BACKGROUND@2x.png in Resources */,
+				E43E02E114D0199500B3EE22 /* REC_OVERLAY@2x.png in Resources */,
+				E43E02E214D0199500B3EE22 /* RESTORE@2x.png in Resources */,
+				E43E02E314D0199500B3EE22 /* SHARE@2x.png in Resources */,
+				E43E02E414D0199500B3EE22 /* SHARE_LOCKED@2x.png in Resources */,
+				E43E02E514D0199500B3EE22 /* SHARE_MENU@2x.png in Resources */,
+				E43E02E614D0199500B3EE22 /* SHARE_MENU~iPad.png in Resources */,
+				E43E02E714D0199500B3EE22 /* ShareViewController-iPad.xib in Resources */,
+				E43E02E814D0199500B3EE22 /* ShareViewController.xib in Resources */,
+				E43E02E914D0199500B3EE22 /* STOP@2x.png in Resources */,
+				E43E02EA14D0199500B3EE22 /* X@2x.png in Resources */,
+				E43E02EB14D0199500B3EE22 /* YOUTUBE_CANCEL@2x.png in Resources */,
+				E43E02EC14D0199500B3EE22 /* YOUTUBE_UPLOAD@2x.png in Resources */,
+				E43E02ED14D0199500B3EE22 /* YouTubeUploadViewController-iPad.xib in Resources */,
+				E43E02EE14D0199500B3EE22 /* YouTubeUploadViewController.xib in Resources */,
+				E43E02EF14D0199500B3EE22 /* YOUYUBE_LOGO@2x.png in Resources */,
+				E43E02F014D0199500B3EE22 /* CARD_LOCK@2x.png in Resources */,
+				E43E02F114D0199500B3EE22 /* CARD_LOCK~iPad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2172,19 +2455,11 @@
 				E4AF014512B0F06000457BC7 /* main.m in Sources */,
 				E430D28B12C8937400E65D3D /* TouchView.mm in Sources */,
 				E41C4B9912CA37DD004D3FA6 /* EAGLView.mm in Sources */,
-				E4A8AB1F13F95585006058D4 /* easing.cpp in Sources */,
-				E4A8AB2013F95585006058D4 /* ofMainExt.mm in Sources */,
-				E4A8AB2113F95585006058D4 /* ofMain.mm in Sources */,
-				E4A8AB2213F95585006058D4 /* ofxiPhoneExtras.mm in Sources */,
 				E4A8AB2313F95585006058D4 /* ofxAudioSampler.cpp in Sources */,
 				E4A8AB2413F95585006058D4 /* ofxAudioTrigger.cpp in Sources */,
 				E4A8AB2513F95585006058D4 /* ofxMidi.cpp in Sources */,
 				E4A8AB2A13F95585006058D4 /* ofxMidiTrack.cpp in Sources */,
 				E4A8AB2B13F95585006058D4 /* ofxSlider.cpp in Sources */,
-				E4A8AB3913F955C2006058D4 /* tinyxml.cpp in Sources */,
-				E4A8AB3A13F955C2006058D4 /* tinyxmlerror.cpp in Sources */,
-				E4A8AB3B13F955C2006058D4 /* tinyxmlparser.cpp in Sources */,
-				E4A8AB3C13F955C2006058D4 /* ofxXmlSettings.cpp in Sources */,
 				E4F742C613FABA73002D7E1B /* ofxiPhoneSoundStream.mm in Sources */,
 				E4F3916613FC1B23007B18EC /* ofxAudioPlayer.cpp in Sources */,
 				E4F3917D13FC1B5E007B18EC /* CAStreamBasicDescription.cpp in Sources */,
@@ -2322,7 +2597,6 @@
 				E4AF1E7D1466E4170027F52D /* InfoViewController.m in Sources */,
 				E4F9F81614742CFB00106A0C /* YouTubeUploadViewController.m in Sources */,
 				E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */,
-				E431ED94147CD75100F792EB /* RateMeMessage.m in Sources */,
 				E4D81444148D7BF900ED8573 /* ofxiFBO.mm in Sources */,
 				E4D81445148D7BF900ED8573 /* ofxiPhoneVideo.cpp in Sources */,
 				E4D81448148D7BF900ED8573 /* VideoImporter.mm in Sources */,
@@ -2330,7 +2604,6 @@
 				E4D8144A148D7BF900ED8573 /* MyVideoBuffer.mm in Sources */,
 				E4D8144B148D7BF900ED8573 /* ofxiVideoGrabber.mm in Sources */,
 				E4D8144C148D7BF900ED8573 /* ofxiVideoPlayer.cpp in Sources */,
-				E476F0ED148ED45F000983EC /* SingleProductStore.m in Sources */,
 				E46AD814148F7B9F0087BC09 /* Facebook.m in Sources */,
 				E46AD816148F7B9F0087BC09 /* FBDialog.m in Sources */,
 				E46AD817148F7B9F0087BC09 /* FBLoginDialog.m in Sources */,
@@ -2341,12 +2614,37 @@
 				E46AD81C148F7B9F0087BC09 /* SBJsonBase.m in Sources */,
 				E46AD81D148F7B9F0087BC09 /* SBJsonParser.m in Sources */,
 				E46AD81E148F7B9F0087BC09 /* SBJsonWriter.m in Sources */,
+				E4CB05C114CEBFE5004CE621 /* tinyxml.cpp in Sources */,
+				E4CB05C214CEBFE5004CE621 /* tinyxmlerror.cpp in Sources */,
+				E4CB05C314CEBFE5004CE621 /* tinyxmlparser.cpp in Sources */,
+				E4CB05C414CEBFE5004CE621 /* ofxXmlSettings.cpp in Sources */,
+				E4CB05D014CEBFF3004CE621 /* easing.cpp in Sources */,
+				E4CB05D114CEBFF3004CE621 /* ofMainExt.mm in Sources */,
+				E4CB05D214CEBFF3004CE621 /* ofMain.mm in Sources */,
+				E4CB05D314CEBFF3004CE621 /* ofxiPhoneExtras.mm in Sources */,
+				E4CB05DF14CEC73F004CE621 /* StatelessStore.m in Sources */,
+				E43E036614D01A2900B3EE22 /* MessageLoader.m in Sources */,
+				E43E036714D01A2900B3EE22 /* MessageParser.m in Sources */,
+				E43E036814D01A2900B3EE22 /* PopupMessage.mm in Sources */,
+				E43E036914D01A2900B3EE22 /* URLCacheAlert.m in Sources */,
+				E43E036A14D01A2900B3EE22 /* ofxPopupMessages.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E43E028514D0199500B3EE22 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E43E028614D0199500B3EE22 /* en */,
+				E43E028714D0199500B3EE22 /* es */,
+				E43E028F14D0199500B3EE22 /* fr */,
+				E43E029914D0199500B3EE22 /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E4E41A2A1482A78C00EB3C20 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

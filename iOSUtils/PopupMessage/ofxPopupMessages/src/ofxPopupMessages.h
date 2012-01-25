@@ -35,7 +35,7 @@ class ofxPopupMessages{
     
 public:
    
-    void setup(string filename,string version);
+    void setup(string filename,string path,string version);
        
     void load();
     void unload();    
@@ -62,6 +62,8 @@ private:
     
     int timer;
     bool bStarted;
+    
+    string path;
     
 };
 

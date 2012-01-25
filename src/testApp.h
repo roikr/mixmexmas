@@ -18,7 +18,7 @@
 #include "ofxiPhoneVideo.h"
 #include "ofxAudioSample.h"
 #include "ofxTexturesVector.h"
-
+#include <set>
 
 
 class ofxiVideoPlayer;
@@ -63,7 +63,7 @@ struct card {
     
     string exportFilename;
     string tag;
-    string featureID;
+    string feature;
     vector<string> features;
     bool bLocked;
 };
@@ -96,7 +96,7 @@ public:
 	void preview();
 //	void playIntro();
 
-    void unlock(string feature);
+    void unlock(string feature="");
 	
 	bool getIsPlaying();
 	
@@ -185,6 +185,9 @@ public:
     ofxAudioFile demoSound;
     ofxAudioSample demoSample;
     ofxRKTexture demoFace;
+    
+    set<string> availableFeatures;
+    
    
 };
 
