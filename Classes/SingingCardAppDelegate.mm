@@ -122,6 +122,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 
 	[self.eAGLView setInterfaceOrientation:UIInterfaceOrientationLandscapeRight duration:0];
     self.message= [PopupMessage popupMessage:kPopupMessageURL delegate:self];
+    [message load]; // first time EnterForeground is not being called
 	RKLog(@"application didFinishLaunchingWithOptions finished");
 	return YES;
 }
@@ -169,9 +170,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 	
     [self.eAGLView startAnimation];
     
-    if (message) {
-        [message load];
-    }
+    
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
 		RKLog(@"update loop started");
@@ -219,9 +218,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     RKLog(@"applicationWillResignActive");
 	[self.eAGLView stopAnimation];
     self.OFSAptr->resignActive();
-    if (message) {
-        [message unload];
-    }
+    
 
 }
 
@@ -284,6 +281,10 @@ void uncaughtExceptionHandler(NSException *exception) {
 	if (self.OFSAptr) {
 		self.OFSAptr->suspend();
 	}
+    
+    if (message) {
+        [message unload];
+    }
 	
 }
 
@@ -297,9 +298,10 @@ void uncaughtExceptionHandler(NSException *exception) {
     if (mainViewController.modalViewController && mainViewController.modalViewController == (UIViewController*) playerViewController) {
         [playerViewController.player seekToTime:CMTimeMake(0, 1)];
         [playerViewController.player play];
-    } else {
-        
-//        [PopupMessage popupMessage:kPopupMessageURL];
+    } 
+    
+    if (message) {
+        [message load];
     }
 }
 

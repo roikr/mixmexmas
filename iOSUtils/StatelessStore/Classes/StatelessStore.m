@@ -78,18 +78,20 @@
     
     for (SKPaymentTransaction *transaction in transactions)
     {
+        SKProduct *aProduct = [self productWithIdentifier:transaction.payment.productIdentifier];
+        
         switch (transaction.transactionState)
         {
             case SKPaymentTransactionStatePurchased: {
                 [delegate statelessStoreProductReceived:transaction.payment.productIdentifier];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[self productWithIdentifier:transaction.payment.productIdentifier] localizedTitle] message:NSLocalizedString(@"store purchased",@"Has been purchased successfully !")  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[aProduct localizedTitle] message:NSLocalizedString(@"store purchased",@"Has been purchased successfully !")  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
                 [alert release];
                 [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
             }   break;
             case SKPaymentTransactionStateRestored: {
                 [delegate statelessStoreProductReceived:transaction.payment.productIdentifier];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[self productWithIdentifier:transaction.payment.productIdentifier] localizedTitle] message:NSLocalizedString(@"store restored",@"Has been restored successfully !")  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[aProduct localizedTitle] message:NSLocalizedString(@"store restored",@"Has been restored successfully !")  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
                 [alert release];
                 [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
@@ -102,7 +104,7 @@
                     // Optionally, display an error here.
                 } else
                 {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[self productWithIdentifier:transaction.payment.productIdentifier] localizedTitle] message:NSLocalizedString(@"store failed",@"Purchase has been failed"	)  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[aProduct localizedTitle] message:NSLocalizedString(@"store failed",@"Purchase has been failed")  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                     [alert show];
                     [alert release]; 
                     NSLog(@"SKPaymentTransactionStateFailed: %@ because %@",transaction.error.localizedDescription,transaction.error.localizedFailureReason);

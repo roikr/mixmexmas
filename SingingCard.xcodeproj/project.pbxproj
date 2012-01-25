@@ -80,7 +80,7 @@
 		E43E7EBB14D0209700B4CDCC /* YOUTUBE_UPLOAD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E8314D0209700B4CDCC /* YOUTUBE_UPLOAD@2x.png */; };
 		E43E7EBC14D0209700B4CDCC /* YouTubeUploadViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E8414D0209700B4CDCC /* YouTubeUploadViewController-iPad.xib */; };
 		E43E7EBD14D0209700B4CDCC /* YouTubeUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E8514D0209700B4CDCC /* YouTubeUploadViewController.xib */; };
-		E43E7EBE14D0209700B4CDCC /* YOUYUBE_LOGO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E8614D0209700B4CDCC /* YOUYUBE_LOGO@2x.png */; };
+		E4454E5614D08030002F0286 /* YOUTUBE_LOGO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4454E5514D08030002F0286 /* YOUTUBE_LOGO@2x.png */; };
 		E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */; };
 		E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E44971F5147932BD000F5838 /* SingingCardKeys.m */; };
 		E469000014CD7089007BEFDB /* DECK_3.mid in Resources */ = {isa = PBXBuildFile; fileRef = E469FFC914CD7089007BEFDB /* DECK_3.mid */; };
@@ -414,7 +414,7 @@
 		E43E7E8314D0209700B4CDCC /* YOUTUBE_UPLOAD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YOUTUBE_UPLOAD@2x.png"; sourceTree = "<group>"; };
 		E43E7E8414D0209700B4CDCC /* YouTubeUploadViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "YouTubeUploadViewController-iPad.xib"; sourceTree = "<group>"; };
 		E43E7E8514D0209700B4CDCC /* YouTubeUploadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouTubeUploadViewController.xib; sourceTree = "<group>"; };
-		E43E7E8614D0209700B4CDCC /* YOUYUBE_LOGO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YOUYUBE_LOGO@2x.png"; sourceTree = "<group>"; };
+		E4454E5514D08030002F0286 /* YOUTUBE_LOGO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YOUTUBE_LOGO@2x.png"; sourceTree = "<group>"; };
 		E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTexturesVector.cpp; sourceTree = "<group>"; };
 		E4475585145F3F0C00481363 /* ofxTexturesVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTexturesVector.h; sourceTree = "<group>"; };
 		E44971F4147932BC000F5838 /* SingingCardKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCardKeys.h; sourceTree = "<group>"; };
@@ -1017,6 +1017,7 @@
 		E43E7E4A14D0209700B4CDCC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4454E5514D08030002F0286 /* YOUTUBE_LOGO@2x.png */,
 				E43E7E4B14D0209700B4CDCC /* AGAIN@2x.png */,
 				E43E7E4C14D0209700B4CDCC /* AVPlayerViewController-iPad.xib */,
 				E43E7E4D14D0209700B4CDCC /* AVPlayerViewController.xib */,
@@ -1072,7 +1073,6 @@
 				E43E7E8314D0209700B4CDCC /* YOUTUBE_UPLOAD@2x.png */,
 				E43E7E8414D0209700B4CDCC /* YouTubeUploadViewController-iPad.xib */,
 				E43E7E8514D0209700B4CDCC /* YouTubeUploadViewController.xib */,
-				E43E7E8614D0209700B4CDCC /* YOUYUBE_LOGO@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2196,7 +2196,7 @@
 				E43E7EBB14D0209700B4CDCC /* YOUTUBE_UPLOAD@2x.png in Resources */,
 				E43E7EBC14D0209700B4CDCC /* YouTubeUploadViewController-iPad.xib in Resources */,
 				E43E7EBD14D0209700B4CDCC /* YouTubeUploadViewController.xib in Resources */,
-				E43E7EBE14D0209700B4CDCC /* YOUYUBE_LOGO@2x.png in Resources */,
+				E4454E5614D08030002F0286 /* YOUTUBE_LOGO@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
