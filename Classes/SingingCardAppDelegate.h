@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AVPlayerViewController.h"
-#import "RateMeMessage.h"
+#import "PopupMessage.h"
 #import "StatelessStore.h"
 
 
@@ -24,7 +24,7 @@ class testApp;
 #define IN_APP_STORE
 #define LIVE_TEXT
 
-@interface SingingCardAppDelegate : NSObject <UIApplicationDelegate,AVPlayerViewControllerDelegate,RateMeMessageDelegate,StatelessStoreDelegate> {
+@interface SingingCardAppDelegate : NSObject <UIApplicationDelegate,AVPlayerViewControllerDelegate,PopupMessageDelegate,StatelessStoreDelegate> {
     UIWindow *window;
 	EAGLView *eAGLView;
     MainViewController *mainViewController;
@@ -37,7 +37,7 @@ class testApp;
     
     UIImageView *imageView;
     
-    RateMeMessage *message;
+    PopupMessage *message;
     StatelessStore *store;
 	
 }
@@ -49,7 +49,7 @@ class testApp;
 @property (nonatomic, retain) IBOutlet InfoViewController *infoViewController;
 @property (nonatomic, retain) IBOutlet AVPlayerViewController *playerViewController;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
-@property (nonatomic, retain) RateMeMessage *message;
+@property (nonatomic, retain) PopupMessage *message;
 @property (nonatomic, retain) StatelessStore *store;
 
 

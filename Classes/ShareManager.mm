@@ -344,11 +344,11 @@ void ShareAlert(NSString *title,NSString *message) {
                 MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
                 picker.mailComposeDelegate = self;
                 
-                [picker setSubject:NSLocalizedString(@"YT email title",@"Sweeeet! My Xmas Greeting!")];
+                [picker setSubject:NSLocalizedString(@"YT email title",@"Sweeeet! My Greeting!")];
                 
                
                 
-                NSString *message = [NSString stringWithFormat:NSLocalizedString(@"YT email message",@"Hey,<br/>I just made a xmas greeting created with the help of this cool app.<br/>click the <a href='%@'>link</a> to watch<br/><br/><br/><a href='http://www.lofipeople.com/mixmexmas/appstore'>MixMeXmas iPhone app</a>."),youtubeLink];
+                NSString *message = [NSString stringWithFormat:NSLocalizedString(@"YT email message",@"Hey,<br/>I just made a greeting created with the help of this cool app.<br/>click the <a href='%@'>link</a> to watch<br/><br/><br/><a href='http://www.lofipeople.com/mixme/appstore'>MixMe iPhone app</a>."),youtubeLink];
                                                                                  
                 [picker setMessageBody:message isHTML:YES];
                 
@@ -490,7 +490,7 @@ void ShareAlert(NSString *title,NSString *message) {
 #endif
 			[parentViewController presentModalViewController:controller animated:YES];
 			controller.uploader = youTubeUploader;
-			controller.videoTitle = NSLocalizedString(@"YT title",@"xmas musical card"); // [[self getDisplayName] uppercaseString];
+			controller.videoTitle = NSLocalizedString(@"YT title",@"musical card"); // [[self getDisplayName] uppercaseString];
 			//controller.additionalText = kMilgromURL;
 			controller.descriptionView.text = NSLocalizedString(@"YT desc",@"this video created with this iphone app\nvisit lofipeople at http://www.lofipeople.com");
 			controller.videoPath = [[self getVideoPath] stringByAppendingPathExtension:@"mov"];

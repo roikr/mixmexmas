@@ -32,8 +32,8 @@
 @property (nonatomic,retain) NSTimer *timer;
 @property BOOL messageDisplayed;
 
-+(PopupMessage*) popupMessage:(NSString *)theURL;
--(id) initWithURL:(NSString *)theURL;
++(PopupMessage*) popupMessage:(NSString *)theURL delegate:(id<PopupMessageDelegate>) theDelegate;
+-(id) initWithURL:(NSString *)theURL delegate:(id<PopupMessageDelegate>) theDelegate;
 -(void) load;
 -(void) unload;
 -(void) popup;

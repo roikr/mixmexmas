@@ -21,7 +21,6 @@
 
 #include "EAGLView.h"
 #include "RKMacros.h"
-//#import "PopupMessage.h"
 #import "SingingCardKeys.h"
 
 #ifdef _FLURRY
@@ -122,6 +121,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 #endif
 
 	[self.eAGLView setInterfaceOrientation:UIInterfaceOrientationLandscapeRight duration:0];
+    self.message= [PopupMessage popupMessage:kPopupMessageURL delegate:self];
 	RKLog(@"application didFinishLaunchingWithOptions finished");
 	return YES;
 }
@@ -148,8 +148,6 @@ void uncaughtExceptionHandler(NSException *exception) {
     RKLog(@"AVPlayerViewControllerDone");
            
     self.OFSAptr->startAudio();
-//    [PopupMessage popupMessage:kPopupMessageURL];
-    self.message = [RateMeMessage rateMeMessage:kRateMeMessageURL firstDelay:(NSTimeInterval)(300.0) repeatedDelay:(NSTimeInterval)(900.0) delegate:self];
     
 
 }
@@ -172,7 +170,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     [self.eAGLView startAnimation];
     
     if (message) {
-        [message becomeActive];
+        [message load];
     }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -222,7 +220,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 	[self.eAGLView stopAnimation];
     self.OFSAptr->resignActive();
     if (message) {
-        [message resignActive];
+        [message unload];
     }
 
 }
@@ -318,24 +316,20 @@ void uncaughtExceptionHandler(NSException *exception) {
 }
 
 
-
--(void) rateMeMessageDelegateDidFire:(RateMeMessage *)theMessage {
-    NSLog(@"rateMeMessageDelegateDidFire");
-    if (self.mainViewController.modalViewController==nil && (self.OFSAptr->getSongState()==SONG_IDLE || self.OFSAptr->getSongState()==SONG_PLAY)) {
-        [theMessage show];
-    }
-    
-    
-}
--(void) rateMeMessageDelegateDone:(RateMeMessage *)theMessage {
-    NSLog(@"rateMeMessageDelegateDone");
-    self.message = nil;
+-(BOOL)popupMessageShouldDisplayMessage:(PopupMessage *)popup {
+//    NSLog(@"popupMessageShouldDisplayMessage");
+    return self.mainViewController.modalViewController==nil && (self.OFSAptr->getSongState()==SONG_IDLE || self.OFSAptr->getSongState()==SONG_PLAY);
 }
 
 -(void) statelessStoreProductReceived:(NSString *)productIdentifier {
     NSLog(@"statelessStoreProductReceived: %@",productIdentifier);
     self.OFSAptr->unlock(ofxNSStringToString(productIdentifier));
     [mainViewController updateViews];
+
+#ifdef _FLURRY
+    [FlurryAnalytics logEvent:@"PRODUCT_RECEIVED" withParameters:[NSDictionary dictionaryWithObject:productIdentifier forKey:@"IDENTIFIER"]];
+#endif
+
 }
 
 

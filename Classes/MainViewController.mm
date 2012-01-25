@@ -241,6 +241,12 @@
 #ifdef IN_APP_STORE
     SingingCardAppDelegate *delegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
     [delegate.store buy:ofxStringToNSString(self.OFSAptr->citer->feature)];
+    
+#ifdef _FLURRY
+    [FlurryAnalytics logEvent:@"BUY_BUTTON" withParameters:[NSDictionary dictionaryWithObjectsAndKeys:[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] getCurrentCardTag],@"CARD",ofxStringToNSString(self.OFSAptr->citer->feature),@"IDENTIFIER",nil]];
+                                                            
+                                                            
+#endif
 #endif
 }
 

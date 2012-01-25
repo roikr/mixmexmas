@@ -19,14 +19,14 @@
 @synthesize url,loader,view,timer,messageDisplayed,delegate;
 
 //#define LOCAL_TIMELINE
+#define REPEAT_TIME_INTERVAL 2.0
 
-
-+(PopupMessage*) popupMessage:(NSString *)theURL {
++(PopupMessage*) popupMessage:(NSString *)theURL delegate:(id<PopupMessageDelegate>) theDelegate{
     
-    return [[[PopupMessage alloc] initWithURL:theURL] autorelease];
+    return [[[PopupMessage alloc] initWithURL:theURL delegate:theDelegate] autorelease];
 }
 
--(id) initWithURL:(NSString *)theURL {
+-(id) initWithURL:(NSString *)theURL delegate:(id<PopupMessageDelegate>) theDelegate{
     
     
     if (self=[super init]) {
@@ -35,6 +35,7 @@
         self.url = [theURL stringByAppendingFormat:@"/messages/%@/timeline_%@.xml",preferredLocalizations,versionString];
         popup.setup(ofxNSStringToString([url lastPathComponent]),ofxiPhoneGetDocumentsDirectory(),ofxNSStringToString(versionString));
         messageDisplayed = NO;
+        self.delegate = theDelegate;
 
 #ifdef LOCAL_TIMELINE
         NSError *error = nil;	
@@ -158,7 +159,7 @@
         [view show];
         [view release];
     } else {
-        self.timer =  [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(popup) userInfo:nil repeats:NO];
+        self.timer =  [NSTimer scheduledTimerWithTimeInterval:REPEAT_TIME_INTERVAL target:self selector:@selector(popup) userInfo:nil repeats:NO];
     }
 }
 

@@ -46,8 +46,7 @@
 //    ofSetDataPathRoot(ofxNSStringToString([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0])+'/');
     //ofSetDataPathRoot(ofxiPhoneGetDocumentsDirectory());
     //ofSetDataPathRoot(ofxNSStringToString([[NSBundle mainBundle] resourcePath])+'/');
-    self.popupMessage= [PopupMessage popupMessage:@"http://www.lofipeople.com/mixmexmas"];
-    [popupMessage setDelegate:self];
+    self.popupMessage= [PopupMessage popupMessage:@"http://www.lofipeople.com/mixmexmas" delegate:self];
     return YES;
 }
 
