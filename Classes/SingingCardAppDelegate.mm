@@ -69,8 +69,6 @@ void uncaughtExceptionHandler(NSException *exception) {
 #endif
 
 #ifdef IN_APP_STORE
-	//self.store = [SingleProductStore singleProductStore:kMyFeatureIdentifier delegate:self];
-    
 #ifdef MIX_ME_XMAS_STORE_COMPATIBILITY
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults integerForKey:@"SingleProductStoreState"]) {
@@ -80,7 +78,6 @@ void uncaughtExceptionHandler(NSException *exception) {
         RKLog(@"SingleProductStoreState had been removed");
     } 
 #endif
-    
     self.store = [StatelessStore statelessStoreWithDelegate:self];
     [self.infoViewController setRestoreTarget:self.store];
 #endif    

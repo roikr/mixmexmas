@@ -13,6 +13,5 @@ NSString* const kFacebookAppId=@"262653967119717";
 NSString* const kFlurryApiKey=@"LT1LZ197JKX9Z62SKBR9";
 NSString* const kPopupMessageURL=@"http://www.lofipeople.com/mixme";
 NSString* const kInfoURL=@"http://www.lofipeople.com/mixme/info/info";
-NSString* const kMyFeatureIdentifier = @"XmasExpansion";
 NSString* const kYouTubeUsername = @"mixmeapp"; // omit @gmail.com
 NSString* const kYouTubePassword = @"mixmelolo";

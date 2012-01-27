@@ -14,6 +14,5 @@ extern NSString* const kFacebookAppId;
 extern NSString* const kFlurryApiKey;
 extern NSString* const kPopupMessageURL;
 extern NSString* const kInfoURL;
-extern NSString* const kMyFeatureIdentifier;
 extern NSString* const kYouTubeUsername;
 extern NSString* const kYouTubePassword;
