@@ -44,8 +44,6 @@
     UIButton *switchButton1;
     UIButton *switchButton2;
     
-    UIImageView *lockImage;
-	
 }
 
 
@@ -73,11 +71,6 @@
 @property (nonatomic,retain) IBOutlet UIButton *shareButton;
 @property (nonatomic,retain) IBOutlet UIButton *switchButton1;
 @property (nonatomic,retain) IBOutlet UIButton *switchButton2;
-@property (nonatomic,retain) IBOutlet UIImageView *lockImage;
-
-
-
-
 
 - (IBAction) more:(id)sender;
 - (IBAction) buy:(id)sender;

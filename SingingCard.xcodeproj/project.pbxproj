@@ -31,8 +31,6 @@
 		E43E7E8A14D0209700B4CDCC /* BRITANIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E4E14D0209700B4CDCC /* BRITANIC.TTF */; };
 		E43E7E8B14D0209700B4CDCC /* CAMERA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E4F14D0209700B4CDCC /* CAMERA@2x.png */; };
 		E43E7E8C14D0209700B4CDCC /* CARD_BACKGROUND~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E5014D0209700B4CDCC /* CARD_BACKGROUND~iPad.png */; };
-		E43E7E8D14D0209700B4CDCC /* CARD_LOCK@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E5114D0209700B4CDCC /* CARD_LOCK@2x.png */; };
-		E43E7E8E14D0209700B4CDCC /* CARD_LOCK~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E5214D0209700B4CDCC /* CARD_LOCK~iPad.png */; };
 		E43E7E8F14D0209700B4CDCC /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E5314D0209700B4CDCC /* Default-Portrait.png */; };
 		E43E7E9014D0209700B4CDCC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E5414D0209700B4CDCC /* Default.png */; };
 		E43E7E9114D0209700B4CDCC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43E7E5514D0209700B4CDCC /* Default@2x.png */; };
@@ -294,6 +292,7 @@
 		E4AFFF4112B0CA3000457BC7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFF4012B0CA3000457BC7 /* CoreVideo.framework */; };
 		E4AFFF4712B0CA4900457BC7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */; };
 		E4AFFFC112B0D37300457BC7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */; };
+		E4B15D8014D5C88A006054EB /* LOCK@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B15D7F14D5C88A006054EB /* LOCK@2x.png */; };
 		E4C3F234145F21FC007760E9 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4C3F233145F21FC007760E9 /* testApp.mm */; };
 		E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C82116140BD03A00E190F1 /* RenderProgressView.m */; };
 		E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */; };
@@ -362,8 +361,6 @@
 		E43E7E4E14D0209700B4CDCC /* BRITANIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BRITANIC.TTF; sourceTree = "<group>"; };
 		E43E7E4F14D0209700B4CDCC /* CAMERA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CAMERA@2x.png"; sourceTree = "<group>"; };
 		E43E7E5014D0209700B4CDCC /* CARD_BACKGROUND~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CARD_BACKGROUND~iPad.png"; sourceTree = "<group>"; };
-		E43E7E5114D0209700B4CDCC /* CARD_LOCK@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CARD_LOCK@2x.png"; sourceTree = "<group>"; };
-		E43E7E5214D0209700B4CDCC /* CARD_LOCK~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CARD_LOCK~iPad.png"; sourceTree = "<group>"; };
 		E43E7E5314D0209700B4CDCC /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		E43E7E5414D0209700B4CDCC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E43E7E5514D0209700B4CDCC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -781,6 +778,7 @@
 		E4AFFF4012B0CA3000457BC7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E4B15D7F14D5C88A006054EB /* LOCK@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOCK@2x.png"; sourceTree = "<group>"; };
 		E4C1A741146A643000259F20 /* SingingCard_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCard_Prefix.pch; sourceTree = "<group>"; };
 		E4C3F231145F21FC007760E9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E4C3F232145F21FC007760E9 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
@@ -1017,6 +1015,7 @@
 		E43E7E4A14D0209700B4CDCC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4B15D7F14D5C88A006054EB /* LOCK@2x.png */,
 				E4454E5514D08030002F0286 /* YOUTUBE_LOGO@2x.png */,
 				E43E7E4B14D0209700B4CDCC /* AGAIN@2x.png */,
 				E43E7E4C14D0209700B4CDCC /* AVPlayerViewController-iPad.xib */,
@@ -1024,8 +1023,6 @@
 				E43E7E4E14D0209700B4CDCC /* BRITANIC.TTF */,
 				E43E7E4F14D0209700B4CDCC /* CAMERA@2x.png */,
 				E43E7E5014D0209700B4CDCC /* CARD_BACKGROUND~iPad.png */,
-				E43E7E5114D0209700B4CDCC /* CARD_LOCK@2x.png */,
-				E43E7E5214D0209700B4CDCC /* CARD_LOCK~iPad.png */,
 				E43E7E5314D0209700B4CDCC /* Default-Portrait.png */,
 				E43E7E5414D0209700B4CDCC /* Default.png */,
 				E43E7E5514D0209700B4CDCC /* Default@2x.png */,
@@ -2045,7 +2042,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SingingCard" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2147,8 +2144,6 @@
 				E43E7E8A14D0209700B4CDCC /* BRITANIC.TTF in Resources */,
 				E43E7E8B14D0209700B4CDCC /* CAMERA@2x.png in Resources */,
 				E43E7E8C14D0209700B4CDCC /* CARD_BACKGROUND~iPad.png in Resources */,
-				E43E7E8D14D0209700B4CDCC /* CARD_LOCK@2x.png in Resources */,
-				E43E7E8E14D0209700B4CDCC /* CARD_LOCK~iPad.png in Resources */,
 				E43E7E8F14D0209700B4CDCC /* Default-Portrait.png in Resources */,
 				E43E7E9014D0209700B4CDCC /* Default.png in Resources */,
 				E43E7E9114D0209700B4CDCC /* Default@2x.png in Resources */,
@@ -2197,6 +2192,7 @@
 				E43E7EBC14D0209700B4CDCC /* YouTubeUploadViewController-iPad.xib in Resources */,
 				E43E7EBD14D0209700B4CDCC /* YouTubeUploadViewController.xib in Resources */,
 				E4454E5614D08030002F0286 /* YOUTUBE_LOGO@2x.png in Resources */,
+				E4B15D8014D5C88A006054EB /* LOCK@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2414,6 +2410,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
@@ -2442,6 +2439,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
@@ -2474,6 +2472,7 @@
 					_RK_DEBUG,
 				);
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -2489,6 +2488,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -2504,6 +2504,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -2520,6 +2521,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",
@@ -2549,6 +2551,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = _FLURRY;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -2565,6 +2568,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/include",

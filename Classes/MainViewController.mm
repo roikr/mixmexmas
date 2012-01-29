@@ -46,7 +46,6 @@
 
 @implementation MainViewController
 
-@synthesize lockImage;
 @synthesize liveView;
 @synthesize liveViewLabel;
 @synthesize recordView;
@@ -188,7 +187,7 @@
 	renderProgressView.cancelButton.hidden = YES;
     
     startOverButton.hidden = shareButton.hidden = self.OFSAptr->citer->bLocked;
-    lockImage.hidden = buyButton.hidden = !self.OFSAptr->citer->bLocked;
+    buyButton.hidden = !self.OFSAptr->citer->bLocked;
 
 	switch (self.OFSAptr->getSongState()) {
 		case SONG_IDLE:

@@ -324,9 +324,12 @@ void testApp::update()
 		bCardChanged = false;
 		switch (getSongState()) {
 			case SONG_IDLE: 
-			case SONG_PLAY: {
-				setSongState(citer->bLocked ? SONG_IDLE : SONG_PLAY);
-			} break;
+			case SONG_PLAY: 
+                if (!citer->bLocked) {
+                    setSongState(SONG_PLAY);
+                }
+				
+			break;
 			default:
 				break;
 		}
