@@ -7,7 +7,7 @@
 //
 
 #import "CustomFontTextView.h"
-
+#import "ApplicationKeys.h"
 
 @implementation CustomFontTextView
 
@@ -16,7 +16,7 @@
 {
     if (self = [super initWithCoder: decoder])
     {
-		[self setFont: [UIFont fontWithName: @"BritannicBold" size: self.font.pointSize]]; 
+		[self setFont: [UIFont fontWithName: kApplicationFont size: self.font.pointSize]]; 
     }
     return self;
 }

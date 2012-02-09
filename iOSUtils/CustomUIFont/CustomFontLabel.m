@@ -7,6 +7,7 @@
 //
 
 #import "CustomFontLabel.h"
+#import "ApplicationKeys.h"
 
 
 @implementation CustomFontLabel
@@ -15,7 +16,7 @@
 {
     if (self = [super initWithCoder: decoder])
     {
-        [self setFont: [UIFont fontWithName: @"BritannicBold" size: self.font.pointSize]];
+        [self setFont: [UIFont fontWithName:kApplicationFont size: self.font.pointSize]];
     }
     return self;
 }

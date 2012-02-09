@@ -14,6 +14,7 @@
 #import "GDataEntryYouTubeUpload.h"
 #import "GDataEntryYouTubeVideo.h"
 #import "RKUBackgroundTask.h"
+#import "RKMacros.h"
 
 #ifdef _FLURRY
 #import "FlurryAnalytics.h"
@@ -278,6 +279,7 @@ ofTotalByteCount:(unsigned long long)dataLength {
 		self.state = YOUTUBE_UPLOADER_STATE_UPLOAD_FINISHED;
 		
 	} else {
+        RKLog(@"%@",[error localizedDescription]);
 //		NSBeginAlertSheet(@"Upload failed", nil, nil, nil,
 //						  [self window], nil, nil,
 //						  nil, nil, @"Upload failed: %@", error);

@@ -7,7 +7,7 @@
 //
 
 #import "CustomButton.h"
-
+#import "ApplicationKeys.h"
 
 @implementation CustomButton
 
@@ -23,7 +23,7 @@
 //
 //        }
         
-        self.titleLabel.font = [UIFont fontWithName: @"BritannicBold" size: self.titleLabel.font.pointSize];
+        self.titleLabel.font = [UIFont fontWithName:kApplicationFont size: self.titleLabel.font.pointSize];
 		
     }
     return self;
