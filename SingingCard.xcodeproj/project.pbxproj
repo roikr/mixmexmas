@@ -13,7 +13,6 @@
 		28EC4C5911D54ECE0027AA9F /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EC4C5711D54ECE0027AA9F /* MainViewController.mm */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
-		E40D5BB7145FD1E3005924A9 /* ofxAudioInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40D5BB5145FD1E3005924A9 /* ofxAudioInstrument.cpp */; };
 		E40FE458141F43C900E9CEDF /* CustomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E40FE457141F43C900E9CEDF /* CustomImageView.m */; };
 		E40FE4A9141F49AA00E9CEDF /* ShareViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40FE4A8141F49AA00E9CEDF /* ShareViewController.mm */; };
 		E41C4B9912CA37DD004D3FA6 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E41C4B9812CA37DD004D3FA6 /* EAGLView.mm */; };
@@ -81,6 +80,13 @@
 		E4454E5614D08030002F0286 /* YOUTUBE_LOGO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4454E5514D08030002F0286 /* YOUTUBE_LOGO@2x.png */; };
 		E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */; };
 		E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E44971F5147932BD000F5838 /* SingingCardKeys.m */; };
+		E44E1D7E14E0234700C7C048 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44E1D6C14E0234700C7C048 /* CAStreamBasicDescription.cpp */; };
+		E44E1D7F14E0234700C7C048 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44E1D6E14E0234700C7C048 /* CAXException.cpp */; };
+		E44E1D8014E0234700C7C048 /* README in Resources */ = {isa = PBXBuildFile; fileRef = E44E1D7014E0234700C7C048 /* README */; };
+		E44E1D8114E0234700C7C048 /* ofxAudioFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = E44E1D7314E0234700C7C048 /* ofxAudioFile.mm */; };
+		E44E1D8214E0234700C7C048 /* ofxAudioInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44E1D7414E0234700C7C048 /* ofxAudioInstrument.cpp */; };
+		E44E1D8414E0234700C7C048 /* ofxAudioPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44E1D7A14E0234700C7C048 /* ofxAudioPlayer.cpp */; };
+		E44E1D8814E023EA00C7C048 /* ApplicationKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = E44E1D8714E023EA00C7C048 /* ApplicationKeys.m */; };
 		E469000014CD7089007BEFDB /* DECK_3.mid in Resources */ = {isa = PBXBuildFile; fileRef = E469FFC914CD7089007BEFDB /* DECK_3.mid */; };
 		E469000114CD7089007BEFDB /* DECK_4.mid in Resources */ = {isa = PBXBuildFile; fileRef = E469FFCA14CD7089007BEFDB /* DECK_4.mid */; };
 		E469000214CD7089007BEFDB /* DECK_5.mid in Resources */ = {isa = PBXBuildFile; fileRef = E469FFCB14CD7089007BEFDB /* DECK_5.mid */; };
@@ -313,10 +319,6 @@
 		E4D8144A148D7BF900ED8573 /* MyVideoBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8143D148D7BF900ED8573 /* MyVideoBuffer.mm */; };
 		E4D8144B148D7BF900ED8573 /* ofxiVideoGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8143F148D7BF900ED8573 /* ofxiVideoGrabber.mm */; };
 		E4D8144C148D7BF900ED8573 /* ofxiVideoPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D81442148D7BF900ED8573 /* ofxiVideoPlayer.cpp */; };
-		E4F3916613FC1B23007B18EC /* ofxAudioPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */; };
-		E4F3917D13FC1B5E007B18EC /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4F3917113FC1B5E007B18EC /* CAStreamBasicDescription.cpp */; };
-		E4F3917E13FC1B5E007B18EC /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4F3917313FC1B5E007B18EC /* CAXException.cpp */; };
-		E4F3918013FC1B5E007B18EC /* ofxAudioFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3917813FC1B5E007B18EC /* ofxAudioFile.mm */; };
 		E4F742C613FABA73002D7E1B /* ofxiPhoneSoundStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */; };
 		E4F9F81614742CFB00106A0C /* YouTubeUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CFC2140AE971004CB633 /* YouTubeUploadViewController.m */; };
 /* End PBXBuildFile section */
@@ -331,8 +333,6 @@
 		28EC4C5711D54ECE0027AA9F /* MainViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		E40D5BB5145FD1E3005924A9 /* ofxAudioInstrument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioInstrument.cpp; sourceTree = "<group>"; };
-		E40D5BB6145FD1E3005924A9 /* ofxAudioInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioInstrument.h; sourceTree = "<group>"; };
 		E40FE456141F43C900E9CEDF /* CustomImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImageView.h; sourceTree = "<group>"; };
 		E40FE457141F43C900E9CEDF /* CustomImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageView.m; sourceTree = "<group>"; };
 		E40FE4A7141F49AA00E9CEDF /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
@@ -416,6 +416,21 @@
 		E4475585145F3F0C00481363 /* ofxTexturesVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTexturesVector.h; sourceTree = "<group>"; };
 		E44971F4147932BC000F5838 /* SingingCardKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCardKeys.h; sourceTree = "<group>"; };
 		E44971F5147932BD000F5838 /* SingingCardKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingingCardKeys.m; sourceTree = "<group>"; };
+		E44E1D6A14E0234700C7C048 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		E44E1D6B14E0234700C7C048 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		E44E1D6C14E0234700C7C048 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		E44E1D6D14E0234700C7C048 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		E44E1D6E14E0234700C7C048 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		E44E1D6F14E0234700C7C048 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		E44E1D7014E0234700C7C048 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		E44E1D7214E0234700C7C048 /* ofxAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioFile.h; sourceTree = "<group>"; };
+		E44E1D7314E0234700C7C048 /* ofxAudioFile.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxAudioFile.mm; sourceTree = "<group>"; };
+		E44E1D7414E0234700C7C048 /* ofxAudioInstrument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioInstrument.cpp; sourceTree = "<group>"; };
+		E44E1D7514E0234700C7C048 /* ofxAudioInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioInstrument.h; sourceTree = "<group>"; };
+		E44E1D7A14E0234700C7C048 /* ofxAudioPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioPlayer.cpp; sourceTree = "<group>"; };
+		E44E1D7B14E0234700C7C048 /* ofxAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioPlayer.h; sourceTree = "<group>"; };
+		E44E1D8614E023E900C7C048 /* ApplicationKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationKeys.h; sourceTree = "<group>"; };
+		E44E1D8714E023EA00C7C048 /* ApplicationKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationKeys.m; sourceTree = "<group>"; };
 		E469001F14CD722D007BEFDB /* bday.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = bday.pvr; sourceTree = "<group>"; };
 		E469002014CD722D007BEFDB /* valentine1.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = valentine1.pvr; sourceTree = "<group>"; };
 		E469002114CD722D007BEFDB /* valentine2.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = valentine2.pvr; sourceTree = "<group>"; };
@@ -822,18 +837,7 @@
 		E4D81442148D7BF900ED8573 /* ofxiVideoPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxiVideoPlayer.cpp; sourceTree = "<group>"; };
 		E4D81443148D7BF900ED8573 /* ofxiVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiVideoPlayer.h; sourceTree = "<group>"; };
 		E4F35E5C1465D2F000B218B1 /* SingingCard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SingingCard-Info.plist"; sourceTree = "<group>"; };
-		E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioPlayer.cpp; sourceTree = "<group>"; };
-		E4F3915613FC1B23007B18EC /* ofxAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioPlayer.h; sourceTree = "<group>"; };
 		E4F3915B13FC1B23007B18EC /* ofxAudioSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioSample.h; sourceTree = "<group>"; };
-		E4F3916F13FC1B5E007B18EC /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
-		E4F3917013FC1B5E007B18EC /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
-		E4F3917113FC1B5E007B18EC /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
-		E4F3917213FC1B5E007B18EC /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
-		E4F3917313FC1B5E007B18EC /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
-		E4F3917413FC1B5E007B18EC /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
-		E4F3917513FC1B5E007B18EC /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		E4F3917713FC1B5E007B18EC /* ofxAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioFile.h; sourceTree = "<group>"; };
-		E4F3917813FC1B5E007B18EC /* ofxAudioFile.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxAudioFile.mm; sourceTree = "<group>"; };
 		E4F742C413FABA73002D7E1B /* ofSoundStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofSoundStream.h; sourceTree = "<group>"; };
 		E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneSoundStream.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -868,6 +872,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E44E1D8614E023E900C7C048 /* ApplicationKeys.h */,
+				E44E1D8714E023EA00C7C048 /* ApplicationKeys.m */,
 				1D3623240D0F684500981E51 /* SingingCardAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SingingCardAppDelegate.mm */,
 				E44971F4147932BC000F5838 /* SingingCardKeys.h */,
@@ -1088,6 +1094,59 @@
 			children = (
 				E4475585145F3F0C00481363 /* ofxTexturesVector.h */,
 				E4475583145F3EFB00481363 /* ofxTexturesVector.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E44E1D6814E0234700C7C048 /* ofxAudio */ = {
+			isa = PBXGroup;
+			children = (
+				E44E1D6914E0234700C7C048 /* iPublicUtility */,
+				E44E1D7014E0234700C7C048 /* README */,
+				E44E1D7114E0234700C7C048 /* src */,
+			);
+			name = ofxAudio;
+			path = "../of_preRelease_v007_iphone/My Addons/ofxAudio";
+			sourceTree = "<group>";
+		};
+		E44E1D6914E0234700C7C048 /* iPublicUtility */ = {
+			isa = PBXGroup;
+			children = (
+				E44E1D6A14E0234700C7C048 /* CADebugMacros.h */,
+				E44E1D6B14E0234700C7C048 /* CAMath.h */,
+				E44E1D6C14E0234700C7C048 /* CAStreamBasicDescription.cpp */,
+				E44E1D6D14E0234700C7C048 /* CAStreamBasicDescription.h */,
+				E44E1D6E14E0234700C7C048 /* CAXException.cpp */,
+				E44E1D6F14E0234700C7C048 /* CAXException.h */,
+			);
+			path = iPublicUtility;
+			sourceTree = "<group>";
+		};
+		E44E1D7114E0234700C7C048 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E44E1D7214E0234700C7C048 /* ofxAudioFile.h */,
+				E44E1D7314E0234700C7C048 /* ofxAudioFile.mm */,
+				E44E1D7414E0234700C7C048 /* ofxAudioInstrument.cpp */,
+				E44E1D7514E0234700C7C048 /* ofxAudioInstrument.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E44E1D7814E0234700C7C048 /* ofxAudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E44E1D7914E0234700C7C048 /* src */,
+			);
+			name = ofxAudioPlayer;
+			path = "../of_preRelease_v007_iphone/My Addons/ofxAudioPlayer";
+			sourceTree = "<group>";
+		};
+		E44E1D7914E0234700C7C048 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E44E1D7A14E0234700C7C048 /* ofxAudioPlayer.cpp */,
+				E44E1D7B14E0234700C7C048 /* ofxAudioPlayer.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1750,6 +1809,8 @@
 			children = (
 				E4CB05C514CEBFF3004CE621 /* common */,
 				E4CB05CA14CEBFF3004CE621 /* myOF */,
+				E44E1D6814E0234700C7C048 /* ofxAudio */,
+				E44E1D7814E0234700C7C048 /* ofxAudioPlayer */,
 				E4CB05B614CEBFE5004CE621 /* ofxXmlSettings */,
 			);
 			name = addons_007_iphone;
@@ -1839,9 +1900,7 @@
 				E476ED151407EC960091FFA3 /* ofxAudioLimiter */,
 				E4F3915913FC1B23007B18EC /* ofxAudioSample */,
 				E4A8AB0513F95585006058D4 /* ofxAudioSampler */,
-				E4F3915313FC1B23007B18EC /* ofxAudioPlayer */,
 				E4A8AB0913F95585006058D4 /* ofxAudioTrigger */,
-				E4F3916D13FC1B5E007B18EC /* ofxAudio */,
 				E4A8AB0D13F95585006058D4 /* ofxMidi */,
 				E4A8AB1B13F95585006058D4 /* ofxSlider */,
 			);
@@ -1934,24 +1993,6 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		E4F3915313FC1B23007B18EC /* ofxAudioPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				E4F3915413FC1B23007B18EC /* src */,
-			);
-			name = ofxAudioPlayer;
-			path = "../of_preRelease/My Addons/ofxAudioPlayer";
-			sourceTree = SOURCE_ROOT;
-		};
-		E4F3915413FC1B23007B18EC /* src */ = {
-			isa = PBXGroup;
-			children = (
-				E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */,
-				E4F3915613FC1B23007B18EC /* ofxAudioPlayer.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		E4F3915913FC1B23007B18EC /* ofxAudioSample */ = {
 			isa = PBXGroup;
 			children = (
@@ -1965,41 +2006,6 @@
 			isa = PBXGroup;
 			children = (
 				E4F3915B13FC1B23007B18EC /* ofxAudioSample.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		E4F3916D13FC1B5E007B18EC /* ofxAudio */ = {
-			isa = PBXGroup;
-			children = (
-				E4F3916E13FC1B5E007B18EC /* iPublicUtility */,
-				E4F3917513FC1B5E007B18EC /* README */,
-				E4F3917613FC1B5E007B18EC /* src */,
-			);
-			name = ofxAudio;
-			path = "../of_preRelease/My Addons/ofxAudio";
-			sourceTree = SOURCE_ROOT;
-		};
-		E4F3916E13FC1B5E007B18EC /* iPublicUtility */ = {
-			isa = PBXGroup;
-			children = (
-				E4F3916F13FC1B5E007B18EC /* CADebugMacros.h */,
-				E4F3917013FC1B5E007B18EC /* CAMath.h */,
-				E4F3917113FC1B5E007B18EC /* CAStreamBasicDescription.cpp */,
-				E4F3917213FC1B5E007B18EC /* CAStreamBasicDescription.h */,
-				E4F3917313FC1B5E007B18EC /* CAXException.cpp */,
-				E4F3917413FC1B5E007B18EC /* CAXException.h */,
-			);
-			path = iPublicUtility;
-			sourceTree = "<group>";
-		};
-		E4F3917613FC1B5E007B18EC /* src */ = {
-			isa = PBXGroup;
-			children = (
-				E40D5BB5145FD1E3005924A9 /* ofxAudioInstrument.cpp */,
-				E40D5BB6145FD1E3005924A9 /* ofxAudioInstrument.h */,
-				E4F3917713FC1B5E007B18EC /* ofxAudioFile.h */,
-				E4F3917813FC1B5E007B18EC /* ofxAudioFile.mm */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -2193,6 +2199,7 @@
 				E43E7EBD14D0209700B4CDCC /* YouTubeUploadViewController.xib in Resources */,
 				E4454E5614D08030002F0286 /* YOUTUBE_LOGO@2x.png in Resources */,
 				E4B15D8014D5C88A006054EB /* LOCK@2x.png in Resources */,
+				E44E1D8014E0234700C7C048 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2215,10 +2222,6 @@
 				E4A8AB2A13F95585006058D4 /* ofxMidiTrack.cpp in Sources */,
 				E4A8AB2B13F95585006058D4 /* ofxSlider.cpp in Sources */,
 				E4F742C613FABA73002D7E1B /* ofxiPhoneSoundStream.mm in Sources */,
-				E4F3916613FC1B23007B18EC /* ofxAudioPlayer.cpp in Sources */,
-				E4F3917D13FC1B5E007B18EC /* CAStreamBasicDescription.cpp in Sources */,
-				E4F3917E13FC1B5E007B18EC /* CAXException.cpp in Sources */,
-				E4F3918013FC1B5E007B18EC /* ofxAudioFile.mm in Sources */,
 				E48B831C140287AF00E4EFDB /* ofxRKTexture.mm in Sources */,
 				E48B841A1402880000E4EFDB /* GDataEntryBase.m in Sources */,
 				E48B841B1402880000E4EFDB /* GDataFeedBase.m in Sources */,
@@ -2347,7 +2350,6 @@
 				E40FE4A9141F49AA00E9CEDF /* ShareViewController.mm in Sources */,
 				E4C3F234145F21FC007760E9 /* testApp.mm in Sources */,
 				E4475584145F3EFB00481363 /* ofxTexturesVector.cpp in Sources */,
-				E40D5BB7145FD1E3005924A9 /* ofxAudioInstrument.cpp in Sources */,
 				E4AF1E7D1466E4170027F52D /* InfoViewController.m in Sources */,
 				E4F9F81614742CFB00106A0C /* YouTubeUploadViewController.m in Sources */,
 				E44971F6147932BD000F5838 /* SingingCardKeys.m in Sources */,
@@ -2381,6 +2383,12 @@
 				E43E036814D01A2900B3EE22 /* PopupMessage.mm in Sources */,
 				E43E036914D01A2900B3EE22 /* URLCacheAlert.m in Sources */,
 				E43E036A14D01A2900B3EE22 /* ofxPopupMessages.cpp in Sources */,
+				E44E1D7E14E0234700C7C048 /* CAStreamBasicDescription.cpp in Sources */,
+				E44E1D7F14E0234700C7C048 /* CAXException.cpp in Sources */,
+				E44E1D8114E0234700C7C048 /* ofxAudioFile.mm in Sources */,
+				E44E1D8214E0234700C7C048 /* ofxAudioInstrument.cpp in Sources */,
+				E44E1D8414E0234700C7C048 /* ofxAudioPlayer.cpp in Sources */,
+				E44E1D8814E023EA00C7C048 /* ApplicationKeys.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
