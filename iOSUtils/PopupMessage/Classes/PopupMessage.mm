@@ -10,6 +10,10 @@
 #include "ofxiPhoneExtras.h"
 #include "ofxPopupMessages.h"
 
+#ifdef _FLURRY
+#import "FlurryAnalytics.h"
+#endif
+
 @interface PopupMessage(PrivateMethods) 
 -(void) start;
 -(void) next;
@@ -165,20 +169,26 @@
 
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+    message m;
+    
+    if (startMessage) {
+        m = popup.startMessage;
+        startMessage = NO;
+    } else {
+        m = *(popup.citer);
+    }
+    
+#ifdef _FLURRY
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%i",buttonIndex],@"BUTTON", nil];
+    [FlurryAnalytics logEvent:[NSString stringWithFormat:@"POPUP_%i",m.messageID] withParameters:dictionary];
+#endif
+    
     if (buttonIndex>=0) {
-        
-        
         
 //        NSLog(@"alertView: %i",buttonIndex);
         
-        message m;
         
-        if (startMessage) {
-            m = popup.startMessage;
-            startMessage = NO;
-        } else {
-            m = *(popup.citer);
-        }
 
         string link = m.buttons[buttonIndex].link;
         if (!m.buttons[buttonIndex].retry) { // if no rerty message is done !
