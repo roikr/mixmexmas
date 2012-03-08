@@ -112,7 +112,7 @@ void ofxPopupMessages::load() {
     
 }
 
-void ofxPopupMessages::unload() {
+void ofxPopupMessages::save() {
     
     ofxXmlSettings xml;
     

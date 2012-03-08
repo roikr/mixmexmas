@@ -38,7 +38,7 @@ public:
     void setup(string filename,string path,string version);
        
     void load();
-    void unload();    
+    void save();    
 
     void nextMessage();
     void clear();

@@ -98,7 +98,7 @@
 
 -(void) unload {
     
-    popup.unload();
+    popup.save();
     
     if (timer) {
         [timer invalidate];
@@ -131,6 +131,8 @@
         self.timer =  [NSTimer scheduledTimerWithTimeInterval:popup.nextDelay target:self selector:@selector(popup) userInfo:nil repeats:NO];
         NSLog(@"next\tnextDelay: %f, nextMessage: %d",popup.nextDelay,distance(popup.messages.begin(), popup.citer) );
     }
+    
+    popup.save();
 }
 
 -(void) popup {
