@@ -9,7 +9,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include <set.h>
+#include <set>
 
 using namespace std;
 
