@@ -1,0 +1,8 @@
+1. create target by duplicating similar target
+2. create folder to contain specific target resources and sources:
+	Resources folder
+	data folder
+	ApplicationKeys.m
+	SingingCardKeys.m
+3. add this files to the project
+4. duplicate *-Info.plist to the target*-Info.plist, update it and change its name in the target settings

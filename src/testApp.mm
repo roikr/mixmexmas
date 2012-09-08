@@ -77,13 +77,13 @@ void testApp::setup(){
 	assert(bLoaded);
     
     
-    bLoaded = demoSound.load(ofToDataPath(xml.getAttribute("cards", "demoSound", "")), bufferSize);
+    bLoaded = demoSound.load(ofToDataPath(xml.getAttribute("cards", "demoSound", "DEMO_SOUND.caf")), bufferSize);
 	assert(bLoaded);
     demoSample.buffer = demoSound.getTableBuffer();
     demoSample.nChannels = demoSound.getNumChannels();
     demoSample.numFrames = demoSound.getSamplesPerChannel();
     
-    demoFace.setup(ofToDataPath(xml.getAttribute("cards", "demoFace", "")));
+    demoFace.setup(ofToDataPath(xml.getAttribute("cards", "demoFace", "DEMO_FACE.pvr")));
     
 	int i;
 	
